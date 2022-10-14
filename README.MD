@@ -24,16 +24,3 @@ Para setar as variáveis de ambiente...
     Name: PYTHONUTF8
     Value: 1
 ```
-
-```sh
-pip3 install --upgrade pip
-pip3 install pandas, seaborn, matplotlib
-```
-
-## Caso esteja usando Windows:
-Para setar as variáveis de ambiente...
-```sh
-- Enviroment Variables:
-    Add to PATH:
-    C:\Users\<YOUR_USERNAME>\AppData\Local\Programs
-```
