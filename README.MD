@@ -23,15 +23,8 @@ Para setar as variáveis de ambiente...
 - New System Variable:
     Name: PYTHONUTF8
     Value: 1
-```# Transforma uma Topologia de Rede em um histograma de Overhead com alguns tipos de Source Routing.
-## _A aplicação é destinada a _
+```
 
-## Bibliotecas usadas:
-- [matplotlib] - Usado para plotar gráficos
-- [seaborn] - Usado para plotar e visualizar gŕaficos.
-- [pandas] - Usado para manipular e visualizar bancos de dados.
-
-## Instalação de Dependências
 ```sh
 pip3 install --upgrade pip
 pip3 install pandas, seaborn, matplotlib
