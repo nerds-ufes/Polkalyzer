@@ -1,0 +1,16 @@
+1. MAPPING == cityname to nodeid in the paths file
+
+2. MAPPING*ANNOTATED == cityname to population mapping
+
+3. TOPOLOGY/CONVERTED.POP.* == IGP weights from actual internet2/geant stats or from rocketfuel inferred weights
+
+
+4. paths*.GRAVITY == each entry is a pop-pop flow.  the format is path
+;FractionofTotalTrafficContributedByThisPath e.g.,  in abilene "1 4 6 8 7 11 10
+;0.000762114062241613" --> source is 1 (Settle) destination is 10 (Wash) and
+this traffic contributes 0.00076 of the total network traffic, i.e., if the
+total number of distinct flows in Internet2 is 8000000, then this path has 5600
+flows
+  
+
+   
