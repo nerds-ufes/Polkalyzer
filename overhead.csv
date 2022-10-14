@@ -1,0 +1,13 @@
+Topology,Where,MPolka,MPINT,INT Clássico
+Isis,DataPlane,170,129,340
+Isis,ControlPlane,51,44,170
+Abilene,DataPlane,250,189,500
+Abilene,ControlPlane,75,64,250
+GEANT,DataPlane,1010,768,2020
+GEANT,ControlPlane,303,263,1010
+GridNet,DataPlane,220,167,440
+GridNet,ControlPlane,66,57,220
+FORTHNET,DataPlane,1750,1338,3500
+FORTHNET,ControlPlane,525,463,1750
+GetNet,DataPlane,180,137,360
+GetNet,ControlPlane,54,47,180
