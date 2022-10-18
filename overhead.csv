@@ -1,13 +1,13 @@
 Topology,Where,MPolka CRC8,MPolka CRC16,MPINT,INT Clássico
-Isis,DataPlane,606,648,618,0
-Isis,ControlPlane,495,516,521,0
-Abilene,DataPlane,1538,1608,1594,0
-Abilene,ControlPlane,687,708,733,0
-GEANT,DataPlane,3699,3972,4041,0
-GEANT,ControlPlane,3033,3180,3323,0
-GridNet,DataPlane,808,864,856,0
-GridNet,ControlPlane,644,672,684,0
-FORTHNET,DataPlane,3809,4236,4247,0
-FORTHNET,ControlPlane,5679,6036,6253,0
-GetNet,DataPlane,462,504,458,0
-GetNet,ControlPlane,548,576,564,0
+Isis,DataPlane,606,648,618,906
+Isis,ControlPlane,495,516,521,713
+FORTHNET,DataPlane,3809,4236,4247,13319
+FORTHNET,ControlPlane,5679,6036,6253,13837
+GEANT,DataPlane,3699,3972,4041,9321
+GEANT,ControlPlane,3033,3180,3323,6395
+GetNet,DataPlane,462,504,458,698
+GetNet,ControlPlane,548,576,564,708
+GridNet,DataPlane,808,864,856,1624
+GridNet,ControlPlane,644,672,684,1020
+Abilene,DataPlane,1538,1608,1594,1978
+Abilene,ControlPlane,687,708,733,973
