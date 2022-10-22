@@ -1,4 +1,6 @@
+from fileinput import filename
 import requests 
+import os
 from bs4 import BeautifulSoup 
   
 ''' 
@@ -30,30 +32,33 @@ def get_links(endswith):
     return links
   
   
-def download_series(video_links): 
+def download_series(linkArray): 
+    if(not(os.path.isdir('topologyZoo'))):
+        os.mkdir('topologyZoo') #Caso não exista, ele cria o diretório
   
-    for link in video_links: 
+    for link in linkArray: 
   
-        '''iterate through all links in video_links 
+        '''iterate through all links in linkArray 
         and download them one by one'''
           
         # obtain filename by splitting url and getting 
         # last string 
-        file_name = link.split('/')[-1] 
+        file_name = link.split('/')[-1]
+        file_path = 'topologyZoo/' + file_name
         print("Link:",link)
   
-        print( "Downloading file:%s"%file_name) 
+        print("Downloading file to:",file_path) 
           
         # create response object 
         r = requests.get(link, stream = True) 
           
         # download started 
-        with open(file_name, 'wb') as f: 
+        with open(file_path, 'wb') as f: 
             for chunk in r.iter_content(chunk_size = 1024*1024): 
                 if chunk: 
                     f.write(chunk) 
           
-        print( "%s downloaded!\n"%file_name )
+        print(file_name,"downloaded!\n")
   
     print ("All topologys downloaded!")
     return

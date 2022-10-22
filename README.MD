@@ -6,11 +6,13 @@
 - [matplotlib] - Usado para plotar gráficos
 - [seaborn] - Usado para plotar e visualizar gŕaficos.
 - [pandas] - Usado para manipular e visualizar bancos de dados.
+- [requests] - Usado para hookar as topologias do topologyZoo 
+- [html5lib] - Usado para hookar as topologias do topologyZoo 
 
 ## Instalação de Dependências
 ```sh
 pip3 install --upgrade pip
-pip3 install pandas, seaborn, matplotlib
+pip3 install pandas, seaborn, matplotlib, requests
 ```
 
 ## Caso esteja usando Windows:
