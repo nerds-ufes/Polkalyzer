@@ -14,11 +14,11 @@ df = pd.DataFrame(columns=['Topology','Where','IsBackBone','Number of Nodes','Nu
 
 GIsis = nx.from_edgelist([[1,5],[5,3],[1,2],[2,6],[6,4],[6,7]])
 sondaIsis = tpb.dfs_init(GIsis,1)
-print('Matriz de Sondas Isis = ',sondaIsis,'\n')
+#print('Matriz de Sondas Isis = ',sondaIsis,'\n')
 
 df = tdf.toDataframe(df,'Isis',1,7,6) #DataFrame Isis Example
 df = tdf.appendAllTopologysToDataFrame(df)
-df.to_csv('overhead.csv',index=False)
+df.to_csv('OptimalOverhead.csv',index=False)
 
 
 ######################################## PLOT AREA #################################################
@@ -36,7 +36,7 @@ df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Cl
 dfm = df2.melt(id_vars=['Where','Number of Nodes'], var_name='Type', value_name='Overhead')
 #sns.catplot(x="Number of Nodes", y="Overhead", hue='Type', data=dfm, kind='point');
 sns.pointplot(x="Number of Nodes", y="Overhead", hue=dfm[['Type','Where']].apply(tuple,axis=1), data=dfm);
-plt.savefig('plots/dfmelted.png')
+plt.savefig('plots/withNodeOptimization.png')
 #df2.sort_values(by=['Number of Nodes'],inplace=True)
 #df2 = df2.set_index('Number of Nodes')
 #df2.plot()
