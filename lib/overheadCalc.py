@@ -30,60 +30,68 @@ def fixReplicationVector(G,v):
     replication.pop(0) #Pop the wrong replication value (Sender Node)
     replication.append(G.degree(v)) #Append the right value (Sender Node)
 
-def calculaOverheads(sonda,hops):
+def calculaOverheads(sonda,hops): #Calcula para o DataPlane
     tamanhoSonda = len(sonda)
     if(hops == 0):
         return 0 #SEM SALTOS, SEM OVERHEAD
     
     #PARA O MPINT
-    overhead_MPINT_Temp.append(calculaOverheadMPINT(tamanhoSonda,hops))
+    overhead_MPINT_Temp.append(calculaOverheadMPINT(tamanhoSonda,hops,isCP=0))
 
     #PARA O MPOLKA CRC8 e CRC16
-    overheadCRC8, overheadCRC16 = calculaOverheadMPolka(tamanhoSonda)
+    overheadCRC8, overheadCRC16 = calculaOverheadMPolka(tamanhoSonda,isCP=0)
     overhead_MPolkaCRC8_Temp.append(overheadCRC8)
     overhead_MPolkaCRC16_Temp.append(overheadCRC16)
 
     #PARA O INT CLASSICO
-    overhead_INTClassico_Temp.append(calculaOverheadINTClassico(hops))
+    overhead_INTClassico_Temp.append(calculaOverheadINTClassico(hops,isCP=0))
 
-def calculaOverheadMPINT(tamanhoSonda,hops):
+def calculaOverheadMPINT(tamanhoSonda,hops,isCP):
     #CABEÇALHO DO MPINT
-    mPINT_Ethernet = 14
-    mPINT_Ip = 20
-    mPINT_INTHeader = 12
-    mPINT_StackINT = 48
-    mPINT_PathHeader = 1
-    mPINT_StackPath = 4
-    fixo_MPINT = mPINT_Ethernet + mPINT_Ip + mPINT_INTHeader + mPINT_PathHeader
+    Ethernet = 14
+    Ip = 20
+    INTHeader = 12
+    StackINT = 48
+    PathHeader = 1
+    StackPath = 4
+    fixo = Ethernet + Ip + INTHeader + PathHeader
 
     if(hops == 0):
         return 0 #SEM SALTOS, SEM OVERHEAD
 
     #Overhead para o MPINT
-    routeOverheadMPINT = mPINT_StackPath * hops
-    telemetryOverheadMPINT = mPINT_StackINT * (tamanhoSonda-1)
-    overhead = fixo_MPINT + routeOverheadMPINT + telemetryOverheadMPINT
+    routeOverhead = StackPath * hops
+    telemetryOverhead = StackINT * (tamanhoSonda-1)
+    overhead = fixo + routeOverhead + telemetryOverhead
+
+    if(isCP == 1):
+        overhead = overhead - fixo
+
     return overhead
 
-def calculaOverheadMPolka(tamanhoSonda):
+def calculaOverheadMPolka(tamanhoSonda,isCP):
     #CABEÇALHO DO MPOLKA
-    mPolka_Ethernet = 14
-    mPolka_Ip = 20
-    mPolka_INTHeader = 12
-    mPolka_StackINT = 48
-    mPolka_routeID_CRC8 = 7
-    mPolka_routeID_CRC16 = 14
-    fixo_MPolkaCRC8 = mPolka_Ethernet + mPolka_routeID_CRC8 + mPolka_Ip + mPolka_INTHeader
-    fixo_MPolkaCRC16 = mPolka_Ethernet + mPolka_routeID_CRC16 + mPolka_Ip + mPolka_INTHeader
+    Ethernet = 14
+    Ip = 20
+    INTHeader = 12
+    StackINT = 48
+    routeID_CRC8 = 7
+    routeID_CRC16 = 14
+    fixo_CRC8 = Ethernet + routeID_CRC8 + Ip + INTHeader
+    fixo_CRC16 = Ethernet + routeID_CRC16 + Ip + INTHeader
 
     #Overhead para o MPolka
-    telemetryOverheadMPolka = mPolka_StackINT * (tamanhoSonda-1)
-    overheadCRC8 = fixo_MPolkaCRC8 + telemetryOverheadMPolka
-    overheadCRC16 = fixo_MPolkaCRC16 + telemetryOverheadMPolka
+    telemetryOverhead = StackINT * (tamanhoSonda-1)
+    overheadCRC8 = fixo_CRC8 + telemetryOverhead
+    overheadCRC16 = fixo_CRC16 + telemetryOverhead
+
+    if(isCP == 1):
+        overheadCRC8 = overheadCRC8 - Ethernet - Ip - INTHeader
+        overheadCRC16 = overheadCRC16 - Ethernet - Ip - INTHeader
 
     return overheadCRC8,overheadCRC16
 
-def calculaOverheadINTClassico(hops):
+def calculaOverheadINTClassico(hops,isCP):
     #CABEÇALHO DO INT CLASSICO
     Ethernet = 14
     Ip = 20
@@ -99,6 +107,10 @@ def calculaOverheadINTClassico(hops):
     #Overhead para o Int Clássico
     telemetryOverhead = StackINT + StackPath
     overhead = fixo + (telemetryOverhead * hops)
+
+    if(isCP == 1):
+        overhead = overhead - fixo
+
     return overhead
 
 def overheadReset():
@@ -114,19 +126,19 @@ def overheadReset():
 def sendNewProbe(hops):
     if(len(overhead_INTClassico_Temp) == 1): #Caso ocorra replicação, ele envia uma nova sonda
         for i in range(1,hops-1): #O unico método de alcançar o próximo nó é enviando uma nova sonda.
-            overhead_INTClassico_Temp.append(calculaOverheadINTClassico(i))
+            overhead_INTClassico_Temp.append(calculaOverheadINTClassico(i,isCP=0))
         overhead_INTClassico_Temp.append(overhead_INTClassico_Temp.pop(0)) #Joga o primeiro elemento da lista pro final
 
-def deadEndRelease(sondaTemp,hops):
+def deadEndRelease(sondaTemp,hops): #Da o append e calcula pro ControlPlane
     #RELEASE OVERHEAD MPINT
     overhead_DataPlane_MPINT.append(overhead_MPINT_Temp.copy())
-    overhead_ControlPlane_MPINT.append(calculaOverheadMPINT(len(sondaTemp)+1,hops))
+    overhead_ControlPlane_MPINT.append(calculaOverheadMPINT(len(sondaTemp)+1,hops,isCP=1))
     overhead_MPINT_Temp.clear()
 
     #RELEASE OVERHEAD MPOLKA
     overhead_DataPlane_MPolkaCRC8.append(overhead_MPolkaCRC8_Temp.copy())
     overhead_DataPlane_MPolkaCRC16.append(overhead_MPolkaCRC16_Temp.copy())
-    overheadCRC8, overheadCRC16 = calculaOverheadMPolka(len(sondaTemp)+1)
+    overheadCRC8, overheadCRC16 = calculaOverheadMPolka(len(sondaTemp)+1,isCP=1)
     overhead_ControlPlane_MPolkaCRC8.append(overheadCRC8)
     overhead_ControlPlane_MPolkaCRC16.append(overheadCRC16)
     overhead_MPolkaCRC8_Temp.clear()
@@ -135,14 +147,12 @@ def deadEndRelease(sondaTemp,hops):
     #RELEASE OVERHEAD INT CLASSICO
     sendNewProbe(hops) #Caso precise replicar, ele envia uma nova sonda.
     overhead_DataPlane_INTClassico.append(overhead_INTClassico_Temp.copy())
-    overhead_ControlPlane_INTClassico.append(calculaOverheadINTClassico(hops))
+    overhead_ControlPlane_INTClassico.append(calculaOverheadINTClassico(hops,isCP=1))
     overhead_INTClassico_Temp.clear()
     
     #RELEASE PROBE
     tpb.sonda.append(sondaTemp.copy())
     tpb.sondaTemp.clear()
-
-
 
 def extractOverheads():
     return overhead_DataPlane_MPINT,\

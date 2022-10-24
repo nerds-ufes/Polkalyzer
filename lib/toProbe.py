@@ -1,3 +1,4 @@
+import lib.outputValidator as ov
 import lib.overheadCalc as oc
 
 sonda = []
@@ -34,3 +35,8 @@ def releaseProbe():
     #RELEASE PROBE
     sonda.append(sondaTemp.copy())
     sondaTemp.clear()
+
+def exportProbe(topologyName):
+    ov.validateEntirePath(f'output/Topology/{topologyName}')
+    with open(f'output/Topology/{topologyName}/Probe.txt','w') as arq:
+        arq.write('%s\n'%sonda)

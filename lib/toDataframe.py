@@ -77,7 +77,8 @@ def appendGraphToDataFrame(df,G):
     G,topologyName,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G)
     optimalNodeSender = extractOptimalNodeSender(G,numberOfNodes)
     sondaAux = tpb.dfs_init(G,optimalNodeSender)
-    print('<ESCOLHIDA> Matriz de Sondas',topologyName,' =',sondaAux,'\n')
+    #print('<ESCOLHIDA> Matriz de Sondas',topologyName,' =',sondaAux,'\n')
+    tpb.exportProbe(topologyName)
     df = toDataframe(df,topologyName,isBackBone,numberOfNodes,numberOfEdges)
     return df
 
@@ -87,3 +88,4 @@ def appendAllTopologysToDataFrame(df):
         G = nx.read_gml(topology,destringizer=int,label='id')
         df = appendGraphToDataFrame(df,G)
     return df
+
