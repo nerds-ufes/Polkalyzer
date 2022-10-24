@@ -62,9 +62,3 @@ def download_series(linkArray):
   
     print ("All topologys downloaded!")
     return
-
-# getting all links 
-links = get_links('gml') 
-
-# download all links
-download_series(links)
