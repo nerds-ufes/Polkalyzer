@@ -29,5 +29,11 @@ df.to_csv('output/Databases/OptimalOverhead.csv',index=False)
 
 #Plot Area
 
-pplt.OverheadPointPlot(df)
-#pplt.StateOverheadHeatMap(maxNodes=50,maxReplication=2.0)
+#pplt.OverheadPointPlot(df)
+#pplt.OverheadLinePlot(df)
+pplt.StateOverheadJointPlot(df)
+#pplt.StateOverheadHeatMap1(maxNodes=50,maxReplication=2.0)
+#hMap = pplt.StateOverheadHeatMap2(df)
+#pplt.StateOverheadHistPlot(df)
+#pplt.StateOverheadConcentration(df)
+#pplt.StateOverheadDistribution(df)
