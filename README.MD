@@ -48,5 +48,5 @@ First of all, run Polkalyzer.py
 python3 Polkalyzer.py
 ```
 
-#References
+# References
 Topology Dataset - http://www.topology-zoo.org/dataset.html
