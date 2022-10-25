@@ -1,5 +1,5 @@
 # Polkalyzer - Polka analyzer tool for any given topology.
-_This tool can be dissecated in multiple parts_
+_This tool can be dissecated in multiple parts_ <br>
 **Download and Filter:** <br>
 1 - Download all graphs (.gml) avaible in topologyZoo. <br>
 2 - Remove topologys that can't be read by multiple factors. <br>
@@ -31,7 +31,7 @@ pip3 install --upgrade pip
 pip3 install pandas, seaborn, matplotlib, requests, html5lib, networkx
 ```
 
-Only for Windows Users, check your enviroment variables:
+**Only for Windows Users**, check your enviroment variables:
 ```sh
 - Enviroment Variables:
     Add to PATH:
