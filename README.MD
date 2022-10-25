@@ -13,7 +13,6 @@ You can choose the a fixed node sender or leave to algorithm decide the optimal 
 6 - While algorithm is performing a DFS, the algorithm will extract a lot of usefull information about each graph. <br>
 **Data Export:** <br>
 7 - Export to **output/Topology** MPolka/MPINT probes to all topologys given in topologyZoo. <br> 
-
 8 - Export to **output/Data** the information collected into a csv. <br>
 9 - Export to **output/Plots** different plots to help us to understand the information collected. <br>
 10 - Export to **output/Topology/./Config** configuration files to run topology on emulated enviroments. **DEVELOPMENT** <br>
