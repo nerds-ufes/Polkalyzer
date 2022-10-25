@@ -1,5 +1,5 @@
 # Polkalyzer - Polka analyzer tool for any given topology.
-_This tool can be dissecated in multiple parts_ <br>
+_This tool can be dissecated in multiple parts._ <br>
 **Download and Filter:** <br>
 1 - Download all graphs (.gml) avaible in topologyZoo. <br>
 2 - Remove topologys that can't be read by multiple factors. <br>
@@ -13,8 +13,10 @@ You can choose the a fixed node sender or leave to algorithm decide the optimal 
 6 - While algorithm is performing a DFS, the algorithm will extract a lot of usefull information about each graph. <br>
 **Data Export:** <br>
 7 - Export to **output/Topology** MPolka/MPINT probes to all topologys given in topologyZoo. <br> 
+
 8 - Export to **output/Data** the information collected into a csv. <br>
 9 - Export to **output/Plots** different plots to help us to understand the information collected. <br>
+10 - Export to **output/Topology/./Config** configuration files to run topology on emulated enviroments. **DEVELOPMENT** <br>
 
 ## Polkalyzer dependencies
 You will need Python3 to run Polkalyzer, so try it:
