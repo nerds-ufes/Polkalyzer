@@ -1,21 +1,20 @@
 # Polkalyzer - Polka analyzer tool for any given topology.
-This tool can be dissecated in multiple parts.
-
-**Download and Filter:**
-1 - Download all graphs (.gml) avaible in topologyZoo.
-2 - Remove topologys that can't be read by multiple factors.
-3 - Filter same topologys to your newest version. 
-**Transform a Graph into a probe:**
-4 - Transform GML Files that represent a topology into a **minimum spanning tree (MST)**.
-You can choose what MST Algorithm you want avaible in networkx.
-5 - Perform a **DFS** in extracted MST to **simulate probes** from different SR Approaches.
-You can choose the a fixed node sender or leave to algorithm decide the optimal node sender for all given topologys.
-**Generate a DataFrame**
-6 - While algorithm is performing a DFS, the algorithm will extract a lot of usefull information about each graph.
-**Data Export:**
-7 - Export to **output/Topology** MPolka/MPINT probes to all topologys given in topologyZoo. 
-8 - Export to **output/Data** the information collected into a csv.
-9 - Export to **output/Plots** different plots to help us to understand the information collected.
+_This tool can be dissecated in multiple parts_
+**Download and Filter:** <br>
+1 - Download all graphs (.gml) avaible in topologyZoo. <br>
+2 - Remove topologys that can't be read by multiple factors. <br>
+3 - Filter same topologys to your newest version. <br>
+**Transform a Graph into a probe:** <br>
+4 - Transform GML Files that represent a topology into a **minimum spanning tree (MST)**. <br>
+You can choose what MST Algorithm you want avaible in networkx.<br>
+5 - Perform a **DFS** in extracted MST to **simulate probes** from different SR Approaches. <br>
+You can choose the a fixed node sender or leave to algorithm decide the optimal node sender for all given topologys. <br>
+**Generate a DataFrame** <br>
+6 - While algorithm is performing a DFS, the algorithm will extract a lot of usefull information about each graph. <br>
+**Data Export:** <br>
+7 - Export to **output/Topology** MPolka/MPINT probes to all topologys given in topologyZoo. <br> 
+8 - Export to **output/Data** the information collected into a csv. <br>
+9 - Export to **output/Plots** different plots to help us to understand the information collected. <br>
 
 ## Polkalyzer dependencies
 You will need Python3 to run Polkalyzer, so try it:
