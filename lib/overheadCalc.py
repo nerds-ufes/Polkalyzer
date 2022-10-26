@@ -123,6 +123,11 @@ def overheadReset():
     overhead_DataPlane_INTClassico.clear()
     overhead_ControlPlane_INTClassico.clear()
 
+    overhead_MPolkaCRC8_Temp.clear()
+    overhead_MPolkaCRC16_Temp.clear()
+    overhead_MPINT_Temp.clear()
+    overhead_INTClassico_Temp.clear()
+
 def sendNewProbe(hops):
     if(len(overhead_INTClassico_Temp) == 1): #Caso ocorra replicação, ele envia uma nova sonda
         for i in range(1,hops-1): #O unico método de alcançar o próximo nó é enviando uma nova sonda.
@@ -164,9 +169,9 @@ def extractOverheads():
         overhead_DataPlane_INTClassico,\
         overhead_ControlPlane_INTClassico
 
-def extractMPolkaOverhead():
-    overheadDP = sum(sum(overhead_DataPlane_MPolkaCRC16,[]))
-    overheadCP = sum(overhead_ControlPlane_MPolkaCRC16)
+def extractINTClassicoOverhead():
+    overheadDP = sum(sum(overhead_DataPlane_INTClassico,[]))
+    overheadCP = sum(overhead_ControlPlane_INTClassico)
     return overheadDP,overheadCP
 
 def extractReplication():

@@ -1,6 +1,8 @@
 from fileinput import filename
+from genericpath import isfile
 import requests 
 import os
+import lib.outputValidator as ov
 from bs4 import BeautifulSoup 
   
 ''' 
@@ -33,9 +35,8 @@ def get_links(endswith):
   
   
 def download_series(linkArray): 
-    if(not(os.path.isdir('topologyZoo'))):
-        os.mkdir('topologyZoo') #Caso não exista, ele cria o diretório
-  
+    ov.validateEntirePath('input/topologyZoo')
+
     for link in linkArray: 
   
         '''iterate through all links in linkArray 
@@ -44,21 +45,22 @@ def download_series(linkArray):
         # obtain filename by splitting url and getting 
         # last string 
         file_name = link.split('/')[-1]
-        file_path = 'topologyZoo/' + file_name
-        print("Link:",link)
-  
-        print("Downloading file to:",file_path) 
-          
-        # create response object 
-        r = requests.get(link, stream = True) 
-          
-        # download started 
-        with open(file_path, 'wb') as f: 
-            for chunk in r.iter_content(chunk_size = 1024*1024): 
-                if chunk: 
-                    f.write(chunk) 
-          
-        print(file_name,"downloaded!\n")
+        file_path = 'input/topologyZoo/' + file_name
+        if(ov.isFile(file_path)):
+            print(file_name,'already downloaded.')
+        else:
+            print("Link:",link)
+            print("Downloading file to:",file_path) 
+            # create response object 
+            r = requests.get(link, stream = True) 
+            
+            # download started 
+            with open(file_path, 'wb') as f: 
+                for chunk in r.iter_content(chunk_size = 1024*1024): 
+                    if chunk: 
+                        f.write(chunk) 
+            
+            print(file_name,"downloaded!\n")
   
     print ("All topologys downloaded!")
     return

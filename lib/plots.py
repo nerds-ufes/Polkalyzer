@@ -4,7 +4,7 @@ import numpy as np
 import lib.outputValidator as ov
 from matplotlib import pyplot as plt
 
-def StateOverheadHeatMap1(maxNodes,maxReplication):
+def StateOverheadHeatMap1(maxNodes,maxReplication,path):
     replicationArr = np.arange(1.0,maxReplication,0.1)
     newArr = []
     for i in range (1,maxNodes+1):
@@ -32,10 +32,10 @@ def StateOverheadHeatMap1(maxNodes,maxReplication):
     plt.gca().invert_yaxis()
     #Save Fig
     ov.validateEntirePath('output/Plots/')
-    plt.savefig('output/Plots/StateOverheadHeatMap1.png',dpi=120)
+    plt.savefig(path,dpi=120)
     return hMap
 
-def StateOverheadHeatMap2(df):
+def StateOverheadHeatMap2(df,path):
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     df2['State Overhead'] = df2['State Overhead'].apply(lambda x: round(x, 1))
     df2['Replication Average per Node'] = df2['Replication Average per Node'].apply(lambda x: round(x, 1))
@@ -58,10 +58,10 @@ def StateOverheadHeatMap2(df):
     plt.gca().invert_yaxis()
     #Save Fig
     ov.validateEntirePath('output/Plots/')
-    plt.savefig('output/Plots/StateOverheadHeatMap2.png',dpi=120)
+    plt.savefig(path,dpi=120)
     return hMap
 
-def StateOverheadConcentration(df):
+def StateOverheadConcentration(df,path):
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     #Plot Config
     f,axes= plt.subplots(1,2,sharey=True)
@@ -73,41 +73,41 @@ def StateOverheadConcentration(df):
     sns.ecdfplot(data=df2, x = "Replication Average per Node",ax=axes[1]);
     #Save Fig
     ov.validateEntirePath('output/Plots/')
-    plt.savefig('output/Plots/StateOverheadConcentration.png',dpi=120)
+    plt.savefig(path,dpi=120)
 
 
-def StateOverheadHistPlot(df):
+def StateOverheadHistPlot(df,path):
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     sns.histplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2);
     #Save Fig
     ov.validateEntirePath('output/Plots/')
-    plt.savefig('output/Plots/StateOverheadHistPlot.png',dpi=120)
+    plt.savefig(path,dpi=120)
 
-def StateOverheadJointPlot(df):
+def StateOverheadJointPlot(df,path):
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     sns.jointplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2,kind='hist');
     #Save Fig
     ov.validateEntirePath('output/Plots/')
-    plt.savefig('output/Plots/StateOverheadJointPlot.png',dpi=120)
+    plt.savefig(path,dpi=120)
 
 
-def StateOverheadDistribution(df):
+def StateOverheadDistribution(df,path):
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     sns.relplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2);
-    plt.show()
+    plt.savefig(path,dpi=120)
 
-def OverheadPointPlot(df):
+def OverheadPointPlot(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']]
     dfm = df2.melt(id_vars=['Where','Number of Nodes'], var_name='Type', value_name='Overhead')
     sns.pointplot(x="Number of Nodes", y="Overhead", hue=dfm[['Type','Where']].apply(tuple,axis=1), data=dfm);
 
     ov.validateEntirePath('output/Plots/')
-    plt.savefig('output/Plots/OverheadWithNodeOptimization.png')
+    plt.savefig(path,dpi=120)
     #df2.sort_values(by=['Number of Nodes'],inplace=True)
     #df2 = df2.set_index('Number of Nodes')
     #df2.plot()
 
-def OverheadLinePlot(df):
+def OverheadLinePlot(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']]
     dfm = df2.melt(id_vars=['Where','Number of Nodes'], var_name='Type', value_name='Overhead')
     dfm1 = dfm.loc[dfm['Where'] == 'DataPlane']
@@ -123,7 +123,7 @@ def OverheadLinePlot(df):
     sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1],data=dfm2);
     #Save Fig
     ov.validateEntirePath('output/Plots/')
-    plt.savefig('output/Plots/OverheadWithNodeOptimization2.png',dpi=120)
+    plt.savefig(path,dpi=120)
 
 ######################################## PLOT AREA #################################################
 

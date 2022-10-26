@@ -1,5 +1,6 @@
 import glob
 import networkx as nx
+from numpy import number
 import pandas as pd
 
 import lib.overheadCalc as oc
@@ -53,16 +54,20 @@ def toDataframe(df,topology,isBackBone,numberOfNodes,numberOfEdges):
     result = pd.concat([df,df2],ignore_index=True)
     return result
 
-def extractOptimalNodeSender(G,numberOfNodes): #Optimal on DP as tiebreaker, Optimal on MPOLKA CRC16
-    optimalDPOverhead = 0
-    optimalCPOverhead = 0
+def extractOptimalNodeSender(G): #Optimal on DP as tiebreaker, Optimal on MPOLKA CRC16
+    optimalDPOverhead = 10000000 #Infinite
+    optimalCPOverhead = 10000000 #Infinite
     optimalNodeSender = 0
-    for nodeSender in range(numberOfNodes):
+    for nodeSender in G.nodes():
         sonda = tpb.dfs_init(G,nodeSender)
-        overheadDP, overheadCP = oc.extractMPolkaOverhead()
+        overheadDP, overheadCP = oc.extractINTClassicoOverhead()
         #print('Possivel Matriz de Sondas: ',sonda,'Overhead DP:',overheadDP,'| Overhead CP',overheadCP)
 
-        if((overheadDP > optimalDPOverhead) and (overheadCP > optimalCPOverhead)):
+        if((overheadDP < optimalDPOverhead) and (overheadCP < optimalCPOverhead)):
+            optimalDPOverhead = overheadDP
+            optimalCPOverhead = overheadCP
+            optimalNodeSender = nodeSender
+        elif((overheadDP < optimalDPOverhead) and (overheadCP == optimalCPOverhead)):
             optimalDPOverhead = overheadDP
             optimalCPOverhead = overheadCP
             optimalNodeSender = nodeSender
@@ -70,22 +75,30 @@ def extractOptimalNodeSender(G,numberOfNodes): #Optimal on DP as tiebreaker, Opt
             optimalDPOverhead = overheadDP
             optimalCPOverhead = overheadCP
             optimalNodeSender = nodeSender
-
+        elif((overheadDP > optimalDPOverhead) and (overheadCP < optimalCPOverhead)):
+            if((overheadDP + overheadCP) < (optimalDPOverhead + optimalCPOverhead)):
+                optimalDPOverhead = overheadDP
+                optimalCPOverhead = overheadCP
+                optimalNodeSender = nodeSender
+    #print('<Escolhida> ',optimalNodeSender)
     return optimalNodeSender
 
-def appendGraphToDataFrame(df,G):
-    G,topologyName,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G)
-    optimalNodeSender = extractOptimalNodeSender(G,numberOfNodes)
-    sondaAux = tpb.dfs_init(G,optimalNodeSender)
-    #print('<ESCOLHIDA> Matriz de Sondas',topologyName,' =',sondaAux,'\n')
+def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender):
+    G,topologyName,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G,algorithm)
+    nodeSender = 0
+    if(fixedNodeSender == -1):
+        nodeSender = extractOptimalNodeSender(G)
+    else:
+        nodeSender = fixedNodeSender
+
+    tpb.dfs_init(G,nodeSender)
     tpb.exportProbe(topologyName)
     df = toDataframe(df,topologyName,isBackBone,numberOfNodes,numberOfEdges)
     return df
 
-def appendAllTopologysToDataFrame(df):
-    listTopology = glob.glob('topologyZoo/*.gml')
+def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender):
+    listTopology = glob.glob('input/topologyZoo/*.gml')
     for topology in listTopology:
         G = nx.read_gml(topology,destringizer=int,label='id')
-        df = appendGraphToDataFrame(df,G)
+        df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender)
     return df
-

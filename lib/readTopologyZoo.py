@@ -1,5 +1,6 @@
 import glob
 import os
+from matplotlib import pyplot as plt
 import pandas as pd
 import networkx as nx
 
@@ -13,36 +14,57 @@ def downloadAllTopologys():
     # Download all links
     download_series(links)
 
+    #Removing Bad Topologys
+    print('You possibly have bad topologys in your input, we\'ll remove for you.')
+    removeBadValues()
+
 def removeBadValues():
-    listTopology = glob.glob('topologyZoo/*.gml')
-    for topology in listTopology:
+    contTotal = 0 #Total
+    cont1 = 0 #Bad Test 1
+    cont2 = 0 #Bad Test 2
+    cont3 = 0 #Bad Test 3
+    listTopology = glob.glob('input/topologyZoo/*.gml')
+    for topology in listTopology: #For Multigraph Read Error
         try:
+            contTotal += 1
             G = nx.read_gml(topology,destringizer=int,label='id') #
         except:
+            cont1 += 1
             print('<READ ERROR 1>',topology,'removed')
             os.remove(topology)
-    print('PASSED TEST 1')
-    for topology in listTopology:
+    listTopology = glob.glob('input/topologyZoo/*.gml')
+    df = pd.DataFrame()
+    for topology in listTopology: #TEST 2
         try:
             G = nx.read_gml(topology,destringizer=int,label='id')
-            tdf.appendGraphToDataFrame(df=pd.DataFrame(),G=G)
+            df = tdf.appendGraphToDataFrame(df,G=G,algorithm='prim',fixedNodeSender=-1)
         except:
+            cont2 += 1
             print('<READ ERROR 2>',topology,'removed')
             os.remove(topology)
-    print('PASSED TEST 2')
+    
+    df = df.loc[df['Where'] == 'DataPlane']
+    df = df.loc[df['Replication Average per Node'] < 1]
+    for badValue in df['Topology'].tolist(): #FOR NODES THAT GRAPHS THAT AREN'T STRONGLY CONNECTED
+        cont3 += 1
+        pathBadValue = 'input/topologyZoo/' + badValue + '.gml'
+        print('<READ ERROR 3>',pathBadValue,'removed')
+        os.remove(pathBadValue)
 
-def GraphToMST(G):
-    topologyName = G.graph['Network'] #Hooka o atributo network que identifica o nome da Topologia
+    print('<Topologys Removed on Test 1>: ',cont1,'/',contTotal)
+    print('<Topologys Removed on Test 2>: ',cont2,'/',contTotal)
+    print('<Topologys Removed on Test 2>: ',cont3,'/',contTotal)
+    print('')
+
+def GraphToMST(G,algorithm):
+    topologyName = G.graph['label'] #Hooka o atributo network que identifica o nome da Topologia
     isBackBone = G.graph['Backbone'] #Hooka o atributo backbone que identifica se a topologia é de backbone
     numberOfNodes = G.number_of_nodes()
-    numberOfEdges = G.number_of_edges()
-    edgeList = list(map(list,G.edges()))
-    G = nx.from_edgelist(edgeList)
-    T = nx.minimum_spanning_tree(G,algorithm='prim')
-    edgeList = list(map(list, T.edges()))
-    T = nx.from_edgelist(edgeList)
-
-    #print(isBackBone, numberOfNodes, numberOfEdges)
-    #print(edgeList)
-    #print(T)
+    numberOfEdges = G.number_of_edges() #Hooka o numero de edges antes de extrair a MST
+    T = nx.minimum_spanning_tree(G,algorithm=algorithm)
+    #if(topologyName == 'BtLatinAmerica'):
+    #    nx.draw(G)
+    #    plt.show()
+    #    nx.draw(T)
+    #    plt.show()
     return T,topologyName,isBackBone,numberOfNodes,numberOfEdges

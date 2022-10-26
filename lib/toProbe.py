@@ -20,21 +20,14 @@ def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
             else: #BIFURCAÇÃO
                 previousHop = hops
                 dfs(G,w,visited,hops,previousHop)
-    return sonda
 
 def dfs_init(G,v):
     visited=[False] * (G.number_of_nodes() + 100)
     sonda.clear()
+    sondaTemp.clear()
     oc.replicationReset()
     oc.overheadReset()
-    sondaAux = dfs(G,v,visited,hops=0,previousHop=0)
-
-    return sondaAux
-
-def releaseProbe():
-    #RELEASE PROBE
-    sonda.append(sondaTemp.copy())
-    sondaTemp.clear()
+    dfs(G,v,visited,hops=0,previousHop=0)
 
 def exportProbe(topologyName):
     ov.validateEntirePath(f'output/Topology/{topologyName}')
