@@ -125,6 +125,40 @@ def OverheadLinePlot(df,path):
     ov.validateEntirePath('output/Plots/')
     plt.savefig(path,dpi=120)
 
+
+def OverheadCompare(df,path):
+    df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT']]
+    df2['Overhead'] = df2.apply(lambda x: x['MPolka CRC16'] - x['MPINT'],axis=1)
+    df2['Number of Nodes'] = df2['Number of Nodes'].astype('float64')
+
+    g = sns.relplot(
+        data=df2,
+        x="Number of Nodes", y="Overhead",
+        hue="Where",
+        height=4, aspect=.7, kind="line"
+    )
+    (g.map(plt.axhline, y=0, color=".7", dashes=(2, 1), zorder=0)
+    .set_axis_labels("Number of Nodes", "Overhead")
+    .set_titles("{Where}")
+    .tight_layout(w_pad=0))
+
+    dfDP = df2.loc[df2['Where'] == 'DataPlane']
+    dfCP = df2.loc[df2['Where'] == 'ControlPlane']
+
+    ##Plot Config
+    #f,ax= plt.subplots(1,2,figsize=(10,5),sharey=True)
+    #f.suptitle('Overhead')
+    #ax[0].set_title('DataPlane')
+    #ax[1].set_title('ControlPlane')
+    ##Plot Data
+    #sns.residplot(x="Number of Nodes", y="Overhead", data=dfDP);
+    #sns.residplot(x="Number of Nodes", y="Overhead", data=dfCP);
+    #Plot Data
+    #sns.lineplot(x="Number of Nodes", y="Overhead",ax=ax, data=df2);
+    ov.validateEntirePath('output/Plots/')
+    plt.savefig(path,dpi=120)
+    return df2
+
 ######################################## PLOT AREA #################################################
 
 #sns.catplot(x="Topology", y="MPolka CRC8", hue="Where",kind="bar", data=df, errorbar = None);

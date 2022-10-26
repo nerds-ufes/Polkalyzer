@@ -34,14 +34,17 @@ def mainMenu():
         pplt.OverheadPointPlot(df,f'output/Plots/OverheadPP')
         pplt.OverheadLinePlot(df,f'output/Plots/OverheadLP')
         pplt.StateOverheadJointPlot(df,f'output/Plots/OverheadJP')
+        pplt.OverheadCompare(df,f'output/Plots/OverheadCompare')
     elif(choice == 2):
         pplt.OverheadPointPlot(df,f'output/Plots/OverheadPP-{algorithm}-WithOtimization')
         pplt.OverheadLinePlot(df,f'output/Plots/OverheadLP-{algorithm}-WithOtimization')
         pplt.StateOverheadJointPlot(df,f'output/Plots/OverheadJP-{algorithm}-WithOtimization')
+        pplt.OverheadCompare(df,f'output/Plots/OverheadCompare-{algorithm}-WithOtimization')
     elif(choice == 3):
         pplt.OverheadPointPlot(df,f'output/Plots/OverheadPP-{algorithm}-{fixedNodeSender}')
         pplt.OverheadLinePlot(df,f'output/Plots/OverheadLP-{algorithm}-{fixedNodeSender}')
         pplt.StateOverheadJointPlot(df,f'output/Plots/OverheadJP-{algorithm}-{fixedNodeSender}')
+        pplt.OverheadCompare(df,f'output/Plots/OverheadCompare-{algorithm}-{fixedNodeSender}')
 
     return df
 
