@@ -49,5 +49,9 @@ First of all, run Polkalyzer.py
 python3 Polkalyzer.py
 ```
 
+![Algorithm Choice](./imgs/AlgorithmChoice.png)
+You can choose three of these options, after chosen check your output folder.
+![Overhead LP](./imgs/OverheadLP.png)
+![Overhead JP](./imgs/OverheadJP.png)
 # References
 Topology Dataset - http://www.topology-zoo.org/dataset.html
