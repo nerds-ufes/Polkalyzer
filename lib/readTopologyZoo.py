@@ -3,6 +3,7 @@ import os
 from matplotlib import pyplot as plt
 import pandas as pd
 import networkx as nx
+import lib.outputValidator as ov
 
 import lib.toDataframe as tdf
 from lib.downloadTopologyZoo import download_series, get_links
@@ -56,15 +57,20 @@ def removeBadValues():
     print('<Topologys Removed on Test 2>: ',cont3,'/',contTotal)
     print('')
 
+def drawTopology(G,T,topologyName):
+    ov.validateEntirePath(f'output/Topology/{topologyName}/draw')
+    nx.draw(G)
+    plt.savefig(f'output/Topology/{topologyName}/draw/Graph.png',dpi=120)
+    plt.clf()
+    nx.draw(T)
+    plt.savefig(f'output/Topology/{topologyName}/draw/MST.png',dpi=120)
+    plt.clf()
+
 def GraphToMST(G,algorithm):
     topologyName = G.graph['label'] #Hooka o atributo network que identifica o nome da Topologia
     isBackBone = G.graph['Backbone'] #Hooka o atributo backbone que identifica se a topologia é de backbone
     numberOfNodes = G.number_of_nodes()
     numberOfEdges = G.number_of_edges() #Hooka o numero de edges antes de extrair a MST
     T = nx.minimum_spanning_tree(G,algorithm=algorithm)
-    #if(topologyName == 'BtLatinAmerica'):
-    #    nx.draw(G)
-    #    plt.show()
-    #    nx.draw(T)
-    #    plt.show()
+    drawTopology(G,T,topologyName)
     return T,topologyName,isBackBone,numberOfNodes,numberOfEdges

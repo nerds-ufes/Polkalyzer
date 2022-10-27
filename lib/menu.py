@@ -26,7 +26,8 @@ def mainMenu():
         if(extractAnswerYN('Do you want download more topologys (y/n): ') == 0):
             downloadAllTopologys()
         else:
-            removeBadValues()
+            print('')
+            #removeBadValues()
 
     df,choice,algorithm,fixedNodeSender = algorithmChoice()
 
