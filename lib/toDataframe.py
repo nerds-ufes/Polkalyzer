@@ -37,6 +37,8 @@ def toDataframe(df,topology,isBackBone,numberOfNodes,numberOfEdges):
     for n in replication:
         stateOverhead += (1 + 2*n)
 
+    starProbability = (maxReplication+1)/numberOfNodes
+
     matrixOverhead = {}
     matrixOverhead['Topology'] = [topology,topology]
     matrixOverhead['IsBackBone'] = [isBackBone,isBackBone]
@@ -45,6 +47,7 @@ def toDataframe(df,topology,isBackBone,numberOfNodes,numberOfEdges):
     matrixOverhead['Replication Average per Node'] = [replicationPerNode,replicationPerNode]
     matrixOverhead['Max Replication'] = [maxReplication,maxReplication]
     matrixOverhead['State Overhead'] = [stateOverhead,stateOverhead]
+    matrixOverhead['Star Probability'] = [starProbability,starProbability]
     matrixOverhead['Where'] = ['DataPlane','ControlPlane']
     matrixOverhead['MPINT'] = [overheadDP_mPINT,overheadCP_mPINT]
     matrixOverhead['MPolka CRC8'] = [overheadDP_mPolkaCRC8,overheadCP_mPolkaCRC8]

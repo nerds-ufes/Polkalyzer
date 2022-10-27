@@ -26,8 +26,7 @@ def mainMenu():
         if(extractAnswerYN('Do you want download more topologys (y/n): ') == 0):
             downloadAllTopologys()
         else:
-            print('')
-            #removeBadValues()
+            removeBadValues()
 
     df,choice,algorithm,fixedNodeSender = algorithmChoice()
 
@@ -50,7 +49,7 @@ def mainMenu():
     return df
 
 def algorithmChoice():
-    df = pd.DataFrame(columns=['Topology','Where','IsBackBone','Number of Nodes','Number of Edges','Replication Average per Node','Max Replication','State Overhead','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']) #Empty Row Dataframe
+    df = pd.DataFrame() #Empty Dataframe
     print('==== Algorithm Choice ====')
     print('Answer what option do you want for algorithm')
     print('1- Default options, Polkalyzer will choice the MST and the optimal node sender for any topology')
