@@ -8,12 +8,13 @@ def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
     visited[v] = True
     sondaTemp.append(v)
     grau = G.degree(v)
+    numberOfNodes = G.number_of_nodes()
     oc.calculaReplicationInDFS(grau)
-    oc.calculaOverheads(sondaTemp,hops)
+    oc.calculaOverheads(sondaTemp,hops,numberOfNodes)
     hops += 1
     for w in G.neighbors(v):
         if grau == 1: #DEADEND
-            oc.deadEndRelease(sondaTemp,hops)
+            oc.deadEndRelease(sondaTemp,hops,numberOfNodes)
         if not visited[w]:
             if grau == 2: #TRANSMISSÃO
                 dfs(G,w,visited,hops,previousHop)

@@ -30,7 +30,7 @@ def fixReplicationVector(G,v):
     replication.pop(0) #Pop the wrong replication value (Sender Node)
     replication.append(G.degree(v)) #Append the right value (Sender Node)
 
-def calculaOverheads(sonda,hops): #Calcula para o DataPlane
+def calculaOverheads(sonda,hops,numberOfNodes): #Calcula para o DataPlane
     tamanhoSonda = len(sonda)
     if(hops == 0):
         return 0 #SEM SALTOS, SEM OVERHEAD
@@ -39,7 +39,7 @@ def calculaOverheads(sonda,hops): #Calcula para o DataPlane
     overhead_MPINT_Temp.append(calculaOverheadMPINT(tamanhoSonda,hops,isCP=0))
 
     #PARA O MPOLKA CRC8 e CRC16
-    overheadCRC8, overheadCRC16 = calculaOverheadMPolka(tamanhoSonda,isCP=0)
+    overheadCRC8, overheadCRC16 = calculaOverheadMPolka(tamanhoSonda,isCP=0,numberOfNodes=numberOfNodes)
     overhead_MPolkaCRC8_Temp.append(overheadCRC8)
     overhead_MPolkaCRC16_Temp.append(overheadCRC16)
 
@@ -69,14 +69,14 @@ def calculaOverheadMPINT(tamanhoSonda,hops,isCP):
 
     return overhead
 
-def calculaOverheadMPolka(tamanhoSonda,isCP):
+def calculaOverheadMPolka(tamanhoSonda,isCP,numberOfNodes):
     #CABEÇALHO DO MPOLKA
     Ethernet = 14
     Ip = 20
     INTHeader = 12
     StackINT = 48
-    routeID_CRC8 = 7
-    routeID_CRC16 = 14
+    routeID_CRC8 = (numberOfNodes*8)/8 #Antigo 7
+    routeID_CRC16 = (numberOfNodes*16)/8 #Antigo 14
     fixo_CRC8 = Ethernet + routeID_CRC8 + Ip + INTHeader
     fixo_CRC16 = Ethernet + routeID_CRC16 + Ip + INTHeader
 
@@ -134,7 +134,7 @@ def sendNewProbe(hops):
             overhead_INTClassico_Temp.append(calculaOverheadINTClassico(i,isCP=0))
         overhead_INTClassico_Temp.append(overhead_INTClassico_Temp.pop(0)) #Joga o primeiro elemento da lista pro final
 
-def deadEndRelease(sondaTemp,hops): #Da o append e calcula pro ControlPlane
+def deadEndRelease(sondaTemp,hops,numberOfNodes): #Da o append e calcula pro ControlPlane
     #RELEASE OVERHEAD MPINT
     overhead_DataPlane_MPINT.append(overhead_MPINT_Temp.copy())
     overhead_ControlPlane_MPINT.append(calculaOverheadMPINT(len(sondaTemp)+1,hops,isCP=1))
@@ -143,7 +143,7 @@ def deadEndRelease(sondaTemp,hops): #Da o append e calcula pro ControlPlane
     #RELEASE OVERHEAD MPOLKA
     overhead_DataPlane_MPolkaCRC8.append(overhead_MPolkaCRC8_Temp.copy())
     overhead_DataPlane_MPolkaCRC16.append(overhead_MPolkaCRC16_Temp.copy())
-    overheadCRC8, overheadCRC16 = calculaOverheadMPolka(len(sondaTemp)+1,isCP=1)
+    overheadCRC8, overheadCRC16 = calculaOverheadMPolka(len(sondaTemp)+1,isCP=1,numberOfNodes=numberOfNodes)
     overhead_ControlPlane_MPolkaCRC8.append(overheadCRC8)
     overhead_ControlPlane_MPolkaCRC16.append(overheadCRC16)
     overhead_MPolkaCRC8_Temp.clear()
