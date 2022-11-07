@@ -31,24 +31,25 @@ def mainMenu():
     df,choice,algorithm,fixedNodeSender = algorithmChoice()
 
     if(choice == 1):
-        pplt.OverheadPointPlot(df,f'output/Plots/OverheadPP')
-        pplt.OverheadLinePlot(df,f'output/Plots/OverheadLP')
-        pplt.StateOverheadJointPlot(df,f'output/Plots/OverheadJP')
-        pplt.OverheadCompare(df,f'output/Plots/OverheadCompare')
-        pplt.StateOverheadConcentration(df,f'output/Plots/StateOverheadConcentration')
-        pplt.StateOverheadDistribution(df,f'output/Plots/StateOverheadDistribution')
-        pplt.StateOverheadHeatMap1(50,f'output/Plots/StateOverheadHeatMap1')
-        pplt.StateOverheadHeatMap2(df,f'output/Plots/StateOverheadHeatMap2')
+        pplt.OverheadPointPlot(df,f'output/Plots')
+        pplt.OverheadLinePlot(df,f'output/Plots')
+        pplt.OverheadDisPlot(df,f'output/Plots')
+        pplt.OverheadCompare(df,f'output/Plots')
     elif(choice == 2):
-        pplt.OverheadPointPlot(df,f'output/Plots/OverheadPP-{algorithm}-WithOtimization')
-        pplt.OverheadLinePlot(df,f'output/Plots/OverheadLP-{algorithm}-WithOtimization')
-        pplt.StateOverheadJointPlot(df,f'output/Plots/OverheadJP-{algorithm}-WithOtimization')
-        pplt.OverheadCompare(df,f'output/Plots/OverheadCompare-{algorithm}-WithOtimization')
+        pplt.OverheadPointPlot(df,f'output/Plots/{algorithm}/optimalNodeSender/')
+        pplt.OverheadLinePlot(df,f'output/Plots/{algorithm}/optimalNodeSender/')
+        pplt.OverheadCompare(df,f'output/Plots/{algorithm}/optimalNodeSender/')
     elif(choice == 3):
-        pplt.OverheadPointPlot(df,f'output/Plots/OverheadPP-{algorithm}-{fixedNodeSender}')
-        pplt.OverheadLinePlot(df,f'output/Plots/OverheadLP-{algorithm}-{fixedNodeSender}')
-        pplt.StateOverheadJointPlot(df,f'output/Plots/OverheadJP-{algorithm}-{fixedNodeSender}')
-        pplt.OverheadCompare(df,f'output/Plots/OverheadCompare-{algorithm}-{fixedNodeSender}')
+        pplt.OverheadPointPlot(df,f'output/Plots/{algorithm}/{fixedNodeSender}')
+        pplt.OverheadLinePlot(df,f'output/Plots/{algorithm}/{fixedNodeSender}')
+        pplt.OverheadCompare(df,f'output/Plots/{algorithm}/{fixedNodeSender}')
+    
+
+    pplt.StateOverheadJointPlot(df,f'output/Plots/StateOverhead')
+    pplt.StateOverheadConcentration(df,f'output/Plots/StateOverhead')
+    pplt.StateOverheadDistribution(df,f'output/Plots/StateOverhead')
+    pplt.StateOverheadHeatMap1(50,f'output/Plots/StateOverhead')
+    pplt.StateOverheadHeatMap2(df,f'output/Plots/StateOverhead')
 
     return df
 
@@ -65,6 +66,7 @@ def algorithmChoice():
     while(True):
         print('My choice is: ')
         choice = int(input())
+
         if(choice == 1): #Default
             df = tdf.appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw=True)
             ov.validateEntirePath('output/Data/')

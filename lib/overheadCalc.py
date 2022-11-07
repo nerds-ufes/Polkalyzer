@@ -11,6 +11,16 @@ overhead_ControlPlane_MPolkaCRC16 = []
 overhead_DataPlane_INTClassico = []
 overhead_ControlPlane_INTClassico = []
 
+############## CAN BE OPTMIZED ##################
+optimalOverhead_DataPlane_MPINT = []
+optimalOverhead_ControlPlane_MPINT = []
+optimalOverhead_DataPlane_MPolkaCRC8 = []
+optimalOverhead_ControlPlane_MPolkaCRC8 = []
+optimalOverhead_DataPlane_MPolkaCRC16 = []
+optimalOverhead_ControlPlane_MPolkaCRC16 = []
+optimalOverhead_DataPlane_INTClassico = []
+optimalOverhead_ControlPlane_INTClassico = []
+
 overhead_MPINT_Temp = []
 overhead_MPolkaCRC8_Temp = []
 overhead_MPolkaCRC16_Temp = []
@@ -172,6 +182,16 @@ def extractOverheads():
 def extractINTClassicoOverhead():
     overheadDP = sum(sum(overhead_DataPlane_INTClassico,[]))
     overheadCP = sum(overhead_ControlPlane_INTClassico)
+    return overheadDP,overheadCP
+
+def extractMPolkaCRC8Overhead():
+    overheadDP = sum(sum(overhead_DataPlane_MPolkaCRC8,[]))
+    overheadCP = sum(overhead_ControlPlane_MPolkaCRC8)
+    return overheadDP,overheadCP
+
+def extractMPINTOverhead():
+    overheadDP = sum(sum(overhead_DataPlane_MPINT,[]))
+    overheadCP = sum(overhead_ControlPlane_MPINT)
     return overheadDP,overheadCP
 
 def extractReplication():

@@ -37,5 +37,22 @@ def extractFilename(path):
     fileName = fileName.pop()
     fileName = fileName.split('.')
     fileName = fileName.pop(0)
-    return fileName
     #print(fileName)
+    return fileName
+
+def extractPathFile(path):
+    pathFile = path.split('/')
+    pathFile.pop()
+    folderPath = ''
+    for subPath in pathFile:
+        folderPath += subPath + '/'
+    #print(folderPath)
+    return folderPath
+
+def validateEntirePathFile(path):
+    newPath = extractPathFile(path)
+    pathNames = newPath.split('/')
+    subPath = ''
+    for p in pathNames:
+        subPath += p + '/' #For each subpath, verify and create
+        validatePath(subPath)

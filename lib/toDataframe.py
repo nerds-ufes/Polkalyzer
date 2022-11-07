@@ -62,40 +62,73 @@ def toDataframe(df,topology,isBackBone,numberOfNodes,numberOfEdges):
     result = pd.concat([df,df2],ignore_index=True)
     return result
 
-def extractOptimalNodeSender(G): #Optimal on DP as tiebreaker, Optimal on MPOLKA CRC16
+def extractOptimalNodeSender(G,approach): #Optimal on DP as tiebreaker, Optimal on MPOLKA CRC16
     optimalDPOverhead = 10000000 #Infinite
     optimalCPOverhead = 10000000 #Infinite
     optimalNodeSender = 0
+    optimalProbe = 0
+    overheadDP = 0
+    overheadCP = 0
     for nodeSender in G.nodes():
         sonda = tpb.dfs_init(G,nodeSender)
-        overheadDP, overheadCP = oc.extractINTClassicoOverhead()
+        if(approach == 'INTClassico'):
+            overheadDP, overheadCP = oc.extractINTClassicoOverhead()
+        elif(approach == 'MPolka'):
+            overheadDP, overheadCP = oc.extractMPolkaCRC8Overhead()
+        elif(approach == 'MPINT'):
+            overheadDP, overheadCP = oc.extractMPINTOverhead
+
         #print('Possivel Matriz de Sondas: ',sonda,'Overhead DP:',overheadDP,'| Overhead CP',overheadCP)
 
         if((overheadDP < optimalDPOverhead) and (overheadCP < optimalCPOverhead)):
             optimalDPOverhead = overheadDP
             optimalCPOverhead = overheadCP
+            optimalProbe = sonda
             optimalNodeSender = nodeSender
         elif((overheadDP < optimalDPOverhead) and (overheadCP == optimalCPOverhead)):
             optimalDPOverhead = overheadDP
             optimalCPOverhead = overheadCP
+            optimalProbe = sonda
             optimalNodeSender = nodeSender
         elif((overheadDP == optimalDPOverhead) and (overheadCP < optimalCPOverhead)):
             optimalDPOverhead = overheadDP
             optimalCPOverhead = overheadCP
+            optimalProbe = sonda
             optimalNodeSender = nodeSender
         elif((overheadDP > optimalDPOverhead) and (overheadCP < optimalCPOverhead)):
             if((overheadDP + overheadCP) < (optimalDPOverhead + optimalCPOverhead)):
                 optimalDPOverhead = overheadDP
                 optimalCPOverhead = overheadCP
+                optimalProbe = sonda
                 optimalNodeSender = nodeSender
     #print('<Escolhida> ',optimalNodeSender)
+    if(approach == 'INTClassico'):
+        tpb.sondaINTClassico = tpb.sonda.copy()
+        oc.optimalOverhead_DataPlane_INTClassico = oc.overhead_DataPlane_INTClassico.copy()
+        oc.optimalOverhead_ControlPlane_INTClassico = oc.overhead_ControlPlane_INTClassico.copy()
+        tpb.sondaINTClassico = optimalProbe
+    elif(approach == 'MPolka'):
+        oc.optimalOverhead_DataPlane_MPolkaCRC8 = oc.overhead_DataPlane_MPolkaCRC8.copy()
+        oc.optimalOverhead_ControlPlane_MPolkaCRC8 = oc.overhead_ControlPlane_MPolkaCRC8.copy()
+        oc.optimalOverhead_DataPlane_MPolkaCRC16 = oc.overhead_DataPlane_MPolkaCRC16.copy()
+        oc.optimalOverhead_ControlPlane_MPolkaCRC16 = oc.overhead_ControlPlane_MPolkaCRC16.copy()
+        tpb.sondaMPolka = optimalProbe
+    elif(approach == 'MPINT'):
+        oc.optimalOverhead_DataPlane_MPINT = oc.overhead_DataPlane_MPINT.copy()
+        oc.optimalOverhead_ControlPlane_MPINT = oc.overhead_ControlPlane_MPINT.copy()
+        tpb.sondaMPINT = optimalProbe
     return optimalNodeSender
 
 def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe):
     G,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G,algorithm)
     nodeSender = 0
+    nodeSenderINTClassico = 0
+    nodeSenderMPolka = 0
+    nodeSenderMPINT = 0
     if(fixedNodeSender == -1):
-        nodeSender = extractOptimalNodeSender(G)
+        nodeSenderINTClassico = extractOptimalNodeSender(G,'INTClassico')
+        nodeSenderMPolka = extractOptimalNodeSender(G,'MPolka')
+        nodeSenderMPINT = extractOptimalNodeSender(G,'MPINT')
     else:
         nodeSender = fixedNodeSender
 

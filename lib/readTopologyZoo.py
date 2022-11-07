@@ -54,26 +54,28 @@ def removeBadValues():
         pathBadValue = 'input/topologyZoo/' + badValue + '.gml'
         print('<READ ERROR 3>',pathBadValue,'removed')
         os.remove(pathBadValue)
-    df1 = df.loc[df['Replication Average per Node'] >= 1] #Drop bad Values
-    df2 = df1.loc[df1['Star Probability'] < 0.4] #Filtering Topologys Star Based
-    df2 = df2.sort_values(by=['Star Probability','Max Replication'],ascending=[False,False])
-    print('Filtered Topologys Path: output/Filtered Topologys/')
-    for goodTopology in df2['Topology'].tolist(): #FOR NODES THAT GRAPHS THAT AREN'T STRONGLY CONNECTED
-        filtereds += 1
-        input_pathGoodValue = 'input/topologyZoo/' + goodTopology + '.gml'
-        output_pathGoodValue = 'output/Filtered Topologys/' + goodTopology + '/'
-        ov.validateEntirePath(output_pathGoodValue)
-        G = nx.read_gml(input_pathGoodValue,destringizer=int,label='id')
-        T = nx.minimum_spanning_tree(G,algorithm='prim')
-        drawTopology(G,T,output_pathGoodValue)
-        print('Filtered:',goodTopology)
 
-    df2.to_csv('output/Filtered Topologys/OptimalOverhead.csv')
+    #FILTERING STAR PROBABILITY TOPOLOGYS
+    #df1 = df.loc[df['Replication Average per Node'] >= 1] #Drop bad Values
+    #df2 = df1.loc[df1['Star Probability'] < 0.4] #Filtering Topologys Star Based
+    #df2 = df2.sort_values(by=['Star Probability','Max Replication'],ascending=[False,False])
+    #print('Filtered Topologys Path: output/Filtered Topologys/')
+    #for goodTopology in df2['Topology'].tolist(): #FOR NODES THAT GRAPHS THAT AREN'T STRONGLY CONNECTED
+    #    filtereds += 1
+    #    input_pathGoodValue = 'input/topologyZoo/' + goodTopology + '.gml'
+    #    output_pathGoodValue = 'output/Filtered Topologys/' + goodTopology + '/'
+    #    ov.validateEntirePath(output_pathGoodValue)
+    #    G = nx.read_gml(input_pathGoodValue,destringizer=int,label='id')
+    #    T = nx.minimum_spanning_tree(G,algorithm='prim')
+    #    drawTopology(G,T,output_pathGoodValue)
+    #    print('Filtered:',goodTopology)
+
+    #df2.to_csv('output/Filtered Topologys/OptimalOverhead.csv')
 
     print('<Topologys Removed on Test 1>: ',cont1,'/',contTotal)
     print('<Topologys Removed on Test 2>: ',cont2,'/',contTotal)
     print('<Topologys Removed on Test 3>: ',cont3,'/',contTotal)
-    print('<Topologys Filtered Star Based>: ',filtereds,'/',contTotal)
+    #print('<Topologys Filtered Star Based>: ',filtereds,'/',contTotal)
     print('')
 
 def drawTopology(G,T,path):
