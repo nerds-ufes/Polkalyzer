@@ -40,7 +40,7 @@ def removeBadValues():
         try:
             G = nx.read_gml(topology,destringizer=int,label='id')
             topologyName = ov.extractFilename(topology)
-            df = tdf.appendGraphToDataFrame(df,G=G,algorithm='prim',fixedNodeSender=-1,topologyName=topologyName)
+            df = tdf.appendGraphToDataFrame(df,G=G,algorithm='prim',fixedNodeSender=-1,topologyName=topologyName,exportProbe=False)
 
         except:
             cont2 += 1

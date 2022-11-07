@@ -6,7 +6,7 @@ import pandas as pd
 import lib.outputValidator as ov
 import lib.overheadCalc as oc
 import lib.toProbe as tpb
-from lib.readTopologyZoo import GraphToMST
+from lib.readTopologyZoo import GraphToMST,drawTopology
 
 
 def toDataframe(df,topology,isBackBone,numberOfNodes,numberOfEdges):
@@ -87,7 +87,7 @@ def extractOptimalNodeSender(G): #Optimal on DP as tiebreaker, Optimal on MPOLKA
     #print('<Escolhida> ',optimalNodeSender)
     return optimalNodeSender
 
-def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName):
+def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe):
     G,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G,algorithm)
     nodeSender = 0
     if(fixedNodeSender == -1):
@@ -96,15 +96,21 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName):
         nodeSender = fixedNodeSender
 
     tpb.dfs_init(G,nodeSender)
-    tpb.exportProbe(topologyName)
+    if(exportProbe == True):
+        tpb.exportProbe(topologyName)
     df = toDataframe(df,topologyName,isBackBone,numberOfNodes,numberOfEdges)
     return df
 
 
-def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender):
+def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw):
     listTopology = glob.glob('input/topologyZoo/*.gml')
+        
     for topology in listTopology:
         topologyName = ov.extractFilename(topology)
         G = nx.read_gml(topology,destringizer=int,label='id')
-        df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName)
+        df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe=True)
+        if(draw == True):
+            T = nx.minimum_spanning_tree(G,algorithm=algorithm)
+            outputPath = f'output/Topology/{topologyName}'
+            drawTopology(G,T,outputPath)
     return df

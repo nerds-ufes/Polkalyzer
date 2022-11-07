@@ -27,7 +27,7 @@ def validateEntirePath(path):
 
 def validateNodeSender(fixedNodeSender):
     try:
-        tdf.appendAllTopologysToDataFrame(pd.DataFrame(),algorithm='prim',fixedNodeSender=fixedNodeSender)
+        tdf.appendAllTopologysToDataFrame(pd.DataFrame(),algorithm='prim',fixedNodeSender=fixedNodeSender,draw=False)
         return 0
     except:
         return 1
