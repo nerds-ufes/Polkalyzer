@@ -2,98 +2,98 @@ graph [
   DateObtained "2/12/10"
   GeoLocation "Australia"
   GeoExtent "Country"
+  Customer 1
   Network "IINET "
+  IX 0
   Provenance "Primary"
   Access 1
   Source "http://www.iinet.net.au/iinetwork/network-diagrams.html"
   Version "1.0"
-  DateType "Current"
   Type "COM"
-  Backbone 1
-  Commercial 0
-  label "IINET"
-  Customer 1
-  IX 0
   LastAccess "3/08/10"
   Layer "IP"
   Classification "Backbone Transit Access Customer"
   Creator "Topology Zoo Toolset"
-  Developed 0
+  DateType "Current"
   Transit 1
+  Backbone 1
+  Commercial 0
   NetworkDate "2010-08"
+  label "IINET"
   Testbed 0
+  Developed 0
   SvnVersion 8123
   node [
     id 0
     label "Darwin"
-    Country "Australia"
-    Longitude 130.84185
     Internal 1
     Latitude -12.46113
+    Country "Australia"
+    Longitude 130.84185
   ]
   node [
     id 1
     label "Adelaide"
-    Country "Australia"
-    Longitude 138.6
     Internal 1
     Latitude -34.93333
+    Country "Australia"
+    Longitude 138.6
   ]
   node [
     id 2
     label "Perth"
-    Country "Australia"
-    Longitude 115.83333
     Internal 1
     Latitude -31.93333
+    Country "Australia"
+    Longitude 115.83333
   ]
   node [
     id 3
     label "Brisbane"
-    Country "Australia"
-    Longitude 153.02809
     Internal 1
     Latitude -27.46794
+    Country "Australia"
+    Longitude 153.02809
   ]
   node [
     id 4
     label "Sydney1"
-    Country "Australia"
-    Longitude 151.20732
     Internal 1
     Latitude -33.86785
+    Country "Australia"
+    Longitude 151.20732
   ]
   node [
     id 5
     label "Sydney2"
-    Country "Australia"
-    Longitude 151.20732
     Internal 1
     Latitude -33.86785
+    Country "Australia"
+    Longitude 151.20732
   ]
   node [
     id 6
     label "Canberra"
-    Country "Australia"
-    Longitude 149.12807
     Internal 1
     Latitude -35.28346
+    Country "Australia"
+    Longitude 149.12807
   ]
   node [
     id 7
     label "Melbourne"
-    Country "Australia"
-    Longitude 144.96332
     Internal 1
     Latitude -37.814
+    Country "Australia"
+    Longitude 144.96332
   ]
   node [
     id 8
     label "Hobart"
-    Country "Australia"
-    Longitude 147.32941
     Internal 1
     Latitude -42.87936
+    Country "Australia"
+    Longitude 147.32941
   ]
   node [
     id 9
@@ -219,11 +219,11 @@ graph [
   ]
   edge [
     source 1
-    target 14
+    target 6
   ]
   edge [
     source 1
-    target 6
+    target 14
   ]
   edge [
     source 2
@@ -327,11 +327,11 @@ graph [
   ]
   edge [
     source 6
-    target 17
+    target 15
   ]
   edge [
     source 6
-    target 15
+    target 17
   ]
   edge [
     source 7

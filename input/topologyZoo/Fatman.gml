@@ -2,63 +2,63 @@ graph [
   DateObtained ""
   GeoLocation "Fife and Tayside, UK"
   GeoExtent "Region"
+  Customer 0
   Network "FatMan"
+  IX 0
   Provenance "Primary"
-  Access 0
+  Note "ATM-based - JANET local provider"
   Source "http://www.fatman.net.uk/"
   Version "1.0"
-  DateType "Current"
   Type "REN"
-  Backbone 1
-  Commercial 0
-  label "fatman"
-  Customer 0
-  IX 0
   LastAccess "21/01/11"
-  Note "ATM-based - JANET local provider"
+  Access 0
   Layer "IP"
   Classification "Backbone  "
   Creator "Topology Zoo Toolset"
-  Developed 0
+  DateType "Current"
   Transit 0
+  Backbone 1
+  Commercial 0
   NetworkDate "2011-01"
+  label "fatman"
   Testbed 0
+  Developed 0
   SvnVersion 8123
   node [
     id 0
     label "Glasgow"
-    Country "United Kingdom"
-    Longitude -4.25763
     Internal 1
     Latitude 55.86515
+    Country "United Kingdom"
     type "Orange Node"
+    Longitude -4.25763
   ]
   node [
     id 1
     label "Leeds"
-    Country "United Kingdom"
-    Longitude -1.54785
     Internal 1
     Latitude 53.79648
+    Country "United Kingdom"
     type "Orange Node"
+    Longitude -1.54785
   ]
   node [
     id 2
     label "RNEP1"
-    Country "United Kingdom"
-    Longitude -2.96667
     Internal 1
     Latitude 56.5
+    Country "United Kingdom"
     type "Purple Node"
+    Longitude -2.96667
   ]
   node [
     id 3
     label "RNEP2"
-    Country "United Kingdom"
-    Longitude -2.96667
     Internal 1
     Latitude 56.5
+    Country "United Kingdom"
     type "Purple Node"
+    Longitude -2.96667
   ]
   node [
     id 4
@@ -99,11 +99,11 @@ graph [
   node [
     id 10
     label "Kirkcaldy"
-    Country "United Kingdom"
-    Longitude -3.16667
     Internal 1
     Latitude 56.11667
+    Country "United Kingdom"
     type "Purple Node"
+    Longitude -3.16667
   ]
   node [
     id 11

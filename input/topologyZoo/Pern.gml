@@ -2,66 +2,66 @@ graph [
   DateObtained "22/10/10"
   GeoLocation "Pakistan"
   GeoExtent "Country"
+  Customer 0
   Network "PERN"
+  IX 0
   Provenance "Primary"
   Access 0
   Source "http://pern.edu.pk/index.php?option=com_content&amp;task=view&amp;id=12&amp;Itemid=75"
   Version "1.0"
-  DateType "Current"
   Type "REN"
-  Backbone 1
-  Commercial 0
-  label "PERN"
-  Customer 0
-  IX 0
   LastAccess "21/10/10"
   Layer "IP"
   Classification "Backbone"
   Creator "Topology Zoo Toolset"
-  Developed 0
+  DateType "Current"
   Transit 0
+  Backbone 1
+  Commercial 0
   NetworkDate "2010-10"
+  label "PERN"
   Testbed 0
+  Developed 0
   SvnVersion 8123
   node [
     id 0
     label "Abbottabad"
-    Country "Pakistan"
-    Longitude 73.21449
     Latitude 34.14685
+    Country "Pakistan"
     type "PoP"
+    Longitude 73.21449
   ]
   node [
     id 1
     label "Islamabad"
-    Country "Pakistan"
-    Longitude 73.04329
     Latitude 33.72148
+    Country "Pakistan"
     type "PoP"
+    Longitude 73.04329
   ]
   node [
     id 2
     label "Peshawar"
-    Country "Pakistan"
-    Longitude 71.58018
     Latitude 34.00837
+    Country "Pakistan"
     type "PoP"
+    Longitude 71.58018
   ]
   node [
     id 3
     label "Lahore"
-    Country "Pakistan"
-    Longitude 74.34361
     Latitude 31.54972
+    Country "Pakistan"
     type "PoP"
+    Longitude 74.34361
   ]
   node [
     id 4
     label "Faisalabad"
-    Country "Pakistan"
-    Longitude 73.08333
     Latitude 31.41667
+    Country "Pakistan"
     type "PoP"
+    Longitude 73.08333
   ]
   node [
     id 5
@@ -76,10 +76,10 @@ graph [
   node [
     id 7
     label "Quetta"
-    Country "Pakistan"
-    Longitude 67.0125
     Latitude 30.18722
+    Country "Pakistan"
     type "PoP"
+    Longitude 67.0125
   ]
   node [
     id 8
@@ -89,10 +89,10 @@ graph [
   node [
     id 9
     label "Peshawar"
-    Country "Pakistan"
-    Longitude 71.58018
     Latitude 34.00837
+    Country "Pakistan"
     type "PoP"
+    Longitude 71.58018
   ]
   node [
     id 10
@@ -102,10 +102,10 @@ graph [
   node [
     id 11
     label "Karachi"
-    Country "Pakistan"
-    Longitude 67.0822
     Latitude 24.9056
+    Country "Pakistan"
     type "PoP"
+    Longitude 67.0822
   ]
   edge [
     source 0

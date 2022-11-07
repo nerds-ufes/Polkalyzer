@@ -2,26 +2,26 @@ graph [
   DateObtained "30/10/10"
   GeoLocation "Latin America"
   GeoExtent "Continent"
+  Customer 1
   Network "Columbus Networks"
+  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.columbus-networks.com/"
   Version "1.0"
-  DateType "Current"
   Type "COM"
-  Backbone 1
-  Commercial 0
-  label "columbus"
-  Customer 1
-  IX 0
   LastAccess "3/08/10"
   Layer "IP"
   Classification "Backbone Transit Customer"
   Creator "Topology Zoo Toolset"
-  Developed 0
+  DateType "Current"
   Transit 1
+  Backbone 1
+  Commercial 0
   NetworkDate "2010-08"
+  label "columbus"
   Testbed 0
+  Developed 0
   SvnVersion 8123
   node [
     id 0
@@ -605,13 +605,13 @@ graph [
   ]
   edge [
     source 5
-    target 54
-    LinkLabel "Maya"
+    target 6
+    LinkLabel "ARCOS"
   ]
   edge [
     source 5
-    target 6
-    LinkLabel "ARCOS"
+    target 54
+    LinkLabel "Maya"
   ]
   edge [
     source 6
@@ -667,12 +667,12 @@ graph [
     source 13
     target 60
     LinkType "Fiber"
-    LinkNote "Terrestrial  Partners"
     LinkLabel "Terrestrial Fiber Partners"
+    LinkNote "Terrestrial  Partners"
   ]
   edge [
     source 13
-    target 15
+    target 63
     LinkLabel "ARCOS"
   ]
   edge [
@@ -682,7 +682,7 @@ graph [
   ]
   edge [
     source 13
-    target 63
+    target 15
     LinkLabel "ARCOS"
   ]
   edge [
@@ -964,8 +964,8 @@ graph [
     source 60
     target 61
     LinkType "Fiber"
-    LinkNote "Terrestrial  Partners"
     LinkLabel "Terrestrial Fiber Partners"
+    LinkNote "Terrestrial  Partners"
   ]
   edge [
     source 66

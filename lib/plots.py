@@ -4,8 +4,8 @@ import numpy as np
 import lib.outputValidator as ov
 from matplotlib import pyplot as plt
 
-def StateOverheadHeatMap1(maxNodes,maxReplication,path):
-    replicationArr = np.arange(1.0,maxReplication,0.1)
+def StateOverheadHeatMap1(maxNodes,path):
+    replicationArr = np.arange(1.0,2.0,0.1)
     newArr = []
     for i in range (1,maxNodes+1):
         for j in replicationArr:

@@ -2,435 +2,435 @@ graph [
   DateObtained "26/10/10"
   GeoLocation "Tennessee, USA"
   GeoExtent "Region"
+  Customer 1
   Network "IRIS Networks "
+  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.iristransport.com/network.php"
   Version "1.0"
-  DateType "Current"
   Type "COM"
-  Backbone 1
-  Commercial 0
-  label "iris"
-  Customer 1
-  IX 0
   LastAccess "3/08/10"
   Layer "IP"
   Classification "Backbone Transit Customer"
   Creator "Topology Zoo Toolset"
-  Developed 1
+  DateType "Current"
   Transit 1
+  Backbone 1
+  Commercial 0
   NetworkDate "2010-08"
+  label "iris"
   Testbed 0
+  Developed 1
   SvnVersion 8123
   node [
     id 0
     label "Paducah"
-    Country "United States"
-    Longitude -88.60005
     Latitude 37.08339
+    Country "United States"
     type "Large Node"
+    Longitude -88.60005
   ]
   node [
     id 1
     label "Mayfield"
-    Country "United States"
-    Longitude -88.63672
     Latitude 36.74172
+    Country "United States"
     type "Node"
+    Longitude -88.63672
   ]
   node [
     id 2
     label "Union City"
-    Country "United States"
-    Longitude -89.05701
     Latitude 36.42423
+    Country "United States"
     type "Node"
+    Longitude -89.05701
   ]
   node [
     id 3
     label "Martin"
-    Country "United States"
-    Longitude -88.85034
     Latitude 36.3434
+    Country "United States"
     type "Node"
+    Longitude -88.85034
   ]
   node [
     id 4
     label "McKenzie"
-    Country "United States"
-    Longitude -88.51866
     Latitude 36.13256
+    Country "United States"
     type "Node"
+    Longitude -88.51866
   ]
   node [
     id 5
     label "Paris"
-    Country "United States"
-    Longitude -88.32671
     Latitude 36.302
+    Country "United States"
     type "Node"
+    Longitude -88.32671
   ]
   node [
     id 6
     label "Murray"
-    Country "United States"
-    Longitude -88.31476
     Latitude 36.61033
+    Country "United States"
     type "Node"
+    Longitude -88.31476
   ]
   node [
     id 7
     label "Franklin"
     geocode_append " Simpson County KY"
-    Country "United States"
-    Longitude -86.57722
     Latitude 36.72226
+    Country "United States"
     type "Node"
+    Longitude -86.57722
   ]
   node [
     id 8
     label "Bowling Green"
-    Country "United States"
-    Longitude -86.4436
     Latitude 36.99032
+    Country "United States"
     type "Node"
+    Longitude -86.4436
   ]
   node [
     id 9
     label "Glasgow"
-    Country "United States"
-    Longitude -85.91192
     Latitude 36.99588
+    Country "United States"
     type "Node"
+    Longitude -85.91192
   ]
   node [
     id 10
     label "Scottsville"
-    Country "United States"
-    Longitude -86.19054
     Latitude 36.75338
+    Country "United States"
     type "Node"
+    Longitude -86.19054
   ]
   node [
     id 11
     label "Lafayette"
-    Country "United States"
-    Longitude -86.02637
     Latitude 36.52116
+    Country "United States"
     type "Node"
+    Longitude -86.02637
   ]
   node [
     id 12
     label "Gainesboro"
-    Country "United States"
-    Longitude -85.65887
     Latitude 36.35561
+    Country "United States"
     type "Node"
+    Longitude -85.65887
   ]
   node [
     id 13
     label "Wartburg"
-    Country "United States"
-    Longitude -84.59716
     Latitude 36.1048
+    Country "United States"
     type "Node"
+    Longitude -84.59716
   ]
   node [
     id 14
     label "Knoxville"
-    Country "United States"
-    Longitude -83.92074
     Latitude 35.96064
+    Country "United States"
     type "Large Node"
+    Longitude -83.92074
   ]
   node [
     id 15
     label "Morristown"
-    Country "United States"
-    Longitude -83.29489
     Latitude 36.21398
+    Country "United States"
     type "Node"
+    Longitude -83.29489
   ]
   node [
     id 16
     label "Greenville"
-    Country "United States"
-    Longitude -82.83099
     Latitude 36.16316
+    Country "United States"
     type "Node"
+    Longitude -82.83099
   ]
   node [
     id 17
     label "Johnson City"
-    Country "United States"
-    Longitude -82.35347
     Latitude 36.31344
+    Country "United States"
     type "Large Node"
+    Longitude -82.35347
   ]
   node [
     id 18
     label "Scott County"
-    Country "United States"
-    Longitude -82.58099
     Latitude 36.63788
+    Country "United States"
     type "Node"
+    Longitude -82.58099
   ]
   node [
     id 19
     label "Crossville"
-    Country "United States"
-    Longitude -85.0269
     Latitude 35.94896
+    Country "United States"
     type "Node"
+    Longitude -85.0269
   ]
   node [
     id 20
     label "Smithville"
-    Country "United States"
-    Longitude -85.81415
     Latitude 35.96062
+    Country "United States"
     type "Node"
+    Longitude -85.81415
   ]
   node [
     id 21
     label "Mt Juliet"
-    Country "United States"
-    Longitude -86.51861
     Latitude 36.20006
+    Country "United States"
     type "Node"
+    Longitude -86.51861
   ]
   node [
     id 22
     label "Smyrna"
-    Country "United States"
-    Longitude -86.5186
     Latitude 35.98284
+    Country "United States"
     type "Node"
+    Longitude -86.5186
   ]
   node [
     id 23
     label "Nashville"
-    Country "United States"
-    Longitude -86.78444
     Latitude 36.16589
+    Country "United States"
     type "Large Node"
+    Longitude -86.78444
   ]
   node [
     id 24
     label "New Johnsonville"
-    Country "United States"
-    Longitude -87.96698
     Latitude 36.02117
+    Country "United States"
     type "Node"
+    Longitude -87.96698
   ]
   node [
     id 25
     label "Camden"
-    Country "United States"
-    Longitude -88.09782
     Latitude 36.05895
+    Country "United States"
     type "Node"
+    Longitude -88.09782
   ]
   node [
     id 26
     label "Bruceton"
-    Country "United States"
-    Longitude -88.24449
     Latitude 36.03812
+    Country "United States"
     type "Node"
+    Longitude -88.24449
   ]
   node [
     id 27
     label "Trenton"
-    Country "United States"
-    Longitude -88.94145
     Latitude 35.98062
+    Country "United States"
     type "Node"
+    Longitude -88.94145
   ]
   node [
     id 28
     label "Yuma"
-    Country "United States"
-    Longitude -88.33671
     Latitude 35.84756
+    Country "United States"
     type "Node"
+    Longitude -88.33671
   ]
   node [
     id 29
     label "Columbia"
-    Country "United States"
-    Longitude -87.03528
     Latitude 35.61507
+    Country "United States"
     type "Node"
+    Longitude -87.03528
   ]
   node [
     id 30
     label "Chapel Hill"
-    Country "United States"
-    Longitude -86.69333
     Latitude 35.62646
+    Country "United States"
     type "Node"
+    Longitude -86.69333
   ]
   node [
     id 31
     label "Chattanooga"
-    Country "United States"
-    Longitude -85.30968
     Latitude 35.04563
+    Country "United States"
     type "Large Node"
+    Longitude -85.30968
   ]
   node [
     id 32
     label "Dunlap"
-    Country "United States"
-    Longitude -85.39052
     Latitude 35.37146
+    Country "United States"
     type "Node"
+    Longitude -85.39052
   ]
   node [
     id 33
     label "Spencer"
-    Country "United States"
-    Longitude -85.46664
     Latitude 35.74729
+    Country "United States"
     type "Node"
+    Longitude -85.46664
   ]
   node [
     id 34
     label "McMinnville"
-    Country "United States"
-    Longitude -85.76998
     Latitude 35.6834
+    Country "United States"
     type "Node"
+    Longitude -85.76998
   ]
   node [
     id 35
     label "Ringgold"
-    Country "United States"
-    Longitude -85.10912
     Latitude 34.91591
+    Country "United States"
     type "Node"
+    Longitude -85.10912
   ]
   node [
     id 36
     label "Chickamauga"
-    Country "United States"
-    Longitude -85.29079
     Latitude 34.87119
+    Country "United States"
     type "Node"
+    Longitude -85.29079
   ]
   node [
     id 37
     label "Trenton"
-    Country "United States"
-    Longitude -85.50913
     Latitude 34.87202
+    Country "United States"
     type "Node"
+    Longitude -85.50913
   ]
   node [
     id 38
     label "Rainsville"
-    Country "United States"
-    Longitude -85.84775
     Latitude 34.49425
+    Country "United States"
     type "Node"
+    Longitude -85.84775
   ]
   node [
     id 39
     label "Scottsboro"
-    Country "United States"
-    Longitude -86.03415
     Latitude 34.67231
+    Country "United States"
     type "Node"
+    Longitude -86.03415
   ]
   node [
     id 40
     label "New Hope"
-    Country "United States"
-    Longitude -86.39443
     Latitude 34.53703
+    Country "United States"
     type "Node"
+    Longitude -86.39443
   ]
   node [
     id 41
     label "Huntsville"
-    Country "United States"
-    Longitude -86.5861
     Latitude 34.73037
+    Country "United States"
     type "Large Node"
+    Longitude -86.5861
   ]
   node [
     id 42
     label "Ardmore"
-    Country "United States"
-    Longitude -86.84667
     Latitude 34.99203
+    Country "United States"
     type "Node"
+    Longitude -86.84667
   ]
   node [
     id 43
     label "Pulaski"
-    Country "United States"
-    Longitude -87.03084
     Latitude 35.1998
+    Country "United States"
     type "Node"
+    Longitude -87.03084
   ]
   node [
     id 44
     label "Loretto"
-    Country "United States"
-    Longitude -87.43974
     Latitude 35.07786
+    Country "United States"
     type "Node"
+    Longitude -87.43974
   ]
   node [
     id 45
     label "Waynesboro"
-    Country "United States"
-    Longitude -87.76225
     Latitude 35.31952
+    Country "United States"
     type "Node"
+    Longitude -87.76225
   ]
   node [
     id 46
     label "Henderson"
-    Country "United States"
-    Longitude -88.64144
     Latitude 35.43924
+    Country "United States"
     type "Node"
+    Longitude -88.64144
   ]
   node [
     id 47
     label "Jackson"
-    Country "United States"
-    Longitude -88.81395
     Latitude 35.61452
+    Country "United States"
     type "Large Node"
+    Longitude -88.81395
   ]
   node [
     id 48
     label "Millington"
-    Country "United States"
-    Longitude -89.89731
     Latitude 35.34147
+    Country "United States"
     type "Node"
+    Longitude -89.89731
   ]
   node [
     id 49
     label "Brownsville"
-    Country "United States"
-    Longitude -89.26229
     Latitude 35.59397
+    Country "United States"
     type "Node"
+    Longitude -89.26229
   ]
   node [
     id 50
     label "Memphis"
-    Country "United States"
-    Longitude -90.04898
     Latitude 35.14953
+    Country "United States"
     type "Large Node"
+    Longitude -90.04898
   ]
   edge [
     source 0
@@ -449,12 +449,12 @@ graph [
   ]
   edge [
     source 2
-    target 3
+    target 27
     LinkLabel "Iris Network"
   ]
   edge [
     source 2
-    target 27
+    target 3
     LinkLabel "Iris Network"
   ]
   edge [
@@ -475,9 +475,9 @@ graph [
   edge [
     source 5
     target 25
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 5
@@ -487,37 +487,37 @@ graph [
   edge [
     source 7
     target 8
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 7
     target 10
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 8
     target 10
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 9
     target 10
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 10
     target 11
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 11
@@ -561,29 +561,29 @@ graph [
   ]
   edge [
     source 14
-    target 15
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
-    LinkStatus "Future"
-  ]
-  edge [
-    source 14
     target 31
     LinkLabel "Iris Network"
   ]
   edge [
+    source 14
+    target 15
+    LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
+  ]
+  edge [
     source 15
     target 16
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 16
     target 17
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 17
@@ -618,9 +618,9 @@ graph [
   edge [
     source 23
     target 29
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 23
@@ -630,23 +630,23 @@ graph [
   edge [
     source 24
     target 25
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 25
     target 26
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 26
     target 28
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 27
@@ -661,9 +661,9 @@ graph [
   edge [
     source 29
     target 41
-    LinkNote "Iris  Network"
-    LinkLabel "Iris Future Network"
     LinkStatus "Future"
+    LinkLabel "Iris Future Network"
+    LinkNote "Iris  Network"
   ]
   edge [
     source 30

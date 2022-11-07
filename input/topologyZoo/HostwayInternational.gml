@@ -2,138 +2,138 @@ graph [
   DateObtained "2/01/11"
   GeoLocation "Global"
   GeoExtent "Global"
+  Customer 1
   Network "Hostway International"
+  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.hostway.com/images/dedicated-servers/infrastructure/map-00.gif"
   Version "1.0"
-  DateType "Current"
   Type "COM"
-  Backbone 1
-  Commercial 0
-  label "hostway_international"
-  Customer 1
-  IX 0
   LastAccess "2/01/11"
   Layer "IP"
   Classification "Backbone Transit Customer "
   Creator "Topology Zoo Toolset"
-  Developed 0
+  DateType "Current"
   Transit 1
+  Backbone 1
+  Commercial 0
   NetworkDate "2011-01"
+  label "hostway_international"
   Testbed 0
+  Developed 0
   SvnVersion 8123
   node [
     id 0
     label "Bucharest"
+    Latitude 44.43225
     Country "Romania"
     Longitude 26.10626
-    Latitude 44.43225
   ]
   node [
     id 1
     label "Seoul"
+    Latitude 37.56826
     Country "South Korea"
     Longitude 126.97783
-    Latitude 37.56826
   ]
   node [
     id 2
     label "Sydney"
+    Latitude -33.86785
     Country "Australia"
     Longitude 151.20732
-    Latitude -33.86785
   ]
   node [
     id 3
     label "Hannover"
+    Latitude 52.37052
     Country "Germany"
     Longitude 9.73322
-    Latitude 52.37052
   ]
   node [
     id 4
     label "Amsterdam"
+    Latitude 52.37403
     Country "Netherlands"
     Longitude 4.88969
-    Latitude 52.37403
   ]
   node [
     id 5
     label "Antwerp"
+    Latitude 51.21667
     Country "Belgium"
     Longitude 4.41667
-    Latitude 51.21667
   ]
   node [
     id 6
     label "Frankfurt"
+    Latitude 50.11667
     Country "Germany"
     Longitude 8.68333
-    Latitude 50.11667
   ]
   node [
     id 7
     label "London"
+    Latitude 51.50853
     Country "United Kingdom"
     Longitude -0.12574
-    Latitude 51.50853
   ]
   node [
     id 8
     label "New York"
+    Latitude 40.71427
     Country "United States"
     Longitude -74.00597
-    Latitude 40.71427
   ]
   node [
     id 9
     label "Atlanta"
+    Latitude 33.749
     Country "United States"
     Longitude -84.38798
-    Latitude 33.749
   ]
   node [
     id 10
     label "Chicago"
+    Latitude 41.85003
     Country "United States"
     Longitude -87.65005
-    Latitude 41.85003
   ]
   node [
     id 11
     label "Vancouver"
+    Latitude 49.24966
     Country "Canada"
     Longitude -123.11934
-    Latitude 49.24966
   ]
   node [
     id 12
     label "Seattle"
+    Latitude 47.60621
     Country "United States"
     Longitude -122.33207
-    Latitude 47.60621
   ]
   node [
     id 13
     label "Tampa"
+    Latitude 27.94752
     Country "United States"
     Longitude -82.45843
-    Latitude 27.94752
   ]
   node [
     id 14
     label "Miami"
+    Latitude 25.77427
     Country "United States"
     Longitude -80.19366
-    Latitude 25.77427
   ]
   node [
     id 15
     label "Austin"
+    Latitude 30.26715
     Country "United States"
     Longitude -97.74306
-    Latitude 30.26715
   ]
   edge [
     source 0

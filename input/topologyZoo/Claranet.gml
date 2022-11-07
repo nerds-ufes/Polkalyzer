@@ -2,132 +2,132 @@ graph [
   DateObtained "19/10/10"
   GeoLocation "Europe"
   GeoExtent "Continent"
+  Customer 1
   Network "Claranet"
+  IX 0
   Provenance "Primary"
-  Access 1
+  Note "Technically, Access is provided by Claranet SOHO, a division of Claranet."
   Source "http://noc.eu.clara.net/"
   Version "1.0"
-  DateType "Dynamic"
   Type "COM"
-  Backbone 1
-  Commercial 0
-  label "claranet"
-  Customer 1
-  IX 0
   LastAccess "3/08/10"
-  Note "Technically, Access is provided by Claranet SOHO, a division of Claranet."
+  Access 1
   Layer "IP"
   Classification "Backbone Transit Access Customer"
   Creator "Topology Zoo Toolset"
-  Developed 0
+  DateType "Dynamic"
   Transit 1
+  Backbone 1
+  Commercial 0
   NetworkDate "2010-08"
+  label "claranet"
   Testbed 0
+  Developed 0
   SvnVersion 8123
   node [
     id 0
     label "Amsterdam"
+    Latitude 52.37403
     Country "Netherlands"
     Longitude 4.88969
-    Latitude 52.37403
   ]
   node [
     id 1
     label "Eindhoven"
+    Latitude 51.44083
     Country "Netherlands"
     Longitude 5.47778
-    Latitude 51.44083
   ]
   node [
     id 2
     label "Berlin"
+    Latitude 52.52437
     Country "Germany"
     Longitude 13.41053
-    Latitude 52.52437
   ]
   node [
     id 3
     label "Frankfurt"
+    Latitude 50.11667
     Country "Germany"
     Longitude 8.68333
-    Latitude 50.11667
   ]
   node [
     id 4
     label "Munich"
+    Latitude 48.13743
     Country "Germany"
     Longitude 11.57549
-    Latitude 48.13743
   ]
   node [
     id 5
     label "Paris"
+    Latitude 48.85341
     Country "France"
     Longitude 2.3488
-    Latitude 48.85341
   ]
   node [
     id 6
     label "Rennes"
+    Latitude 48.08333
     Country "France"
     Longitude -1.68333
-    Latitude 48.08333
   ]
   node [
     id 7
     label "London"
+    Latitude 51.50853
     Country "United Kingdom"
     Longitude -0.12574
-    Latitude 51.50853
   ]
   node [
     id 8
     label "Manchester"
+    Latitude 53.48095
     Country "United Kingdom"
     Longitude -2.23743
-    Latitude 53.48095
   ]
   node [
     id 9
     label "New York"
+    Latitude 53.07897
     Country "United Kingdom"
     Longitude -0.14008
-    Latitude 53.07897
   ]
   node [
     id 10
     label "Porto"
+    Latitude 41.15
     Country "Portugal"
     Longitude -8.61667
-    Latitude 41.15
   ]
   node [
     id 11
     label "Lisbon"
+    Latitude 38.71667
     Country "Portugal"
     Longitude -9.13333
-    Latitude 38.71667
   ]
   node [
     id 12
     label "Faro"
+    Latitude 37.01667
     Country "Portugal"
     Longitude -7.93333
-    Latitude 37.01667
   ]
   node [
     id 13
     label "Madrid"
+    Latitude 40.4165
     Country "Spain"
     Longitude -3.70256
-    Latitude 40.4165
   ]
   node [
     id 14
     label "Barcelona"
+    Latitude 41.38879
     Country "Spain"
     Longitude 2.15899
-    Latitude 41.38879
   ]
   edge [
     source 0
@@ -163,11 +163,11 @@ graph [
   ]
   edge [
     source 5
-    target 14
+    target 6
   ]
   edge [
     source 5
-    target 6
+    target 14
   ]
   edge [
     source 5

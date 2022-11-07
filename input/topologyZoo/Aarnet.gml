@@ -2,159 +2,159 @@ graph [
   DateObtained "2/12/10"
   GeoLocation "Australia"
   GeoExtent "Country"
+  Customer 0
   Network "AARNET"
+  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.aarnet.edu.au/aarnet3.aspx"
   Version "1.0"
-  DateType "Current"
   Type "REN"
-  Backbone 1
-  Commercial 0
-  label "AARNET"
-  Customer 0
-  IX 0
   LastAccess "3/08/10"
   Layer "IP"
   Classification "Backbone"
   Creator "Topology Zoo Toolset"
-  Developed 1
+  DateType "Current"
   Transit 0
+  Backbone 1
+  Commercial 0
   NetworkDate "2010-08"
+  label "AARNET"
   Testbed 0
+  Developed 1
   SvnVersion 8123
   node [
     id 0
     label "Perth1"
+    Latitude -31.93333
     Country "Australia"
     Longitude 115.83333
-    Latitude -31.93333
   ]
   node [
     id 1
     label "Perth2"
+    Latitude -31.93333
     Country "Australia"
     Longitude 115.83333
-    Latitude -31.93333
   ]
   node [
     id 2
     label "Adelaide1"
+    Latitude -34.93333
     Country "Australia"
     Longitude 138.6
-    Latitude -34.93333
   ]
   node [
     id 3
     label "Adelaide2"
+    Latitude -34.93333
     Country "Australia"
     Longitude 138.6
-    Latitude -34.93333
   ]
   node [
     id 4
     label "Melbourne1"
+    Latitude -37.814
     Country "Australia"
     Longitude 144.96332
-    Latitude -37.814
   ]
   node [
     id 5
     label "Melbourne2"
+    Latitude -37.814
     Country "Australia"
     Longitude 144.96332
-    Latitude -37.814
   ]
   node [
     id 6
     label "Alice Springs"
+    Latitude -23.7
     Country "Australia"
     Longitude 133.88333
-    Latitude -23.7
   ]
   node [
     id 7
     label "Darwin"
+    Latitude -12.46113
     Country "Australia"
     Longitude 130.84185
-    Latitude -12.46113
   ]
   node [
     id 8
     label "Hobart"
+    Latitude -42.87936
     Country "Australia"
     Longitude 147.32941
-    Latitude -42.87936
   ]
   node [
     id 9
     label "Canberra2"
+    Latitude -35.28346
     Country "Australia"
     Longitude 149.12807
-    Latitude -35.28346
   ]
   node [
     id 10
     label "Canberra1"
+    Latitude -35.28346
     Country "Australia"
     Longitude 149.12807
-    Latitude -35.28346
   ]
   node [
     id 11
     label "Sydney2"
+    Latitude -33.86785
     Country "Australia"
     Longitude 151.20732
-    Latitude -33.86785
   ]
   node [
     id 12
     label "Sydney1"
+    Latitude -33.86785
     Country "Australia"
     Longitude 151.20732
-    Latitude -33.86785
   ]
   node [
     id 13
     label "Brisbane2"
+    Latitude -27.46794
     Country "Australia"
     Longitude 153.02809
-    Latitude -27.46794
   ]
   node [
     id 14
     label "Brisbane1"
+    Latitude -27.46794
     Country "Australia"
     Longitude 153.02809
-    Latitude -27.46794
   ]
   node [
     id 15
     label "Rockhampton"
+    Latitude -23.38333
     Country "Australia"
     Longitude 150.5
-    Latitude -23.38333
   ]
   node [
     id 16
     label "Townsville"
+    Latitude -19.25
     Country "Australia"
     Longitude 146.8
-    Latitude -19.25
   ]
   node [
     id 17
     label "Cairns"
+    Latitude -16.91667
     Country "Australia"
     Longitude 145.76667
-    Latitude -16.91667
   ]
   node [
     id 18
     label "Armidale"
+    Latitude -30.51667
     Country "Australia"
     Longitude 151.65
-    Latitude -30.51667
   ]
   edge [
     source 0

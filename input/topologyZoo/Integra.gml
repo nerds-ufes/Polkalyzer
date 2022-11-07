@@ -2,246 +2,246 @@ graph [
   DateObtained "18/10/10"
   GeoLocation "USA"
   GeoExtent "Country"
+  Customer 1
   Network "Integra Telecom "
+  IX 0
   Provenance "Primary"
-  Access 0
+  Note "Electric Lightwave provides carrier wholesale. Hard to read as 3D style. May be multiple PoPs in same city, with multiple links."
   Source "http://www.integratelecom.com/about/images/networkmap_large.png"
   Version "1.0"
-  DateType "Current"
   Type "COM"
-  Backbone 1
-  Commercial 0
-  label "integra"
-  Customer 1
-  IX 0
   LastAccess "3/08/10"
-  Note "Electric Lightwave provides carrier wholesale. Hard to read as 3D style. May be multiple PoPs in same city, with multiple links."
+  Access 0
   Layer "IP"
   Classification "Backbone Transit Customer"
   Creator "Topology Zoo Toolset"
-  Developed 1
+  DateType "Current"
   Transit 1
+  Backbone 1
+  Commercial 0
   NetworkDate "2010-08"
+  label "integra"
   Testbed 0
+  Developed 1
   SvnVersion 8123
   node [
     id 0
     label "Billings"
-    Country "United States"
-    Longitude -108.50069
     Latitude 45.78329
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -108.50069
   ]
   node [
     id 1
     label "Denver"
-    Country "United States"
-    Longitude -104.9847
     Latitude 39.73915
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -104.9847
   ]
   node [
     id 2
     label "Ogden"
-    Country "United States"
-    Longitude -111.97383
     Latitude 41.223
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -111.97383
   ]
   node [
     id 3
     label "Orem"
-    Country "United States"
-    Longitude -111.69465
     Latitude 40.2969
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -111.69465
   ]
   node [
     id 4
     label "Salt Lake City"
-    Country "United States"
-    Longitude -111.89105
     Latitude 40.76078
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -111.89105
   ]
   node [
     id 5
     label "Boise"
-    Country "United States"
-    Longitude -116.20345
     Latitude 43.6135
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -116.20345
   ]
   node [
     id 6
     label "Portland"
-    Country "United States"
-    Longitude -122.67621
     Latitude 45.52345
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -122.67621
   ]
   node [
     id 7
     label "Seattle"
-    Country "United States"
-    Longitude -122.33207
     Latitude 47.60621
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -122.33207
   ]
   node [
     id 8
     label "Spokane"
-    Country "United States"
-    Longitude -117.42605
     Latitude 47.65878
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -117.42605
   ]
   node [
     id 9
     label "Fargo?"
     geocode_append "ND"
-    Country "United States"
-    Longitude -96.7898
     Latitude 46.87719
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -96.7898
   ]
   node [
     id 10
     label "St Cloud"
     geocode_append "MN"
-    Country "United States"
-    Longitude -94.16249
     Latitude 45.5608
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -94.16249
   ]
   node [
     id 11
     label "Minneapolis/St Paul"
-    Country "United States"
-    Longitude -93.26384
     Latitude 44.97997
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -93.26384
   ]
   node [
     id 12
     label "Chicago"
-    Country "United States"
-    Longitude -87.65005
     Latitude 41.85003
+    Country "United States"
     type "PoP with Peering"
+    Longitude -87.65005
   ]
   node [
     id 13
     label "Dallas"
-    Country "United States"
-    Longitude -96.80667
     Latitude 32.78306
+    Country "United States"
     type "PoP with Peering"
+    Longitude -96.80667
   ]
   node [
     id 14
     label "Las Vegas"
-    Country "United States"
-    Longitude -115.13722
     Latitude 36.17497
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -115.13722
   ]
   node [
     id 15
     label "Phoenix"
-    Country "United States"
-    Longitude -112.07404
     Latitude 33.44838
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -112.07404
   ]
   node [
     id 16
     label "Los Angeles"
-    Country "United States"
-    Longitude -118.24368
     Latitude 34.05223
+    Country "United States"
     type "PoP with Peering"
+    Longitude -118.24368
   ]
   node [
     id 17
     label "Santa Clara"
-    Country "United States"
-    Longitude -121.95524
     Latitude 37.35411
+    Country "United States"
     type "PoP with Peering"
+    Longitude -121.95524
   ]
   node [
     id 18
     label "Sacramento"
-    Country "United States"
-    Longitude -121.4944
     Latitude 38.58157
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -121.4944
   ]
   node [
     id 19
     label "Santa Rose"
-    Country "United States"
-    Longitude -122.71443
     Latitude 38.44047
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -122.71443
   ]
   node [
     id 20
     label "Reno"
-    Country "United States"
-    Longitude -119.8138
     Latitude 39.52963
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -119.8138
   ]
   node [
     id 21
     label "Eugene"
-    Country "United States"
-    Longitude -123.08675
     Latitude 44.05207
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -123.08675
   ]
   node [
     id 22
     label "Bend"
     geocode_append "OR"
-    Country "United States"
-    Longitude -121.31531
     Latitude 44.05817
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -121.31531
   ]
   node [
     id 23
     label "Salem"
-    Country "United States"
-    Longitude -123.0351
     Latitude 44.9429
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -123.0351
   ]
   node [
     id 24
     label "Ashburn"
-    Country "United States"
-    Longitude -77.48749
     Latitude 39.04372
+    Country "United States"
     type "PoP with Peering"
+    Longitude -77.48749
   ]
   node [
     id 25
     label "New York"
-    Country "United States"
-    Longitude -74.00597
     Latitude 40.71427
+    Country "United States"
     type "PoP with Peering"
+    Longitude -74.00597
   ]
   node [
     id 26
     label "Rancho Cordova"
-    Country "United States"
-    Longitude -121.30273
     Latitude 38.58907
+    Country "United States"
     type "Customer Service PoP"
+    Longitude -121.30273
   ]
   edge [
     source 0
@@ -297,7 +297,7 @@ graph [
   ]
   edge [
     source 6
-    target 7
+    target 23
   ]
   edge [
     source 6
@@ -305,7 +305,7 @@ graph [
   ]
   edge [
     source 6
-    target 23
+    target 7
   ]
   edge [
     source 7
@@ -333,11 +333,11 @@ graph [
   ]
   edge [
     source 11
-    target 25
+    target 12
   ]
   edge [
     source 11
-    target 12
+    target 25
   ]
   edge [
     source 12

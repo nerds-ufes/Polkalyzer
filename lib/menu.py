@@ -35,6 +35,10 @@ def mainMenu():
         pplt.OverheadLinePlot(df,f'output/Plots/OverheadLP')
         pplt.StateOverheadJointPlot(df,f'output/Plots/OverheadJP')
         pplt.OverheadCompare(df,f'output/Plots/OverheadCompare')
+        pplt.StateOverheadConcentration(df,f'output/Plots/StateOverheadConcentration')
+        pplt.StateOverheadDistribution(df,f'output/Plots/StateOverheadDistribution')
+        pplt.StateOverheadHeatMap1(50,f'output/Plots/StateOverheadHeatMap1')
+        pplt.StateOverheadHeatMap2(df,f'output/Plots/StateOverheadHeatMap2')
     elif(choice == 2):
         pplt.OverheadPointPlot(df,f'output/Plots/OverheadPP-{algorithm}-WithOtimization')
         pplt.OverheadLinePlot(df,f'output/Plots/OverheadLP-{algorithm}-WithOtimization')

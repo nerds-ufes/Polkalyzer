@@ -2,167 +2,167 @@ graph [
   DateObtained "22/10/10"
   GeoLocation "USA"
   GeoExtent "Country"
+  Customer 1
   Network "Electric Lightwave"
+  IX 0
   Provenance "Secondary"
-  Access 0
+  Note "Now the carrier wholesale BU of Integra Telecom"
   Source "http://www.isp-planet.com/img/backbones/eli_backbone.jpg"
   Version "1.0"
-  DateType "Historic"
   Type "COM"
-  Backbone 1
-  Commercial 0
-  label "eli_backbone"
-  Customer 1
-  IX 0
   LastAccess "3/08/10"
-  Note "Now the carrier wholesale BU of Integra Telecom"
+  Access 0
   Layer "IP"
   Classification "Backbone Transit Customer"
   Creator "Topology Zoo Toolset"
-  Developed 1
+  DateType "Historic"
   Transit 1
+  Backbone 1
+  Commercial 0
   NetworkDate "<2005"
+  label "eli_backbone"
   Testbed 0
+  Developed 1
   SvnVersion 8123
   node [
     id 0
     label "Spokane"
+    Latitude 47.65878
     Country "United States"
     Longitude -117.42605
-    Latitude 47.65878
   ]
   node [
     id 1
     label "Boise"
+    Latitude 43.6135
     Country "United States"
     Longitude -116.20345
-    Latitude 43.6135
   ]
   node [
     id 2
     label "Salt Lake City"
+    Latitude 40.76078
     Country "United States"
     Longitude -111.89105
-    Latitude 40.76078
   ]
   node [
     id 3
     label "Minneapolis"
+    Latitude 44.97997
     Country "United States"
     Longitude -93.26384
-    Latitude 44.97997
   ]
   node [
     id 4
     label "Chicago"
+    Latitude 41.85003
     Country "United States"
     Longitude -87.65005
-    Latitude 41.85003
   ]
   node [
     id 5
     label "Rochester"
+    Latitude 43.15478
     Country "United States"
     Longitude -77.61556
-    Latitude 43.15478
   ]
   node [
     id 6
     label "Newark"
+    Latitude 40.73566
     Country "United States"
     Longitude -74.17237
-    Latitude 40.73566
   ]
   node [
     id 7
     label "Washington DC"
+    Latitude 38.89511
     Country "United States"
     Longitude -77.03637
-    Latitude 38.89511
   ]
   node [
     id 8
     label "Atlanta"
+    Latitude 33.749
     Country "United States"
     Longitude -84.38798
-    Latitude 33.749
   ]
   node [
     id 9
     label "Houston"
+    Latitude 29.76328
     Country "United States"
     Longitude -95.36327
-    Latitude 29.76328
   ]
   node [
     id 10
     label "Dallas"
+    Latitude 32.78306
     Country "United States"
     Longitude -96.80667
-    Latitude 32.78306
   ]
   node [
     id 11
     label "Phoenix"
+    Latitude 33.44838
     Country "United States"
     Longitude -112.07404
-    Latitude 33.44838
   ]
   node [
     id 12
     label "Las Vegas"
+    Latitude 36.17497
     Country "United States"
     Longitude -115.13722
-    Latitude 36.17497
   ]
   node [
     id 13
     label "Los Angeles"
+    Latitude 34.05223
     Country "United States"
     Longitude -118.24368
-    Latitude 34.05223
   ]
   node [
     id 14
     label "Sacramento"
+    Latitude 38.58157
     Country "United States"
     Longitude -121.4944
-    Latitude 38.58157
   ]
   node [
     id 15
     label "Palo Alto"
+    Latitude 37.44188
     Country "United States"
     Longitude -122.14302
-    Latitude 37.44188
   ]
   node [
     id 16
     label "Santa Clara"
+    Latitude 37.35411
     Country "United States"
     Longitude -121.95524
-    Latitude 37.35411
   ]
   node [
     id 17
     label "Portland"
+    Latitude 45.52345
     Country "United States"
     Longitude -122.67621
-    Latitude 45.52345
   ]
   node [
     id 18
     label "Tacoma"
+    Latitude 47.25288
     Country "United States"
     Longitude -122.44429
-    Latitude 47.25288
   ]
   node [
     id 19
     label "Seattle"
+    Latitude 47.60621
     Country "United States"
     Longitude -122.33207
-    Latitude 47.60621
   ]
   edge [
     source 0

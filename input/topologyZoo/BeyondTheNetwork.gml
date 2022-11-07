@@ -2,251 +2,251 @@ graph [
   DateObtained "19/10/10"
   GeoLocation "USA"
   GeoExtent "Country"
+  Customer 1
   Network "BTN "
+  IX 0
   Provenance "Secondary"
-  Access 1
+  Note "Now PCCW Global AS3491"
   Source "http://www.isp-planet.com/img/backbones/BTN.jpg"
   Version "1.0"
-  DateType "Historic"
   Type "COM"
-  Backbone 1
-  Commercial 0
-  label "beyond_the_network"
-  Customer 1
-  IX 0
   LastAccess "3/08/10"
-  Note "Now PCCW Global AS3491"
+  Access 1
   Layer "IP"
   Classification "Backbone Transit Access Customer"
   Creator "Topology Zoo Toolset"
-  Developed 0
+  DateType "Historic"
   Transit 1
+  Backbone 1
+  Commercial 0
   NetworkDate "<2005"
+  label "beyond_the_network"
   Testbed 0
+  Developed 0
   SvnVersion 8123
   node [
     id 0
     label "Denver"
-    Country "United States"
-    Longitude -104.9847
     Internal 1
     Latitude 39.73915
+    Country "United States"
+    Longitude -104.9847
   ]
   node [
     id 1
     label "Minneapolis"
-    Country "United States"
-    Longitude -93.26384
     Internal 1
     Latitude 44.97997
+    Country "United States"
+    Longitude -93.26384
   ]
   node [
     id 2
     label "Chicago"
-    Country "United States"
-    Longitude -87.65005
     Internal 1
     Latitude 41.85003
+    Country "United States"
+    Longitude -87.65005
   ]
   node [
     id 3
     label "Kansas City"
-    Country "United States"
-    Longitude -94.62746
     Internal 1
     Latitude 39.11417
+    Country "United States"
+    Longitude -94.62746
   ]
   node [
     id 4
     label "Atlanta"
-    Country "United States"
-    Longitude -84.38798
     Internal 1
     Latitude 33.749
+    Country "United States"
+    Longitude -84.38798
   ]
   node [
     id 5
     label "Raleigh"
-    Country "United States"
-    Longitude -78.63861
     Internal 1
     Latitude 35.7721
+    Country "United States"
+    Longitude -78.63861
   ]
   node [
     id 6
     label "Ashburn"
-    Country "United States"
-    Longitude -77.48749
     Internal 1
     Latitude 39.04372
+    Country "United States"
+    Longitude -77.48749
   ]
   node [
     id 7
     label "Vienna"
-    Country "United States"
-    Longitude -77.26526
     Internal 1
     Latitude 38.90122
+    Country "United States"
+    Longitude -77.26526
   ]
   node [
     id 8
     label "Washington"
-    Country "United States"
-    Longitude -77.03637
     Internal 1
     Latitude 38.89511
+    Country "United States"
+    Longitude -77.03637
   ]
   node [
     id 9
     label "Baltimore"
-    Country "United States"
-    Longitude -76.61219
     Internal 1
     Latitude 39.29038
+    Country "United States"
+    Longitude -76.61219
   ]
   node [
     id 10
     label "Philadelphia"
-    Country "United States"
-    Longitude -75.16379
     Internal 1
     Latitude 39.95234
+    Country "United States"
+    Longitude -75.16379
   ]
   node [
     id 11
     label "New York"
-    Country "United States"
-    Longitude -74.00597
     Internal 1
     Latitude 40.71427
+    Country "United States"
+    Longitude -74.00597
   ]
   node [
     id 12
     label "Boston"
-    Country "United States"
-    Longitude -71.05977
     Internal 1
     Latitude 42.35843
+    Country "United States"
+    Longitude -71.05977
   ]
   node [
     id 13
     label "Detroit"
-    Country "United States"
-    Longitude -83.04575
     Internal 1
     Latitude 42.33143
+    Country "United States"
+    Longitude -83.04575
   ]
   node [
     id 14
     label "Seattle"
-    Country "United States"
-    Longitude -122.33207
     Internal 1
     Latitude 47.60621
+    Country "United States"
+    Longitude -122.33207
   ]
   node [
     id 15
     label "Portland"
-    Country "United States"
-    Longitude -122.67621
     Internal 1
     Latitude 45.52345
+    Country "United States"
+    Longitude -122.67621
   ]
   node [
     id 16
     label "Sacramento"
-    Country "United States"
-    Longitude -121.4944
     Internal 1
     Latitude 38.58157
+    Country "United States"
+    Longitude -121.4944
   ]
   node [
     id 17
     label "San Jose"
-    Country "United States"
-    Longitude -121.89496
     Internal 1
     Latitude 37.33939
+    Country "United States"
+    Longitude -121.89496
   ]
   node [
     id 18
     label "Sunnyvale"
-    Country "United States"
-    Longitude -122.03635
     Internal 1
     Latitude 37.36883
+    Country "United States"
+    Longitude -122.03635
   ]
   node [
     id 19
     label "Los Angeles"
-    Country "United States"
-    Longitude -118.24368
     Internal 1
     Latitude 34.05223
+    Country "United States"
+    Longitude -118.24368
   ]
   node [
     id 20
     label "San Diego"
-    Country "United States"
-    Longitude -117.15726
     Internal 1
     Latitude 32.71533
+    Country "United States"
+    Longitude -117.15726
   ]
   node [
     id 21
     label "Phoenix"
-    Country "United States"
-    Longitude -112.07404
     Internal 1
     Latitude 33.44838
+    Country "United States"
+    Longitude -112.07404
   ]
   node [
     id 22
     label "San Antonio"
-    Country "United States"
-    Longitude -98.49363
     Internal 1
     Latitude 29.42412
+    Country "United States"
+    Longitude -98.49363
   ]
   node [
     id 23
     label "Dallas"
-    Country "United States"
-    Longitude -96.80667
     Internal 1
     Latitude 32.78306
+    Country "United States"
+    Longitude -96.80667
   ]
   node [
     id 24
     label "Houston"
-    Country "United States"
-    Longitude -95.36327
     Internal 1
     Latitude 29.76328
+    Country "United States"
+    Longitude -95.36327
   ]
   node [
     id 25
     label "New Orleans"
-    Country "United States"
-    Longitude -90.07507
     Internal 1
     Latitude 29.95465
+    Country "United States"
+    Longitude -90.07507
   ]
   node [
     id 26
     label "Miami"
-    Country "United States"
-    Longitude -80.19366
     Internal 1
     Latitude 25.77427
+    Country "United States"
+    Longitude -80.19366
   ]
   node [
     id 27
     label "Tampa"
-    Country "United States"
-    Longitude -82.45843
     Internal 1
     Latitude 27.94752
+    Country "United States"
+    Longitude -82.45843
   ]
   node [
     id 28
@@ -326,10 +326,10 @@ graph [
   node [
     id 41
     label "Pittsburgh"
-    Country "United States"
-    Longitude -79.99589
     Internal 1
     Latitude 40.44062
+    Country "United States"
+    Longitude -79.99589
   ]
   node [
     id 42
@@ -544,7 +544,7 @@ graph [
   ]
   edge [
     source 14
-    target 39
+    target 15
   ]
   edge [
     source 14
@@ -552,7 +552,7 @@ graph [
   ]
   edge [
     source 14
-    target 15
+    target 39
   ]
   edge [
     source 15

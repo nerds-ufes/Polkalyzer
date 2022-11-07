@@ -2,188 +2,188 @@ graph [
   DateObtained "22/10/10"
   GeoLocation "Czech Republic"
   GeoExtent "Country"
+  Customer 1
   Network "GTS Czech Republic"
+  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.gtsce.com/en/map/index.shtml"
   Version "1.0"
-  DateType "Current"
   Type "COM"
-  Backbone 1
-  Commercial 0
-  label "gts_czech_republic"
-  Customer 1
-  IX 0
   LastAccess "22/10/10"
   Layer "IP"
   Classification "Backbone Transit Customer "
   Creator "Topology Zoo Toolset"
-  Developed 0
+  DateType "Current"
   Transit 1
+  Backbone 1
+  Commercial 0
   NetworkDate "2010-10"
+  label "gts_czech_republic"
   Testbed 0
+  Developed 0
   SvnVersion 8123
   node [
     id 0
     label "Opava"
-    Country "Czech Republic"
-    Longitude 17.90257
     Internal 1
     Latitude 49.93866
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 17.90257
   ]
   node [
     id 1
     label "Olomouc"
-    Country "Czech Republic"
-    Longitude 17.25175
     Internal 1
     Latitude 49.59552
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 17.25175
   ]
   node [
     id 2
     label "Ceska Trebova"
-    Country "Czech Republic"
-    Longitude 16.44413
     Internal 1
     Latitude 49.90436
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 16.44413
   ]
   node [
     id 3
     label "Liberec"
-    Country "Czech Republic"
-    Longitude 15.05619
     Internal 1
     Latitude 50.76711
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 15.05619
   ]
   node [
     id 4
     label "Semily"
-    Country "Czech Republic"
-    Longitude 15.33552
     Internal 1
     Latitude 50.60191
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 15.33552
   ]
   node [
     id 5
     label "Kladno"
-    Country "Czech Republic"
-    Longitude 14.10285
     Internal 1
     Latitude 50.14734
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 14.10285
   ]
   node [
     id 6
     label "Prague"
-    Country "Czech Republic"
-    Longitude 14.42076
     Internal 1
     Latitude 50.08804
+    Country "Czech Republic"
     type "Large Node"
+    Longitude 14.42076
   ]
   node [
     id 7
     label "Mlada Boleslay"
-    Country "Czech Republic"
-    Longitude 14.90318
     Internal 1
     Latitude 50.41135
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 14.90318
   ]
   node [
     id 8
     label "Beroun"
-    Country "Czech Republic"
-    Longitude 14.072
     Internal 1
     Latitude 49.96382
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 14.072
   ]
   node [
     id 9
     label "Karlovy vary"
-    Country "Czech Republic"
-    Longitude 12.87117
     Internal 1
     Latitude 50.23271
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 12.87117
   ]
   node [
     id 10
     label "Chomutov"
-    Country "Czech Republic"
-    Longitude 13.41779
     Internal 1
     Latitude 50.46048
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 13.41779
   ]
   node [
     id 11
     label "Plzen"
-    Country "Czech Republic"
-    Longitude 13.37759
     Internal 1
     Latitude 49.74747
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 13.37759
   ]
   node [
     id 12
     label "Klatovy"
-    Country "Czech Republic"
-    Longitude 13.29505
     Internal 1
     Latitude 49.39552
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 13.29505
   ]
   node [
     id 13
     label "Pisek"
-    Country "Czech Republic"
-    Longitude 14.1475
     Internal 1
     Latitude 49.3088
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 14.1475
   ]
   node [
     id 14
     label "Ceske Budejovice"
-    Country "Czech Republic"
-    Longitude 14.47434
     Internal 1
     Latitude 48.97447
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 14.47434
   ]
   node [
     id 15
     label "Tabor"
-    Country "Czech Republic"
-    Longitude 14.6578
     Internal 1
     Latitude 49.41441
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 14.6578
   ]
   node [
     id 16
     label "Jindrichuv Hradec"
-    Country "Czech Republic"
-    Longitude 15.00301
     Internal 1
     Latitude 49.14404
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 15.00301
   ]
   node [
     id 17
     label "Havlickuv Brod"
-    Country "Czech Republic"
-    Longitude 15.58069
     Internal 1
     Latitude 49.60785
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 15.58069
   ]
   node [
     id 18
@@ -194,56 +194,56 @@ graph [
   node [
     id 19
     label "Brno"
-    Country "Czech Republic"
-    Longitude 16.60796
     Internal 1
     Latitude 49.19522
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 16.60796
   ]
   node [
     id 20
     label "Hodonin"
-    Country "Czech Republic"
-    Longitude 17.13244
     Internal 1
     Latitude 48.84893
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 17.13244
   ]
   node [
     id 21
     label "Ostrokovice"
-    Country "Czech Republic"
-    Longitude 15.5
     Internal 1
     Latitude 49.03333
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 15.5
   ]
   node [
     id 22
     label "Zlin"
-    Country "Czech Republic"
-    Longitude 17.66667
     Internal 1
     Latitude 49.21667
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 17.66667
   ]
   node [
     id 23
     label "Ostrava"
-    Country "Czech Republic"
-    Longitude 18.28204
     Internal 1
     Latitude 49.83465
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 18.28204
   ]
   node [
     id 24
     label "Prostejov"
-    Country "Czech Republic"
-    Longitude 17.11184
     Internal 1
     Latitude 49.47188
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 17.11184
   ]
   node [
     id 25
@@ -263,20 +263,20 @@ graph [
   node [
     id 28
     label "Kolin"
-    Country "Czech Republic"
-    Longitude 15.20057
     Internal 1
     Latitude 50.02814
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 15.20057
   ]
   node [
     id 29
     label "Usti nad Labem"
-    Country "Czech Republic"
-    Longitude 14.03227
     Internal 1
     Latitude 50.6607
+    Country "Czech Republic"
     type "Small Node"
+    Longitude 14.03227
   ]
   node [
     id 30

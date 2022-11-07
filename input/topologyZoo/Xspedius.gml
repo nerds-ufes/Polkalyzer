@@ -2,298 +2,298 @@ graph [
   DateObtained "15/11/10"
   GeoLocation "USA"
   GeoExtent "Country"
+  Customer 1
   Network "Xspedius"
+  IX 0
   Provenance "Secondary"
   Access 1
   Source "http://www.isp-planet.com/resources/backbones/xspedius.html"
   Version "1.0"
-  DateType "Current"
   Type "COM"
-  Backbone 1
-  Commercial 0
-  label "xspedius"
-  Customer 1
-  IX 0
   LastAccess "15/11/10"
   Layer "IP"
   Classification "Backbone Customer Access"
   Creator "Topology Zoo Toolset"
-  Developed 1
+  DateType "Current"
   Transit 0
+  Backbone 1
+  Commercial 0
   NetworkDate "2010-11"
+  label "xspedius"
   Testbed 0
+  Developed 1
   SvnVersion 8123
   node [
     id 0
     label "Las Vegas"
-    Country "United States"
-    Longitude -115.13722
     Latitude 36.17497
+    Country "United States"
     type "Core"
+    Longitude -115.13722
   ]
   node [
     id 1
     label "Colorado Springs"
-    Country "United States"
-    Longitude -104.82136
     Latitude 38.83388
+    Country "United States"
     type "Core"
+    Longitude -104.82136
   ]
   node [
     id 2
     label "Albuquerque"
-    Country "United States"
-    Longitude -106.65114
     Latitude 35.08449
+    Country "United States"
     type "Core"
+    Longitude -106.65114
   ]
   node [
     id 3
     label "Tucson"
-    Country "United States"
-    Longitude -110.92648
     Latitude 32.22174
+    Country "United States"
     type "Core"
+    Longitude -110.92648
   ]
   node [
     id 4
     label "El Paso"
-    Country "United States"
-    Longitude -106.48693
     Latitude 31.75872
+    Country "United States"
     type "Core"
+    Longitude -106.48693
   ]
   node [
     id 5
     label "Fort Worth"
-    Country "United States"
-    Longitude -97.32085
     Latitude 32.72541
+    Country "United States"
     type "Core"
+    Longitude -97.32085
   ]
   node [
     id 6
     label "San Antonio"
-    Country "United States"
-    Longitude -98.49363
     Latitude 29.42412
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -98.49363
   ]
   node [
     id 7
     label "Houston"
-    Country "United States"
-    Longitude -95.36327
     Latitude 29.76328
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -95.36327
   ]
   node [
     id 8
     label "Dallas"
-    Country "United States"
-    Longitude -96.80667
     Latitude 32.78306
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -96.80667
   ]
   node [
     id 9
     label "Little Rock"
-    Country "United States"
-    Longitude -92.28959
     Latitude 34.74648
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -92.28959
   ]
   node [
     id 10
     label "Tulsa"
-    Country "United States"
-    Longitude -95.99278
     Latitude 36.15398
+    Country "United States"
     type "Core"
+    Longitude -95.99278
   ]
   node [
     id 11
     label "Kansas City"
-    Country "United States"
-    Longitude -94.62746
     Latitude 39.11417
+    Country "United States"
     type "Core"
+    Longitude -94.62746
   ]
   node [
     id 12
     label "Baltimore"
-    Country "United States"
-    Longitude -76.61219
     Latitude 39.29038
+    Country "United States"
     type "Core"
+    Longitude -76.61219
   ]
   node [
     id 13
     label "Lexington"
-    Country "United States"
-    Longitude -84.47772
     Latitude 37.98869
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -84.47772
   ]
   node [
     id 14
     label "Louisville"
-    Country "United States"
-    Longitude -85.75941
     Latitude 38.25424
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -85.75941
   ]
   node [
     id 15
     label "Nashville"
-    Country "United States"
-    Longitude -86.78444
     Latitude 36.16589
+    Country "United States"
     type "Core"
+    Longitude -86.78444
   ]
   node [
     id 16
     label "Memphis"
-    Country "United States"
-    Longitude -90.04898
     Latitude 35.14953
+    Country "United States"
     type "Core"
+    Longitude -90.04898
   ]
   node [
     id 17
     label "Jackson"
-    Country "United States"
-    Longitude -90.18481
     Latitude 32.29876
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -90.18481
   ]
   node [
     id 18
     label "Lake Charles"
-    Country "United States"
-    Longitude -93.2044
     Latitude 30.21309
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -93.2044
   ]
   node [
     id 19
     label "Baton Rouge"
-    Country "United States"
-    Longitude -91.15455
     Latitude 30.45075
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -91.15455
   ]
   node [
     id 20
     label "Mobile"
-    Country "United States"
-    Longitude -88.04305
     Latitude 30.69436
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -88.04305
   ]
   node [
     id 21
     label "New Orleans"
-    Country "United States"
-    Longitude -90.07507
     Latitude 29.95465
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -90.07507
   ]
   node [
     id 22
     label "Montgomery"
-    Country "United States"
-    Longitude -86.29997
     Latitude 32.36681
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -86.29997
   ]
   node [
     id 23
     label "Birmingham"
-    Country "United States"
-    Longitude -86.80249
     Latitude 33.52066
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -86.80249
   ]
   node [
     id 24
     label "Atlanta"
-    Country "United States"
-    Longitude -84.38798
     Latitude 33.749
+    Country "United States"
     type "Core"
+    Longitude -84.38798
   ]
   node [
     id 25
     label "Greenville"
-    Country "United States"
-    Longitude -82.39401
     Latitude 34.85262
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -82.39401
   ]
   node [
     id 26
     label "Columbia"
-    Country "United States"
-    Longitude -81.03481
     Latitude 34.00071
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -81.03481
   ]
   node [
     id 27
     label "Charlotte"
-    Country "United States"
-    Longitude -80.84313
     Latitude 35.22709
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -80.84313
   ]
   node [
     id 28
     label "Greensboro"
-    Country "United States"
-    Longitude -79.79198
     Latitude 36.07264
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -79.79198
   ]
   node [
     id 29
     label "Columbus"
-    Country "United States"
-    Longitude -82.99879
     Latitude 39.96118
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -82.99879
   ]
   node [
     id 30
     label "Jacksonville"
-    Country "United States"
-    Longitude -81.65565
     Latitude 30.33218
+    Country "United States"
     type "Core"
+    Longitude -81.65565
   ]
   node [
     id 31
     label "Fort Lauderdale"
-    Country "United States"
-    Longitude -80.14338
     Latitude 26.12231
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -80.14338
   ]
   node [
     id 32
     label "Tampa"
-    Country "United States"
-    Longitude -82.45843
     Latitude 27.94752
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -82.45843
   ]
   node [
     id 33
     label "Austin"
-    Country "United States"
-    Longitude -97.74306
     Latitude 30.26715
+    Country "United States"
     type "ATM/FR/IP Node"
+    Longitude -97.74306
   ]
   edge [
     source 0

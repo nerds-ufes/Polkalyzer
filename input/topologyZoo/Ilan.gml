@@ -2,97 +2,97 @@ graph [
   DateObtained "21/10/10"
   GeoLocation "Israel"
   GeoExtent "Country"
+  Customer 1
   Network "ILAN"
+  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.iucc.ac.il/eng/info/units/Ilan2.htm"
   Version "1.0"
-  DateType "Historic"
   Type "REN"
-  Backbone 1
-  Commercial 0
-  label "ILAN"
-  Customer 1
-  IX 0
   LastAccess "21/10/10"
   Layer "IP"
   Classification "Backbone Customer"
   Creator "Topology Zoo Toolset"
-  Developed 1
+  DateType "Historic"
   Transit 0
+  Backbone 1
+  Commercial 0
   NetworkDate "2008"
+  label "ILAN"
   Testbed 0
+  Developed 1
   SvnVersion 8123
   node [
     id 0
     label "Open University"
-    Country "Israel"
-    Longitude 34.86667
     Internal 1
     Latitude 32.18333
+    Country "Israel"
     type "Purple Node"
+    Longitude 34.86667
   ]
   node [
     id 1
     label "Haifa University"
-    Country "Israel"
-    Longitude 34.98917
     Internal 1
     Latitude 32.81556
+    Country "Israel"
     type "Purple Node"
+    Longitude 34.98917
   ]
   node [
     id 2
     label "Technion"
-    Country "Israel"
-    Longitude 34.98917
     Internal 1
     Latitude 32.81556
+    Country "Israel"
     type "Purple Node"
+    Longitude 34.98917
   ]
   node [
     id 3
     label "Bar Ilan University"
-    Country "Israel"
-    Longitude 34.81417
     Internal 1
     Latitude 32.08056
+    Country "Israel"
     type "Purple Node"
+    Longitude 34.81417
   ]
   node [
     id 4
     label "Hebrew University"
-    Country "Israel"
-    Longitude 35.2253
     Internal 1
     Latitude 31.77902
+    Country "Israel"
     type "Purple Node"
+    Longitude 35.2253
   ]
   node [
     id 5
     label "Ben Gurion University"
-    Country "Israel"
-    Longitude 34.95167
     Internal 1
     Latitude 29.56111
+    Country "Israel"
+    Longitude 34.95167
   ]
   node [
     id 6
     label "Weizmann Institute"
-    Country "Israel"
-    Longitude 34.81861
     Internal 1
     Latitude 31.89694
+    Country "Israel"
     type "Purple Node"
+    Longitude 34.81861
   ]
   node [
     id 7
     label "Tel Aviv University"
-    Country "Israel"
-    Longitude 34.76667
     Internal 1
     Latitude 32.06667
+    Country "Israel"
     type "Purple Node"
+    Longitude 34.76667
   ]
   node [
     id 8
@@ -112,20 +112,20 @@ graph [
   node [
     id 11
     label "Petach Tikva GigaPoP"
-    Country "Israel"
-    Longitude 34.88503
     Internal 1
     Latitude 32.09174
+    Country "Israel"
     type "Orange Node"
+    Longitude 34.88503
   ]
   node [
     id 12
     label "Tel Aviv GigaPoP"
-    Country "Israel"
-    Longitude 34.76667
     Internal 1
     Latitude 32.06667
+    Country "Israel"
     type "Orange Node"
+    Longitude 34.76667
   ]
   node [
     id 13
@@ -194,8 +194,8 @@ graph [
     source 9
     target 11
     LinkSpeed "2.5"
-    LinkSpeedUnits "G"
     LinkLabel "2.5Gb/s"
+    LinkSpeedUnits "G"
     LinkSpeedRaw 2500000000.0
   ]
   edge [
@@ -206,8 +206,8 @@ graph [
     source 12
     target 13
     LinkSpeed "600"
-    LinkSpeedUnits "M"
     LinkLabel "600Mb/s"
+    LinkSpeedUnits "M"
     LinkSpeedRaw 600000000.0
   ]
 ]

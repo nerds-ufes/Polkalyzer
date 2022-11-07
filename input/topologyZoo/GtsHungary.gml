@@ -2,134 +2,134 @@ graph [
   DateObtained "22/10/10"
   GeoLocation "Hungary"
   GeoExtent "Country"
+  Customer 1
   Network "GTS Hungary"
+  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.gtsce.com/en/map/index.shtml"
   Version "1.0"
-  DateType "Current"
   Type "COM"
-  Backbone 1
-  Commercial 0
-  label "gts_hungary"
-  Customer 1
-  IX 0
   LastAccess "22/10/10"
   Layer "IP"
   Classification "Backbone Transit Customer "
   Creator "Topology Zoo Toolset"
-  Developed 0
+  DateType "Current"
   Transit 1
+  Backbone 1
+  Commercial 0
   NetworkDate "2010-10"
+  label "gts_hungary"
   Testbed 0
+  Developed 0
   SvnVersion 8123
   node [
     id 0
     label "Sopron"
-    Country "Hungary"
-    Longitude 16.6
     Internal 1
     Latitude 47.68333
+    Country "Hungary"
     type "Small Node"
+    Longitude 16.6
   ]
   node [
     id 1
     label "Szombathely"
-    Country "Hungary"
-    Longitude 16.62155
     Internal 1
     Latitude 47.23088
+    Country "Hungary"
     type "Small Node"
+    Longitude 16.62155
   ]
   node [
     id 2
     label "Zalaegerszeg"
-    Country "Hungary"
-    Longitude 16.84389
     Internal 1
     Latitude 46.84
+    Country "Hungary"
     type "Small Node"
+    Longitude 16.84389
   ]
   node [
     id 3
     label "Nagykanizsa"
-    Country "Hungary"
-    Longitude 16.99104
     Internal 1
     Latitude 46.45347
+    Country "Hungary"
     type "Small Node"
+    Longitude 16.99104
   ]
   node [
     id 4
     label "Szekesfehervar"
-    Country "Hungary"
-    Longitude 18.41034
     Internal 1
     Latitude 47.18995
+    Country "Hungary"
     type "Small Node"
+    Longitude 18.41034
   ]
   node [
     id 5
     label "Veszprem"
-    Country "Hungary"
-    Longitude 17.91149
     Internal 1
     Latitude 47.09327
+    Country "Hungary"
     type "Small Node"
+    Longitude 17.91149
   ]
   node [
     id 6
     label "Gyor"
-    Country "Hungary"
-    Longitude 17.63512
     Internal 1
     Latitude 47.68333
+    Country "Hungary"
     type "Small Node"
+    Longitude 17.63512
   ]
   node [
     id 7
     label "Tatabanya"
-    Country "Hungary"
-    Longitude 18.41667
     Internal 1
     Latitude 47.56667
+    Country "Hungary"
     type "Small Node"
+    Longitude 18.41667
   ]
   node [
     id 8
     label "Budapest"
-    Country "Hungary"
-    Longitude 19.03991
     Internal 1
     Latitude 47.49801
+    Country "Hungary"
     type "Large Node"
+    Longitude 19.03991
   ]
   node [
     id 9
     label "Vac"
-    Country "Hungary"
-    Longitude 19.13333
     Internal 1
     Latitude 47.78333
+    Country "Hungary"
     type "Small Node"
+    Longitude 19.13333
   ]
   node [
     id 10
     label "Salgotarjan"
-    Country "Hungary"
-    Longitude 19.80303
     Internal 1
     Latitude 48.09872
+    Country "Hungary"
     type "Small Node"
+    Longitude 19.80303
   ]
   node [
     id 11
     label "Godollo"
-    Country "Hungary"
-    Longitude 19.36667
     Internal 1
     Latitude 47.6
+    Country "Hungary"
     type "Small Node"
+    Longitude 19.36667
   ]
   node [
     id 12
@@ -140,110 +140,110 @@ graph [
   node [
     id 13
     label "Miskolc"
-    Country "Hungary"
-    Longitude 20.78333
     Internal 1
     Latitude 48.1
+    Country "Hungary"
     type "Small Node"
+    Longitude 20.78333
   ]
   node [
     id 14
     label "Nyiregyhaza"
-    Country "Hungary"
-    Longitude 21.71671
     Internal 1
     Latitude 47.95539
+    Country "Hungary"
     type "Small Node"
+    Longitude 21.71671
   ]
   node [
     id 15
     label "Debrecen"
-    Country "Hungary"
-    Longitude 21.63333
     Internal 1
     Latitude 47.53333
+    Country "Hungary"
     type "Small Node"
+    Longitude 21.63333
   ]
   node [
     id 16
     label "Szolnok"
-    Country "Hungary"
-    Longitude 20.2
     Internal 1
     Latitude 47.18333
+    Country "Hungary"
     type "Small Node"
+    Longitude 20.2
   ]
   node [
     id 17
     label "Dunaujvaros"
-    Country "Hungary"
-    Longitude 18.93333
     Internal 1
     Latitude 46.98333
+    Country "Hungary"
     type "Small Node"
+    Longitude 18.93333
   ]
   node [
     id 18
     label "Kecskemet"
-    Country "Hungary"
-    Longitude 19.69128
     Internal 1
     Latitude 46.90618
+    Country "Hungary"
     type "Small Node"
+    Longitude 19.69128
   ]
   node [
     id 19
     label "Baja"
-    Country "Hungary"
-    Longitude 18.96667
     Internal 1
     Latitude 46.18333
+    Country "Hungary"
     type "Small Node"
+    Longitude 18.96667
   ]
   node [
     id 20
     label "Szekszard"
-    Country "Hungary"
-    Longitude 18.71667
     Internal 1
     Latitude 46.35
+    Country "Hungary"
     type "Small Node"
+    Longitude 18.71667
   ]
   node [
     id 21
     label "Kaposvar"
-    Country "Hungary"
-    Longitude 17.8
     Internal 1
     Latitude 46.36667
+    Country "Hungary"
     type "Small Node"
+    Longitude 17.8
   ]
   node [
     id 22
     label "Siofok"
-    Country "Hungary"
-    Longitude 18.05
     Internal 1
     Latitude 46.9
+    Country "Hungary"
     type "Small Node"
+    Longitude 18.05
   ]
   node [
     id 23
     label "Szeged"
-    Country "Hungary"
-    Longitude 20.14824
     Internal 1
     Latitude 46.253
+    Country "Hungary"
     type "Small Node"
+    Longitude 20.14824
   ]
   node [
     id 24
     label "Bekescsaba"
-    Country "Hungary"
-    Longitude 21.1
     Internal 1
     Latitude 46.68333
+    Country "Hungary"
     type "Small Node"
+    Longitude 21.1
   ]
   node [
     id 25
@@ -268,11 +268,11 @@ graph [
   node [
     id 31
     label "Pecs"
-    Country "Hungary"
-    Longitude 18.23333
     Internal 1
     Latitude 46.08333
+    Country "Hungary"
     type "Small Node"
+    Longitude 18.23333
   ]
   edge [
     source 0
