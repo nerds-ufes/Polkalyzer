@@ -1,0 +1,404 @@
+*File Index
+1 Aarnet
+2 Abvt
+3 Aconet
+4 Agis
+5 Ai3
+6 Airtel
+7 Ans
+8 Arn
+9 Arnes
+10 AsnetAm
+11 Atmnet
+12 AttMpls
+13 Azrena
+14 Bbnplanet
+15 Bellcanada
+16 Bellsouth
+17 Belnet
+18 BeyondTheNetwork
+19 Bics
+20 Biznet
+21 Bren
+22 BsonetEurope
+23 BtAsiaPac
+24 BtEurope
+25 BtLatinAmerica
+26 BtNorthAmerica
+27 Canerie
+28 Carnet
+29 Cernet
+30 Cesnet2
+31 Chinanet
+32 Claranet
+33 Cogentco
+34 Colt
+35 Columbus
+36 Compuserve
+37 CrlNetworkServices
+38 Cudi
+39 Cwix
+40 Cynet
+41 Darkstrand
+42 Dataxchange
+43 Deltacom
+44 DeutscheTelekomIpTransitIpPopsOnly
+45 DialtelecomCz
+46 Digex
+47 Easynet
+48 Eenet
+49 EliBackbone
+50 Epoch
+51 Ernet
+52 Esnet
+53 Eunetworks
+54 Fccn
+55 Forthnet
+56 Funet
+57 Garr
+58 Gblnet
+59 Geant
+60 Getnet
+61 Globalcenter
+62 Globenet
+63 Goodnet
+64 Gridnet
+65 Grnet
+66 Harnet
+67 Hibernia
+68 HurricaneElectric
+69 Ibm
+70 Iij
+71 Iinet
+72 Ilan
+73 IntNetworkmap
+74 Integra
+75 Intellifiber
+76 Internet2
+77 Internetmci
+78 Internode
+79 Intranetwork
+80 Ion
+81 IowaStatewideFiberMap
+82 Iris
+83 Istar
+84 Jgn2Plus
+85 Karen
+86 Kdl
+87 Kreonet
+88 LambdaNet
+89 Layer42
+90 Litnet
+91 Marwan
+92 Missouri
+93 Napnet
+94 Navigata
+95 Netrail
+96 NetworkUsa
+97 Nextgen
+98 Niif
+99 Noel
+100 Nordu
+101 Nsfcnet
+102 Nsfnet
+103 Ntelos
+104 Opteglobe
+105 Oxford
+106 Packetexchange
+107 Padi
+108 Palmetto
+109 Peer1
+110 Pern
+111 Psinet
+112 Psnc
+113 Quest
+114 RedBestel
+115 Rnp
+116 Sago
+117 Sanet
+118 Savvis
+119 Shentel
+120 Sinet
+121 Singaren
+122 Spiralight
+123 Sprint
+124 Sunet
+125 Surfnet
+126 Switch
+127 Syringa
+128 TLex
+129 TataNld
+130 Telcove
+131 Tinet
+132 Tw
+133 Twaren
+134 Ulaknet
+135 UniC
+136 Uninet
+137 Uninett
+138 Uran
+139 UsCarrier
+140 UsSignal
+141 Uunet
+142 Vinaren
+143 VisionNet
+144 WideJpn
+145 Xeex
+146 Xspedius
+147 York
+
+*GeoLocation
+Canada [27, 83, 94]
+Louisiana, Texas, USA [96]
+Hungary [98]
+Italy [57]
+Czech Republic [30, 45]
+USA [4, 7, 11, 12, 14, 16, 18, 36, 37, 39, 41, 42, 43, 46, 49, 50, 52, 60, 61, 63, 64, 69, 74, 75, 76, 77, 86, 89, 93, 95, 102, 111, 118, 123, 130, 132, 140, 141, 145, 146]
+Missouri [92]
+Canada, USA [15]
+Georgia, Alabama, Florida, USA [139]
+Norway [137]
+Netherlands [125]
+Slovakia [117]
+Palestine [107]
+West Virginia, Virginia, USA [103]
+Tokyo, Japan [128]
+Massachusetts, New Hampshire, Maine, USA [105]
+USA, Europe, Japan [2]
+Europe [19, 22, 24, 32, 34, 53, 58, 59, 73, 100, 104]
+North Carolina, South Carolina, USA [108]
+Israel [72]
+Australia [1, 71, 78, 97]
+Algeria [8]
+Singapore [121]
+Wisconsin, USA [122]
+Slovenia [9]
+China [29, 31]
+Armenia [10]
+Denmark [135]
+Belgium [17]
+Germany [88]
+Bulgaria [21]
+Hong Kong [66]
+Tennessee, USA [82]
+New York State, USA [80]
+Iowa, USA [81]
+Florida and Georgia, USA [116]
+Ukraine [138]
+Washington State, USA [99]
+Maryland, West Virginia, Virginia, USA [119]
+Asia-Pacific [5, 23, 113, 136]
+Lithuania [90]
+Poland [112]
+Indonesia [20]
+Idaho, USA [127]
+Turkey [134]
+North America [26]
+Morocco [91]
+Sweden [124]
+Vietnam [142]
+Croatia [28]
+Virginia, Tennessee, West Virginia, Maryland, USA [79]
+Finland, Sweden, Denmark, Norway, Iceland [56]
+Switzerland [126]
+Montana, USA [143]
+New Zealand [85]
+Taiwan [133]
+Brazil [115]
+Latin America [25, 35, 62]
+Pakistan [110]
+Portugal [54]
+Estonia [48]
+Mexico [38, 114]
+Cyprus [40]
+Global [6, 44, 47, 68, 106, 109, 129, 131]
+India [51]
+Azerbaijan [13]
+United Kingdom [67]
+Austria [3]
+Beijing, China [101]
+UK [147]
+Greece [55, 65]
+Japan [84, 120, 144]
+South Korea [87]
+Japan, USA [70]
+USA, Europe [33]
+
+Named:
+Canada [Canerie,Istar,Navigata]
+Louisiana, Texas, USA [NetworkUsa]
+Hungary [Niif]
+Italy [Garr]
+Czech Republic [Cesnet2,DialtelecomCz]
+USA [Agis,Ans,Atmnet,AttMpls,Bbnplanet,Bellsouth,BeyondTheNetwork,Compuserve,CrlNetworkServices,Cwix,Darkstrand,Dataxchange,Deltacom,Digex,EliBackbone,Epoch,Esnet,Getnet,Globalcenter,Goodnet,Gridnet,Ibm,Integra,Intellifiber,Internet2,Internetmci,Kdl,Layer42,Napnet,Netrail,Nsfnet,Psinet,Savvis,Sprint,Telcove,Tw,UsSignal,Uunet,Xeex,Xspedius]
+Missouri [Missouri]
+Canada, USA [Bellcanada]
+Georgia, Alabama, Florida, USA [UsCarrier]
+Norway [Uninett]
+Netherlands [Surfnet]
+Slovakia [Sanet]
+Palestine [Padi]
+West Virginia, Virginia, USA [Ntelos]
+Tokyo, Japan [TLex]
+Massachusetts, New Hampshire, Maine, USA [Oxford]
+USA, Europe, Japan [Abvt]
+Europe [Bics,BsonetEurope,BtEurope,Claranet,Colt,Eunetworks,Gblnet,Geant,IntNetworkmap,Nordu,Opteglobe]
+North Carolina, South Carolina, USA [Palmetto]
+Israel [Ilan]
+Australia [Aarnet,Iinet,Internode,Nextgen]
+Algeria [Arn]
+Singapore [Singaren]
+Wisconsin, USA [Spiralight]
+Slovenia [Arnes]
+China [Cernet,Chinanet]
+Armenia [AsnetAm]
+Denmark [UniC]
+Belgium [Belnet]
+Germany [LambdaNet]
+Bulgaria [Bren]
+Hong Kong [Harnet]
+Tennessee, USA [Iris]
+New York State, USA [Ion]
+Iowa, USA [IowaStatewideFiberMap]
+Florida and Georgia, USA [Sago]
+Ukraine [Uran]
+Washington State, USA [Noel]
+Maryland, West Virginia, Virginia, USA [Shentel]
+Asia-Pacific [Ai3,BtAsiaPac,Quest,Uninet]
+Lithuania [Litnet]
+Poland [Psnc]
+Indonesia [Biznet]
+Idaho, USA [Syringa]
+Turkey [Ulaknet]
+North America [BtNorthAmerica]
+Morocco [Marwan]
+Sweden [Sunet]
+Vietnam [Vinaren]
+Croatia [Carnet]
+Virginia, Tennessee, West Virginia, Maryland, USA [Intranetwork]
+Finland, Sweden, Denmark, Norway, Iceland [Funet]
+Switzerland [Switch]
+Montana, USA [VisionNet]
+New Zealand [Karen]
+Taiwan [Twaren]
+Brazil [Rnp]
+Latin America [BtLatinAmerica,Columbus,Globenet]
+Pakistan [Pern]
+Portugal [Fccn]
+Estonia [Eenet]
+Mexico [Cudi,RedBestel]
+Cyprus [Cynet]
+Global [Airtel,DeutscheTelekomIpTransitIpPopsOnly,Easynet,HurricaneElectric,Packetexchange,Peer1,TataNld,Tinet]
+India [Ernet]
+Azerbaijan [Azrena]
+United Kingdom [Hibernia]
+Austria [Aconet]
+Beijing, China [Nsfcnet]
+UK [York]
+Greece [Forthnet,Grnet]
+Japan [Jgn2Plus,Sinet,WideJpn]
+South Korea [Kreonet]
+Japan, USA [Iij]
+USA, Europe [Cogentco]
+
+*GeoExtent
+Unavailable [91, 125]
+Metro [101, 128]
+Country [1, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 20, 21, 27, 28, 29, 30, 31, 36, 37, 38, 39, 40, 41, 42, 43, 45, 46, 48, 49, 50, 51, 52, 54, 55, 57, 60, 61, 63, 64, 65, 66, 67, 69, 71, 72, 74, 75, 76, 77, 78, 83, 84, 85, 86, 87, 88, 89, 90, 93, 94, 95, 97, 98, 102, 107, 109, 110, 111, 112, 114, 115, 117, 118, 120, 121, 123, 124, 126, 130, 132, 133, 134, 135, 137, 138, 140, 141, 142, 144, 145, 146, 147]
+Region [79, 80, 81, 82, 92, 96, 99, 103, 105, 108, 116, 119, 122, 127, 139, 143]
+Global [6, 44, 47, 68, 106, 129, 131]
+Country+ [2, 15, 33, 56, 70]
+Continent [5, 19, 22, 23, 24, 25, 26, 32, 34, 35, 53, 58, 59, 62, 73, 100, 104, 113, 136]
+
+Named:
+Unavailable [Marwan,Surfnet]
+Metro [Nsfcnet,TLex]
+Country [Aarnet,Aconet,Agis,Ans,Arn,Arnes,AsnetAm,Atmnet,AttMpls,Azrena,Bbnplanet,Bellsouth,Belnet,BeyondTheNetwork,Biznet,Bren,Canerie,Carnet,Cernet,Cesnet2,Chinanet,Compuserve,CrlNetworkServices,Cudi,Cwix,Cynet,Darkstrand,Dataxchange,Deltacom,DialtelecomCz,Digex,Eenet,EliBackbone,Epoch,Ernet,Esnet,Fccn,Forthnet,Garr,Getnet,Globalcenter,Goodnet,Gridnet,Grnet,Harnet,Hibernia,Ibm,Iinet,Ilan,Integra,Intellifiber,Internet2,Internetmci,Internode,Istar,Jgn2Plus,Karen,Kdl,Kreonet,LambdaNet,Layer42,Litnet,Napnet,Navigata,Netrail,Nextgen,Niif,Nsfnet,Padi,Peer1,Pern,Psinet,Psnc,RedBestel,Rnp,Sanet,Savvis,Sinet,Singaren,Sprint,Sunet,Switch,Telcove,Tw,Twaren,Ulaknet,UniC,Uninett,Uran,UsSignal,Uunet,Vinaren,WideJpn,Xeex,Xspedius,York]
+Region [Intranetwork,Ion,IowaStatewideFiberMap,Iris,Missouri,NetworkUsa,Noel,Ntelos,Oxford,Palmetto,Sago,Shentel,Spiralight,Syringa,UsCarrier,VisionNet]
+Global [Airtel,DeutscheTelekomIpTransitIpPopsOnly,Easynet,HurricaneElectric,Packetexchange,TataNld,Tinet]
+Country+ [Abvt,Bellcanada,Cogentco,Funet,Iij]
+Continent [Ai3,Bics,BsonetEurope,BtAsiaPac,BtEurope,BtLatinAmerica,BtNorthAmerica,Claranet,Colt,Columbus,Eunetworks,Gblnet,Geant,Globenet,IntNetworkmap,Nordu,Opteglobe,Quest,Uninet]
+
+*Classification
+No value [2, 4, 7, 11, 14, 19, 20, 22, 36, 37, 39, 42, 46, 50, 58, 60, 61, 63, 64, 69, 77, 83, 89, 93, 95, 102, 111, 118, 123, 141, 143, 145, 147]
+Backbone Transit Access Customer [6, 15, 16, 18, 32, 45, 71, 78, 79, 105, 129]
+Testbed Backbone Transit Customer [23, 24, 25, 26]
+Backbone Transit Testbed? [57]
+Backbone Customer [9, 10, 13, 21, 28, 29, 41, 48, 51, 56, 72, 86, 90, 91, 92, 94, 98, 112, 116, 117, 127, 135, 138]
+Backbone Transit? Customer [47, 81, 139]
+Backbone Customer Transit? [70]
+Backbone [1, 3, 8, 38, 40, 85, 87, 96, 107, 108, 110, 115, 120, 121, 122, 124, 134, 136, 137, 140, 142]
+Backbone Customer Transit [126]
+Backbone Transit Access [55]
+Testbed Backbone [5, 101]
+Testbed Backbone Customer [54, 84, 125]
+Backbone Customer? [17]
+Backbone Customer? Transit? [100]
+Testbed Backbone Transit [30, 59, 133, 144]
+Backbone Customer Access [103, 119, 146]
+Backbone Transit? [76, 99]
+Backbone Transit Customer [12, 31, 33, 34, 35, 44, 49, 52, 53, 62, 65, 68, 73, 74, 75, 80, 82, 88, 97, 106, 109, 113, 114, 130, 132]
+Backbone Transit Customer? [104]
+Backbone Transit [27, 43, 66, 67, 128, 131]
+
+Named:
+No value [Abvt,Agis,Ans,Atmnet,Bbnplanet,Bics,Biznet,BsonetEurope,Compuserve,CrlNetworkServices,Cwix,Dataxchange,Digex,Epoch,Gblnet,Getnet,Globalcenter,Goodnet,Gridnet,Ibm,Internetmci,Istar,Layer42,Napnet,Netrail,Nsfnet,Psinet,Savvis,Sprint,Uunet,VisionNet,Xeex,York]
+Backbone Transit Access Customer [Airtel,Bellcanada,Bellsouth,BeyondTheNetwork,Claranet,DialtelecomCz,Iinet,Internode,Intranetwork,Oxford,TataNld]
+Testbed Backbone Transit Customer [BtAsiaPac,BtEurope,BtLatinAmerica,BtNorthAmerica]
+Backbone Transit Testbed? [Garr]
+Backbone Customer [Arnes,AsnetAm,Azrena,Bren,Carnet,Cernet,Darkstrand,Eenet,Ernet,Funet,Ilan,Kdl,Litnet,Marwan,Missouri,Navigata,Niif,Psnc,Sago,Sanet,Syringa,UniC,Uran]
+Backbone Transit? Customer [Easynet,IowaStatewideFiberMap,UsCarrier]
+Backbone Customer Transit? [Iij]
+Backbone [Aarnet,Aconet,Arn,Cudi,Cynet,Karen,Kreonet,NetworkUsa,Padi,Palmetto,Pern,Rnp,Sinet,Singaren,Spiralight,Sunet,Ulaknet,Uninet,Uninett,UsSignal,Vinaren]
+Backbone Customer Transit [Switch]
+Backbone Transit Access [Forthnet]
+Testbed Backbone [Ai3,Nsfcnet]
+Testbed Backbone Customer [Fccn,Jgn2Plus,Surfnet]
+Backbone Customer? [Belnet]
+Backbone Customer? Transit? [Nordu]
+Testbed Backbone Transit [Cesnet2,Geant,Twaren,WideJpn]
+Backbone Customer Access [Ntelos,Shentel,Xspedius]
+Backbone Transit? [Internet2,Noel]
+Backbone Transit Customer [AttMpls,Chinanet,Cogentco,Colt,Columbus,DeutscheTelekomIpTransitIpPopsOnly,EliBackbone,Esnet,Eunetworks,Globenet,Grnet,HurricaneElectric,IntNetworkmap,Integra,Intellifiber,Ion,Iris,LambdaNet,Nextgen,Packetexchange,Peer1,Quest,RedBestel,Telcove,Tw]
+Backbone Transit Customer? [Opteglobe]
+Backbone Transit [Canerie,Deltacom,Harnet,Hibernia,TLex,Tinet]
+
+*Developed
+No value [3, 5, 18, 23, 24, 25, 26, 71, 75, 79, 81, 86, 97, 103, 114]
+developed [1, 2, 4, 7, 9, 11, 12, 14, 15, 16, 17, 19, 22, 27, 30, 33, 36, 37, 39, 40, 41, 42, 43, 45, 46, 49, 50, 52, 54, 55, 56, 57, 58, 59, 60, 61, 63, 64, 65, 66, 69, 70, 72, 74, 76, 77, 78, 80, 82, 83, 84, 85, 87, 88, 89, 92, 93, 94, 95, 96, 99, 100, 102, 104, 105, 108, 111, 113, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 130, 132, 133, 135, 137, 139, 140, 141, 143, 144, 145, 146, 147]
+multi [6, 32, 34, 35, 44, 47, 53, 62, 67, 68, 73, 106, 109, 129, 131]
+developing [8, 10, 13, 20, 21, 28, 29, 31, 38, 48, 51, 90, 91, 98, 101, 107, 110, 112, 115, 134, 136, 138, 142]
+
+Named:
+No value [Aconet,Ai3,BeyondTheNetwork,BtAsiaPac,BtEurope,BtLatinAmerica,BtNorthAmerica,Iinet,Intellifiber,Intranetwork,IowaStatewideFiberMap,Kdl,Nextgen,Ntelos,RedBestel]
+developed [Aarnet,Abvt,Agis,Ans,Arnes,Atmnet,AttMpls,Bbnplanet,Bellcanada,Bellsouth,Belnet,Bics,BsonetEurope,Canerie,Cesnet2,Cogentco,Compuserve,CrlNetworkServices,Cwix,Cynet,Darkstrand,Dataxchange,Deltacom,DialtelecomCz,Digex,EliBackbone,Epoch,Esnet,Fccn,Forthnet,Funet,Garr,Gblnet,Geant,Getnet,Globalcenter,Goodnet,Gridnet,Grnet,Harnet,Ibm,Iij,Ilan,Integra,Internet2,Internetmci,Internode,Ion,Iris,Istar,Jgn2Plus,Karen,Kreonet,LambdaNet,Layer42,Missouri,Napnet,Navigata,Netrail,NetworkUsa,Noel,Nordu,Nsfnet,Opteglobe,Oxford,Palmetto,Psinet,Quest,Sago,Sanet,Savvis,Shentel,Sinet,Singaren,Spiralight,Sprint,Sunet,Surfnet,Switch,Syringa,TLex,Telcove,Tw,Twaren,UniC,Uninett,UsCarrier,UsSignal,Uunet,VisionNet,WideJpn,Xeex,Xspedius,York]
+multi [Airtel,Claranet,Colt,Columbus,DeutscheTelekomIpTransitIpPopsOnly,Easynet,Eunetworks,Globenet,Hibernia,HurricaneElectric,IntNetworkmap,Packetexchange,Peer1,TataNld,Tinet]
+developing [Arn,AsnetAm,Azrena,Biznet,Bren,Carnet,Cernet,Chinanet,Cudi,Eenet,Ernet,Litnet,Marwan,Niif,Nsfcnet,Padi,Pern,Psnc,Rnp,Ulaknet,Uninet,Uran,Vinaren]
+
+*Layer
+No value [107, 142]
+Fibre [43, 45, 73, 75, 76, 79, 80, 81, 86, 88, 92, 96, 97, 103, 105, 108, 112, 114, 116, 119, 122, 124, 126, 127, 139, 140, 143]
+Layer 1 [21]
+Layer 2 [128]
+NA [8, 91, 125]
+Telephone [129]
+Simplified Fibre [41, 53, 56, 104]
+IP [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 42, 44, 46, 47, 48, 49, 50, 51, 52, 54, 55, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 74, 77, 78, 82, 83, 84, 85, 87, 89, 90, 93, 94, 95, 98, 99, 100, 101, 102, 106, 109, 110, 111, 113, 115, 117, 118, 120, 121, 123, 130, 131, 132, 133, 134, 135, 136, 137, 138, 141, 144, 145, 146, 147]
+
+Named:
+No value [Padi,Vinaren]
+Fibre [Deltacom,DialtelecomCz,IntNetworkmap,Intellifiber,Internet2,Intranetwork,Ion,IowaStatewideFiberMap,Kdl,LambdaNet,Missouri,NetworkUsa,Nextgen,Ntelos,Oxford,Palmetto,Psnc,RedBestel,Sago,Shentel,Spiralight,Sunet,Switch,Syringa,UsCarrier,UsSignal,VisionNet]
+Layer 1 [Bren]
+Layer 2 [TLex]
+NA [Arn,Marwan,Surfnet]
+Telephone [TataNld]
+Simplified Fibre [Darkstrand,Eunetworks,Funet,Opteglobe]
+IP [Aarnet,Abvt,Aconet,Agis,Ai3,Airtel,Ans,Arnes,AsnetAm,Atmnet,AttMpls,Azrena,Bbnplanet,Bellcanada,Bellsouth,Belnet,BeyondTheNetwork,Bics,Biznet,BsonetEurope,BtAsiaPac,BtEurope,BtLatinAmerica,BtNorthAmerica,Canerie,Carnet,Cernet,Cesnet2,Chinanet,Claranet,Cogentco,Colt,Columbus,Compuserve,CrlNetworkServices,Cudi,Cwix,Cynet,Dataxchange,DeutscheTelekomIpTransitIpPopsOnly,Digex,Easynet,Eenet,EliBackbone,Epoch,Ernet,Esnet,Fccn,Forthnet,Garr,Gblnet,Geant,Getnet,Globalcenter,Globenet,Goodnet,Gridnet,Grnet,Harnet,Hibernia,HurricaneElectric,Ibm,Iij,Iinet,Ilan,Integra,Internetmci,Internode,Iris,Istar,Jgn2Plus,Karen,Kreonet,Layer42,Litnet,Napnet,Navigata,Netrail,Niif,Noel,Nordu,Nsfcnet,Nsfnet,Packetexchange,Peer1,Pern,Psinet,Quest,Rnp,Sanet,Savvis,Sinet,Singaren,Sprint,Telcove,Tinet,Tw,Twaren,Ulaknet,UniC,Uninet,Uninett,Uran,Uunet,WideJpn,Xeex,Xspedius,York]
+
+*Type
+COM [2, 4, 6, 7, 11, 12, 14, 15, 16, 18, 19, 20, 22, 23, 24, 25, 26, 31, 32, 33, 34, 35, 36, 37, 39, 41, 42, 43, 44, 45, 46, 47, 49, 50, 53, 55, 58, 60, 61, 62, 63, 64, 67, 68, 69, 70, 71, 73, 74, 75, 77, 78, 79, 80, 81, 82, 83, 86, 88, 89, 92, 93, 94, 95, 96, 97, 99, 102, 103, 104, 105, 106, 108, 109, 111, 113, 114, 116, 118, 119, 122, 123, 127, 129, 130, 131, 132, 139, 140, 141, 143, 145, 146, 147]
+REN [1, 3, 5, 8, 9, 10, 13, 17, 21, 27, 28, 29, 30, 38, 40, 48, 51, 52, 54, 56, 57, 59, 65, 66, 72, 76, 84, 85, 87, 90, 91, 98, 100, 101, 107, 110, 112, 115, 117, 120, 121, 124, 125, 126, 128, 133, 134, 135, 136, 137, 138, 142, 144]
+
+Named:
+COM [Abvt,Agis,Airtel,Ans,Atmnet,AttMpls,Bbnplanet,Bellcanada,Bellsouth,BeyondTheNetwork,Bics,Biznet,BsonetEurope,BtAsiaPac,BtEurope,BtLatinAmerica,BtNorthAmerica,Chinanet,Claranet,Cogentco,Colt,Columbus,Compuserve,CrlNetworkServices,Cwix,Darkstrand,Dataxchange,Deltacom,DeutscheTelekomIpTransitIpPopsOnly,DialtelecomCz,Digex,Easynet,EliBackbone,Epoch,Eunetworks,Forthnet,Gblnet,Getnet,Globalcenter,Globenet,Goodnet,Gridnet,Hibernia,HurricaneElectric,Ibm,Iij,Iinet,IntNetworkmap,Integra,Intellifiber,Internetmci,Internode,Intranetwork,Ion,IowaStatewideFiberMap,Iris,Istar,Kdl,LambdaNet,Layer42,Missouri,Napnet,Navigata,Netrail,NetworkUsa,Nextgen,Noel,Nsfnet,Ntelos,Opteglobe,Oxford,Packetexchange,Palmetto,Peer1,Psinet,Quest,RedBestel,Sago,Savvis,Shentel,Spiralight,Sprint,Syringa,TataNld,Telcove,Tinet,Tw,UsCarrier,UsSignal,Uunet,VisionNet,Xeex,Xspedius,York]
+REN [Aarnet,Aconet,Ai3,Arn,Arnes,AsnetAm,Azrena,Belnet,Bren,Canerie,Carnet,Cernet,Cesnet2,Cudi,Cynet,Eenet,Ernet,Esnet,Fccn,Funet,Garr,Geant,Grnet,Harnet,Ilan,Internet2,Jgn2Plus,Karen,Kreonet,Litnet,Marwan,Niif,Nordu,Nsfcnet,Padi,Pern,Psnc,Rnp,Sanet,Sinet,Singaren,Sunet,Surfnet,Switch,TLex,Twaren,Ulaknet,UniC,Uninet,Uninett,Uran,Vinaren,WideJpn]

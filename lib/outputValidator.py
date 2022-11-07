@@ -31,3 +31,11 @@ def validateNodeSender(fixedNodeSender):
         return 0
     except:
         return 1
+
+def extractFilename(path):
+    fileName = path.split('/')
+    fileName = fileName.pop()
+    fileName = fileName.split('.')
+    fileName = fileName.pop(0)
+    return fileName
+    #print(fileName)

@@ -3,6 +3,7 @@ import networkx as nx
 from numpy import number
 import pandas as pd
 
+import lib.outputValidator as ov
 import lib.overheadCalc as oc
 import lib.toProbe as tpb
 from lib.readTopologyZoo import GraphToMST
@@ -86,8 +87,8 @@ def extractOptimalNodeSender(G): #Optimal on DP as tiebreaker, Optimal on MPOLKA
     #print('<Escolhida> ',optimalNodeSender)
     return optimalNodeSender
 
-def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender):
-    G,topologyName,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G,algorithm)
+def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName):
+    G,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G,algorithm)
     nodeSender = 0
     if(fixedNodeSender == -1):
         nodeSender = extractOptimalNodeSender(G)
@@ -99,9 +100,11 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender):
     df = toDataframe(df,topologyName,isBackBone,numberOfNodes,numberOfEdges)
     return df
 
+
 def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender):
     listTopology = glob.glob('input/topologyZoo/*.gml')
     for topology in listTopology:
+        topologyName = ov.extractFilename(topology)
         G = nx.read_gml(topology,destringizer=int,label='id')
-        df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender)
+        df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName)
     return df

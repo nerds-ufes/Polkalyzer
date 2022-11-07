@@ -39,7 +39,8 @@ def removeBadValues():
     for topology in listTopology: #TEST 2
         try:
             G = nx.read_gml(topology,destringizer=int,label='id')
-            df = tdf.appendGraphToDataFrame(df,G=G,algorithm='prim',fixedNodeSender=-1)
+            topologyName = ov.extractFilename(topology)
+            df = tdf.appendGraphToDataFrame(df,G=G,algorithm='prim',fixedNodeSender=-1,topologyName=topologyName)
 
         except:
             cont2 += 1
@@ -53,8 +54,10 @@ def removeBadValues():
         pathBadValue = 'input/topologyZoo/' + badValue + '.gml'
         print('<READ ERROR 3>',pathBadValue,'removed')
         os.remove(pathBadValue)
-    df2 = df.loc[df['Star Probability'] < 0.4] #Filtering Topologys Star Based
+    df1 = df.loc[df['Replication Average per Node'] >= 1] #Drop bad Values
+    df2 = df1.loc[df1['Star Probability'] < 0.4] #Filtering Topologys Star Based
     df2 = df2.sort_values(by=['Star Probability','Max Replication'],ascending=[False,False])
+    print('Filtered Topologys Path: output/Filtered Topologys/')
     for goodTopology in df2['Topology'].tolist(): #FOR NODES THAT GRAPHS THAT AREN'T STRONGLY CONNECTED
         filtereds += 1
         input_pathGoodValue = 'input/topologyZoo/' + goodTopology + '.gml'
@@ -63,7 +66,7 @@ def removeBadValues():
         G = nx.read_gml(input_pathGoodValue,destringizer=int,label='id')
         T = nx.minimum_spanning_tree(G,algorithm='prim')
         drawTopology(G,T,output_pathGoodValue)
-        print(goodTopology,'filtered to',output_pathGoodValue)
+        print('Filtered:',goodTopology)
 
     df2.to_csv('output/Filtered Topologys/OptimalOverhead.csv')
 
@@ -75,7 +78,7 @@ def removeBadValues():
 
 def drawTopology(G,T,path):
     ov.validateEntirePath(f'{path}/draw')
-    pos = nx.spring_layout(G)
+    pos = nx.kamada_kawai_layout(G)
     nx.draw(
         G, pos, edge_color='black', width=1, linewidths=1,
         node_size=500, node_color='pink', alpha=0.9,
@@ -94,10 +97,10 @@ def drawTopology(G,T,path):
     plt.close()
 
 def GraphToMST(G,algorithm):
-    topologyName = G.graph['label'] #Hooka o atributo network que identifica o nome da Topologia
+    #topologyName = G.graph['label'] #Hooka o atributo network que identifica o nome da Topologia
     isBackBone = G.graph['Backbone'] #Hooka o atributo backbone que identifica se a topologia é de backbone
     numberOfNodes = G.number_of_nodes()
     numberOfEdges = G.number_of_edges() #Hooka o numero de edges antes de extrair a MST
     T = nx.minimum_spanning_tree(G,algorithm=algorithm)
     #drawTopology(G,T,f'output/Topology/{topologyName}')
-    return T,topologyName,isBackBone,numberOfNodes,numberOfEdges
+    return T,isBackBone,numberOfNodes,numberOfEdges
