@@ -4,9 +4,9 @@ import lib.overheadCalc as oc
 sonda = []
 sondaTemp = []
 
-sondaMPolka = []
-sondaMPINT = []
-sondaINTClassico = []
+sondaMPolka = list()
+sondaMPINT = list()
+sondaINTClassico = list()
 
 def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
     visited[v] = True
@@ -33,10 +33,15 @@ def dfs_init(G,v):
     oc.replicationReset()
     oc.overheadReset()
     dfs(G,v,visited,hops=0,previousHop=0)
+    return sonda.copy()
 
-def exportProbe(topologyName):
+def exportProbe(topologyName,fixedNodeSender):
     ov.validateEntirePath(f'output/Topology/{topologyName}')
-    with open(f'output/Topology/{topologyName}/Probe.txt','w') as arq:
-        arq.write('MPINT: %s\n'%sondaMPINT)
-        arq.write('MPolka: %s\n'%sondaMPolka)
-        arq.write('INT Clássico: %s\n'%sondaINTClassico)
+    if(fixedNodeSender == -1):
+        with open(f'output/Topology/{topologyName}/Probe.txt','w') as arq:
+            arq.write('MPINT: %s\n'%sondaMPINT)
+            arq.write('MPolka: %s\n'%sondaMPolka)
+            arq.write('INT Clássico: %s\n'%sondaINTClassico)
+    else:
+        with open(f'output/Topology/{topologyName}/Probe.txt','w') as arq:
+            arq.write('%s\n'%sonda)

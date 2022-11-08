@@ -9,7 +9,7 @@ import lib.toProbe as tpb
 from lib.readTopologyZoo import GraphToMST,drawTopology
 
 
-def toDataframe(df,topology,isBackBone,numberOfNodes,numberOfEdges):
+def toDataframe(df,topology,isBackBone,numberOfNodes,numberOfEdges,fixedNodeSender):
     #Filtering Datasets
     if(numberOfNodes > 50):
         return df
@@ -26,15 +26,26 @@ def toDataframe(df,topology,isBackBone,numberOfNodes,numberOfEdges):
     replication = oc.extractReplication()
     
     #Overhead por abordagem
-    overheadDP_mPolkaCRC8 = sum(sum(overhead_DataPlane_MPolkaCRC8,[]))
-    overheadDP_mPolkaCRC16 = sum(sum(overhead_DataPlane_MPolkaCRC16,[]))
-    overheadDP_mPINT = sum(sum(overhead_DataPlane_MPINT,[]))
-    overheadDP_INTClassico = sum(sum(overhead_DataPlane_INTClassico,[]))
+    if(fixedNodeSender == -1):
+        overheadDP_mPolkaCRC8 = oc.optimalOverhead_DataPlane_MPolkaCRC8
+        overheadDP_mPolkaCRC16 = oc.optimalOverhead_DataPlane_MPolkaCRC16
+        overheadDP_mPINT = oc.optimalOverhead_DataPlane_MPINT
+        overheadDP_INTClassico = oc.optimalOverhead_DataPlane_INTClassico
 
-    overheadCP_mPolkaCRC8 = sum(overhead_ControlPlane_MPolkaCRC8)
-    overheadCP_mPolkaCRC16 = sum(overhead_ControlPlane_MPolkaCRC16)
-    overheadCP_mPINT = sum(overhead_ControlPlane_MPINT)
-    overheadCP_INTClassico = sum(overhead_ControlPlane_INTClassico)
+        overheadCP_mPolkaCRC8 = oc.optimalOverhead_ControlPlane_MPolkaCRC8
+        overheadCP_mPolkaCRC16 = oc.optimalOverhead_ControlPlane_MPolkaCRC16
+        overheadCP_mPINT = oc.optimalOverhead_ControlPlane_MPINT
+        overheadCP_INTClassico = oc.optimalOverhead_ControlPlane_INTClassico
+    else:
+        overheadDP_mPolkaCRC8 = sum(sum(overhead_DataPlane_MPolkaCRC8,[]))
+        overheadDP_mPolkaCRC16 = sum(sum(overhead_DataPlane_MPolkaCRC16,[]))
+        overheadDP_mPINT = sum(sum(overhead_DataPlane_MPINT,[]))
+        overheadDP_INTClassico = sum(sum(overhead_DataPlane_INTClassico,[]))
+
+        overheadCP_mPolkaCRC8 = sum(overhead_ControlPlane_MPolkaCRC8)
+        overheadCP_mPolkaCRC16 = sum(overhead_ControlPlane_MPolkaCRC16)
+        overheadCP_mPINT = sum(overhead_ControlPlane_MPINT)
+        overheadCP_INTClassico = sum(overhead_ControlPlane_INTClassico)
 
     replicationPerNode = sum(replication)/numberOfNodes
     maxReplication = max(replication)
@@ -76,7 +87,7 @@ def extractOptimalNodeSender(G,approach): #Optimal on DP as tiebreaker, Optimal 
         elif(approach == 'MPolka'):
             overheadDP, overheadCP = oc.extractMPolkaCRC8Overhead()
         elif(approach == 'MPINT'):
-            overheadDP, overheadCP = oc.extractMPINTOverhead
+            overheadDP, overheadCP = oc.extractMPINTOverhead()
 
         #print('Possivel Matriz de Sondas: ',sonda,'Overhead DP:',overheadDP,'| Overhead CP',overheadCP)
 
@@ -104,38 +115,37 @@ def extractOptimalNodeSender(G,approach): #Optimal on DP as tiebreaker, Optimal 
     #print('<Escolhida> ',optimalNodeSender)
     if(approach == 'INTClassico'):
         tpb.sondaINTClassico = tpb.sonda.copy()
-        oc.optimalOverhead_DataPlane_INTClassico = oc.overhead_DataPlane_INTClassico.copy()
-        oc.optimalOverhead_ControlPlane_INTClassico = oc.overhead_ControlPlane_INTClassico.copy()
-        tpb.sondaINTClassico = optimalProbe
+        oc.optimalOverhead_DataPlane_INTClassico = optimalDPOverhead
+        oc.optimalOverhead_ControlPlane_INTClassico = optimalCPOverhead
+        tpb.sondaINTClassico = optimalProbe.copy()
     elif(approach == 'MPolka'):
-        oc.optimalOverhead_DataPlane_MPolkaCRC8 = oc.overhead_DataPlane_MPolkaCRC8.copy()
-        oc.optimalOverhead_ControlPlane_MPolkaCRC8 = oc.overhead_ControlPlane_MPolkaCRC8.copy()
-        oc.optimalOverhead_DataPlane_MPolkaCRC16 = oc.overhead_DataPlane_MPolkaCRC16.copy()
-        oc.optimalOverhead_ControlPlane_MPolkaCRC16 = oc.overhead_ControlPlane_MPolkaCRC16.copy()
-        tpb.sondaMPolka = optimalProbe
+        oc.optimalOverhead_DataPlane_MPolkaCRC8 = optimalDPOverhead
+        oc.optimalOverhead_ControlPlane_MPolkaCRC8 = optimalCPOverhead
+        tpb.dfs_init(G,optimalNodeSender)
+        oc.optimalOverhead_DataPlane_MPolkaCRC16,oc.optimalOverhead_ControlPlane_MPolkaCRC16 = oc.extractMPolkaCRC16Overhead()
+        tpb.sondaMPolka = optimalProbe.copy()
     elif(approach == 'MPINT'):
-        oc.optimalOverhead_DataPlane_MPINT = oc.overhead_DataPlane_MPINT.copy()
-        oc.optimalOverhead_ControlPlane_MPINT = oc.overhead_ControlPlane_MPINT.copy()
-        tpb.sondaMPINT = optimalProbe
+        oc.optimalOverhead_DataPlane_MPINT = optimalDPOverhead
+        oc.optimalOverhead_ControlPlane_MPINT = optimalCPOverhead
+        tpb.sondaMPINT = optimalProbe.copy()
     return optimalNodeSender
 
 def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe):
     G,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G,algorithm)
-    nodeSender = 0
-    nodeSenderINTClassico = 0
-    nodeSenderMPolka = 0
-    nodeSenderMPINT = 0
     if(fixedNodeSender == -1):
         nodeSenderINTClassico = extractOptimalNodeSender(G,'INTClassico')
         nodeSenderMPolka = extractOptimalNodeSender(G,'MPolka')
         nodeSenderMPINT = extractOptimalNodeSender(G,'MPINT')
+        print(topologyName,'\n')
+        print('NS_INTClassico:',nodeSenderINTClassico,' DP:',oc.optimalOverhead_DataPlane_INTClassico)
+        print('NS_MPINT:',nodeSenderMPINT,' DP:',oc.optimalOverhead_DataPlane_MPINT)
+        print('NS_MPolka:',nodeSenderMPolka,' DP:',oc.optimalOverhead_DataPlane_MPolkaCRC8,'\n')
     else:
-        nodeSender = fixedNodeSender
+        tpb.dfs_init(G,fixedNodeSender)
 
-    tpb.dfs_init(G,nodeSender)
     if(exportProbe == True):
-        tpb.exportProbe(topologyName)
-    df = toDataframe(df,topologyName,isBackBone,numberOfNodes,numberOfEdges)
+        tpb.exportProbe(topologyName,fixedNodeSender)
+    df = toDataframe(df,topologyName,isBackBone,numberOfNodes,numberOfEdges,fixedNodeSender)
     return df
 
 

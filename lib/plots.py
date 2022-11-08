@@ -121,8 +121,8 @@ def OverheadLinePlot(df,path):
     ax[0].set_title('DataPlane')
     ax[1].set_title('ControlPlane')
     #Plot Data
-    sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0], data=dfm1,errorbar=None);
-    sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1],data=dfm2,errorbar=None);
+    sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0], data=dfm1);
+    sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1], data=dfm2);
     #Save Fig
     ov.validateEntirePath(path)
     plt.savefig(f'{path}/OverheadLP.png',dpi=120)
