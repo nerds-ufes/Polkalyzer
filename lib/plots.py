@@ -197,3 +197,24 @@ def OverheadCompare(df,path):
 
 #sns.catplot(x="Number of Nodes", y="Overhead", hue='Type', data=dfm, kind='point');
 #plt.show()
+
+def plotDataFrame(df,name,choice,algorithm,fixedNodeSender):
+
+    if(choice == 1):
+        OverheadPointPlot(df,f'output/Plots/{name}')
+        OverheadLinePlot(df,f'output/Plots/{name}')
+        OverheadCompare(df,f'output/Plots/{name}')
+    elif(choice == 2):
+        OverheadPointPlot(df,f'output/Plots/{name}/{algorithm}/optimalNodeSender')
+        OverheadLinePlot(df,f'output/Plots/{name}/{algorithm}/optimalNodeSender')
+        OverheadCompare(df,f'output/Plots/{name}/{algorithm}/optimalNodeSender')
+    elif(choice == 3):
+        OverheadPointPlot(df,f'output/Plots/{name}/{algorithm}/{fixedNodeSender}')
+        OverheadLinePlot(df,f'output/Plots/{name}/{algorithm}/{fixedNodeSender}')
+        OverheadCompare(df,f'output/Plots/{name}/{algorithm}/{fixedNodeSender}')
+
+    StateOverheadJointPlot(df,f'output/Plots/{name}/StateOverhead')
+    StateOverheadConcentration(df,f'output/Plots/{name}/StateOverhead')
+    StateOverheadDistribution(df,f'output/Plots/{name}/StateOverhead')
+    StateOverheadHeatMap1(50,f'output/Plots/{name}/StateOverhead')
+    StateOverheadHeatMap2(df,f'output/Plots/{name}/StateOverhead')

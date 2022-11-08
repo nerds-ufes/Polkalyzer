@@ -8,11 +8,12 @@ import lib.overheadCalc as oc
 import lib.toProbe as tpb
 from lib.readTopologyZoo import GraphToMST,drawTopology
 
+stronglyConnectedFlag = False
 
 def toDataframe(df,topology,isBackBone,numberOfNodes,numberOfEdges,fixedNodeSender):
     #Filtering Datasets
-    if(numberOfNodes > 30):
-        return df
+    #if(numberOfNodes > 30):
+    #    return df
 
     #Extracting Overheads
     overhead_DataPlane_MPINT,\
@@ -134,12 +135,15 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportPro
     G,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G,algorithm)
     if(fixedNodeSender == -1):
         nodeSenderINTClassico = extractOptimalNodeSender(G,'INTClassico')
-        nodeSenderMPolka = extractOptimalNodeSender(G,'MPolka')
-        nodeSenderMPINT = extractOptimalNodeSender(G,'MPINT')
-        print(topologyName,'\n')
-        print('NS_INTClassico:',nodeSenderINTClassico,' DP:',oc.optimalOverhead_DataPlane_INTClassico)
-        print('NS_MPINT:',nodeSenderMPINT,' DP:',oc.optimalOverhead_DataPlane_MPINT)
-        print('NS_MPolka:',nodeSenderMPolka,' DP:',oc.optimalOverhead_DataPlane_MPolkaCRC8,'\n')
+        tpb.dfs_init(G,nodeSenderINTClassico) #Otimizando apenas em relação ao INTClássico
+        fixedNodeSender = 1
+        #nodeSenderMPolka = extractOptimalNodeSender(G,'MPolka')
+        #nodeSenderMPINT = extractOptimalNodeSender(G,'MPINT')
+
+        #print(topologyName,'\n')
+        #print('NS_INTClassico:',nodeSenderINTClassico,' DP:',oc.optimalOverhead_DataPlane_INTClassico)
+        #print('NS_MPINT:',nodeSenderMPINT,' DP:',oc.optimalOverhead_DataPlane_MPINT)
+        #print('NS_MPolka:',nodeSenderMPolka,' DP:',oc.optimalOverhead_DataPlane_MPolkaCRC8,'\n')
     else:
         tpb.dfs_init(G,fixedNodeSender)
 
@@ -151,7 +155,6 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportPro
 
 def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw):
     listTopology = glob.glob('input/topologyZoo/*.gml')
-        
     for topology in listTopology:
         topologyName = ov.extractFilename(topology)
         G = nx.read_gml(topology,destringizer=int,label='id')

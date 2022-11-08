@@ -29,29 +29,10 @@ def mainMenu():
             removeBadValues()
 
     df,choice,algorithm,fixedNodeSender = algorithmChoice()
+    pplt.plotDataFrame(df,'AllTopologys',choice,algorithm,fixedNodeSender)
 
-    if(choice == 1):
-        pplt.OverheadPointPlot(df,f'output/Plots')
-        pplt.OverheadLinePlot(df,f'output/Plots')
-        pplt.OverheadDisPlot(df,f'output/Plots')
-        pplt.OverheadCompare(df,f'output/Plots')
-    elif(choice == 2):
-        pplt.OverheadPointPlot(df,f'output/Plots/{algorithm}/optimalNodeSender/')
-        pplt.OverheadLinePlot(df,f'output/Plots/{algorithm}/optimalNodeSender/')
-        pplt.OverheadCompare(df,f'output/Plots/{algorithm}/optimalNodeSender/')
-    elif(choice == 3):
-        pplt.OverheadPointPlot(df,f'output/Plots/{algorithm}/{fixedNodeSender}')
-        pplt.OverheadLinePlot(df,f'output/Plots/{algorithm}/{fixedNodeSender}')
-        pplt.OverheadCompare(df,f'output/Plots/{algorithm}/{fixedNodeSender}')
-    
 
-    pplt.StateOverheadJointPlot(df,f'output/Plots/StateOverhead')
-    pplt.StateOverheadConcentration(df,f'output/Plots/StateOverhead')
-    pplt.StateOverheadDistribution(df,f'output/Plots/StateOverhead')
-    pplt.StateOverheadHeatMap1(50,f'output/Plots/StateOverhead')
-    pplt.StateOverheadHeatMap2(df,f'output/Plots/StateOverhead')
-
-    return df
+    return df,choice,algorithm,fixedNodeSender
 
 def algorithmChoice():
     df = pd.DataFrame() #Empty Dataframe

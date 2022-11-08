@@ -6,6 +6,7 @@ import networkx as nx
 import lib.outputValidator as ov
 
 import lib.toDataframe as tdf
+import lib.toProbe as tpb
 from lib.downloadTopologyZoo import download_series, get_links
 
 def downloadAllTopologys():
@@ -46,7 +47,7 @@ def removeBadValues():
             cont2 += 1
             print('<READ ERROR 2>',topology,'removed')
             os.remove(topology)
-    
+
     df = df.loc[df['Where'] == 'DataPlane']
     df1 = df.loc[df['Replication Average per Node'] < 1]
     for badValue in df1['Topology'].tolist(): #FOR NODES THAT GRAPHS THAT AREN'T STRONGLY CONNECTED

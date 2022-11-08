@@ -12,6 +12,9 @@ def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
     visited[v] = True
     sondaTemp.append(v)
     grau = G.degree(v)
+    if(grau == 0):
+        raise Exception('Graph is not strongly connected')
+    
     numberOfNodes = G.number_of_nodes()
     oc.calculaReplicationInDFS(grau)
     oc.calculaOverheads(sondaTemp,hops,numberOfNodes)
