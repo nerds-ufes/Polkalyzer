@@ -100,14 +100,20 @@ def StateOverheadDistribution(df,path):
 def OverheadPointPlot(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']]
     dfm = df2.melt(id_vars=['Where','Number of Nodes'], var_name='Type', value_name='Overhead')
-    sns.pointplot(x="Number of Nodes", y="Overhead", hue=dfm[['Type','Where']].apply(tuple,axis=1), data=dfm);
+    dfm1 = dfm.loc[dfm['Where'] == 'DataPlane']
+    dfm2 = dfm.loc[dfm['Where'] == 'ControlPlane']
 
+    #Plot Config
+    f,ax= plt.subplots(2,1,figsize=(10,10),sharey=True)
+    f.suptitle('Overhead')
+    ax[0].set_title('DataPlane')
+    ax[1].set_title('ControlPlane')
+    #Plot Data
+    sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0],dodge=True, data=dfm1);
+    sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1],dodge=True,data=dfm2);
     #Save Fig
     ov.validateEntirePath(path)
     plt.savefig(f'{path}/OverheadPP.png',dpi=120)
-    #df2.sort_values(by=['Number of Nodes'],inplace=True)
-    #df2 = df2.set_index('Number of Nodes')
-    #df2.plot()
 
 def OverheadLinePlot(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']]

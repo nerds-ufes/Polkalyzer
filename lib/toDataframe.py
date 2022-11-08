@@ -11,7 +11,7 @@ from lib.readTopologyZoo import GraphToMST,drawTopology
 
 def toDataframe(df,topology,isBackBone,numberOfNodes,numberOfEdges,fixedNodeSender):
     #Filtering Datasets
-    if(numberOfNodes > 50):
+    if(numberOfNodes > 30):
         return df
 
     #Extracting Overheads
