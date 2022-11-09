@@ -1,3 +1,0 @@
-MPINT: []
-MPolka: []
-INT Clássico: []

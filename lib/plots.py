@@ -99,36 +99,48 @@ def StateOverheadDistribution(df,path):
 
 def OverheadPointPlot(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']]
+    #Rename Dataframe
+    df2.rename(columns = {'MPolka CRC8':'INT-MPolKA (CRC8)', 'MPolka CRC16':'INT-MPolKA (CRC16)','INT Clássico':'INT Original'}, inplace = True)
+    #Melting dataframe
     dfm = df2.melt(id_vars=['Where','Number of Nodes'], var_name='Type', value_name='Overhead')
     dfm1 = dfm.loc[dfm['Where'] == 'DataPlane']
     dfm2 = dfm.loc[dfm['Where'] == 'ControlPlane']
 
+    #Extract size of dataframe
+    numberOfTopologys = int((len(df2.axes[0]))/2)
+    #maxNode = df2['Number of Nodes'].max()
     #Plot Config
-    f,ax= plt.subplots(2,1,figsize=(10,10),sharey=True)
-    f.suptitle('Overhead')
+    f,ax= plt.subplots(1,2,figsize=(15,5),sharey=True)
+    f.suptitle('Overhead (Bits) (%s Topologys)' %numberOfTopologys)
+    #plt.xticks(np.arange(0, maxNode +1, 5))
     ax[0].set_title('DataPlane')
     ax[1].set_title('ControlPlane')
     #Plot Data
-    sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0],dodge=True, data=dfm1);
-    sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1],dodge=True,data=dfm2);
+    sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0],dodge=True, data=dfm1,errorbar=None);
+    sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1],dodge=True,data=dfm2,errorbar=None);
     #Save Fig
     ov.validateEntirePath(path)
     plt.savefig(f'{path}/OverheadPP.png',dpi=120)
 
 def OverheadLinePlot(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']]
+    #Rename Dataframe
+    df2.rename(columns = {'MPolka CRC8':'INT-MPolKA (CRC8)', 'MPolka CRC16':'INT-MPolKA (CRC16)','INT Clássico':'INT Original'}, inplace = True)
+    #Melting dataframe
     dfm = df2.melt(id_vars=['Where','Number of Nodes'], var_name='Type', value_name='Overhead')
     dfm1 = dfm.loc[dfm['Where'] == 'DataPlane']
     dfm2 = dfm.loc[dfm['Where'] == 'ControlPlane']
 
+    #Extract size of dataframe
+    numberOfTopologys = int((len(df2.axes[0]))/2)
     #Plot Config
-    f,ax= plt.subplots(1,2,figsize=(10,5),sharey=True)
-    f.suptitle('Overhead')
+    f,ax= plt.subplots(1,2,figsize=(15,5),sharey=True)
+    f.suptitle('Overhead (Bits) (%s Topologys)' %numberOfTopologys)
     ax[0].set_title('DataPlane')
     ax[1].set_title('ControlPlane')
     #Plot Data
-    sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0], data=dfm1);
-    sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1], data=dfm2);
+    sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0], data=dfm1,errorbar=None);
+    sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1], data=dfm2,errorbar=None);
     #Save Fig
     ov.validateEntirePath(path)
     plt.savefig(f'{path}/OverheadLP.png',dpi=120)
@@ -216,5 +228,5 @@ def plotDataFrame(df,name,choice,algorithm,fixedNodeSender):
     StateOverheadJointPlot(df,f'output/Plots/{name}/StateOverhead')
     StateOverheadConcentration(df,f'output/Plots/{name}/StateOverhead')
     StateOverheadDistribution(df,f'output/Plots/{name}/StateOverhead')
-    StateOverheadHeatMap1(50,f'output/Plots/{name}/StateOverhead')
+    StateOverheadHeatMap1(30,f'output/Plots/{name}/StateOverhead')
     StateOverheadHeatMap2(df,f'output/Plots/{name}/StateOverhead')
