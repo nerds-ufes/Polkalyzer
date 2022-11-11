@@ -2,194 +2,194 @@ graph [
   DateObtained "16/11/10"
   GeoLocation "Europe"
   GeoExtent "Continent"
-  Customer 1
   Network "BT Europe"
-  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.bt.net/info/europe.shtml"
   Version "1.0"
+  DateType "Current"
   Type "COM"
+  Backbone 1
+  Commercial 0
+  label "bt_europe"
+  Customer 1
+  IX 0
   LastAccess "3/08/10"
   Layer "IP"
   Classification "Testbed Backbone Transit Customer"
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "2010-08"
-  label "bt_europe"
-  Testbed 1
   Developed 0
+  Transit 1
+  NetworkDate "2010-08"
+  Testbed 1
   SvnVersion 8123
   node [
     id 0
     label "London"
-    Internal 1
-    Latitude 51.50853
     Country "United Kingdom"
     Longitude -0.12574
+    Internal 1
+    Latitude 51.50853
   ]
   node [
     id 1
     label "London"
-    Internal 1
-    Latitude 51.50853
     Country "United Kingdom"
     Longitude -0.12574
+    Internal 1
+    Latitude 51.50853
   ]
   node [
     id 2
     label "Madley"
-    Internal 1
-    Latitude 52.03333
     Country "United Kingdom"
     Longitude -2.85
+    Internal 1
+    Latitude 52.03333
   ]
   node [
     id 3
     label "Dublin"
-    Internal 1
-    Latitude 53.34399
     Country "Ireland"
     Longitude -6.26719
+    Internal 1
+    Latitude 53.34399
   ]
   node [
     id 4
     label "Brussels"
-    Internal 1
-    Latitude 50.85045
     Country "Belgium"
     Longitude 4.34878
+    Internal 1
+    Latitude 50.85045
   ]
   node [
     id 5
     label "Amsterdam"
-    Internal 1
-    Latitude 52.37403
     Country "Netherlands"
     Longitude 4.88969
+    Internal 1
+    Latitude 52.37403
   ]
   node [
     id 6
     label "Gothenburg"
-    Internal 1
-    Latitude 57.70716
     Country "Sweden"
     Longitude 11.96679
+    Internal 1
+    Latitude 57.70716
   ]
   node [
     id 7
     label "Stockholm"
-    Internal 1
-    Latitude 59.33258
     Country "Sweden"
     Longitude 18.0649
+    Internal 1
+    Latitude 59.33258
   ]
   node [
     id 8
     label "Helsinki"
-    Internal 1
-    Latitude 60.16952
     Country "Finland"
     Longitude 24.93545
+    Internal 1
+    Latitude 60.16952
   ]
   node [
     id 9
     label "Copenhagen"
-    Internal 1
-    Latitude 55.67594
     Country "Denmark"
     Longitude 12.56553
+    Internal 1
+    Latitude 55.67594
   ]
   node [
     id 10
     label "Prague"
-    Internal 1
-    Latitude 50.08804
     Country "Czech Republic"
     Longitude 14.42076
+    Internal 1
+    Latitude 50.08804
   ]
   node [
     id 11
     label "Vienna"
-    Internal 1
-    Latitude 48.20849
     Country "Austria"
     Longitude 16.37208
+    Internal 1
+    Latitude 48.20849
   ]
   node [
     id 12
     label "Budapest"
-    Internal 1
-    Latitude 47.49801
     Country "Hungary"
     Longitude 19.03991
+    Internal 1
+    Latitude 47.49801
   ]
   node [
     id 13
     label "Munich"
-    Internal 1
-    Latitude 48.13743
     Country "Germany"
     Longitude 11.57549
+    Internal 1
+    Latitude 48.13743
   ]
   node [
     id 14
     label "Zurich"
-    Internal 1
-    Latitude 47.36667
     Country "Switzerland"
     Longitude 8.55
+    Internal 1
+    Latitude 47.36667
   ]
   node [
     id 15
     label "Paris"
-    Internal 1
-    Latitude 48.85341
     Country "France"
     Longitude 2.3488
+    Internal 1
+    Latitude 48.85341
   ]
   node [
     id 16
     label "Dusseldorf"
-    Internal 1
-    Latitude 51.22172
     Country "Germany"
     Longitude 6.77616
+    Internal 1
+    Latitude 51.22172
   ]
   node [
     id 17
     label "Frankfurt"
-    Internal 1
-    Latitude 50.11667
     Country "Germany"
     Longitude 8.68333
+    Internal 1
+    Latitude 50.11667
   ]
   node [
     id 18
     label "Milan"
-    Internal 1
-    Latitude 45.46427
     Country "Italy"
     Longitude 9.18951
+    Internal 1
+    Latitude 45.46427
   ]
   node [
     id 19
     label "Barcelona"
-    Internal 1
-    Latitude 41.38879
     Country "Spain"
     Longitude 2.15899
+    Internal 1
+    Latitude 41.38879
   ]
   node [
     id 20
     label "Madrid"
-    Internal 1
-    Latitude 40.4165
     Country "Spain"
     Longitude -3.70256
+    Internal 1
+    Latitude 40.4165
   ]
   node [
     id 21
@@ -204,10 +204,10 @@ graph [
   node [
     id 23
     label "Goonhilly"
-    Internal 1
-    Latitude 50.05
     Country "United Kingdom"
     Longitude -5.2
+    Internal 1
+    Latitude 50.05
   ]
   edge [
     source 0
@@ -219,7 +219,7 @@ graph [
   ]
   edge [
     source 0
-    target 5
+    target 7
   ]
   edge [
     source 0
@@ -227,7 +227,7 @@ graph [
   ]
   edge [
     source 0
-    target 7
+    target 5
   ]
   edge [
     source 1

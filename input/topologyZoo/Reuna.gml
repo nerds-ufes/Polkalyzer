@@ -2,27 +2,27 @@ graph [
   DateObtained "3/02/11"
   GeoLocation "Chile"
   GeoExtent "Country"
-  Customer 1
   Network "Reuna"
-  IX 0
   Provenance "Primary"
-  Note "Grid services + possible others, Names from http://www.reuna.cl/index.php/es/ique-es-reuna/miembros/socios"
+  Access 0
   Source "http://www.reuna.cl/images/stories/documentos/Mapa_Topologia_REUNA_2010.pdf"
   Version "1.0"
+  DateType "Historic"
   Type "REN"
+  Backbone 1
+  Commercial 0
+  label "reuna"
+  Customer 1
+  IX 0
   LastAccess "6/03/11"
-  Access 0
+  Note "Grid services + possible others, Names from http://www.reuna.cl/index.php/es/ique-es-reuna/miembros/socios"
   Layer "IP"
   Classification "Backbone Customer "
   Creator "Topology Zoo Toolset"
-  DateType "Historic"
-  Transit 0
-  Backbone 1
-  Commercial 0
-  NetworkDate "2010"
-  label "reuna"
-  Testbed 0
   Developed 0
+  Transit 0
+  NetworkDate "2010"
+  Testbed 0
   SvnVersion 8123
   node [
     id 3
@@ -33,20 +33,20 @@ graph [
   node [
     id 4
     label "ULS"
+    Country "Chile"
+    Longitude -71.25417
     Internal 1
     Latitude -29.90778
-    Country "Chile"
     type "Router Acceso G-REUNA (Catalyst 6503)"
-    Longitude -71.25417
   ]
   node [
     id 5
     label "AURA"
+    Country "Chile"
+    Longitude -71.25417
     Internal 1
     Latitude -29.90778
-    Country "Chile"
     type "Router Acceso G-REUNA (Catalyst 6503)"
-    Longitude -71.25417
   ]
   node [
     id 6
@@ -111,11 +111,11 @@ graph [
   node [
     id 16
     label "ULAGOS"
+    Country "Chile"
+    Longitude -73.15
     Internal 1
     Latitude -40.56667
-    Country "Chile"
     type "Router Acceso G-REUNA (Catalyst 6503)"
-    Longitude -73.15
   ]
   node [
     id 17
@@ -126,11 +126,11 @@ graph [
   node [
     id 18
     label "UTA"
+    Country "Chile"
+    Longitude -70.30417
     Internal 1
     Latitude -18.475
-    Country "Chile"
     type "Router Acceso G-REUNA (Catalyst 6503)"
-    Longitude -70.30417
   ]
   node [
     id 19
@@ -147,101 +147,101 @@ graph [
   node [
     id 21
     label "ULAGO Puerto Montt"
+    Country "Chile"
+    Longitude -72.93694
     Internal 1
     Latitude -41.47167
-    Country "Chile"
     type "Router Accesso REUNA2 (Cisco 7204)"
-    Longitude -72.93694
   ]
   node [
     id 22
     label "Arica"
+    Country "Chile"
+    Longitude -70.30417
     Internal 1
     Latitude -18.475
-    Country "Chile"
     type "Switch Troncal G-REUNA (Cisco 7606)"
-    Longitude -70.30417
   ]
   node [
     id 23
     label "Iquique"
+    Country "Chile"
+    Longitude -70.14306
     Internal 1
     Latitude -20.22083
-    Country "Chile"
     type "Switch Troncal G-REUNA (Cisco 7606)"
-    Longitude -70.14306
   ]
   node [
     id 24
     label "Antofagasta"
+    Country "Chile"
+    Longitude -70.4
     Internal 1
     Latitude -23.65
-    Country "Chile"
     type "Switch Troncal G-REUNA (Cisco 7606)"
-    Longitude -70.4
   ]
   node [
     id 25
     label "Copiapo"
+    Country "Chile"
+    Longitude -70.33333
     Internal 1
     Latitude -27.36667
-    Country "Chile"
     type "Switch Troncal G-REUNA (Cisco 7606)"
-    Longitude -70.33333
   ]
   node [
     id 26
     label "La Serena"
+    Country "Chile"
+    Longitude -71.25417
     Internal 1
     Latitude -29.90778
-    Country "Chile"
     type "Switch Troncal G-REUNA (Cisco 7606)"
-    Longitude -71.25417
   ]
   node [
     id 27
     label "Santiago"
+    Country "Chile"
+    Longitude -70.56656
     Internal 1
     Latitude -33.42628
-    Country "Chile"
     type "Switch Troncal G-REUNA (Cisco 7606)"
-    Longitude -70.56656
   ]
   node [
     id 28
     label "Concepcion"
+    Country "Chile"
+    Longitude -73.04977
     Internal 1
     Latitude -36.82699
-    Country "Chile"
     type "Switch Troncal G-REUNA (Cisco 7606)"
-    Longitude -73.04977
   ]
   node [
     id 29
     label "Temuco"
+    Country "Chile"
+    Longitude -72.6
     Internal 1
     Latitude -38.73333
-    Country "Chile"
     type "Switch Troncal G-REUNA (Cisco 7606)"
-    Longitude -72.6
   ]
   node [
     id 30
     label "Valdivia"
+    Country "Chile"
+    Longitude -73.24589
     Internal 1
     Latitude -39.81422
-    Country "Chile"
     type "Switch Troncal G-REUNA (Cisco 7606)"
-    Longitude -73.24589
   ]
   node [
     id 31
     label "Osorno"
+    Country "Chile"
+    Longitude -73.15
     Internal 1
     Latitude -40.56667
-    Country "Chile"
     type "Switch Troncal G-REUNA (Cisco 7606)"
-    Longitude -73.15
   ]
   node [
     id 32
@@ -384,40 +384,40 @@ graph [
     source 22
     target 23
     LinkSpeed "155"
-    LinkLabel "155 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "155 Mbps"
     LinkSpeedRaw 155000000.0
   ]
   edge [
     source 23
     target 24
     LinkSpeed "155"
-    LinkLabel "155 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "155 Mbps"
     LinkSpeedRaw 155000000.0
   ]
   edge [
     source 24
     target 25
     LinkSpeed "205"
-    LinkLabel "205 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "205 Mbps"
     LinkSpeedRaw 205000000.0
   ]
   edge [
     source 25
     target 26
     LinkSpeed "205"
-    LinkLabel "205 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "205 Mbps"
     LinkSpeedRaw 205000000.0
   ]
   edge [
     source 26
     target 27
     LinkSpeed "301"
-    LinkLabel "301 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "301 Mbps"
     LinkSpeedRaw 301000000.0
   ]
   edge [
@@ -434,8 +434,8 @@ graph [
     source 27
     target 28
     LinkSpeed "301"
-    LinkLabel "301 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "301 Mbps"
     LinkSpeedRaw 301000000.0
   ]
   edge [
@@ -452,8 +452,8 @@ graph [
     source 28
     target 29
     LinkSpeed "205"
-    LinkLabel "205 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "205 Mbps"
     LinkSpeedRaw 205000000.0
   ]
   edge [
@@ -470,31 +470,31 @@ graph [
     source 29
     target 30
     LinkSpeed "155"
-    LinkLabel "155 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "155 Mbps"
     LinkSpeedRaw 155000000.0
   ]
   edge [
     source 30
     target 31
     LinkSpeed "155"
-    LinkLabel "155 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "155 Mbps"
     LinkSpeedRaw 155000000.0
   ]
   edge [
     source 32
     target 34
     LinkSpeed "1"
-    LinkLabel "1 Gbps"
     LinkSpeedUnits "G"
+    LinkLabel "1 Gbps"
     LinkSpeedRaw 1000000000.0
   ]
   edge [
     source 33
     target 35
     LinkType "STM-1"
-    LinkLabel "4x1 Gbps + 2x STM-1"
     LinkNote "4x1 Gbps + 2x "
+    LinkLabel "4x1 Gbps + 2x STM-1"
   ]
 ]

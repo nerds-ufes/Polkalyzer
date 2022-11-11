@@ -2,26 +2,26 @@ graph [
   DateObtained "20/10/10"
   GeoLocation "Vietnam"
   GeoExtent "Country"
-  Customer 0
   Network "VinaREN"
-  IX 0
   Provenance "Secondary"
   Access 0
   Source "http://www.apan.net/meetings/newzealand2008/presentations/medical/VinaREN-Updates-APAN26-nt.ppt"
   Version "1.0"
+  DateType "Historic"
   Type "REN"
+  Backbone 1
+  Commercial 0
+  label "VinaREN"
+  Customer 0
+  IX 0
   LastAccess "21/10/10"
   Layer "IP"
   Classification "Backbone"
   Creator "Topology Zoo Toolset"
-  DateType "Historic"
-  Transit 0
-  Backbone 1
-  Commercial 0
-  NetworkDate "2009"
-  label "VinaREN"
-  Testbed 0
   Developed 0
+  Transit 0
+  NetworkDate "2009"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
@@ -96,47 +96,47 @@ graph [
   node [
     id 9
     label "CT"
+    Country "Vietnam"
+    Longitude 105.78333
     Internal 1
     Latitude 10.03333
-    Country "Vietnam"
     type "VinaREN NOC"
-    Longitude 105.78333
   ]
   node [
     id 10
     label "HCM"
+    Country "Vietnam"
+    Longitude 106.66667
     Internal 1
     Latitude 10.75
-    Country "Vietnam"
     type "VinaREN NOC"
-    Longitude 106.66667
   ]
   node [
     id 11
     label "DN"
+    Country "Vietnam"
+    Longitude 108.22083
     Internal 1
     Latitude 16.06778
-    Country "Vietnam"
     type "VinaREN NOC"
-    Longitude 108.22083
   ]
   node [
     id 12
     label "Hue"
+    Country "Vietnam"
+    Longitude 107.6
     Internal 1
     Latitude 16.46667
-    Country "Vietnam"
     type "VinaREN NOC"
-    Longitude 107.6
   ]
   node [
     id 13
     label "VN HN"
+    Country "Vietnam"
+    Longitude 105.84117
     Internal 1
     Latitude 21.0245
-    Country "Vietnam"
     type "VinaREN NOC"
-    Longitude 105.84117
   ]
   node [
     id 14
@@ -191,79 +191,79 @@ graph [
   node [
     id 19
     label "Nha Trang"
+    Country "Vietnam"
+    Longitude 109.18333
     Internal 1
     Latitude 12.25
-    Country "Vietnam"
     type "Member Network"
-    Longitude 109.18333
   ]
   node [
     id 20
     label "Da Lat"
+    Country "Vietnam"
+    Longitude 108.44193
     Internal 1
     Latitude 11.94646
-    Country "Vietnam"
     type "Member Network"
-    Longitude 108.44193
   ]
   node [
     id 21
     label "An Giang"
+    Country "Vietnam"
+    Longitude 105.41667
     Internal 1
     Latitude 10.38333
-    Country "Vietnam"
     type "Member Network"
-    Longitude 105.41667
   ]
   node [
     id 22
     label "Thai Nguyen"
+    Country "Vietnam"
+    Longitude 105.84417
     Internal 1
     Latitude 21.59278
-    Country "Vietnam"
     type "Member Network"
-    Longitude 105.84417
   ]
   node [
     id 23
     label "Vinh"
+    Country "Vietnam"
+    Longitude 105.96667
     Internal 1
     Latitude 10.25
-    Country "Vietnam"
     type "Member Network"
-    Longitude 105.96667
   ]
   node [
     id 24
     label "Hai Phong"
+    Country "Vietnam"
+    Longitude 106.68222
     Internal 1
     Latitude 20.85611
-    Country "Vietnam"
     type "Member Network"
-    Longitude 106.68222
   ]
   edge [
     source 0
     target 7
     LinkSpeed "155"
-    LinkLabel "155 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "155 Mbps"
     LinkSpeedRaw 155000000.0
   ]
   edge [
     source 1
     target 7
     LinkSpeed "45"
-    LinkLabel "45 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "45 Mbps"
     LinkSpeedRaw 45000000.0
   ]
   edge [
     source 2
     target 7
     LinkSpeed "45"
-    LinkLabel "45Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "45Mbps"
     LinkSpeedRaw 45000000.0
   ]
   edge [
@@ -274,17 +274,17 @@ graph [
     source 4
     target 13
     LinkSpeed "40"
+    LinkNote "bs"
     LinkSpeedUnits "M"
     LinkLabel "40Mpbs"
-    LinkNote "bs"
     LinkSpeedRaw 40000000.0
   ]
   edge [
     source 5
     target 15
     LinkSpeed "2.5"
-    LinkLabel "2.5Gbps"
     LinkSpeedUnits "G"
+    LinkLabel "2.5Gbps"
     LinkSpeedRaw 2500000000.0
   ]
   edge [
@@ -301,24 +301,24 @@ graph [
     source 7
     target 14
     LinkSpeed "622"
-    LinkLabel "622Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "622Mbps"
     LinkSpeedRaw 622000000.0
   ]
   edge [
     source 7
     target 16
     LinkSpeed "622"
-    LinkLabel "622Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "622Mbps"
     LinkSpeedRaw 622000000.0
   ]
   edge [
     source 7
     target 17
     LinkSpeed "622"
-    LinkLabel "622 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "622 Mbps"
     LinkSpeedRaw 622000000.0
   ]
   edge [
@@ -329,24 +329,24 @@ graph [
     source 9
     target 21
     LinkSpeed "20"
-    LinkLabel "20Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "20Mbps"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 10
     target 11
     LinkSpeed "45"
-    LinkLabel "45 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "45 Mbps"
     LinkSpeedRaw 45000000.0
   ]
   edge [
     source 10
     target 20
     LinkSpeed "20"
-    LinkLabel "20Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "20Mbps"
     LinkSpeedRaw 20000000.0
   ]
   edge [
@@ -358,8 +358,8 @@ graph [
     source 11
     target 19
     LinkSpeed "20"
-    LinkLabel "20Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "20Mbps"
     LinkSpeedRaw 20000000.0
   ]
   edge [
@@ -370,33 +370,33 @@ graph [
     source 11
     target 13
     LinkSpeed "45"
-    LinkLabel "45Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "45Mbps"
     LinkSpeedRaw 45000000.0
   ]
   edge [
     source 13
     target 14
     LinkSpeed "155"
+    LinkNote "45/ "
     LinkSpeedUnits "M"
     LinkLabel "45/155 Mbps"
-    LinkNote "45/ "
     LinkSpeedRaw 155000000.0
   ]
   edge [
     source 13
     target 22
     LinkSpeed "20"
-    LinkLabel "20Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "20Mbps"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 13
     target 23
     LinkSpeed "20"
-    LinkLabel "20Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "20Mbps"
     LinkSpeedRaw 20000000.0
   ]
   edge [
@@ -407,24 +407,24 @@ graph [
     source 14
     target 17
     LinkSpeed "622"
-    LinkLabel "622Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "622Mbps"
     LinkSpeedRaw 622000000.0
   ]
   edge [
     source 14
     target 15
     LinkSpeed "622"
-    LinkLabel "622 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "622 Mbps"
     LinkSpeedRaw 622000000.0
   ]
   edge [
     source 17
     target 18
     LinkSpeed "155"
-    LinkLabel "155 Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "155 Mbps"
     LinkSpeedRaw 155000000.0
   ]
 ]

@@ -2,143 +2,143 @@ graph [
   DateObtained "20/01/11"
   GeoLocation "Slovakia"
   GeoExtent "Country"
-  Customer 1
   Network "GTS Slovakia"
-  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.gtsce.com/en/map/index.shtml"
   Version "1.0"
+  DateType "Current"
   Type "COM"
+  Backbone 1
+  Commercial 0
+  label "gts_slovakia"
+  Customer 1
+  IX 0
   LastAccess "20/01/11"
   Layer "IP"
   Classification "Backbone Transit Customer "
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "2011-01"
-  label "gts_slovakia"
-  Testbed 0
   Developed 0
+  Transit 1
+  NetworkDate "2011-01"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Banska Bystrica"
+    Country "Slovakia"
+    Longitude 19.15
     Internal 1
     Latitude 48.73333
-    Country "Slovakia"
     type "Large Node"
-    Longitude 19.15
   ]
   node [
     id 1
     label "Bratislava"
+    Country "Slovakia"
+    Longitude 17.10674
     Internal 1
     Latitude 48.14816
-    Country "Slovakia"
     type "Large Node"
-    Longitude 17.10674
   ]
   node [
     id 2
     label "Kosice"
+    Country "Slovakia"
+    Longitude 21.25
     Internal 1
     Latitude 48.71667
-    Country "Slovakia"
     type "Large Node"
-    Longitude 21.25
   ]
   node [
     id 3
     label "Presov"
+    Country "Slovakia"
+    Longitude 21.25
     Internal 1
     Latitude 49.0
-    Country "Slovakia"
     type "Small Node"
-    Longitude 21.25
   ]
   node [
     id 4
     label "Bardejov"
+    Country "Slovakia"
+    Longitude 21.28333
     Internal 1
     Latitude 49.28333
-    Country "Slovakia"
     type "Small Node"
-    Longitude 21.28333
   ]
   node [
     id 5
     label "Svidnik"
+    Country "Slovakia"
+    Longitude 21.56667
     Internal 1
     Latitude 49.3
-    Country "Slovakia"
     type "Small Node"
-    Longitude 21.56667
   ]
   node [
     id 6
     label "Humenne"
+    Country "Slovakia"
+    Longitude 21.91667
     Internal 1
     Latitude 48.93333
-    Country "Slovakia"
     type "Small Node"
-    Longitude 21.91667
   ]
   node [
     id 7
     label "Michalovce"
+    Country "Slovakia"
+    Longitude 21.93333
     Internal 1
     Latitude 48.75
-    Country "Slovakia"
     type "Small Node"
-    Longitude 21.93333
   ]
   node [
     id 8
     label "Spisska"
+    Country "Slovakia"
+    Longitude 20.56667
     Internal 1
     Latitude 48.95
-    Country "Slovakia"
     type "Small Node"
-    Longitude 20.56667
   ]
   node [
     id 9
     label "Poprad"
+    Country "Slovakia"
+    Longitude 20.3
     Internal 1
     Latitude 49.05
-    Country "Slovakia"
     type "Small Node"
-    Longitude 20.3
   ]
   node [
     id 10
     label "Svit"
+    Country "Slovakia"
+    Longitude 20.20695
     Internal 1
     Latitude 49.06014
-    Country "Slovakia"
     type "Small Node"
-    Longitude 20.20695
   ]
   node [
     id 11
     label "Liptovdky Mikulas"
+    Country "Slovakia"
+    Longitude 19.62218
     Internal 1
     Latitude 49.08061
-    Country "Slovakia"
     type "Small Node"
-    Longitude 19.62218
   ]
   node [
     id 12
     label "Ruzombernk"
+    Country "Slovakia"
+    Longitude 19.31667
     Internal 1
     Latitude 49.08333
-    Country "Slovakia"
     type "Small Node"
-    Longitude 19.31667
   ]
   node [
     id 13
@@ -149,110 +149,110 @@ graph [
   node [
     id 14
     label "Zilina"
+    Country "Slovakia"
+    Longitude 18.73941
     Internal 1
     Latitude 49.22315
-    Country "Slovakia"
     type "Small Node"
-    Longitude 18.73941
   ]
   node [
     id 15
     label "Namestovo"
+    Country "Slovakia"
+    Longitude 19.5
     Internal 1
     Latitude 49.4
-    Country "Slovakia"
     type "Small Node"
-    Longitude 19.5
   ]
   node [
     id 16
     label "Detva"
+    Country "Slovakia"
+    Longitude 19.41667
     Internal 1
     Latitude 48.56667
-    Country "Slovakia"
     type "Small Node"
-    Longitude 19.41667
   ]
   node [
     id 17
     label "Zvolen"
+    Country "Slovakia"
+    Longitude 19.13333
     Internal 1
     Latitude 48.58333
-    Country "Slovakia"
     type "Small Node"
-    Longitude 19.13333
   ]
   node [
     id 18
     label "Rimavska Sobota"
+    Country "Slovakia"
+    Longitude 20.03333
     Internal 1
     Latitude 48.38333
-    Country "Slovakia"
     type "Small Node"
-    Longitude 20.03333
   ]
   node [
     id 19
     label "Lucenec"
+    Country "Slovakia"
+    Longitude 19.66667
     Internal 1
     Latitude 48.33333
-    Country "Slovakia"
     type "Small Node"
-    Longitude 19.66667
   ]
   node [
     id 20
     label "Prievidza"
+    Country "Slovakia"
+    Longitude 18.63333
     Internal 1
     Latitude 48.76667
-    Country "Slovakia"
     type "Small Node"
-    Longitude 18.63333
   ]
   node [
     id 21
     label "Novaky"
+    Country "Slovakia"
+    Longitude 18.55
     Internal 1
     Latitude 48.71667
-    Country "Slovakia"
     type "Small Node"
-    Longitude 18.55
   ]
   node [
     id 22
     label "Topolcany"
+    Country "Slovakia"
+    Longitude 18.18333
     Internal 1
     Latitude 48.56667
-    Country "Slovakia"
     type "Small Node"
-    Longitude 18.18333
   ]
   node [
     id 23
     label "Trencin"
+    Country "Slovakia"
+    Longitude 18.04436
     Internal 1
     Latitude 48.89452
-    Country "Slovakia"
     type "Small Node"
-    Longitude 18.04436
   ]
   node [
     id 24
     label "Nove Mest nad Vahom"
+    Country "Slovakia"
+    Longitude 17.8309
     Internal 1
     Latitude 48.75763
-    Country "Slovakia"
     type "Small Node"
-    Longitude 17.8309
   ]
   node [
     id 25
     label "Piestany"
+    Country "Slovakia"
+    Longitude 17.83333
     Internal 1
     Latitude 48.6
-    Country "Slovakia"
     type "Small Node"
-    Longitude 17.83333
   ]
   node [
     id 26
@@ -269,29 +269,29 @@ graph [
   node [
     id 28
     label "Nitra"
+    Country "Slovakia"
+    Longitude 18.08453
     Internal 1
     Latitude 48.30763
-    Country "Slovakia"
     type "Small Node"
-    Longitude 18.08453
   ]
   node [
     id 29
     label "Nove Zamky"
+    Country "Slovakia"
+    Longitude 18.16195
     Internal 1
     Latitude 47.98544
-    Country "Slovakia"
     type "Small Node"
-    Longitude 18.16195
   ]
   node [
     id 30
     label "Komarno"
+    Country "Slovakia"
+    Longitude 18.12263
     Internal 1
     Latitude 47.76356
-    Country "Slovakia"
     type "Small Node"
-    Longitude 18.12263
   ]
   node [
     id 31

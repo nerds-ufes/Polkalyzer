@@ -2,251 +2,251 @@ graph [
   DateObtained "19/10/10"
   GeoLocation "USA"
   GeoExtent "Country"
-  Customer 1
   Network "BTN "
-  IX 0
   Provenance "Secondary"
-  Note "Now PCCW Global AS3491"
+  Access 1
   Source "http://www.isp-planet.com/img/backbones/BTN.jpg"
   Version "1.0"
+  DateType "Historic"
   Type "COM"
+  Backbone 1
+  Commercial 0
+  label "beyond_the_network"
+  Customer 1
+  IX 0
   LastAccess "3/08/10"
-  Access 1
+  Note "Now PCCW Global AS3491"
   Layer "IP"
   Classification "Backbone Transit Access Customer"
   Creator "Topology Zoo Toolset"
-  DateType "Historic"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "<2005"
-  label "beyond_the_network"
-  Testbed 0
   Developed 0
+  Transit 1
+  NetworkDate "<2005"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Denver"
-    Internal 1
-    Latitude 39.73915
     Country "United States"
     Longitude -104.9847
+    Internal 1
+    Latitude 39.73915
   ]
   node [
     id 1
     label "Minneapolis"
-    Internal 1
-    Latitude 44.97997
     Country "United States"
     Longitude -93.26384
+    Internal 1
+    Latitude 44.97997
   ]
   node [
     id 2
     label "Chicago"
-    Internal 1
-    Latitude 41.85003
     Country "United States"
     Longitude -87.65005
+    Internal 1
+    Latitude 41.85003
   ]
   node [
     id 3
     label "Kansas City"
-    Internal 1
-    Latitude 39.11417
     Country "United States"
     Longitude -94.62746
+    Internal 1
+    Latitude 39.11417
   ]
   node [
     id 4
     label "Atlanta"
-    Internal 1
-    Latitude 33.749
     Country "United States"
     Longitude -84.38798
+    Internal 1
+    Latitude 33.749
   ]
   node [
     id 5
     label "Raleigh"
-    Internal 1
-    Latitude 35.7721
     Country "United States"
     Longitude -78.63861
+    Internal 1
+    Latitude 35.7721
   ]
   node [
     id 6
     label "Ashburn"
-    Internal 1
-    Latitude 39.04372
     Country "United States"
     Longitude -77.48749
+    Internal 1
+    Latitude 39.04372
   ]
   node [
     id 7
     label "Vienna"
-    Internal 1
-    Latitude 38.90122
     Country "United States"
     Longitude -77.26526
+    Internal 1
+    Latitude 38.90122
   ]
   node [
     id 8
     label "Washington"
-    Internal 1
-    Latitude 38.89511
     Country "United States"
     Longitude -77.03637
+    Internal 1
+    Latitude 38.89511
   ]
   node [
     id 9
     label "Baltimore"
-    Internal 1
-    Latitude 39.29038
     Country "United States"
     Longitude -76.61219
+    Internal 1
+    Latitude 39.29038
   ]
   node [
     id 10
     label "Philadelphia"
-    Internal 1
-    Latitude 39.95234
     Country "United States"
     Longitude -75.16379
+    Internal 1
+    Latitude 39.95234
   ]
   node [
     id 11
     label "New York"
-    Internal 1
-    Latitude 40.71427
     Country "United States"
     Longitude -74.00597
+    Internal 1
+    Latitude 40.71427
   ]
   node [
     id 12
     label "Boston"
-    Internal 1
-    Latitude 42.35843
     Country "United States"
     Longitude -71.05977
+    Internal 1
+    Latitude 42.35843
   ]
   node [
     id 13
     label "Detroit"
-    Internal 1
-    Latitude 42.33143
     Country "United States"
     Longitude -83.04575
+    Internal 1
+    Latitude 42.33143
   ]
   node [
     id 14
     label "Seattle"
-    Internal 1
-    Latitude 47.60621
     Country "United States"
     Longitude -122.33207
+    Internal 1
+    Latitude 47.60621
   ]
   node [
     id 15
     label "Portland"
-    Internal 1
-    Latitude 45.52345
     Country "United States"
     Longitude -122.67621
+    Internal 1
+    Latitude 45.52345
   ]
   node [
     id 16
     label "Sacramento"
-    Internal 1
-    Latitude 38.58157
     Country "United States"
     Longitude -121.4944
+    Internal 1
+    Latitude 38.58157
   ]
   node [
     id 17
     label "San Jose"
-    Internal 1
-    Latitude 37.33939
     Country "United States"
     Longitude -121.89496
+    Internal 1
+    Latitude 37.33939
   ]
   node [
     id 18
     label "Sunnyvale"
-    Internal 1
-    Latitude 37.36883
     Country "United States"
     Longitude -122.03635
+    Internal 1
+    Latitude 37.36883
   ]
   node [
     id 19
     label "Los Angeles"
-    Internal 1
-    Latitude 34.05223
     Country "United States"
     Longitude -118.24368
+    Internal 1
+    Latitude 34.05223
   ]
   node [
     id 20
     label "San Diego"
-    Internal 1
-    Latitude 32.71533
     Country "United States"
     Longitude -117.15726
+    Internal 1
+    Latitude 32.71533
   ]
   node [
     id 21
     label "Phoenix"
-    Internal 1
-    Latitude 33.44838
     Country "United States"
     Longitude -112.07404
+    Internal 1
+    Latitude 33.44838
   ]
   node [
     id 22
     label "San Antonio"
-    Internal 1
-    Latitude 29.42412
     Country "United States"
     Longitude -98.49363
+    Internal 1
+    Latitude 29.42412
   ]
   node [
     id 23
     label "Dallas"
-    Internal 1
-    Latitude 32.78306
     Country "United States"
     Longitude -96.80667
+    Internal 1
+    Latitude 32.78306
   ]
   node [
     id 24
     label "Houston"
-    Internal 1
-    Latitude 29.76328
     Country "United States"
     Longitude -95.36327
+    Internal 1
+    Latitude 29.76328
   ]
   node [
     id 25
     label "New Orleans"
-    Internal 1
-    Latitude 29.95465
     Country "United States"
     Longitude -90.07507
+    Internal 1
+    Latitude 29.95465
   ]
   node [
     id 26
     label "Miami"
-    Internal 1
-    Latitude 25.77427
     Country "United States"
     Longitude -80.19366
+    Internal 1
+    Latitude 25.77427
   ]
   node [
     id 27
     label "Tampa"
-    Internal 1
-    Latitude 27.94752
     Country "United States"
     Longitude -82.45843
+    Internal 1
+    Latitude 27.94752
   ]
   node [
     id 28
@@ -326,10 +326,10 @@ graph [
   node [
     id 41
     label "Pittsburgh"
-    Internal 1
-    Latitude 40.44062
     Country "United States"
     Longitude -79.99589
+    Internal 1
+    Latitude 40.44062
   ]
   node [
     id 42
@@ -544,7 +544,7 @@ graph [
   ]
   edge [
     source 14
-    target 15
+    target 39
   ]
   edge [
     source 14
@@ -552,7 +552,7 @@ graph [
   ]
   edge [
     source 14
-    target 39
+    target 15
   ]
   edge [
     source 15

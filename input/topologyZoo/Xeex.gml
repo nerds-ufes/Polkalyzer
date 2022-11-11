@@ -2,218 +2,218 @@ graph [
   DateObtained "16/01/11"
   GeoLocation "USA"
   GeoExtent "Country"
-  Customer 1
   Network "Xeex"
-  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.xeex.com/map/map.gif"
   Version "1.0"
+  DateType "Current"
   Type "COM"
+  Backbone 1
+  Commercial 0
+  label "xeex"
+  Customer 1
+  IX 0
   LastAccess "16/01/11"
   Layer "IP"
   Classification "Backbone Transit Customer "
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "2011-01"
-  label "xeex"
-  Testbed 0
   Developed 1
+  Transit 1
+  NetworkDate "2011-01"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Seattle"
-    Latitude 47.60621
     Country "United States"
-    type "Super Pop"
     Longitude -122.33207
+    Latitude 47.60621
+    type "Super Pop"
   ]
   node [
     id 1
     label "San Jose"
-    Latitude 37.33939
     Country "United States"
-    type "Super Pop"
     Longitude -121.89496
+    Latitude 37.33939
+    type "Super Pop"
   ]
   node [
     id 2
     label "Los Angeles"
-    Latitude 34.05223
     Country "United States"
-    type "Super Pop"
     Longitude -118.24368
+    Latitude 34.05223
+    type "Super Pop"
   ]
   node [
     id 3
     label "Chicago"
-    Latitude 41.85003
     Country "United States"
-    type "Super Pop"
     Longitude -87.65005
+    Latitude 41.85003
+    type "Super Pop"
   ]
   node [
     id 4
     label "Ashburn"
-    Latitude 39.04372
     Country "United States"
-    type "Super Pop"
     Longitude -77.48749
+    Latitude 39.04372
+    type "Super Pop"
   ]
   node [
     id 5
     label "New York"
-    Latitude 40.71427
     Country "United States"
-    type "Super Pop"
     Longitude -74.00597
+    Latitude 40.71427
+    type "Super Pop"
   ]
   node [
     id 6
     label "Atlanta"
-    Latitude 33.749
     Country "United States"
-    type "Super Pop"
     Longitude -84.38798
+    Latitude 33.749
+    type "Super Pop"
   ]
   node [
     id 7
     label "Dallas"
-    Latitude 32.78306
     Country "United States"
-    type "Super Pop"
     Longitude -96.80667
+    Latitude 32.78306
+    type "Super Pop"
   ]
   node [
     id 8
     label "Miami"
-    Latitude 25.77427
     Country "United States"
-    type "Super Pop"
     Longitude -80.19366
+    Latitude 25.77427
+    type "Super Pop"
   ]
   node [
     id 11
     label "Cincinnati"
-    Latitude 39.162
     Country "United States"
-    type "PoP"
     Longitude -84.45689
+    Latitude 39.162
+    type "PoP"
   ]
   node [
     id 12
     label "Indianapolis"
-    Latitude 39.76838
     Country "United States"
-    type "PoP"
     Longitude -86.15804
+    Latitude 39.76838
+    type "PoP"
   ]
   node [
     id 13
     label "Nashville"
-    Latitude 36.16589
     Country "United States"
-    type "PoP"
     Longitude -86.78444
+    Latitude 36.16589
+    type "PoP"
   ]
   node [
     id 14
     label "Denver"
-    Latitude 39.73915
     Country "United States"
-    type "PoP"
     Longitude -104.9847
+    Latitude 39.73915
+    type "PoP"
   ]
   node [
     id 15
     label "Las Vegas"
-    Latitude 36.17497
     Country "United States"
-    type "PoP"
     Longitude -115.13722
+    Latitude 36.17497
+    type "PoP"
   ]
   node [
     id 16
     label "San Francisco"
-    Latitude 37.77493
     Country "United States"
-    type "PoP"
     Longitude -122.41942
+    Latitude 37.77493
+    type "PoP"
   ]
   node [
     id 17
     label "San Diego"
-    Latitude 32.71533
     Country "United States"
-    type "PoP"
     Longitude -117.15726
+    Latitude 32.71533
+    type "PoP"
   ]
   node [
     id 18
     label "Phoenix"
-    Latitude 33.44838
     Country "United States"
-    type "PoP"
     Longitude -112.07404
+    Latitude 33.44838
+    type "PoP"
   ]
   node [
     id 19
     label "Hong Kong"
-    Latitude 22.28552
     Country "Hong Kong"
-    type "PoP"
     Longitude 114.15769
+    Latitude 22.28552
+    type "PoP"
   ]
   node [
     id 20
     label "Tokyo"
-    Latitude 35.61488
     Country "Japan"
-    type "PoP"
     Longitude 139.5813
+    Latitude 35.61488
+    type "PoP"
   ]
   node [
     id 21
     label "Chennai"
-    Latitude 13.08784
     Country "India"
-    type "PoP"
     Longitude 80.27847
+    Latitude 13.08784
+    type "PoP"
   ]
   node [
     id 22
     label "Amsterdam"
-    Latitude 52.37403
     Country "Netherlands"
-    type "PoP"
     Longitude 4.88969
+    Latitude 52.37403
+    type "PoP"
   ]
   node [
     id 23
     label "Columbus"
-    Latitude 39.96118
     Country "United States"
-    type "PoP"
     Longitude -82.99879
+    Latitude 39.96118
+    type "PoP"
   ]
   node [
     id 24
     label "Pittsburgh"
-    Latitude 40.44062
     Country "United States"
-    type "PoP"
     Longitude -79.99589
+    Latitude 40.44062
+    type "PoP"
   ]
   node [
     id 25
     label "London"
-    Latitude 51.50853
     Country "United Kingdom"
-    type "PoP"
     Longitude -0.12574
+    Latitude 51.50853
+    type "PoP"
   ]
   edge [
     source 0
@@ -241,10 +241,6 @@ graph [
   ]
   edge [
     source 2
-    target 15
-  ]
-  edge [
-    source 2
     target 18
   ]
   edge [
@@ -254,6 +250,10 @@ graph [
   edge [
     source 2
     target 17
+  ]
+  edge [
+    source 2
+    target 15
   ]
   edge [
     source 3
@@ -285,11 +285,11 @@ graph [
   ]
   edge [
     source 4
-    target 6
+    target 22
   ]
   edge [
     source 4
-    target 22
+    target 6
   ]
   edge [
     source 4

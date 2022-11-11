@@ -2,35 +2,35 @@ graph [
   DateObtained "22/10/10"
   GeoLocation "Lithuania"
   GeoExtent "Country"
-  Customer 1
   Network "LITNET"
-  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.litnet.lt/litnet/schema.gif"
   Version "1.0"
+  DateType "Historic"
   Type "REN"
+  Backbone 1
+  Commercial 0
+  label "LITNET"
+  Customer 1
+  IX 0
   LastAccess "21/10/10"
   Layer "IP"
   Classification "Backbone Customer"
   Creator "Topology Zoo Toolset"
-  DateType "Historic"
-  Transit 0
-  Backbone 1
-  Commercial 0
-  NetworkDate "2009"
-  label "LITNET"
-  Testbed 0
   Developed 0
+  Transit 0
+  NetworkDate "2009"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Mazeikiai"
+    Country "Lithuania"
+    Longitude 22.33333
     Internal 1
     Latitude 56.31667
-    Country "Lithuania"
     type "PoP"
-    Longitude 22.33333
   ]
   node [
     id 1
@@ -41,29 +41,29 @@ graph [
   node [
     id 2
     label "Joniskis"
+    Country "Lithuania"
+    Longitude 23.61528
     Internal 1
     Latitude 56.24028
-    Country "Lithuania"
     type "PoP"
-    Longitude 23.61528
   ]
   node [
     id 3
     label "Birzai"
+    Country "Lithuania"
+    Longitude 24.75
     Internal 1
     Latitude 56.2
-    Country "Lithuania"
     type "PoP"
-    Longitude 24.75
   ]
   node [
     id 4
     label "Siauliai"
+    Country "Lithuania"
+    Longitude 23.31667
     Internal 1
     Latitude 55.93333
-    Country "Lithuania"
     type "Major City PoP"
-    Longitude 23.31667
   ]
   node [
     id 5
@@ -74,101 +74,101 @@ graph [
   node [
     id 6
     label "Palanga"
+    Country "Lithuania"
+    Longitude 21.06861
     Internal 1
     Latitude 55.9175
-    Country "Lithuania"
     type "PoP"
-    Longitude 21.06861
   ]
   node [
     id 7
     label "Kretinga"
+    Country "Lithuania"
+    Longitude 21.25083
     Internal 1
     Latitude 55.87583
-    Country "Lithuania"
     type "PoP"
-    Longitude 21.25083
   ]
   node [
     id 8
     label "Klaipeda"
+    Country "Lithuania"
+    Longitude 21.1175
     Internal 1
     Latitude 55.71722
-    Country "Lithuania"
     type "Major City PoP"
-    Longitude 21.1175
   ]
   node [
     id 9
     label "Telsiai"
+    Country "Lithuania"
+    Longitude 22.24722
     Internal 1
     Latitude 55.98139
-    Country "Lithuania"
     type "PoP"
-    Longitude 22.24722
   ]
   node [
     id 10
     label "Rokiskis"
+    Country "Lithuania"
+    Longitude 25.58333
     Internal 1
     Latitude 55.96667
-    Country "Lithuania"
     type "PoP"
-    Longitude 25.58333
   ]
   node [
     id 11
     label "Kupiskis"
+    Country "Lithuania"
+    Longitude 24.96667
     Internal 1
     Latitude 55.83333
-    Country "Lithuania"
     type "PoP"
-    Longitude 24.96667
   ]
   node [
     id 12
     label "Zarasai"
+    Country "Lithuania"
+    Longitude 26.25
     Internal 1
     Latitude 55.73333
-    Country "Lithuania"
     type "PoP"
-    Longitude 26.25
   ]
   node [
     id 13
     label "Panevezys"
+    Country "Lithuania"
+    Longitude 24.35
     Internal 1
     Latitude 55.73333
-    Country "Lithuania"
     type "Major City PoP"
-    Longitude 24.35
   ]
   node [
     id 14
     label "Radviliskis"
+    Country "Lithuania"
+    Longitude 23.53333
     Internal 1
     Latitude 55.81667
-    Country "Lithuania"
     type "PoP"
-    Longitude 23.53333
   ]
   node [
     id 15
     label "Plunge"
+    Country "Lithuania"
+    Longitude 21.84417
     Internal 1
     Latitude 55.91139
-    Country "Lithuania"
     type "PoP"
-    Longitude 21.84417
   ]
   node [
     id 16
     label "Kelme"
+    Country "Lithuania"
+    Longitude 22.93417
     Internal 1
     Latitude 55.63389
-    Country "Lithuania"
     type "PoP"
-    Longitude 22.93417
   ]
   node [
     id 17
@@ -179,218 +179,218 @@ graph [
   node [
     id 18
     label "Taurage"
+    Country "Lithuania"
+    Longitude 22.28972
     Internal 1
     Latitude 55.25222
-    Country "Lithuania"
     type "PoP"
-    Longitude 22.28972
   ]
   node [
     id 19
     label "Zemaiciu Naumiestis"
+    Country "Lithuania"
+    Longitude 21.70222
     Internal 1
     Latitude 55.35917
-    Country "Lithuania"
     type "PoP"
-    Longitude 21.70222
   ]
   node [
     id 20
     label "Raseiniai"
+    Country "Lithuania"
+    Longitude 23.12167
     Internal 1
     Latitude 55.37361
-    Country "Lithuania"
     type "PoP"
-    Longitude 23.12167
   ]
   node [
     id 21
     label "Kedainiai"
+    Country "Lithuania"
+    Longitude 23.97472
     Internal 1
     Latitude 55.28833
-    Country "Lithuania"
     type "PoP"
-    Longitude 23.97472
   ]
   node [
     id 22
     label "Kaunas"
+    Country "Lithuania"
+    Longitude 23.9
     Internal 1
     Latitude 54.9
-    Country "Lithuania"
     type "Major City PoP"
-    Longitude 23.9
   ]
   node [
     id 23
     label "Pasvalys"
+    Country "Lithuania"
+    Longitude 24.40361
     Internal 1
     Latitude 56.05944
-    Country "Lithuania"
     type "PoP"
-    Longitude 24.40361
   ]
   node [
     id 24
     label "Vilnius"
+    Country "Lithuania"
+    Longitude 25.2798
     Internal 1
     Latitude 54.68916
-    Country "Lithuania"
     type "Major City PoP"
-    Longitude 25.2798
   ]
   node [
     id 25
     label "Jonava"
+    Country "Lithuania"
+    Longitude 24.28333
     Internal 1
     Latitude 55.08333
-    Country "Lithuania"
     type "PoP"
-    Longitude 24.28333
   ]
   node [
     id 26
     label "Anyksciai"
+    Country "Lithuania"
+    Longitude 25.10264
     Internal 1
     Latitude 55.52557
-    Country "Lithuania"
     type "PoP"
-    Longitude 25.10264
   ]
   node [
     id 27
     label "Utena"
+    Country "Lithuania"
+    Longitude 25.6
     Internal 1
     Latitude 55.5
-    Country "Lithuania"
     type "PoP"
-    Longitude 25.6
   ]
   node [
     id 28
     label "Visaginas"
+    Country "Lithuania"
+    Longitude 26.41667
     Internal 1
     Latitude 55.6
-    Country "Lithuania"
     type "PoP"
-    Longitude 26.41667
   ]
   node [
     id 29
     label "Moletai"
+    Country "Lithuania"
+    Longitude 25.41667
     Internal 1
     Latitude 55.23333
-    Country "Lithuania"
     type "PoP"
-    Longitude 25.41667
   ]
   node [
     id 30
     label "Ignalina"
+    Country "Lithuania"
+    Longitude 26.16667
     Internal 1
     Latitude 55.35
-    Country "Lithuania"
     type "PoP"
-    Longitude 26.16667
   ]
   node [
     id 31
     label "Ukmerge"
+    Country "Lithuania"
+    Longitude 24.75
     Internal 1
     Latitude 55.25
-    Country "Lithuania"
     type "PoP"
-    Longitude 24.75
   ]
   node [
     id 32
     label "Sirvintos"
+    Country "Lithuania"
+    Longitude 24.95
     Internal 1
     Latitude 55.05
-    Country "Lithuania"
     type "PoP"
-    Longitude 24.95
   ]
   node [
     id 33
     label "Jurbarkas"
+    Country "Lithuania"
+    Longitude 22.76639
     Internal 1
     Latitude 55.07778
-    Country "Lithuania"
     type "PoP"
-    Longitude 22.76639
   ]
   node [
     id 34
     label "Sakiai"
+    Country "Lithuania"
+    Longitude 23.03583
     Internal 1
     Latitude 54.95472
-    Country "Lithuania"
     type "PoP"
-    Longitude 23.03583
   ]
   node [
     id 35
     label "Vilkaviskis"
+    Country "Lithuania"
+    Longitude 23.03222
     Internal 1
     Latitude 54.65167
-    Country "Lithuania"
     type "PoP"
-    Longitude 23.03222
   ]
   node [
     id 36
     label "Marijampole"
+    Country "Lithuania"
+    Longitude 23.35
     Internal 1
     Latitude 54.56667
-    Country "Lithuania"
     type "PoP"
-    Longitude 23.35
   ]
   node [
     id 37
     label "Alytus"
+    Country "Lithuania"
+    Longitude 24.05
     Internal 1
     Latitude 54.4
-    Country "Lithuania"
     type "PoP"
-    Longitude 24.05
   ]
   node [
     id 38
     label "Prienai"
+    Country "Lithuania"
+    Longitude 23.95
     Internal 1
     Latitude 54.63333
-    Country "Lithuania"
     type "PoP"
-    Longitude 23.95
   ]
   node [
     id 39
     label "Trakar"
+    Country "Lithuania"
+    Longitude 24.93333
     Internal 1
     Latitude 54.63333
-    Country "Lithuania"
     type "PoP"
-    Longitude 24.93333
   ]
   node [
     id 40
     label "Salcininkai"
+    Country "Lithuania"
+    Longitude 25.38333
     Internal 1
     Latitude 54.3
-    Country "Lithuania"
     type "PoP"
-    Longitude 25.38333
   ]
   node [
     id 41
     label "Druskininkai"
+    Country "Lithuania"
+    Longitude 23.96667
     Internal 1
     Latitude 54.01667
-    Country "Lithuania"
     type "PoP"
-    Longitude 23.96667
   ]
   node [
     id 42
@@ -401,24 +401,24 @@ graph [
     source 0
     target 4
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 1
     target 4
     LinkSpeed "8"
-    LinkLabel "8Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "8Mb/s"
     LinkSpeedRaw 8000000.0
   ]
   edge [
     source 2
     target 4
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
@@ -429,312 +429,312 @@ graph [
     source 4
     target 8
     LinkSpeed "1"
-    LinkLabel "1Gb/s"
     LinkSpeedUnits "G"
+    LinkLabel "1Gb/s"
     LinkSpeedRaw 1000000000.0
   ]
   edge [
     source 4
     target 10
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 4
     target 11
     LinkSpeed "10"
-    LinkLabel "10Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 4
     target 13
     LinkSpeed "1"
-    LinkLabel "1Gb/s"
     LinkSpeedUnits "G"
+    LinkLabel "1Gb/s"
     LinkSpeedRaw 1000000000.0
   ]
   edge [
     source 4
     target 14
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 4
     target 15
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 4
     target 16
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 5
     target 24
     LinkSpeed "8"
-    LinkLabel "8Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "8Mb/s"
     LinkSpeedRaw 8000000.0
   ]
   edge [
     source 6
     target 8
     LinkSpeed "10"
-    LinkLabel "10Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 7
     target 8
     LinkSpeed "40"
-    LinkLabel "40Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "40Mb/s"
     LinkSpeedRaw 40000000.0
   ]
   edge [
     source 8
     target 9
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 8
     target 17
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 8
     target 18
     LinkSpeed "40"
-    LinkLabel "40Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "40Mb/s"
     LinkSpeedRaw 40000000.0
   ]
   edge [
     source 8
     target 19
     LinkSpeed "40"
-    LinkLabel "40mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "40mb/s"
     LinkSpeedRaw 40000000.0
   ]
   edge [
     source 8
     target 22
     LinkSpeed "1"
-    LinkLabel "1Gb/s"
     LinkSpeedUnits "G"
+    LinkLabel "1Gb/s"
     LinkSpeedRaw 1000000000.0
   ]
   edge [
     source 12
     target 13
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 13
     target 24
     LinkSpeed "1"
-    LinkLabel "1Gb/s"
     LinkSpeedUnits "G"
+    LinkLabel "1Gb/s"
     LinkSpeedRaw 1000000000.0
   ]
   edge [
     source 13
     target 26
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 13
     target 28
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 20
     target 22
     LinkSpeed "8"
-    LinkLabel "8Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "8Mb/s"
     LinkSpeedRaw 8000000.0
   ]
   edge [
     source 21
     target 22
     LinkSpeed "40"
-    LinkLabel "40Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "40Mb/s"
     LinkSpeedRaw 40000000.0
   ]
   edge [
     source 22
     target 33
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 22
     target 34
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 22
     target 35
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 22
     target 36
     LinkSpeed "40"
-    LinkLabel "40Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "40Mb/s"
     LinkSpeedRaw 40000000.0
   ]
   edge [
     source 22
     target 37
     LinkSpeed "60"
-    LinkLabel "60Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "60Mb/s"
     LinkSpeedRaw 60000000.0
   ]
   edge [
     source 22
     target 38
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 22
     target 42
     LinkSpeed "5"
-    LinkLabel "5Gb/s"
     LinkSpeedUnits "G"
+    LinkLabel "5Gb/s"
     LinkSpeedRaw 5000000000.0
   ]
   edge [
     source 22
     target 40
     LinkSpeed "8"
-    LinkLabel "8Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "8Mb/s"
     LinkSpeedRaw 8000000.0
   ]
   edge [
     source 22
     target 24
     LinkSpeed "1"
-    LinkLabel "1Gb/s"
     LinkSpeedUnits "G"
+    LinkLabel "1Gb/s"
     LinkSpeedRaw 1000000000.0
   ]
   edge [
     source 22
     target 25
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 23
     target 24
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 24
     target 32
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 24
     target 39
     LinkSpeed "20"
-    LinkLabel "20mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 24
     target 41
     LinkSpeed "8"
-    LinkLabel "8Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "8Mb/s"
     LinkSpeedRaw 8000000.0
   ]
   edge [
     source 24
     target 27
     LinkSpeed "60"
-    LinkLabel "60Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "60Mb/s"
     LinkSpeedRaw 60000000.0
   ]
   edge [
     source 24
     target 29
     LinkSpeed "8"
-    LinkLabel "8Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "8Mb/s"
     LinkSpeedRaw 8000000.0
   ]
   edge [
     source 24
     target 30
     LinkSpeed "20"
-    LinkLabel "20Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20Mb/s"
     LinkSpeedRaw 20000000.0
   ]
   edge [
     source 24
     target 31
     LinkSpeed "20"
-    LinkLabel "20mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "20mb/s"
     LinkSpeedRaw 20000000.0
   ]
 ]

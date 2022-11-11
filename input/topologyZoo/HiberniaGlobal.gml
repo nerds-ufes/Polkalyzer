@@ -2,446 +2,446 @@ graph [
   DateObtained "23/03/11"
   GeoLocation "North America, Europe"
   GeoExtent "Continent+"
-  Customer 0
   Network "Hibernia Atlantic "
-  IX 0
   Provenance "Primary"
-  Note "Links unclear around Washington DC. Londonderry and Portrush have no node shown, only label. Missing Portrush node added in."
+  Access 0
   Source "http://www.hiberniaatlantic.com/documents/HA_NetworkPCard_0110.pdf"
   Version "1.0"
+  DateType "Current"
   Type "COM"
+  Backbone 1
+  Commercial 0
+  label "hibernia_global"
+  Customer 0
+  IX 0
   LastAccess "23/03/11"
-  Access 0
+  Note "Links unclear around Washington DC. Londonderry and Portrush have no node shown, only label. Missing Portrush node added in."
   Layer "IP"
   Classification "Backbone Transit"
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "2011-03"
-  label "hibernia_global"
-  Testbed 0
   Developed 0
+  Transit 1
+  NetworkDate "2011-03"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Seattle"
-    Latitude 47.60621
     Country "United States"
-    type "Red Node"
     Longitude -122.33207
+    Latitude 47.60621
+    type "Red Node"
   ]
   node [
     id 1
     label "Denver"
-    Latitude 39.73915
     Country "United States"
-    type "Red Node"
     Longitude -104.9847
+    Latitude 39.73915
+    type "Red Node"
   ]
   node [
     id 2
     label "San Francisco"
-    Latitude 37.77493
     Country "United States"
-    type "Red Node"
     Longitude -122.41942
+    Latitude 37.77493
+    type "Red Node"
   ]
   node [
     id 3
     label "Los Angeles"
-    Latitude 34.05223
     Country "United States"
-    type "Red Node"
     Longitude -118.24368
+    Latitude 34.05223
+    type "Red Node"
   ]
   node [
     id 4
     label "San Diego"
-    Latitude 32.71533
     Country "United States"
-    type "Red Node"
     Longitude -117.15726
+    Latitude 32.71533
+    type "Red Node"
   ]
   node [
     id 5
     label "Las Vegas"
-    Latitude 36.17497
     Country "United States"
-    type "Red Node"
     Longitude -115.13722
+    Latitude 36.17497
+    type "Red Node"
   ]
   node [
     id 6
     label "Phoenix"
-    Latitude 33.44838
     Country "United States"
-    type "Red Node"
     Longitude -112.07404
+    Latitude 33.44838
+    type "Red Node"
   ]
   node [
     id 7
     label "Dallas"
-    Latitude 32.78306
     Country "United States"
-    type "Red Node"
     Longitude -96.80667
+    Latitude 32.78306
+    type "Red Node"
   ]
   node [
     id 8
     label "Houston"
-    Latitude 29.76328
     Country "United States"
-    type "Red Node"
     Longitude -95.36327
+    Latitude 29.76328
+    type "Red Node"
   ]
   node [
     id 9
     label "Tampa"
-    Latitude 27.94752
     Country "United States"
-    type "Red Node"
     Longitude -82.45843
+    Latitude 27.94752
+    type "Red Node"
   ]
   node [
     id 10
     label "Atlanta"
-    Latitude 33.749
     Country "United States"
-    type "Red Node"
     Longitude -84.38798
+    Latitude 33.749
+    type "Red Node"
   ]
   node [
     id 11
     label "Charlotte"
     geocode_append "Atlanta"
-    Latitude 35.22709
     Country "United States"
-    type "Red Node"
     Longitude -80.84313
+    Latitude 35.22709
+    type "Red Node"
   ]
   node [
     id 12
     label "Raleigh"
-    Latitude 35.7721
     Country "United States"
-    type "Red Node"
     Longitude -78.63861
+    Latitude 35.7721
+    type "Red Node"
   ]
   node [
     id 13
     label "Miami"
-    Latitude 25.77427
     Country "United States"
-    type "Red Node"
     Longitude -80.19366
+    Latitude 25.77427
+    type "Red Node"
   ]
   node [
     id 14
     label "Chicago"
-    Latitude 41.85003
     Country "United States"
-    type "Red Node"
     Longitude -87.65005
+    Latitude 41.85003
+    type "Red Node"
   ]
   node [
     id 15
     label "Toronto"
-    Latitude 43.70011
     Country "Canada"
-    type "Red Node"
     Longitude -79.4163
+    Latitude 43.70011
+    type "Red Node"
   ]
   node [
     id 16
     label "Buffalo"
-    Latitude 42.88645
     Country "United States"
-    type "Red Node"
     Longitude -78.87837
+    Latitude 42.88645
+    type "Red Node"
   ]
   node [
     id 17
     label "Cleveland"
-    Latitude 41.4995
     Country "United States"
-    type "Red Node"
     Longitude -81.69541
+    Latitude 41.4995
+    type "Red Node"
   ]
   node [
     id 18
     label "Montreal"
-    Latitude 45.50884
     Country "Canada"
-    type "Red Node"
     Longitude -73.58781
+    Latitude 45.50884
+    type "Red Node"
   ]
   node [
     id 19
     label "Albany"
-    Latitude 42.65258
     Country "United States"
-    type "Red Node"
     Longitude -73.75623
+    Latitude 42.65258
+    type "Red Node"
   ]
   node [
     id 20
     label "White Plains"
-    Latitude 41.03399
     Country "United States"
-    type "Red Node"
     Longitude -73.76291
+    Latitude 41.03399
+    type "Red Node"
   ]
   node [
     id 21
     label "Stamford"
-    Latitude 41.05343
     Country "United States"
-    type "Red Node"
     Longitude -73.53873
+    Latitude 41.05343
+    type "Red Node"
   ]
   node [
     id 22
     label "Boston"
-    Latitude 42.35843
     Country "United States"
-    type "Red Node"
     Longitude -71.05977
+    Latitude 42.35843
+    type "Red Node"
   ]
   node [
     id 23
     label "Sainte-Foy"
     geocode_append "Canada"
-    Latitude 46.75615
     Country "Canada"
-    type "Red Node"
     Longitude -71.29543
+    Latitude 46.75615
+    type "Red Node"
   ]
   node [
     id 24
     label "Edmundston"
-    Latitude 47.3737
     Country "Canada"
-    type "Red Node"
     Longitude -68.32512
+    Latitude 47.3737
+    type "Red Node"
   ]
   node [
     id 25
     label "Moncton"
-    Latitude 46.11594
     Country "Canada"
-    type "Red Node"
     Longitude -64.80186
+    Latitude 46.11594
+    type "Red Node"
   ]
   node [
     id 26
     label "Truro"
     geocode_append "Canada"
-    Latitude 45.36685
     Country "Canada"
-    type "Red Node"
     Longitude -63.26538
+    Latitude 45.36685
+    type "Red Node"
   ]
   node [
     id 27
     label "Halifax"
-    Latitude 44.646
     Country "Canada"
-    type "Red Node"
     Longitude -63.57333
+    Latitude 44.646
+    type "Red Node"
   ]
   node [
     id 28
     label "Belfast"
-    Latitude 54.58333
     Country "United Kingdom"
-    type "Red Node"
     Longitude -5.93333
+    Latitude 54.58333
+    type "Red Node"
   ]
   node [
     id 29
     label "Dublin"
-    Latitude 53.34399
     Country "Ireland"
-    type "Red Node"
     Longitude -6.26719
+    Latitude 53.34399
+    type "Red Node"
   ]
   node [
     id 30
     label "Southport"
-    Latitude 53.64779
     Country "United Kingdom"
-    type "Red Node"
     Longitude -3.00648
+    Latitude 53.64779
+    type "Red Node"
   ]
   node [
     id 31
     label "Manchester"
-    Latitude 53.48095
     Country "United Kingdom"
-    type "Red Node"
     Longitude -2.23743
+    Latitude 53.48095
+    type "Red Node"
   ]
   node [
     id 32
     label "Reading"
-    Latitude 51.45625
     Country "United Kingdom"
-    type "Red Node"
     Longitude -0.97113
+    Latitude 51.45625
+    type "Red Node"
   ]
   node [
     id 33
     label "London"
-    Latitude 51.50853
     Country "United Kingdom"
-    type "Red Node"
     Longitude -0.12574
+    Latitude 51.50853
+    type "Red Node"
   ]
   node [
     id 34
     label "Egham"
-    Latitude 51.43158
     Country "United Kingdom"
-    type "Red Node"
     Longitude -0.55239
+    Latitude 51.43158
+    type "Red Node"
   ]
   node [
     id 35
     label "Biache"
-    Latitude 50.30869
     Country "France"
-    type "Red Node"
     Longitude 2.94777
+    Latitude 50.30869
+    type "Red Node"
   ]
   node [
     id 36
     label "Paris"
-    Latitude 48.85341
     Country "France"
-    type "Red Node"
     Longitude 2.3488
+    Latitude 48.85341
+    type "Red Node"
   ]
   node [
     id 37
     label "Brussels"
-    Latitude 50.85045
     Country "Belgium"
-    type "Red Node"
     Longitude 4.34878
+    Latitude 50.85045
+    type "Red Node"
   ]
   node [
     id 38
     label "Amsterdam"
-    Latitude 52.37403
     Country "Netherlands"
-    type "Red Node"
     Longitude 4.88969
+    Latitude 52.37403
+    type "Red Node"
   ]
   node [
     id 39
     label "Dusseldorf"
-    Latitude 51.22172
     Country "Germany"
-    type "Red Node"
     Longitude 6.77616
+    Latitude 51.22172
+    type "Red Node"
   ]
   node [
     id 40
     label "Frankfurt"
-    Latitude 50.11667
     Country "Germany"
-    type "Red Node"
     Longitude 8.68333
+    Latitude 50.11667
+    type "Red Node"
   ]
   node [
     id 41
     label "Mannheim"
-    Latitude 49.48833
     Country "Germany"
-    type "Red Node"
     Longitude 8.46472
+    Latitude 49.48833
+    type "Red Node"
   ]
   node [
     id 42
     label "Strasbourg"
-    Latitude 48.58342
     Country "France"
-    type "Red Node"
     Longitude 7.74296
+    Latitude 48.58342
+    type "Red Node"
   ]
   node [
     id 43
     label "Newark"
-    Latitude 40.73566
     Country "United States"
-    type "Red Node"
     Longitude -74.17237
+    Latitude 40.73566
+    type "Red Node"
   ]
   node [
     id 44
     label "Ashburn"
-    Latitude 39.04372
     Country "United States"
-    type "Red Node"
     Longitude -77.48749
+    Latitude 39.04372
+    type "Red Node"
   ]
   node [
     id 45
     label "Pittsburgh"
-    Latitude 40.44062
     Country "United States"
-    type "Red Node"
     Longitude -79.99589
+    Latitude 40.44062
+    type "Red Node"
   ]
   node [
     id 46
     label "Philadelphia"
-    Latitude 39.95234
     Country "United States"
-    type "Red Node"
     Longitude -75.16379
+    Latitude 39.95234
+    type "Red Node"
   ]
   node [
     id 47
     label "McClean"
-    Latitude 38.93428
     Country "United States"
-    type "Red Node"
     Longitude -77.17748
+    Latitude 38.93428
+    type "Red Node"
   ]
   node [
     id 48
     label "Washington Dc"
-    Latitude 38.89511
     Country "United States"
-    type "Red Node"
     Longitude -77.03637
+    Latitude 38.89511
+    type "Red Node"
   ]
   node [
     id 49
     label "Baltimore"
-    Latitude 39.29038
     Country "United States"
-    type "Red Node"
     Longitude -76.61219
+    Latitude 39.29038
+    type "Red Node"
   ]
   node [
     id 50
     label "Richmond"
-    Latitude 37.55376
     Country "United States"
-    type "Red Node"
     Longitude -77.46026
+    Latitude 37.55376
+    type "Red Node"
   ]
   node [
     id 51
     label "New York"
-    Latitude 40.71427
     Country "United States"
-    type "Yellow Node"
     Longitude -74.00597
+    Latitude 40.71427
+    type "Yellow Node"
   ]
   node [
     id 52
@@ -456,10 +456,10 @@ graph [
   node [
     id 54
     label "Portrush"
-    Latitude 55.19592
     Country "United Kingdom"
-    type "Red Node"
     Longitude -6.6493
+    Latitude 55.19592
+    type "Red Node"
   ]
   edge [
     source 0
@@ -613,12 +613,12 @@ graph [
   ]
   edge [
     source 18
-    target 19
+    target 23
     LinkLabel "Green Link"
   ]
   edge [
     source 18
-    target 23
+    target 19
     LinkLabel "Green Link"
   ]
   edge [
@@ -778,12 +778,12 @@ graph [
   ]
   edge [
     source 38
-    target 39
+    target 53
     LinkLabel "Green Link"
   ]
   edge [
     source 38
-    target 53
+    target 39
     LinkLabel "Green Link"
   ]
   edge [

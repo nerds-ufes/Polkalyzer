@@ -146,6 +146,64 @@ def StateOverheadHeatMap3(df,path):
     plt.savefig(f'{path}/SO_HeatMap3.png',dpi=120)
     return hMap
 
+def StateOverheadHeatMap4(df,path):
+    #Constants
+    initialNode = 6
+    maxNodes = 30
+    #Anotation DF
+    df2 = (df[['Topology','Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
+    df2['State Overhead'] = df2['State Overhead'].apply(lambda x: round(x, 1))
+    df2['Replication Average per Node'] = df2['Replication Average per Node'].apply(lambda x: round(x, 1))
+    
+    #Plot Config
+
+    #nodesArr = np.arange(1.5,31,1)
+    nodesLabel = np.arange(4,31,1)
+    replicationArr = [1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9]
+    newArr = []
+    for i in range (initialNode,maxNodes+1):
+        for j in replicationArr:
+            newArr.append([i,round(j,1)])
+
+    df1 = pd.DataFrame(data=newArr,columns=['Number of Nodes','Replication Average per Node'])
+    df1['State Overhead'] = df1.apply(lambda x : x['Number of Nodes']*(1+2*(x['Replication Average per Node'])),axis=1)
+    hMap = df1.pivot('Number of Nodes','Replication Average per Node','State Overhead')
+    #Plot Config 
+    plt.clf()
+    plt.cla()
+    f = plt.figure(figsize=(10,10))
+    #f.suptitle('Number of State Entries per Node using MPINT')
+    plt.xlabel('Replication Average per Node',fontsize=18)
+    plt.ylabel('Number of Nodes',fontsize=18)
+    #f.text(0.5, 0.04, 'Number of Nodes', ha='center',fontsize='18')
+    #f.text(0.04, 0.5, 'Overhead (Bytes)', va='center', rotation='vertical',fontsize='18')
+    #Plot HeatMap
+    ax = sns.heatmap(data=hMap,cmap="rocket_r",fmt='.1f',annot=False,linewidth=0.01,linecolor="#222")
+    #Plot Anotate
+    offsetX = +0.5 #Centering the annotations
+    offsetY = -0.5 -3 #Centering the annotations
+    for label, x, y in zip(df2['Topology'], df2['Replication Average per Node'], df2['Number of Nodes']):
+        if(label == 'Gridnet' or label == 'Pern' or label == 'BtEurope' or label == 'EliBackbone' or label == 'Gambia' or label == 'Itnet' or label == 'Netrail' or label == 'Abilene' or label == 'Sanren' or label == 'Cesnet1999' or label == 'Nsfnet' or label == 'Arpanet196912' or label == 'Arpanet19728' or label == 'Geant2001' or label == 'Cesnet1997'):
+            x = gambiarra(x)
+            x += offsetX
+            y += offsetY
+            #ax.scatter(x,y, color = 'red')
+            ax.annotate(
+                label, 
+                xy = (x, y), xytext = (0,0), xycoords='data',
+                textcoords = 'offset points', ha = 'center', va = 'center',
+                bbox = dict(boxstyle = 'round,pad=0.5', fc = 'yellow', alpha = 0.5))
+
+    #plt.xlim([1.0,2.0])
+    #plt.ylim([0,30])
+    #Invert Y Axis
+    plt.gca().invert_yaxis()
+    #Save Fig
+    ov.validateEntirePath(path)
+    plt.savefig(f'{path}/SO_HeatMap4.png',bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(f'{path}/SO_HeatMap4.pdf',bbox_inches='tight',pad_inches=0.1,dpi=120)
+    return hMap
+
 def StateOverheadConcentration(df,path):
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     #Plot Config
@@ -197,17 +255,23 @@ def OverheadPointPlot(df,path):
     #maxNode = df2['Number of Nodes'].max()
     #Plot Config
     f,ax= plt.subplots(2,1,figsize=(10,10),sharex=True)
-    f.suptitle('Overhead (Bits) - %s Topologys' %numberOfTopologys)
+    #f.suptitle('Overhead (Bytes) - %s Topologys' %numberOfTopologys)
+    #plt.xlabel('Number of Nodes',fontsize=18)
+    #plt.ylabel('Overhead',fontsize=18)
+    f.text(0.5, 0.04, 'Number of Nodes', ha='center',fontsize='18')
+    f.text(0.04, 0.5, 'Overhead (Bytes)', va='center', rotation='vertical',fontsize='18')
     #plt.xticks(np.arange(0, maxNode +1, 5))
-    ax[0].set_title('DataPlane')
-    ax[1].set_title('ControlPlane')
+    ax[0].set_title('DataPlane',fontsize=16)
+    ax[1].set_title('ControlPlane',fontsize=16)
     #Plot Data
-    g = sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0],dodge=True, data=dfm1,errorbar=None);
-    g.set(xlabel=None)
-    sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1],dodge=True,data=dfm2,errorbar=None);
+    g1 = sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0],dodge=True, data=dfm1,errorbar=None);
+    g1.set(xlabel=None,ylabel=None)
+    g2 = sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1],dodge=True,data=dfm2,errorbar=None);
+    g2.set(xlabel=None,ylabel=None)
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(f'{path}/OverheadPP.png',dpi=120)
+    plt.savefig(f'{path}/OverheadPP.png',bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(f'{path}/OverheadPP.pdf',bbox_inches='tight',pad_inches=0.1,dpi=120)
 
 def OverheadLinePlot(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']]
@@ -222,33 +286,22 @@ def OverheadLinePlot(df,path):
     numberOfTopologys = int((len(df2.axes[0]))/2)
     #Plot Config
     f,ax= plt.subplots(2,1,figsize=(10,10),sharex=True)
-    f.suptitle('Overhead (Bits) (%s Topologys)' %numberOfTopologys)
-    ax[0].set_title('DataPlane')
-    ax[1].set_title('ControlPlane')
+    #f.suptitle('Overhead (Bytes) (%s Topologys)' %numberOfTopologys)
+    ax[0].set_title('DataPlane',fontsize=16)
+    ax[1].set_title('ControlPlane',fontsize=16)
+    #plt.xlabel('Number of Nodes',fontsize=18)
+    #plt.ylabel('Overhead',fontsize=18)
+    f.text(0.5, 0.04, 'Number of Nodes', ha='center',fontsize='18')
+    f.text(0.04, 0.5, 'Overhead (Bytes)', va='center', rotation='vertical',fontsize='18')
     #Plot Data
-    sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0], data=dfm1,errorbar=None);
-    sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1], data=dfm2,errorbar=None);
+    g1 = sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0], data=dfm1,errorbar=None);
+    g1.set(xlabel=None,ylabel=None)
+    g2 = sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1], data=dfm2,errorbar=None);
+    g2.set(xlabel=None,ylabel=None)
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(f'{path}/OverheadLP.png',dpi=120)
-
-def OverheadDisPlot(df,path):
-    df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']]
-    dfm = df2.melt(id_vars=['Where','Number of Nodes'], var_name='Type', value_name='Overhead')
-    dfm1 = dfm.loc[dfm['Where'] == 'DataPlane']
-    dfm2 = dfm.loc[dfm['Where'] == 'ControlPlane']
-
-    #Plot Config
-    f,ax= plt.subplots(1,2,figsize=(10,5),sharey=True)
-    f.suptitle('Overhead')
-    ax[0].set_title('DataPlane')
-    ax[1].set_title('ControlPlane')
-    #Plot Data
-    sns.displot(x="Number of Nodes", hue='Type',kind='kde',ax=ax[0], data=dfm1);
-    sns.displot(x="Number of Nodes", hue='Type',kind='kde',ax=ax[1],data=dfm2);
-    #Save Fig
-    ov.validateEntirePath(path)
-    plt.savefig(f'{path}/OverheadDP.png',dpi=120)
+    plt.savefig(f'{path}/OverheadLP.png',bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(f'{path}/OverheadLP.pdf',bbox_inches='tight',pad_inches=0.1,dpi=120)
 
 def OverheadCompare(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT']]
@@ -301,19 +354,20 @@ def plotDataFrame(df,name,choice,algorithm,fixedNodeSender):
 
     if(choice == 1):
         OverheadPointPlot(df,f'output/Plots/{name}')
-        OverheadLinePlot(df,f'output/Plots/{name}')
-        OverheadCompare(df,f'output/Plots/{name}')
+        #OverheadLinePlot(df,f'output/Plots/{name}')
+        #OverheadCompare(df,f'output/Plots/{name}')
     elif(choice == 2):
         OverheadPointPlot(df,f'output/Plots/{name}/{algorithm}/optimalNodeSender')
-        OverheadLinePlot(df,f'output/Plots/{name}/{algorithm}/optimalNodeSender')
-        OverheadCompare(df,f'output/Plots/{name}/{algorithm}/optimalNodeSender')
+        #OverheadLinePlot(df,f'output/Plots/{name}/{algorithm}/optimalNodeSender')
+        #OverheadCompare(df,f'output/Plots/{name}/{algorithm}/optimalNodeSender')
     elif(choice == 3):
         OverheadPointPlot(df,f'output/Plots/{name}/{algorithm}/{fixedNodeSender}')
-        OverheadLinePlot(df,f'output/Plots/{name}/{algorithm}/{fixedNodeSender}')
-        OverheadCompare(df,f'output/Plots/{name}/{algorithm}/{fixedNodeSender}')
+        #OverheadLinePlot(df,f'output/Plots/{name}/{algorithm}/{fixedNodeSender}')
+        #OverheadCompare(df,f'output/Plots/{name}/{algorithm}/{fixedNodeSender}')
 
     StateOverheadJointPlot(df,f'output/Plots/{name}/StateOverhead')
     StateOverheadConcentration(df,f'output/Plots/{name}/StateOverhead')
     StateOverheadDistribution(df,f'output/Plots/{name}/StateOverhead')
     StateOverheadHeatMap2(df,f'output/Plots/{name}/StateOverhead')
     StateOverheadHeatMap3(df,f'output/Plots/{name}/StateOverhead')
+    StateOverheadHeatMap4(df,f'output/Plots/{name}/StateOverhead')

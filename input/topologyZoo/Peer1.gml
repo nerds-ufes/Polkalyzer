@@ -2,138 +2,138 @@ graph [
   DateObtained "16/11/10"
   GeoLocation "Global"
   GeoExtent "Global"
-  Customer 1
   Network "peer1"
-  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.peer1.com/infrastructure/network.php"
   Version "1.0"
+  DateType "Dynamic"
   Type "COM"
+  Backbone 1
+  Commercial 0
+  label "peer1"
+  Customer 1
+  IX 0
   LastAccess "3/08/10"
   Layer "IP"
   Classification "Backbone Transit Customer"
   Creator "Topology Zoo Toolset"
-  DateType "Dynamic"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "2010-08"
-  label "peer1"
-  Testbed 0
   Developed 0
+  Transit 1
+  NetworkDate "2010-08"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Vancouver"
-    Latitude 49.24966
     Country "Canada"
     Longitude -123.11934
+    Latitude 49.24966
   ]
   node [
     id 1
     label "Seattle"
-    Latitude 47.60621
     Country "United States"
     Longitude -122.33207
+    Latitude 47.60621
   ]
   node [
     id 2
     label "Fremont"
-    Latitude 37.54827
     Country "United States"
     Longitude -121.98857
+    Latitude 37.54827
   ]
   node [
     id 3
     label "San Jose"
-    Latitude 9.93333
     Country "Costa Rica"
     Longitude -84.08333
+    Latitude 9.93333
   ]
   node [
     id 4
     label "Los Angeles"
-    Latitude 34.05223
     Country "United States"
     Longitude -118.24368
+    Latitude 34.05223
   ]
   node [
     id 5
     label "Dallas"
-    Latitude 32.78306
     Country "United States"
     Longitude -96.80667
+    Latitude 32.78306
   ]
   node [
     id 6
     label "San Antonio"
-    Latitude 29.42412
     Country "United States"
     Longitude -98.49363
+    Latitude 29.42412
   ]
   node [
     id 7
     label "Atlanta"
-    Latitude 33.749
     Country "United States"
     Longitude -84.38798
+    Latitude 33.749
   ]
   node [
     id 8
     label "Chicago"
-    Latitude 41.85003
     Country "United States"
     Longitude -87.65005
+    Latitude 41.85003
   ]
   node [
     id 9
     label "Toronto"
-    Latitude 43.70011
     Country "Canada"
     Longitude -79.4163
+    Latitude 43.70011
   ]
   node [
     id 10
     label "Montreal"
-    Latitude 45.50884
     Country "Canada"
     Longitude -73.58781
+    Latitude 45.50884
   ]
   node [
     id 11
     label "New York"
-    Latitude 40.71427
     Country "United States"
     Longitude -74.00597
+    Latitude 40.71427
   ]
   node [
     id 12
     label "Herndon/Ashburn"
-    Latitude 39.04372
     Country "United States"
     Longitude -77.48749
+    Latitude 39.04372
   ]
   node [
     id 13
     label "Miami"
-    Latitude 25.77427
     Country "United States"
     Longitude -80.19366
+    Latitude 25.77427
   ]
   node [
     id 14
     label "London"
-    Latitude 51.50853
     Country "United Kingdom"
     Longitude -0.12574
+    Latitude 51.50853
   ]
   node [
     id 15
     label "Amsterdam"
-    Latitude 52.37403
     Country "Netherlands"
     Longitude 4.88969
+    Latitude 52.37403
   ]
   edge [
     source 0

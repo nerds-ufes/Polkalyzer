@@ -2,69 +2,69 @@ graph [
   DateObtained "14/01/11"
   GeoLocation "USA"
   GeoExtent "Country"
-  Customer 0
   Network "NapNet"
-  IX 0
   Provenance "Secondary"
-  Note "ATM only? No information"
+  Access 0
   Source "http://www.nthelp.com/images/napnet.jpg"
   Version "1.0"
+  DateType "Current"
   Type "COM"
+  Backbone 0
+  Commercial 0
+  label "napnet"
+  Customer 0
+  IX 0
   LastAccess "14/01/11"
-  Access 0
+  Note "ATM only? No information"
   Layer "IP"
   Classification ""
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 0
-  Backbone 0
-  Commercial 0
-  NetworkDate "2011-01"
-  label "napnet"
-  Testbed 0
   Developed 1
+  Transit 0
+  NetworkDate "2011-01"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Seattle"
-    Latitude 47.60621
     Country "United States"
     Longitude -122.33207
+    Latitude 47.60621
   ]
   node [
     id 1
     label "San Jose"
-    Latitude 37.33939
     Country "United States"
     Longitude -121.89496
+    Latitude 37.33939
   ]
   node [
     id 2
     label "Minneapolis"
-    Latitude 44.97997
     Country "United States"
     Longitude -93.26384
+    Latitude 44.97997
   ]
   node [
     id 3
     label "Chicago"
-    Latitude 41.85003
     Country "United States"
     Longitude -87.65005
+    Latitude 41.85003
   ]
   node [
     id 4
     label "Vienna"
-    Latitude 38.90122
     Country "United States"
     Longitude -77.26526
+    Latitude 38.90122
   ]
   node [
     id 5
     label "Dallas"
-    Latitude 32.78306
     Country "United States"
     Longitude -96.80667
+    Latitude 32.78306
   ]
   edge [
     source 0
@@ -82,8 +82,8 @@ graph [
     source 1
     target 4
     LinkType "DS-3"
-    LinkLabel "45 Mbps DS-3"
     LinkNote "45 Mbps "
+    LinkLabel "45 Mbps DS-3"
   ]
   edge [
     source 2

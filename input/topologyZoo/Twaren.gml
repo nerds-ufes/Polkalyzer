@@ -2,26 +2,26 @@ graph [
   DateObtained "18/10/10"
   GeoLocation "Taiwan"
   GeoExtent "Country"
-  Customer 0
   Network "TWAREN"
-  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.twaren.net/english/AboutTwaren/PeeringNetworks/"
   Version "1.0"
+  DateType "Current"
   Type "REN"
+  Backbone 1
+  Commercial 0
+  label "TWAREN"
+  Customer 0
+  IX 0
   LastAccess "3/10/10"
   Layer "IP"
   Classification "Testbed Backbone Transit"
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "2010-10"
-  label "TWAREN"
-  Testbed 1
   Developed 1
+  Transit 1
+  NetworkDate "2010-10"
+  Testbed 1
   SvnVersion 8123
   node [
     id 0

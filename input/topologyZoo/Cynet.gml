@@ -2,26 +2,26 @@ graph [
   DateObtained "20/10/10"
   GeoLocation "Cyprus"
   GeoExtent "Country"
-  Customer 0
   Network "Cynet"
-  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.cynet.ac.cy/images/CyNet_Network.gif"
   Version "1.0"
+  DateType "Current"
   Type "REN"
+  Backbone 1
+  Commercial 0
+  label "CYNET"
+  Customer 0
+  IX 0
   LastAccess "20/10/10"
   Layer "IP"
   Classification "Backbone"
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 0
-  Backbone 1
-  Commercial 0
-  NetworkDate "2010-10"
-  label "CYNET"
-  Testbed 0
   Developed 1
+  Transit 0
+  NetworkDate "2010-10"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
@@ -201,32 +201,32 @@ graph [
     source 0
     target 1
     LinkSpeed "100"
-    LinkLabel "100Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "100Mb/s"
     LinkSpeedRaw 100000000.0
   ]
   edge [
     source 0
     target 3
     LinkSpeed "155"
-    LinkLabel "155Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "155Mb/s"
     LinkSpeedRaw 155000000.0
   ]
   edge [
     source 0
     target 4
     LinkSpeed "155"
-    LinkLabel "155Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "155Mb/s"
     LinkSpeedRaw 155000000.0
   ]
   edge [
     source 0
     target 5
     LinkSpeed "1"
-    LinkLabel "1Gb/s"
     LinkSpeedUnits "G"
+    LinkLabel "1Gb/s"
     LinkSpeedRaw 1000000000.0
   ]
   edge [
@@ -241,160 +241,160 @@ graph [
     source 0
     target 8
     LinkSpeed "60"
-    LinkLabel "60 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "60 Mb/s"
     LinkSpeedRaw 60000000.0
   ]
   edge [
     source 1
     target 2
     LinkSpeed "34"
-    LinkLabel "34mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "34mb/s"
     LinkSpeedRaw 34000000.0
   ]
   edge [
     source 6
     target 9
     LinkSpeed "1"
-    LinkLabel "1Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "1Mb/s"
     LinkSpeedRaw 1000000.0
   ]
   edge [
     source 6
     target 10
     LinkSpeed "2"
-    LinkLabel "2Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "2Mb/s"
     LinkSpeedRaw 2000000.0
   ]
   edge [
     source 7
     target 11
     LinkSpeed "1"
-    LinkLabel "1Gb/s"
     LinkSpeedUnits "G"
+    LinkLabel "1Gb/s"
     LinkSpeedRaw 1000000000.0
   ]
   edge [
     source 7
     target 14
     LinkSpeed "1"
-    LinkLabel "1Gb/s"
     LinkSpeedUnits "G"
+    LinkLabel "1Gb/s"
     LinkSpeedRaw 1000000000.0
   ]
   edge [
     source 7
     target 18
     LinkSpeed "4"
-    LinkLabel "4Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "4Mb/s"
     LinkSpeedRaw 4000000.0
   ]
   edge [
     source 7
     target 19
     LinkSpeed "10"
-    LinkLabel "10 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10 Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 7
     target 20
     LinkSpeed "10"
-    LinkLabel "10 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10 Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 7
     target 21
     LinkSpeed "10"
-    LinkLabel "10 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10 Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 7
     target 22
     LinkSpeed "10"
-    LinkLabel "10 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10 Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 7
     target 23
     LinkSpeed "10"
-    LinkLabel "10 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10 Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 7
     target 24
     LinkSpeed "10"
-    LinkLabel "10 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10 Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 7
     target 25
     LinkSpeed "10"
-    LinkLabel "10 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10 Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 7
     target 26
     LinkSpeed "10"
-    LinkLabel "10 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10 Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 7
     target 27
     LinkSpeed "10"
-    LinkLabel "10 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10 Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 7
     target 28
     LinkSpeed "10"
-    LinkLabel "10 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10 Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 7
     target 29
     LinkSpeed "10"
-    LinkLabel "10 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "10 Mb/s"
     LinkSpeedRaw 10000000.0
   ]
   edge [
     source 8
     target 12
     LinkSpeed "34"
-    LinkLabel "34 Mb/s"
     LinkSpeedUnits "M"
+    LinkLabel "34 Mb/s"
     LinkSpeedRaw 34000000.0
   ]
   edge [
     source 8
     target 13
     LinkSpeed "2"
-    LinkLabel "2Mbps"
     LinkSpeedUnits "M"
+    LinkLabel "2Mbps"
     LinkSpeedRaw 2000000.0
   ]
   edge [
@@ -405,8 +405,8 @@ graph [
     source 14
     target 15
     LinkSpeed "1"
-    LinkLabel "1Gb/s"
     LinkSpeedUnits "G"
+    LinkLabel "1Gb/s"
     LinkSpeedRaw 1000000000.0
   ]
   edge [

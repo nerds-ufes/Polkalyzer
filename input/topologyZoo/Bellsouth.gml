@@ -2,367 +2,367 @@ graph [
   DateObtained "21/10/10"
   GeoLocation "USA"
   GeoExtent "Country"
-  Customer 1
   Network "Bell South "
-  IX 0
   Provenance "Secondary"
-  Note "Same as ATT?"
+  Access 1
   Source "http://www.isp-planet.com/img/backbones/bellsouth.jpg"
   Version "1.0"
+  DateType "Historic"
   Type "COM"
+  Backbone 1
+  Commercial 0
+  label "bellsouth"
+  Customer 1
+  IX 0
   LastAccess "3/08/10"
-  Access 1
+  Note "Same as ATT?"
   Layer "IP"
   Classification "Backbone Transit Access Customer"
   Creator "Topology Zoo Toolset"
-  DateType "Historic"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "<2005"
-  label "bellsouth"
-  Testbed 0
   Developed 1
+  Transit 1
+  NetworkDate "<2005"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Mobile"
-    Latitude 30.69436
     Country "United States"
     Longitude -88.04305
+    Latitude 30.69436
   ]
   node [
     id 1
     label "Greenville"
-    Latitude 34.85262
     Country "United States"
     Longitude -82.39401
+    Latitude 34.85262
   ]
   node [
     id 2
     label "Spartanburg"
-    Latitude 34.94957
     Country "United States"
     Longitude -81.93205
+    Latitude 34.94957
   ]
   node [
     id 3
     label "Stone Mt?"
-    Latitude 33.80816
     Country "United States"
     Longitude -84.1702
+    Latitude 33.80816
   ]
   node [
     id 4
     label "Wilmington"
-    Latitude 34.22573
     Country "United States"
     Longitude -77.94471
+    Latitude 34.22573
   ]
   node [
     id 5
     label "Orlando"
-    Latitude 28.53834
     Country "United States"
     Longitude -81.37924
+    Latitude 28.53834
   ]
   node [
     id 6
     label "Miami"
-    Latitude 25.77427
     Country "United States"
     Longitude -80.19366
+    Latitude 25.77427
   ]
   node [
     id 7
     label "Miami?"
-    Latitude 25.77427
     Country "United States"
     Longitude -80.19366
+    Latitude 25.77427
   ]
   node [
     id 8
     label "Ft Lauderdale"
-    Latitude 26.12231
     Country "United States"
     Longitude -80.14338
+    Latitude 26.12231
   ]
   node [
     id 9
     label "Boca Raton"
-    Latitude 26.35869
     Country "United States"
     Longitude -80.0831
+    Latitude 26.35869
   ]
   node [
     id 10
     label "West Palm Beach"
-    Latitude 26.71534
     Country "United States"
     Longitude -80.05337
+    Latitude 26.71534
   ]
   node [
     id 11
     label "Stuart"
-    Latitude 27.19755
     Country "United States"
     Longitude -80.25283
+    Latitude 27.19755
   ]
   node [
     id 12
     label "Cocoa Beach"
-    Latitude 28.32001
     Country "United States"
     Longitude -80.60755
+    Latitude 28.32001
   ]
   node [
     id 13
     label "Daytona Beach"
-    Latitude 29.21081
     Country "United States"
     Longitude -81.02283
+    Latitude 29.21081
   ]
   node [
     id 14
     label "Panama City"
-    Latitude 30.15881
     Country "United States"
     Longitude -85.66021
+    Latitude 30.15881
   ]
   node [
     id 15
     label "Gainesville"
-    Latitude 29.65163
     Country "United States"
     Longitude -82.32483
+    Latitude 29.65163
   ]
   node [
     id 16
     label "Jacksonville"
-    Latitude 30.33218
     Country "United States"
     Longitude -81.65565
+    Latitude 30.33218
   ]
   node [
     id 17
     label "Savannah"
-    Latitude 32.08354
     Country "United States"
     Longitude -81.09983
+    Latitude 32.08354
   ]
   node [
     id 18
     label "Albany"
     geocode_append "GA"
-    Latitude 31.57851
     Country "United States"
     Longitude -84.15574
+    Latitude 31.57851
   ]
   node [
     id 19
     label "Macon"
-    Latitude 32.84069
     Country "United States"
     Longitude -83.6324
+    Latitude 32.84069
   ]
   node [
     id 20
     label "Athens"
-    Latitude 33.96095
     Country "United States"
     Longitude -83.37794
+    Latitude 33.96095
   ]
   node [
     id 21
     label "Atlanta"
-    Latitude 33.749
     Country "United States"
     Longitude -84.38798
+    Latitude 33.749
   ]
   node [
     id 22
     label "Chatanooga"
-    Latitude 35.04563
     Country "United States"
     Longitude -85.30968
+    Latitude 35.04563
   ]
   node [
     id 23
     label "Huntsville"
-    Latitude 34.73037
     Country "United States"
     Longitude -86.5861
+    Latitude 34.73037
   ]
   node [
     id 24
     label "Birmingham"
-    Latitude 33.52066
     Country "United States"
     Longitude -86.80249
+    Latitude 33.52066
   ]
   node [
     id 25
     label "Montgomery"
-    Latitude 32.36681
     Country "United States"
     Longitude -86.29997
+    Latitude 32.36681
   ]
   node [
     id 26
     label "Pensacola"
-    Latitude 30.42131
     Country "United States"
     Longitude -87.21691
+    Latitude 30.42131
   ]
   node [
     id 27
     label "Biloxi"
-    Latitude 30.39603
     Country "United States"
     Longitude -88.88531
+    Latitude 30.39603
   ]
   node [
     id 28
     label "Slidell"
-    Latitude 30.27519
     Country "United States"
     Longitude -89.78117
+    Latitude 30.27519
   ]
   node [
     id 29
     label "New Orleans"
-    Latitude 29.95465
     Country "United States"
     Longitude -90.07507
+    Latitude 29.95465
   ]
   node [
     id 30
     label "New Orleans?"
-    Latitude 29.95465
     Country "United States"
     Longitude -90.07507
+    Latitude 29.95465
   ]
   node [
     id 31
     label "Lafayette"
-    Latitude 30.22409
     Country "United States"
     Longitude -92.01984
+    Latitude 30.22409
   ]
   node [
     id 32
     label "Baton Rouge"
-    Latitude 30.45075
     Country "United States"
     Longitude -91.15455
+    Latitude 30.45075
   ]
   node [
     id 33
     label "Shreveport"
-    Latitude 32.52515
     Country "United States"
     Longitude -93.75018
+    Latitude 32.52515
   ]
   node [
     id 34
     label "Jackson"
-    Latitude 32.29876
     Country "United States"
     Longitude -90.18481
+    Latitude 32.29876
   ]
   node [
     id 35
     label "Memphis"
-    Latitude 35.14953
     Country "United States"
     Longitude -90.04898
+    Latitude 35.14953
   ]
   node [
     id 36
     label "Owensboro"
-    Latitude 37.77422
     Country "United States"
     Longitude -87.11333
+    Latitude 37.77422
   ]
   node [
     id 37
     label "Louisville"
-    Latitude 38.25424
     Country "United States"
     Longitude -85.75941
+    Latitude 38.25424
   ]
   node [
     id 38
     label "Nashville"
-    Latitude 36.16589
     Country "United States"
     Longitude -86.78444
+    Latitude 36.16589
   ]
   node [
     id 39
     label "Knoxville"
-    Latitude 35.96064
     Country "United States"
     Longitude -83.92074
+    Latitude 35.96064
   ]
   node [
     id 40
     label "Arden"
     geocode_append "NC"
-    Latitude 35.46623
     Country "United States"
     Longitude -82.51651
+    Latitude 35.46623
   ]
   node [
     id 41
     label "Greensboro"
-    Latitude 36.07264
     Country "United States"
     Longitude -79.79198
+    Latitude 36.07264
   ]
   node [
     id 42
     label "Winston"
-    Latitude 36.09986
     Country "United States"
     Longitude -80.24422
+    Latitude 36.09986
   ]
   node [
     id 43
     label "Charlotte"
-    Latitude 35.22709
     Country "United States"
     Longitude -80.84313
+    Latitude 35.22709
   ]
   node [
     id 44
     label "Augusta"
     geocode_append "GA"
-    Latitude 33.47097
     Country "United States"
     Longitude -81.97484
+    Latitude 33.47097
   ]
   node [
     id 45
     label "Columbia"
-    Latitude 34.00071
     Country "United States"
     Longitude -81.03481
+    Latitude 34.00071
   ]
   node [
     id 46
     label "Charleston"
     geocode_append "SC"
-    Latitude 32.77657
     Country "United States"
     Longitude -79.93092
+    Latitude 32.77657
   ]
   node [
     id 47
     label "Florence"
-    Latitude 34.19543
     Country "United States"
     Longitude -79.76256
+    Latitude 34.19543
   ]
   node [
     id 48
@@ -372,16 +372,16 @@ graph [
     id 49
     label "Georgetown"
     geocode_append "KY"
-    Latitude 38.2098
     Country "United States"
     Longitude -84.55883
+    Latitude 38.2098
   ]
   node [
     id 50
     label "Stone Mt?"
-    Latitude 33.80816
     Country "United States"
     Longitude -84.1702
+    Latitude 33.80816
   ]
   edge [
     source 0
@@ -449,7 +449,7 @@ graph [
   ]
   edge [
     source 6
-    target 29
+    target 7
   ]
   edge [
     source 6
@@ -457,7 +457,7 @@ graph [
   ]
   edge [
     source 6
-    target 7
+    target 29
   ]
   edge [
     source 7

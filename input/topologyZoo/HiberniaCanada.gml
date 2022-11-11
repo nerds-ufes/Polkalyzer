@@ -2,107 +2,107 @@ graph [
   DateObtained "23/03/11"
   GeoLocation "Canada"
   GeoExtent "Country"
-  Customer 0
   Network "Hibernia Atlantic (Canada)"
-  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.hiberniaatlantic.com/Canada_network.html"
   Version "1.0"
+  DateType "Current"
   Type "COM"
+  Backbone 1
+  Commercial 0
+  label "hibernia_canada"
+  Customer 0
+  IX 0
   LastAccess "23/03/11"
   Layer "IP"
   Classification "Backbone Transit"
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "2011-03"
-  label "hibernia_canada"
-  Testbed 0
   Developed 0
+  Transit 1
+  NetworkDate "2011-03"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Edmundston"
+    Country "Canada"
+    Longitude -68.32512
     Internal 1
     Latitude 47.3737
-    Country "Canada"
     type "Green Node"
-    Longitude -68.32512
   ]
   node [
     id 1
     label "Quebec"
+    Country "Canada"
+    Longitude -71.21454
     Internal 1
     Latitude 46.81228
-    Country "Canada"
     type "Green Node"
-    Longitude -71.21454
   ]
   node [
     id 2
     label "Montreal"
+    Country "Canada"
+    Longitude -73.58781
     Internal 1
     Latitude 45.50884
-    Country "Canada"
     type "Green Node"
-    Longitude -73.58781
   ]
   node [
     id 3
     label "Toronto"
+    Country "Canada"
+    Longitude -79.4163
     Internal 1
     Latitude 43.70011
-    Country "Canada"
     type "Green Node"
-    Longitude -79.4163
   ]
   node [
     id 4
     label "Buffalo"
+    Country "Canada"
+    Longitude -108.48475
     Internal 1
     Latitude 55.85017
-    Country "Canada"
     type "Green Node"
-    Longitude -108.48475
   ]
   node [
     id 5
     label "Albany"
+    Country "Canada"
+    Longitude -63.64872
     Internal 1
     Latitude 46.28343
-    Country "Canada"
     type "Green Node"
-    Longitude -63.64872
   ]
   node [
     id 6
     label "Boston"
+    Country "Canada"
+    Longitude -121.44399
     Internal 1
     Latitude 49.87002
-    Country "Canada"
     type "Green Node"
-    Longitude -121.44399
   ]
   node [
     id 7
     label "Halifax"
+    Country "Canada"
+    Longitude -63.57333
     Internal 1
     Latitude 44.646
-    Country "Canada"
     type "Green Node"
-    Longitude -63.57333
   ]
   node [
     id 8
     label "Moncton"
+    Country "Canada"
+    Longitude -64.80186
     Internal 1
     Latitude 46.11594
-    Country "Canada"
     type "Green Node"
-    Longitude -64.80186
   ]
   node [
     id 9
@@ -123,11 +123,11 @@ graph [
   node [
     id 12
     label "New York"
+    Country "Canada"
+    Longitude -79.06627
     Internal 1
     Latitude 43.08342
-    Country "Canada"
     type "Yellow Node"
-    Longitude -79.06627
   ]
   edge [
     source 0

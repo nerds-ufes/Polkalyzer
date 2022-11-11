@@ -2,80 +2,80 @@ graph [
   DateObtained "23/03/11"
   GeoLocation "Ireland"
   GeoExtent "Country"
-  Customer 0
   Network "Hibernia Atlantic (Ireland)"
-  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.hiberniaatlantic.com/Ireland_network.html"
   Version "1.0"
+  DateType "Current"
   Type "COM"
+  Backbone 1
+  Commercial 0
+  label "hibernia_ireland"
+  Customer 0
+  IX 0
   LastAccess "23/03/11"
   Layer "IP"
   Classification "Backbone Transit"
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "2011-03"
-  label "hibernia_ireland"
-  Testbed 0
   Developed 0
+  Transit 1
+  NetworkDate "2011-03"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Dublin"
+    Country "Ireland"
+    Longitude -6.26719
     Internal 1
     Latitude 53.34399
-    Country "Ireland"
     type "Large Node"
-    Longitude -6.26719
   ]
   node [
     id 1
     label "Galway"
+    Country "Ireland"
+    Longitude -9.04889
     Internal 1
     Latitude 53.27194
-    Country "Ireland"
     type "Small Node"
-    Longitude -9.04889
   ]
   node [
     id 2
     label "Limerick"
+    Country "Ireland"
+    Longitude -8.62306
     Internal 1
     Latitude 52.66472
-    Country "Ireland"
     type "Small Node"
-    Longitude -8.62306
   ]
   node [
     id 3
     label "Cork"
+    Country "Ireland"
+    Longitude -8.49583
     Internal 1
     Latitude 51.89861
-    Country "Ireland"
     type "Small Node"
-    Longitude -8.49583
   ]
   node [
     id 4
     label "Waterford"
+    Country "Ireland"
+    Longitude -7.11194
     Internal 1
     Latitude 52.25833
-    Country "Ireland"
     type "Small Node"
-    Longitude -7.11194
   ]
   node [
     id 5
     label "Portlaioise"
+    Country "Ireland"
+    Longitude -7.29979
     Internal 1
     Latitude 53.03441
-    Country "Ireland"
     type "Small Node"
-    Longitude -7.29979
   ]
   node [
     id 8

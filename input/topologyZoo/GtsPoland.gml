@@ -2,27 +2,27 @@ graph [
   DateObtained "22/10/10"
   GeoLocation "Poland"
   GeoExtent "Country"
-  Customer 1
   Network "GTS Poland"
-  IX 0
   Provenance "Primary"
-  Note "Krakow not listed, filled in from gts_ce main map"
+  Access 0
   Source "http://www.gtsce.com/en/map/index.shtml"
   Version "1.0"
+  DateType "Current"
   Type "COM"
+  Backbone 1
+  Commercial 0
+  label "gts_poland"
+  Customer 1
+  IX 0
   LastAccess "22/10/10"
-  Access 0
+  Note "Krakow not listed, filled in from gts_ce main map"
   Layer "IP"
   Classification "Backbone Transit Customer "
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "2010-10"
-  label "gts_poland"
-  Testbed 0
   Developed 0
+  Transit 1
+  NetworkDate "2010-10"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
@@ -33,38 +33,38 @@ graph [
   node [
     id 1
     label "Slupsk"
+    Country "Poland"
+    Longitude 17.02872
     Internal 1
     Latitude 54.46405
-    Country "Poland"
     type "Small Node"
-    Longitude 17.02872
   ]
   node [
     id 2
     label "Koszalin"
+    Country "Poland"
+    Longitude 16.17222
     Internal 1
     Latitude 54.19438
-    Country "Poland"
     type "Small Node"
-    Longitude 16.17222
   ]
   node [
     id 3
     label "Kolobrzeg"
+    Country "Poland"
+    Longitude 15.58342
     Internal 1
     Latitude 54.17565
-    Country "Poland"
     type "Small Node"
-    Longitude 15.58342
   ]
   node [
     id 4
     label "Szczecin"
+    Country "Poland"
+    Longitude 14.55302
     Internal 1
     Latitude 53.42894
-    Country "Poland"
     type "Small Node"
-    Longitude 14.55302
   ]
   node [
     id 5
@@ -75,164 +75,164 @@ graph [
   node [
     id 6
     label "Poznan"
+    Country "Poland"
+    Longitude 16.96667
     Internal 1
     Latitude 52.41667
-    Country "Poland"
     type "Small Node"
-    Longitude 16.96667
   ]
   node [
     id 7
     label "Pila"
+    Country "Poland"
+    Longitude 16.73782
     Internal 1
     Latitude 53.15145
-    Country "Poland"
     type "Small Node"
-    Longitude 16.73782
   ]
   node [
     id 8
     label "Bydgoszcz"
+    Country "Poland"
+    Longitude 18.00762
     Internal 1
     Latitude 53.1235
-    Country "Poland"
     type "Small Node"
-    Longitude 18.00762
   ]
   node [
     id 9
     label "Torun"
+    Country "Poland"
+    Longitude 18.59814
     Internal 1
     Latitude 53.01375
-    Country "Poland"
     type "Small Node"
-    Longitude 18.59814
   ]
   node [
     id 10
     label "Wlocawek"
+    Country "Poland"
+    Longitude 19.0678
     Internal 1
     Latitude 52.64817
-    Country "Poland"
     type "Small Node"
-    Longitude 19.0678
   ]
   node [
     id 11
     label "Plock"
+    Country "Poland"
+    Longitude 19.70638
     Internal 1
     Latitude 52.54682
-    Country "Poland"
     type "Small Node"
-    Longitude 19.70638
   ]
   node [
     id 12
     label "Warsaw"
+    Country "Poland"
+    Longitude 21.01178
     Internal 1
     Latitude 52.22977
-    Country "Poland"
     type "Large Node"
-    Longitude 21.01178
   ]
   node [
     id 13
     label "Bialystok"
+    Country "Poland"
+    Longitude 23.15
     Internal 1
     Latitude 53.13333
-    Country "Poland"
     type "Small Node"
-    Longitude 23.15
   ]
   node [
     id 14
     label "Lublin"
+    Country "Poland"
+    Longitude 22.56667
     Internal 1
     Latitude 51.25
-    Country "Poland"
     type "Small Node"
-    Longitude 22.56667
   ]
   node [
     id 15
     label "Rzeszow"
+    Country "Poland"
+    Longitude 21.99901
     Internal 1
     Latitude 50.04132
-    Country "Poland"
     type "Small Node"
-    Longitude 21.99901
   ]
   node [
     id 16
     label "Opole"
+    Country "Poland"
+    Longitude 17.95
     Internal 1
     Latitude 50.66667
-    Country "Poland"
     type "Small Node"
-    Longitude 17.95
   ]
   node [
     id 17
     label "Wroclaw"
+    Country "Poland"
+    Longitude 17.03333
     Internal 1
     Latitude 51.1
-    Country "Poland"
     type "Small Node"
-    Longitude 17.03333
   ]
   node [
     id 18
     label "Kalisz"
+    Country "Poland"
+    Longitude 18.09102
     Internal 1
     Latitude 51.76109
-    Country "Poland"
     type "Small Node"
-    Longitude 18.09102
   ]
   node [
     id 19
     label "Lodz"
+    Country "Poland"
+    Longitude 19.46667
     Internal 1
     Latitude 51.75
-    Country "Poland"
     type "Small Node"
-    Longitude 19.46667
   ]
   node [
     id 20
     label "Radom"
+    Country "Poland"
+    Longitude 21.14714
     Internal 1
     Latitude 51.40253
-    Country "Poland"
     type "Small Node"
-    Longitude 21.14714
   ]
   node [
     id 21
     label "Kielce"
+    Country "Poland"
+    Longitude 20.62752
     Internal 1
     Latitude 50.87033
-    Country "Poland"
     type "Small Node"
-    Longitude 20.62752
   ]
   node [
     id 22
     label "Kalowice"
+    Country "Poland"
+    Longitude 19.01667
     Internal 1
     Latitude 50.26667
-    Country "Poland"
     type "Small Node"
-    Longitude 19.01667
   ]
   node [
     id 23
     label "Tarnow"
+    Country "Poland"
+    Longitude 20.98698
     Internal 1
     Latitude 50.01381
-    Country "Poland"
     type "Small Node"
-    Longitude 20.98698
   ]
   node [
     id 24
@@ -257,20 +257,20 @@ graph [
   node [
     id 28
     label "Olszlyn"
+    Country "Poland"
+    Longitude 20.48333
     Internal 1
     Latitude 53.78333
-    Country "Poland"
     type "Small Node"
-    Longitude 20.48333
   ]
   node [
     id 29
     label "Gdansk"
+    Country "Poland"
+    Longitude 18.64637
     Internal 1
     doubted 1
     Latitude 54.35205
-    Country "Poland"
-    Longitude 18.64637
   ]
   node [
     id 30
@@ -281,20 +281,20 @@ graph [
   node [
     id 33
     label "Krakow"
+    Country "Poland"
+    Longitude 19.91667
     Internal 1
     Latitude 50.08333
-    Country "Poland"
     type "Small Node"
-    Longitude 19.91667
   ]
   node [
     id 34
     label "Zielona Gora"
+    Country "Poland"
+    Longitude 15.50643
     Internal 1
     Latitude 51.93548
-    Country "Poland"
     type "Small Node"
-    Longitude 15.50643
   ]
   edge [
     source 0

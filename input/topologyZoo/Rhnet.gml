@@ -2,99 +2,99 @@ graph [
   DateObtained "22/03/11"
   GeoLocation "Iceland"
   GeoExtent "Country"
-  Customer 0
   Network "RHnet"
-  IX 0
   Provenance "Primary"
-  Note "Locations from http://www.rhnet.is/tengdir.html"
+  Access 0
   Source "http://www.rhnet.is/traffic-map.html"
   Version "1.0"
+  DateType "Dynamic"
   Type "REN"
+  Backbone 1
+  Commercial 0
+  label "rhnet"
+  Customer 0
+  IX 0
   LastAccess "22/03/11"
-  Access 0
+  Note "Locations from http://www.rhnet.is/tengdir.html"
   Layer "IP"
   Classification "Backbone"
   Creator "Topology Zoo Toolset"
-  DateType "Dynamic"
-  Transit 0
-  Backbone 1
-  Commercial 0
-  NetworkDate "2011-03"
-  label "rhnet"
-  Testbed 0
   Developed 1
+  Transit 0
+  NetworkDate "2011-03"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Grensas"
-    Internal 1
-    Latitude 64.13548
     Country "Iceland"
     Longitude -21.89541
+    Internal 1
+    Latitude 64.13548
   ]
   node [
     id 1
     label "Skulagata"
-    Internal 1
-    Latitude 64.13548
     Country "Iceland"
     Longitude -21.89541
+    Internal 1
+    Latitude 64.13548
   ]
   node [
     id 2
     label "Taeknigarour"
-    Internal 1
-    Latitude 64.13548
     Country "Iceland"
     Longitude -21.89541
+    Internal 1
+    Latitude 64.13548
   ]
   node [
     id 3
     label "Sturlugata"
-    Internal 1
-    Latitude 64.13548
     Country "Iceland"
     Longitude -21.89541
+    Internal 1
+    Latitude 64.13548
   ]
   node [
     id 4
     label "Hringbraut"
-    Internal 1
-    Latitude 64.13548
     Country "Iceland"
     Longitude -21.89541
+    Internal 1
+    Latitude 64.13548
   ]
   node [
     id 5
     label "Bustaoavegur"
-    Internal 1
-    Latitude 64.13548
     Country "Iceland"
     Longitude -21.89541
+    Internal 1
+    Latitude 64.13548
   ]
   node [
     id 6
     label "Ofanleiti"
-    Internal 1
-    Latitude 63.41972
     Country "Iceland"
     Longitude -20.2944
+    Internal 1
+    Latitude 63.41972
   ]
   node [
     id 7
     label "Keldhaholt"
-    Internal 1
-    Latitude 66.15134
     Country "Iceland"
     Longitude -18.90512
+    Internal 1
+    Latitude 66.15134
   ]
   node [
     id 8
     label "Hvanneyri"
-    Internal 1
-    Latitude 66.15134
     Country "Iceland"
     Longitude -18.90512
+    Internal 1
+    Latitude 66.15134
   ]
   node [
     id 9
@@ -104,34 +104,34 @@ graph [
   node [
     id 10
     label "FSA-Akureyri"
-    Internal 1
-    Latitude 65.68353
     Country "Iceland"
     Longitude -18.0878
+    Internal 1
+    Latitude 65.68353
   ]
   node [
     id 11
     label "DST-Akureyri"
-    Internal 1
-    Latitude 65.68353
     Country "Iceland"
     Longitude -18.0878
+    Internal 1
+    Latitude 65.68353
   ]
   node [
     id 12
     label "Solborg-Akureyri"
-    Internal 1
-    Latitude 65.68353
     Country "Iceland"
     Longitude -18.0878
+    Internal 1
+    Latitude 65.68353
   ]
   node [
     id 13
     label "Fjarski"
-    Internal 1
-    Latitude 64.13548
     Country "Iceland"
     Longitude -21.89541
+    Internal 1
+    Latitude 64.13548
   ]
   node [
     id 14

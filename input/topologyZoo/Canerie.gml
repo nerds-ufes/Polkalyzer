@@ -2,211 +2,211 @@ graph [
   DateObtained "2/12/10"
   GeoLocation "Canada"
   GeoExtent "Country"
-  Customer 0
   Network "Canerie"
-  IX 0
   Provenance "Primary"
-  Note "Explicitly allows for 3-rd party transit in network docs."
+  Access 0
   Source "http://www.canarie.ca/templates/news/docs/CANARIE_Network_May28_2010.png"
   Version "1.0"
+  DateType "Dynamic"
   Type "REN"
+  Backbone 1
+  Commercial 0
+  label "CANERIE"
+  Customer 0
+  IX 0
   LastAccess "7/10/10"
-  Access 0
+  Note "Explicitly allows for 3-rd party transit in network docs."
   Layer "IP"
   Classification "Backbone Transit"
   Creator "Topology Zoo Toolset"
-  DateType "Dynamic"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "2010-10"
-  label "CANERIE"
-  Testbed 0
   Developed 1
+  Transit 1
+  NetworkDate "2010-10"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Whitehorse"
-    Internal 1
-    Latitude 60.71611
     Country "Canada"
     Longitude -135.05375
+    Internal 1
+    Latitude 60.71611
   ]
   node [
     id 1
     label "Yellowknife"
-    Internal 1
-    Latitude 62.456
     Country "Canada"
     Longitude -114.35255
+    Internal 1
+    Latitude 62.456
   ]
   node [
     id 2
     label "Edmonton"
-    Internal 1
-    Latitude 53.55014
     Country "Canada"
     Longitude -113.46871
+    Internal 1
+    Latitude 53.55014
   ]
   node [
     id 3
     label "Kamloops"
-    Internal 1
-    Latitude 50.66648
     Country "Canada"
     Longitude -120.3192
+    Internal 1
+    Latitude 50.66648
   ]
   node [
     id 4
     label "Kelowna"
-    Internal 1
-    Latitude 49.88307
     Country "Canada"
     Longitude -119.48568
+    Internal 1
+    Latitude 49.88307
   ]
   node [
     id 5
     label "Vancouver"
-    Internal 1
-    Latitude 49.24966
     Country "Canada"
     Longitude -123.11934
+    Internal 1
+    Latitude 49.24966
   ]
   node [
     id 6
     label "Victoria"
-    Internal 1
-    Latitude 48.43294
     Country "Canada"
     Longitude -123.3693
+    Internal 1
+    Latitude 48.43294
   ]
   node [
     id 7
     label "Seattle"
-    Internal 1
-    Latitude 47.60621
     Country "United States"
     Longitude -122.33207
+    Internal 1
+    Latitude 47.60621
   ]
   node [
     id 8
     label "Calgary"
-    Internal 1
-    Latitude 51.05011
     Country "Canada"
     Longitude -114.08529
+    Internal 1
+    Latitude 51.05011
   ]
   node [
     id 9
     label "Saskatoon"
-    Internal 1
-    Latitude 52.11679
     Country "Canada"
     Longitude -106.63452
+    Internal 1
+    Latitude 52.11679
   ]
   node [
     id 10
     label "Regina"
-    Internal 1
-    Latitude 50.45008
     Country "Canada"
     Longitude -104.6178
+    Internal 1
+    Latitude 50.45008
   ]
   node [
     id 11
     label "Winnipeg"
-    Internal 1
-    Latitude 49.8844
     Country "Canada"
     Longitude -97.14704
+    Internal 1
+    Latitude 49.8844
   ]
   node [
     id 12
     label "Thunder Bay"
-    Internal 1
-    Latitude 48.4001
     Country "Canada"
     Longitude -89.31683
+    Internal 1
+    Latitude 48.4001
   ]
   node [
     id 13
     label "Chicago"
-    Internal 1
-    Latitude 41.85003
     Country "United States"
     Longitude -87.65005
+    Internal 1
+    Latitude 41.85003
   ]
   node [
     id 14
     label "Windsor/Detroit"
-    Internal 1
-    Latitude 42.33143
     Country "United States"
     Longitude -83.04575
+    Internal 1
+    Latitude 42.33143
   ]
   node [
     id 15
     label "Toronto"
-    Internal 1
-    Latitude 43.70011
     Country "Canada"
     Longitude -79.4163
+    Internal 1
+    Latitude 43.70011
   ]
   node [
     id 16
     label "Ottawa"
-    Internal 1
-    Latitude 45.41117
     Country "Canada"
     Longitude -75.69812
+    Internal 1
+    Latitude 45.41117
   ]
   node [
     id 17
     label "Montreal"
-    Internal 1
-    Latitude 45.50884
     Country "Canada"
     Longitude -73.58781
+    Internal 1
+    Latitude 45.50884
   ]
   node [
     id 18
     label "Fredericton"
-    Internal 1
-    Latitude 45.94541
     Country "Canada"
     Longitude -66.66558
+    Internal 1
+    Latitude 45.94541
   ]
   node [
     id 19
     label "Charlottetown"
-    Internal 1
-    Latitude 46.23525
     Country "Canada"
     Longitude -63.12671
+    Internal 1
+    Latitude 46.23525
   ]
   node [
     id 20
     label "Halifax"
-    Internal 1
-    Latitude 44.646
     Country "Canada"
     Longitude -63.57333
+    Internal 1
+    Latitude 44.646
   ]
   node [
     id 21
     label "St John's"
-    Internal 1
-    Latitude 47.56494
     Country "Canada"
     Longitude -52.70931
+    Internal 1
+    Latitude 47.56494
   ]
   node [
     id 22
     label "New York"
-    Internal 1
-    Latitude 40.71427
     Country "United States"
     Longitude -74.00597
+    Internal 1
+    Latitude 40.71427
   ]
   node [
     id 23
@@ -251,10 +251,10 @@ graph [
   node [
     id 31
     label "Boston"
-    Internal 1
-    Latitude 42.35843
     Country "United States"
     Longitude -71.05977
+    Internal 1
+    Latitude 42.35843
   ]
   edge [
     source 0
@@ -419,9 +419,9 @@ graph [
   edge [
     source 18
     target 19
-    LinkStatus "Planned"
-    LinkLabel "Planned Wavelength"
     LinkNote " Wavelength"
+    LinkLabel "Planned Wavelength"
+    LinkStatus "Planned"
   ]
   edge [
     source 19

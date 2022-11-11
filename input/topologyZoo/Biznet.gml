@@ -2,83 +2,83 @@ graph [
   DateObtained "16/01/11"
   GeoLocation "Indonesia"
   GeoExtent "Country"
-  Customer 1
   Network "BizNetworks"
-  IX 0
   Provenance "Primary"
-  Note "Offers IX but unclear as to how."
+  Access 1
   Source "http://www.biznetnetworks.com/pdf/BiznetInterCityNetwork.pdf"
   Version "1.0"
+  DateType "Current"
   Type "COM"
+  Backbone 1
+  Commercial 0
+  label "biznet"
+  Customer 1
+  IX 0
   LastAccess "16/01/11"
-  Access 1
+  Note "Offers IX but unclear as to how."
   Layer "IP"
   Classification "Backbone Transit Access Customer IX?"
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 1
-  Backbone 1
-  Commercial 0
-  NetworkDate "2011-01"
-  label "biznet"
-  Testbed 0
   Developed 0
+  Transit 1
+  NetworkDate "2011-01"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Tegal"
-    Latitude -6.8694
     Country "Indonesia"
     Longitude 109.1402
+    Latitude -6.8694
   ]
   node [
     id 1
     label "Cirebon"
-    Latitude -6.7063
     Country "Indonesia"
     Longitude 108.557
+    Latitude -6.7063
   ]
   node [
     id 2
     label "Bandung"
-    Latitude -6.90389
     Country "Indonesia"
     Longitude 107.61861
+    Latitude -6.90389
   ]
   node [
     id 3
     label "Karawang"
-    Latitude -6.30333
     Country "Indonesia"
     Longitude 107.30556
+    Latitude -6.30333
   ]
   node [
     id 4
     label "Jakarta"
-    Latitude -6.21462
     Country "Indonesia"
     Longitude 106.84513
+    Latitude -6.21462
   ]
   node [
     id 5
     label "Bogor"
-    Latitude -6.59444
     Country "Indonesia"
     Longitude 106.78917
+    Latitude -6.59444
   ]
   node [
     id 6
     label "Serang"
-    Latitude -6.1149
     Country "Indonesia"
     Longitude 106.1502
+    Latitude -6.1149
   ]
   node [
     id 7
     label "Anyer"
-    Latitude -6.06667
     Country "Indonesia"
     Longitude 105.88333
+    Latitude -6.06667
   ]
   node [
     id 8
@@ -87,142 +87,142 @@ graph [
   node [
     id 9
     label "Cibaliung"
-    Latitude -6.76667
     Country "Indonesia"
     Longitude 105.85
+    Latitude -6.76667
   ]
   node [
     id 10
     label "Sukabumi"
-    Latitude -6.91806
     Country "Indonesia"
     Longitude 106.92667
+    Latitude -6.91806
   ]
   node [
     id 11
     label "Tasikmalaya"
-    Latitude -7.33333
     Country "Indonesia"
     Longitude 108.2
+    Latitude -7.33333
   ]
   node [
     id 12
     label "Cilacap"
-    Latitude -7.72639
     Country "Indonesia"
     Longitude 109.00944
+    Latitude -7.72639
   ]
   node [
     id 13
     label "Purwokerto"
-    Latitude -7.42139
     Country "Indonesia"
     Longitude 109.23444
+    Latitude -7.42139
   ]
   node [
     id 14
     label "Magelang"
-    Latitude -7.47056
     Country "Indonesia"
     Longitude 110.21778
+    Latitude -7.47056
   ]
   node [
     id 15
     label "Yogyakarta"
-    Latitude -7.78278
     Country "Indonesia"
     Longitude 110.36083
+    Latitude -7.78278
   ]
   node [
     id 16
     label "Pekalongan"
-    Latitude -6.8886
     Country "Indonesia"
     Longitude 109.6753
+    Latitude -6.8886
   ]
   node [
     id 17
     label "Semarang"
-    Latitude -6.9932
     Country "Indonesia"
     Longitude 110.4203
+    Latitude -6.9932
   ]
   node [
     id 18
     label "Kudus"
-    Latitude -6.8048
     Country "Indonesia"
     Longitude 110.8405
+    Latitude -6.8048
   ]
   node [
     id 19
     label "Surakarta"
-    Latitude -7.55611
     Country "Indonesia"
     Longitude 110.83167
+    Latitude -7.55611
   ]
   node [
     id 20
     label "Tuban"
-    Latitude -6.9
     Country "Indonesia"
     Longitude 112.05
+    Latitude -6.9
   ]
   node [
     id 21
     label "Madium"
-    Latitude -7.6298
     Country "Indonesia"
     Longitude 111.5239
+    Latitude -7.6298
   ]
   node [
     id 22
     label "Kediri"
-    Latitude -7.81667
     Country "Indonesia"
     Longitude 112.01667
+    Latitude -7.81667
   ]
   node [
     id 23
     label "Surabaya"
-    Latitude -7.24917
     Country "Indonesia"
     Longitude 112.75083
+    Latitude -7.24917
   ]
   node [
     id 24
     label "Malang"
-    Latitude -7.9797
     Country "Indonesia"
     Longitude 112.6304
+    Latitude -7.9797
   ]
   node [
     id 25
     label "Probolinggo"
-    Latitude -7.7543
     Country "Indonesia"
     Longitude 113.2159
+    Latitude -7.7543
   ]
   node [
     id 26
     label "Jember"
-    Latitude -8.16604
     Country "Indonesia"
     Longitude 113.70317
+    Latitude -8.16604
   ]
   node [
     id 27
     label "Banyunwangi"
-    Latitude -8.2215
     Country "Indonesia"
     Longitude 114.3646
+    Latitude -8.2215
   ]
   node [
     id 28
     label "Nusa Dua"
-    Latitude -9.59806
     Country "Indonesia"
     Longitude 123.77028
+    Latitude -9.59806
   ]
   edge [
     source 0
@@ -238,7 +238,7 @@ graph [
   ]
   edge [
     source 2
-    target 11
+    target 3
   ]
   edge [
     source 2
@@ -246,7 +246,7 @@ graph [
   ]
   edge [
     source 2
-    target 3
+    target 11
   ]
   edge [
     source 3

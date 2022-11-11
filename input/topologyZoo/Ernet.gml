@@ -2,154 +2,154 @@ graph [
   DateObtained "11/10/10"
   GeoLocation "India"
   GeoExtent "Country"
-  Customer 1
   Network "ERNET"
-  IX 0
   Provenance "Primary"
   Access 0
   Source "http://www.ernet.in/backbone.htm"
   Version "1.0"
+  DateType "Current"
   Type "REN"
+  Backbone 1
+  Commercial 0
+  label "ERNET"
+  Customer 1
+  IX 0
   LastAccess "7/10/10"
   Layer "IP"
   Classification "Backbone Customer"
   Creator "Topology Zoo Toolset"
-  DateType "Current"
-  Transit 0
-  Backbone 1
-  Commercial 0
-  NetworkDate "2010-10"
-  label "ERNET"
-  Testbed 0
   Developed 0
+  Transit 0
+  NetworkDate "2010-10"
+  Testbed 0
   SvnVersion 8123
   node [
     id 0
     label "Delhi"
-    Internal 1
-    Latitude 28.63576
     Country "India"
     Longitude 77.22445
+    Internal 1
+    Latitude 28.63576
   ]
   node [
     id 1
     label "Guwahati"
-    Internal 1
-    Latitude 26.18617
     Country "India"
     Longitude 91.75095
+    Internal 1
+    Latitude 26.18617
   ]
   node [
     id 2
     label "Gorakhpur"
-    Internal 1
-    Latitude 29.45
     Country "India"
     Longitude 75.68333
+    Internal 1
+    Latitude 29.45
   ]
   node [
     id 3
     label "Kanpur"
-    Internal 1
-    Latitude 26.46667
     Country "India"
     Longitude 80.35
+    Internal 1
+    Latitude 26.46667
   ]
   node [
     id 4
     label "Allahabad"
-    Internal 1
-    Latitude 25.45
     Country "India"
     Longitude 81.85
+    Internal 1
+    Latitude 25.45
   ]
   node [
     id 5
     label "Kalkota"
-    Internal 1
-    Latitude 22.56972
     Country "India"
     Longitude 88.36972
+    Internal 1
+    Latitude 22.56972
   ]
   node [
     id 6
     label "Bhubaneswar"
-    Internal 1
-    Latitude 20.23333
     Country "India"
     Longitude 85.83333
+    Internal 1
+    Latitude 20.23333
   ]
   node [
     id 7
     label "Hyderabad"
-    Internal 1
-    Latitude 17.37528
     Country "India"
     Longitude 78.47444
+    Internal 1
+    Latitude 17.37528
   ]
   node [
     id 8
     label "Chennai"
-    Internal 1
-    Latitude 13.08784
     Country "India"
     Longitude 80.27847
+    Internal 1
+    Latitude 13.08784
   ]
   node [
     id 9
     label "Bengaluru"
-    Internal 1
-    Latitude 12.97623
     Country "India"
     Longitude 77.60329
+    Internal 1
+    Latitude 12.97623
   ]
   node [
     id 10
     label "Trivandrum"
-    Internal 1
-    Latitude 8.48333
     Country "India"
     Longitude 76.91667
+    Internal 1
+    Latitude 8.48333
   ]
   node [
     id 11
     label "Mumbai"
-    Internal 1
-    Latitude 19.01441
     Country "India"
     Longitude 72.84794
+    Internal 1
+    Latitude 19.01441
   ]
   node [
     id 12
     label "Pune"
-    Internal 1
-    Latitude 18.51957
     Country "India"
     Longitude 73.85535
+    Internal 1
+    Latitude 18.51957
   ]
   node [
     id 13
     label "Indore"
-    Internal 1
-    Latitude 22.71792
     Country "India"
     Longitude 75.8333
+    Internal 1
+    Latitude 22.71792
   ]
   node [
     id 14
     label "Ahmedabad"
-    Internal 1
-    Latitude 23.03333
     Country "India"
     Longitude 72.61667
+    Internal 1
+    Latitude 23.03333
   ]
   node [
     id 15
     label "Jaipur"
-    Internal 1
-    Latitude 26.91667
     Country "India"
     Longitude 75.81667
+    Internal 1
+    Latitude 26.91667
   ]
   node [
     id 16
@@ -287,13 +287,13 @@ graph [
   ]
   edge [
     source 5
-    target 6
-    LinkLabel "Dark Green"
+    target 30
+    LinkLabel "Light Green Bolt"
   ]
   edge [
     source 5
-    target 30
-    LinkLabel "Light Green Bolt"
+    target 6
+    LinkLabel "Dark Green"
   ]
   edge [
     source 5
