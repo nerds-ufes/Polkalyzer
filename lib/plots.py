@@ -60,7 +60,7 @@ def StateOverheadHeatMap2(df,path):
     plt.savefig(f'{path}/SO_HeatMap2.png',dpi=120)
     return hMap
 
-def gambiarra(x):
+def offsetAnnotation(x):
     newX = 0
     if(x == 1.0):
         newX = 0
@@ -126,7 +126,7 @@ def StateOverheadHeatMap3(df,path):
     offsetY = -0.5 #Centering the annotations
     for label, x, y in zip(df2['Topology'], df2['Replication Average per Node'], df2['Number of Nodes']):
         if(label == 'Gridnet' or label == 'Pern' or label == 'BtEurope' or label == 'EliBackbone' or label == 'Gambia' or label == 'Itnet' or label == 'Netrail' or label == 'Biznet'):
-            x = gambiarra(x)
+            x = offsetAnnotation(x)
             x += offsetX
             y += offsetY
             #ax.scatter(x,y, color = 'black')
@@ -148,7 +148,7 @@ def StateOverheadHeatMap3(df,path):
 
 def StateOverheadHeatMap4(df,path):
     #Constants
-    initialNode = 6
+    initialNode = 4
     maxNodes = 30
     #Anotation DF
     df2 = (df[['Topology','Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
@@ -158,7 +158,6 @@ def StateOverheadHeatMap4(df,path):
     #Plot Config
 
     #nodesArr = np.arange(1.5,31,1)
-    nodesLabel = np.arange(4,31,1)
     replicationArr = [1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9]
     newArr = []
     for i in range (initialNode,maxNodes+1):
@@ -183,8 +182,8 @@ def StateOverheadHeatMap4(df,path):
     offsetX = +0.5 #Centering the annotations
     offsetY = -0.5 -3 #Centering the annotations
     for label, x, y in zip(df2['Topology'], df2['Replication Average per Node'], df2['Number of Nodes']):
-        if(label == 'Gridnet' or label == 'Pern' or label == 'BtEurope' or label == 'EliBackbone' or label == 'Gambia' or label == 'Itnet' or label == 'Netrail' or label == 'Abilene' or label == 'Sanren' or label == 'Cesnet1999' or label == 'Nsfnet' or label == 'Arpanet196912' or label == 'Arpanet19728' or label == 'Geant2001' or label == 'Cesnet1997'):
-            x = gambiarra(x)
+        if(label == 'Gridnet' or label == 'Atmnet' or label == 'BtEurope' or label == 'EliBackbone' or label == 'Gambia' or label == 'Itnet' or label == 'Netrail' or label == 'Abilene' or label == 'Sanren' or label == 'Cesnet1999' or label == 'Nsfnet' or label == 'Arpanet196912' or label == 'Arpanet19728' or label == 'Geant2001' or label == 'Cesnet1997' or label == 'Oxford' or label == 'Ibm' or label == 'Arn' or label == 'Renater2001' or label == 'Psinet' or label == 'Twaren'):
+            x = offsetAnnotation(x)
             x += offsetX
             y += offsetY
             #ax.scatter(x,y, color = 'red')
@@ -203,6 +202,70 @@ def StateOverheadHeatMap4(df,path):
     plt.savefig(f'{path}/SO_HeatMap4.png',bbox_inches='tight',pad_inches=0.1,dpi=120)
     plt.savefig(f'{path}/SO_HeatMap4.pdf',bbox_inches='tight',pad_inches=0.1,dpi=120)
     return hMap
+
+def StateOverheadHeatMap5(df,path):
+    #Constants
+    initialNode = 4
+    maxNodes = 30
+    #Anotation DF
+    df2 = (df[['Topology','Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
+    df2['State Overhead'] = df2['State Overhead'].apply(lambda x: round(x, 1))
+    df2['Replication Average per Node'] = df2['Replication Average per Node'].apply(lambda x: round(x, 1))
+    
+    #Plot Config
+
+    #nodesArr = np.arange(1.5,31,1)
+    replicationArr = [1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9]
+    newArr = []
+    for i in range (initialNode,maxNodes+1):
+        for j in replicationArr:
+            newArr.append([i,round(j,1)])
+
+    df1 = pd.DataFrame(data=newArr,columns=['Number of Nodes','Replication Average per Node'])
+    df1['State Overhead'] = df1.apply(lambda x : x['Number of Nodes']*(1+2*(x['Replication Average per Node'])),axis=1)
+    hMap = df1.pivot('Number of Nodes','Replication Average per Node','State Overhead')
+    #Plot Config 
+    plt.clf()
+    plt.cla()
+    f = plt.figure(figsize=(10,10))
+    #f.suptitle('Number of State Entries per Node using MPINT')
+    plt.xlabel('Replication Average per Node',fontsize=18)
+    plt.ylabel('Number of Nodes',fontsize=18)
+    #f.text(0.5, 0.04, 'Number of Nodes', ha='center',fontsize='18')
+    #f.text(0.04, 0.5, 'Overhead (Bytes)', va='center', rotation='vertical',fontsize='18')
+    #Plot HeatMap
+    ax = sns.heatmap(data=hMap,cmap="rocket_r",fmt='.1f',annot=False,linewidth=0.01,linecolor="#222")
+    #Plot Anotate
+    offsetX = +0.5 #Centering the annotations
+    offsetY = -0.5 -3 #Centering the annotations
+    for label, x, y in zip(df2['Topology'], df2['Replication Average per Node'], df2['Number of Nodes']):
+        dfAux = df2.loc[df2['Number of Nodes'] == y]
+        #print(dfAux)
+        xMin = dfAux['Replication Average per Node'].min()
+        xMax = dfAux['Replication Average per Node'].max()
+        #print('Xmin Xmax:',xMin,xMax)
+        x = offsetAnnotation(x)
+        x += offsetX
+        y += offsetY
+        ax.scatter(x,y, color = 'yellow')
+        if(label == 'Gridnet' or label == 'Atmnet' or label == 'BtEurope' or label == 'EliBackbone' or label == 'Gambia' or label == 'Itnet' or label == 'Netrail' or label == 'Abilene' or label == 'Sanren' or label == 'Cesnet1999' or label == 'Nsfnet' or label == 'Arpanet196912' or label == 'Arpanet19728' or label == 'Geant2001' or label == 'Cesnet1997' or label == 'Oxford' or label == 'Ibm' or label == 'Arn' or label == 'Renater2001' or label == 'Psinet' or label == 'Twaren'):
+            ax.annotate(
+                label, 
+                xy = (x, y), xytext = (40,15), xycoords='data',
+                textcoords = 'offset points', ha = 'right', va = 'bottom',
+                bbox = dict(boxstyle = 'round,pad=0.5', fc = 'yellow', alpha = 0.5),
+                arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
+
+    #plt.xlim([1.0,2.0])
+    #plt.ylim([0,30])
+    #Invert Y Axis
+    plt.gca().invert_yaxis()
+    #Save Fig
+    ov.validateEntirePath(path)
+    plt.savefig(f'{path}/SO_HeatMap5.png',bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(f'{path}/SO_HeatMap5.pdf',bbox_inches='tight',pad_inches=0.1,dpi=120)
+    return hMap
+
 
 def StateOverheadConcentration(df,path):
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
@@ -244,7 +307,7 @@ def StateOverheadDistribution(df,path):
 def OverheadPointPlot(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']]
     #Rename Dataframe
-    df2.rename(columns = {'MPolka CRC8':'INT-MPolKA (CRC8)', 'MPolka CRC16':'INT-MPolKA (CRC16)','INT Clássico':'INT Original'}, inplace = True)
+    df2.rename(columns = {'MPolka CRC8':'MPolKA-INT (CRC8)', 'MPolka CRC16':'MPolKA-INT (CRC16)','INT Clássico':'Original INT'}, inplace = True)
     #Melting dataframe
     dfm = df2.melt(id_vars=['Where','Number of Nodes'], var_name='Type', value_name='Overhead')
     dfm1 = dfm.loc[dfm['Where'] == 'DataPlane']
@@ -258,11 +321,11 @@ def OverheadPointPlot(df,path):
     #f.suptitle('Overhead (Bytes) - %s Topologys' %numberOfTopologys)
     #plt.xlabel('Number of Nodes',fontsize=18)
     #plt.ylabel('Overhead',fontsize=18)
-    f.text(0.5, 0.04, 'Number of Nodes', ha='center',fontsize='18')
-    f.text(0.04, 0.5, 'Overhead (Bytes)', va='center', rotation='vertical',fontsize='18')
+    f.text(0.5, 0.04, 'Number of Nodes', ha='center',fontsize=18)
+    f.text(0.04, 0.5, 'Overhead (Bytes)', va='center', rotation='vertical',fontsize=18)
     #plt.xticks(np.arange(0, maxNode +1, 5))
-    ax[0].set_title('DataPlane',fontsize=16)
-    ax[1].set_title('ControlPlane',fontsize=16)
+    ax[0].set_title('DataPlane',fontsize=18)
+    ax[1].set_title('ControlPlane',fontsize=18)
     #Plot Data
     g1 = sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[0],dodge=True, data=dfm1,errorbar=None);
     g1.set(xlabel=None,ylabel=None)
@@ -371,3 +434,4 @@ def plotDataFrame(df,name,choice,algorithm,fixedNodeSender):
     StateOverheadHeatMap2(df,f'output/Plots/{name}/StateOverhead')
     StateOverheadHeatMap3(df,f'output/Plots/{name}/StateOverhead')
     StateOverheadHeatMap4(df,f'output/Plots/{name}/StateOverhead')
+    StateOverheadHeatMap5(df,f'output/Plots/{name}/StateOverhead')
