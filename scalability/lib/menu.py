@@ -1,5 +1,5 @@
 import lib.outputValidator as ov
-from lib.readTopologyZoo import downloadAllTopologys, removeBadValues
+from lib.readTopologyZoo import removeBadValues
 import lib.toProbe as tpb
 import lib.toDataframe as tdf
 import pandas as pd
@@ -19,14 +19,10 @@ def extractAnswerYN(question):
 
 def mainMenu():
     print('==== Polka Analyzer Tool ====')
-    if(ov.isDir('input/topologyZoo') == 0):
-        print('You don\'t have topologys downloaded, press enter to start download ...')
-        downloadAllTopologys()
-    elif(ov.isDir('input/topologyZoo') == 1):
-        if(extractAnswerYN('Do you want download more topologys (y/n): ') == 0):
-            downloadAllTopologys()
-        else:
-            removeBadValues()
+    if(ov.isDir('input/') == 0):
+        print('Fill the ./input/ with topologys in .GML to run Polkalyzer...')
+    elif(ov.isDir('input/') == 1):
+        removeBadValues()
 
     df,choice,algorithm,fixedNodeSender = algorithmChoice()
     pplt.plotDataFrame(df,'AllTopologys',choice,algorithm,fixedNodeSender)

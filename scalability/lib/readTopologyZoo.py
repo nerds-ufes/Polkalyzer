@@ -7,18 +7,6 @@ import lib.outputValidator as ov
 
 import lib.toDataframe as tdf
 import lib.toProbe as tpb
-from lib.downloadTopologyZoo import download_series, get_links
-
-def downloadAllTopologys():
-    # Getting all links 
-    links = get_links('gml') 
-
-    # Download all links
-    download_series(links)
-
-    #Removing Bad Topologys
-    print('You possibly have bad topologys in your input, we\'ll remove for you.')
-    removeBadValues()
 
 def removeBadValues():
     contTotal = 0 #Total
@@ -26,7 +14,7 @@ def removeBadValues():
     cont2 = 0 #Bad Test 2
     cont3 = 0 #Bad Test 3
     filtereds = 0 #Filtered
-    listTopology = glob.glob('input/topologyZoo/*.gml')
+    listTopology = glob.glob('input/*.gml')
     for topology in listTopology: #For Multigraph Read Error
         try:
             contTotal += 1
@@ -35,7 +23,7 @@ def removeBadValues():
             cont1 += 1
             print('<READ ERROR 1>',topology,'removed')
             os.remove(topology)
-    listTopology = glob.glob('input/topologyZoo/*.gml')
+    listTopology = glob.glob('input/*.gml')
     df = pd.DataFrame()
     for topology in listTopology: #TEST 2
         try:
@@ -52,7 +40,7 @@ def removeBadValues():
     df1 = df.loc[df['Replication Average per Node'] < 1]
     for badValue in df1['Topology'].tolist(): #FOR NODES THAT GRAPHS THAT AREN'T STRONGLY CONNECTED
         cont3 += 1
-        pathBadValue = 'input/topologyZoo/' + badValue + '.gml'
+        pathBadValue = 'input/' + badValue + '.gml'
         print('<READ ERROR 3>',pathBadValue,'removed')
         os.remove(pathBadValue)
 
@@ -63,7 +51,7 @@ def removeBadValues():
     #print('Filtered Topologys Path: output/Filtered Topologys/')
     #for goodTopology in df2['Topology'].tolist(): #FOR NODES THAT GRAPHS THAT AREN'T STRONGLY CONNECTED
     #    filtereds += 1
-    #    input_pathGoodValue = 'input/topologyZoo/' + goodTopology + '.gml'
+    #    input_pathGoodValue = 'input/' + goodTopology + '.gml'
     #    output_pathGoodValue = 'output/Filtered Topologys/' + goodTopology + '/'
     #    ov.validateEntirePath(output_pathGoodValue)
     #    G = nx.read_gml(input_pathGoodValue,destringizer=int,label='id')

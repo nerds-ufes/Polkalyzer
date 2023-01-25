@@ -1,21 +1,25 @@
 # Polkalyzer - Polka analyzer tool for any given topology.
+
+![Polkalyzer Explained](./imgs/PolkalyzerBehavior.png)
+Diagram explaining polkalyzer behavior.
+
 _This tool can be dissecated in multiple parts._ <br>
-**Download and Filter:** <br>
-1 - Download all graphs (.gml) avaible in topologyZoo. <br>
+**Filter Raw Topologies Dataset:** <br>
+1 - Load topologys dataset with NetworkX.
 2 - Remove topologys that can't be read by multiple factors. <br>
-3 - Filter same topologys to your newest version. <br>
-**Transform a Graph into a probe:** <br>
+3 - Remove topologys that are disconnected graphs. <br>
+**Transform a Graph into a MST:** <br>
 4 - Transform GML Files that represent a topology into a **minimum spanning tree (MST)**. <br>
 You can choose what MST Algorithm you want avaible in networkx.<br>
-5 - Perform a **DFS** in extracted MST to **simulate probes** from different SR Approaches. <br>
-You can choose the a fixed node sender or leave to algorithm decide the optimal node sender for all given topologys. <br>
-**Generate a DataFrame** <br>
-6 - While algorithm is performing a DFS, the algorithm will extract a lot of usefull information about each graph. <br>
+**Extract Probe Matrix:** <br>
+5 - Perform a **DFS** in extracted MST to **simulate probes** from different telemetry approaches. <br>
+You can choose the a fixed node sender or leave to algorithm decide the optimal node sender for all given topologies. <br>
+**Fill the dataframe until there are no more unread topologies** <br>
+6 - While algorithm is performing a DFS, the algorithm will extract a lot of usefull information about each graph and fill it the dataframe. <br>
 **Data Export:** <br>
-7 - Export to **output/Topology** MPolka/MPINT probes to all topologys given in topologyZoo. <br> 
-8 - Export to **output/Data** the information collected into a csv. <br>
+7 - Export to **output/Topology** MPolKA-INT/MPINT probes to all topologys given in topologyZoo. <br> 
+8 - Export to **output/Data** all usefull information collected into a csv. <br>
 9 - Export to **output/Plots** different plots to help us to understand the information collected. <br>
-10 - Export to **output/Topology/./Config** configuration files to run topology on emulated enviroments. **DEVELOPMENT** <br>
 
 ## Polkalyzer dependencies
 You will need Python3 to run Polkalyzer, so try it:
@@ -29,7 +33,7 @@ https://www.python.org/downloads/
 You also will need PIP dependencies:
 ```sh
 pip3 install --upgrade pip
-pip3 install pandas, seaborn, matplotlib, requests, html5lib, networkx
+pip3 install pandas, seaborn, matplotlib, networkx
 ```
 
 **Only for Windows Users**, check your enviroment variables:
@@ -51,7 +55,5 @@ python3 Polkalyzer.py
 
 ![Algorithm Choice](./imgs/AlgorithmChoice.png)
 You can choose three of these options, after chosen check your output folder.
-![Overhead LP](./imgs/OverheadLP.png)
-![Overhead JP](./imgs/OverheadJP.png)
 # References
 Topology Dataset - http://www.topology-zoo.org/dataset.html

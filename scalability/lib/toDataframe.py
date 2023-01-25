@@ -154,7 +154,7 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportPro
 
 
 def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw):
-    listTopology = glob.glob('input/topologyZoo/*.gml')
+    listTopology = glob.glob('input/*.gml')
     for topology in listTopology:
         topologyName = ov.extractFilename(topology)
         G = nx.read_gml(topology,destringizer=int,label='id')
