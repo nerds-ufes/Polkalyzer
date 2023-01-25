@@ -1,7 +1,7 @@
 # Polkalyzer - Polka analyzer tool for any given topology.
 
 ![Polkalyzer Explained](./imgs/PolkalyzerBehavior.png)
-Diagram explaining polkalyzer behavior.
+# 
 
 _This tool can be dissecated in multiple parts._ <br>
 **Filter Raw Topologies Dataset:** <br>
