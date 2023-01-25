@@ -5,7 +5,7 @@
 
 _This tool can be dissecated in multiple parts._ <br>
 **Filter Raw Topologies Dataset:** <br>
-1 - Load topologys dataset with NetworkX.
+1 - Load topologys dataset with NetworkX. <br>
 2 - Remove topologys that can't be read by multiple factors. <br>
 3 - Remove topologys that are disconnected graphs. <br>
 **Transform a Graph into a MST:** <br>
