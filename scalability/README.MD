@@ -47,8 +47,8 @@ Check your Environment Variables to run **pip** on Terminal. <br>
     Name: PYTHONUTF8
     Value: 1
 ```
-Change **YOUR_USERNAME** to something like **lucas**
-Change **Python3XY** to something like **Python311**
+Change **YOUR_USERNAME** to something like **lucas** <br>
+Change **Python3XY** to something like **Python311** <br>
 
 ## Using Polkalyzer
 First of all, run Polkalyzer.py
@@ -57,6 +57,6 @@ python Polkalyzer.py
 python3 Polkalyzer.py
 ```
 ![Algorithm Choice](./imgs/AlgorithmChoice.png) <br>
-You can choose three algorithm options, after choosen wait finish and check your output folder.
+You can choose between three algorithm options, after chosen wait finish and check your output folder.
 # References
 Topology Dataset - http://www.topology-zoo.org/dataset.html
