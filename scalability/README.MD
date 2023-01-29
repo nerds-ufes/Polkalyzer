@@ -36,9 +36,9 @@ pip3 install pandas seaborn matplotlib networkx
 ```
 ## Troubleshooting
 ### If you can't run python or pip on CLI (Command Line Interface): <br>
-&emsp; **For Windows Users**:
-&emsp; Check your Environment Variables to run **pip** on Terminal. <br>
-```sh
+**For Windows Users**: <br>
+Check your Environment Variables to run **pip** on Terminal. <br>
+```
 - Enviroment Variables:
     Add to PATH:
     C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python3XY
