@@ -34,6 +34,16 @@ You also will need PIP dependencies:
 pip3 install --upgrade pip
 pip3 install pandas seaborn matplotlib networkx
 ```
+
+## Using Polkalyzer
+First of all, run Polkalyzer.py
+```
+python Polkalyzer.py
+python3 Polkalyzer.py
+```
+![Algorithm Choice](./imgs/AlgorithmChoice.png) <br>
+You can choose between three algorithm options, after chosen wait finish and check your output folder. <br>
+
 ## Troubleshooting
 ### If you can't run python or pip on CLI (Command Line Interface): <br>
 **For Windows Users**: <br>
@@ -50,13 +60,5 @@ Check your Environment Variables to run **pip** on Terminal. <br>
 Change **YOUR_USERNAME** to something like **lucas** <br>
 Change **Python3XY** to something like **Python311** <br>
 
-## Using Polkalyzer
-First of all, run Polkalyzer.py
-```
-python Polkalyzer.py
-python3 Polkalyzer.py
-```
-![Algorithm Choice](./imgs/AlgorithmChoice.png) <br>
-You can choose between three algorithm options, after chosen wait finish and check your output folder.
 # References
 Topology Dataset - http://www.topology-zoo.org/dataset.html
