@@ -14,7 +14,7 @@ def removeBadValues():
     cont2 = 0 #Bad Test 2
     cont3 = 0 #Bad Test 3
     filtereds = 0 #Filtered
-    listTopology = glob.glob('input/*.gml')
+    listTopology = glob.glob(os.path.join('input','*.gml'))
     for topology in listTopology: #For Multigraph Read Error
         try:
             contTotal += 1
@@ -23,7 +23,7 @@ def removeBadValues():
             cont1 += 1
             print('<READ ERROR 1>',topology,'removed')
             os.remove(topology)
-    listTopology = glob.glob('input/*.gml')
+    listTopology = glob.glob(os.path.join('input','*.gml'))
     df = pd.DataFrame()
     for topology in listTopology: #TEST 2
         try:
@@ -40,7 +40,7 @@ def removeBadValues():
     df1 = df.loc[df['Replication Average per Node'] < 1]
     for badValue in df1['Topology'].tolist(): #FOR NODES THAT GRAPHS THAT AREN'T STRONGLY CONNECTED
         cont3 += 1
-        pathBadValue = 'input/' + badValue + '.gml'
+        pathBadValue = os.path.join('input/',badValue,'.gml')
         print('<READ ERROR 3>',pathBadValue,'removed')
         os.remove(pathBadValue)
 
@@ -68,14 +68,14 @@ def removeBadValues():
     print('')
 
 def drawTopology(G,T,path):
-    ov.validateEntirePath(f'{path}/draw')
+    ov.validateEntirePath(ov.toUniversalOSPath(f'{path}/draw'))
     pos = nx.kamada_kawai_layout(G)
     nx.draw(
         G, pos, edge_color='black', width=1, linewidths=1,
         node_size=500, node_color='pink', alpha=0.9,
         labels={node: node for node in G.nodes()}
     )
-    plt.savefig(f'{path}/draw/Graph.png',dpi=120)
+    plt.savefig(ov.toUniversalOSPath(f'{path}/draw/Graph.png'),dpi=120)
     plt.clf()
     plt.close()
     nx.draw(
@@ -83,7 +83,7 @@ def drawTopology(G,T,path):
         node_size=500, node_color='red', alpha=0.9,
         labels={node: node for node in T.nodes()}
     )
-    plt.savefig(f'{path}/draw/MST.png',dpi=120)
+    plt.savefig(ov.toUniversalOSPath(f'{path}/draw/MST.png'),dpi=120)
     plt.clf()
     plt.close()
 

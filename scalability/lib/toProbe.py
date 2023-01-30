@@ -41,10 +41,10 @@ def dfs_init(G,v):
 def exportProbe(topologyName,fixedNodeSender):
     ov.validateEntirePath(f'output/Topology/{topologyName}')
     if(fixedNodeSender == -1):
-        with open(f'output/Topology/{topologyName}/Probe.txt','w') as arq:
+        with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/Probe.txt'),'w') as arq:
             arq.write('MPINT: %s\n'%sondaMPINT)
             arq.write('MPolka: %s\n'%sondaMPolka)
             arq.write('INT Clássico: %s\n'%sondaINTClassico)
     else:
-        with open(f'output/Topology/{topologyName}/Probe.txt','w') as arq:
+        with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/Probe.txt'),'w') as arq:
             arq.write('%s\n'%sonda)

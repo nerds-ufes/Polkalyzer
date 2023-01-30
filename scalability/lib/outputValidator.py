@@ -19,7 +19,12 @@ def validatePath(path):
         os.mkdir(path)
 
 def validateEntirePath(path):
-    pathNames = path.split('/')
+
+    if(os.name == 'posix'):
+        pathNames = path.split('/')
+    else:
+        pathNames = path.split('\\')
+    
     subPath = ''
     for p in pathNames:
         subPath += p + '/' #For each subpath, verify and create
@@ -33,7 +38,11 @@ def validateNodeSender(fixedNodeSender):
         return 1
 
 def extractFilename(path):
-    fileName = path.split('/')
+    if(os.name == 'posix'):
+        fileName = path.split('/')
+    else:
+        fileName = path.split('\\')
+    
     fileName = fileName.pop()
     fileName = fileName.split('.')
     fileName = fileName.pop(0)
@@ -41,18 +50,39 @@ def extractFilename(path):
     return fileName
 
 def extractPathFile(path):
-    pathFile = path.split('/')
+    if(os.name == 'posix'):
+        pathFile = path.split('/')
+    else:
+        pathFile = path.split('\\')
+
     pathFile.pop()
     folderPath = ''
-    for subPath in pathFile:
-        folderPath += subPath + '/'
-    #print(folderPath)
+
+    if(os.name == 'posix'):
+        for subPath in pathFile:
+            folderPath += subPath + '/'
+        #print(folderPath)
+    else:
+        for subPath in pathFile:
+            folderPath += subPath + '\\'
+        #print(folderPath)
+    
     return folderPath
 
 def validateEntirePathFile(path):
     newPath = extractPathFile(path)
-    pathNames = newPath.split('/')
+    if(os.name == 'posix'):
+        pathNames = newPath.split('/')
+    else:
+        pathNames = newPath.split('\\')
     subPath = ''
     for p in pathNames:
         subPath += p + '/' #For each subpath, verify and create
         validatePath(subPath)
+
+def toUniversalOSPath(rawPath):
+    auxPath = rawPath.split('/')
+    universalPath = ''
+    for path in auxPath:
+        universalPath = os.path.join(universalPath,path)
+    return universalPath

@@ -154,13 +154,13 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportPro
 
 
 def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw):
-    listTopology = glob.glob('input/*.gml')
+    listTopology = glob.glob(ov.toUniversalOSPath('input/*.gml'))
     for topology in listTopology:
         topologyName = ov.extractFilename(topology)
         G = nx.read_gml(topology,destringizer=int,label='id')
         df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe=True)
         if(draw == True):
             T = nx.minimum_spanning_tree(G,algorithm=algorithm)
-            outputPath = f'output/Topology/{topologyName}'
+            outputPath = ov.toUniversalOSPath(f'output/Topology/{topologyName}')
             drawTopology(G,T,outputPath)
     return df
