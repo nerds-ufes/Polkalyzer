@@ -25,20 +25,29 @@ You can choose the a fixed node sender or leave to algorithm decide the optimal 
 You will need Python3 to run Polkalyzer, so try it:
 ```
 python --version
+```
+or
+```
 python3 --version
 ```
 If you haven't it, try install: https://www.python.org/downloads/ <br>
 
 You also will need PIP dependencies:
 ```
-pip3 install --upgrade pip
-pip3 install pandas seaborn matplotlib networkx
+pip install pandas seaborn matplotlib networkx scipy
+```
+or
+```
+pip3 install pandas seaborn matplotlib networkx scipy
 ```
 
 ## Using Polkalyzer
 First of all, run Polkalyzer.py
 ```
 python Polkalyzer.py
+```
+or
+```
 python3 Polkalyzer.py
 ```
 ![Algorithm Choice](./imgs/AlgorithmChoice.png) <br>
