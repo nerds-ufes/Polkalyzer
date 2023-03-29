@@ -70,5 +70,21 @@ class MininetNX( Topo ):
 		self.addLink('s11','h24')
 		self.addLink('s12','h25')
 		self.addLink('s12','h26')
+		#Add a link of switches of original topology
+		self.addLink('s0','s8')
+		self.addLink('s0','s1')
+		self.addLink('s1','s9')
+		self.addLink('s2','s3')
+		self.addLink('s2','s4')
+		self.addLink('s3','s6')
+		self.addLink('s4','s5')
+		self.addLink('s5','s6')
+		self.addLink('s5','s7')
+		self.addLink('s6','s8')
+		self.addLink('s7','s11')
+		self.addLink('s8','s10')
+		self.addLink('s9','s11')
+		self.addLink('s10','s11')
+		self.addLink('s10','s12')
 		
 topos = { 'Sinet': ( lambda: MininetNX() ) }

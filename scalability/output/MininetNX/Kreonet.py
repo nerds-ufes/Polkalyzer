@@ -70,5 +70,18 @@ class MininetNX( Topo ):
 		self.addLink('s11','h24')
 		self.addLink('s12','h25')
 		self.addLink('s12','h26')
+		#Add a link of switches of original topology
+		self.addLink('s0','s1')
+		self.addLink('s0','s2')
+		self.addLink('s0','s5')
+		self.addLink('s3','s5')
+		self.addLink('s4','s5')
+		self.addLink('s5','s6')
+		self.addLink('s5','s7')
+		self.addLink('s5','s8')
+		self.addLink('s5','s9')
+		self.addLink('s5','s11')
+		self.addLink('s5','s12')
+		self.addLink('s10','s11')
 		
 topos = { 'Kreonet': ( lambda: MininetNX() ) }

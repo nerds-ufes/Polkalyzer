@@ -85,5 +85,23 @@ class MininetNX( Topo ):
 		self.addLink('s16','h30')
 		self.addLink('s17','h31')
 		self.addLink('s17','h32')
+		#Add a link of switches of original topology
+		self.addLink('s0','s12')
+		self.addLink('s0','s13')
+		self.addLink('s1','s16')
+		self.addLink('s2','s8')
+		self.addLink('s3','s16')
+		self.addLink('s5','s12')
+		self.addLink('s6','s16')
+		self.addLink('s7','s13')
+		self.addLink('s8','s13')
+		self.addLink('s9','s10')
+		self.addLink('s9','s13')
+		self.addLink('s10','s15')
+		self.addLink('s11','s16')
+		self.addLink('s11','s12')
+		self.addLink('s12','s13')
+		self.addLink('s13','s17')
+		self.addLink('s15','s16')
 		
 topos = { 'KentmanJul2005': ( lambda: MininetNX() ) }

@@ -70,5 +70,18 @@ class MininetNX( Topo ):
 		self.addLink('s11','h24')
 		self.addLink('s12','h25')
 		self.addLink('s12','h26')
+		#Add a link of switches of original topology
+		self.addLink('s0','s1')
+		self.addLink('s1','s9')
+		self.addLink('s1','s2')
+		self.addLink('s1','s11')
+		self.addLink('s1','s10')
+		self.addLink('s3','s10')
+		self.addLink('s4','s11')
+		self.addLink('s5','s11')
+		self.addLink('s6','s8')
+		self.addLink('s6','s12')
+		self.addLink('s7','s12')
+		self.addLink('s10','s12')
 		
 topos = { 'Cesnet1997': ( lambda: MininetNX() ) }

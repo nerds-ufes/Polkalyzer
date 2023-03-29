@@ -70,5 +70,20 @@ class MininetNX( Topo ):
 		self.addLink('s11','h24')
 		self.addLink('s12','h25')
 		self.addLink('s12','h26')
+		#Add a link of switches of original topology
+		self.addLink('s0','s8')
+		self.addLink('s0','s1')
+		self.addLink('s1','s2')
+		self.addLink('s2','s3')
+		self.addLink('s2','s5')
+		self.addLink('s3','s4')
+		self.addLink('s4','s5')
+		self.addLink('s5','s12')
+		self.addLink('s6','s9')
+		self.addLink('s6','s12')
+		self.addLink('s7','s8')
+		self.addLink('s7','s9')
+		self.addLink('s7','s11')
+		self.addLink('s9','s10')
 		
 topos = { 'HiberniaCanada': ( lambda: MininetNX() ) }

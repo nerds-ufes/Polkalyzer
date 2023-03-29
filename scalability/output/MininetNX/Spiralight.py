@@ -80,5 +80,22 @@ class MininetNX( Topo ):
 		self.addLink('s13','h28')
 		self.addLink('s14','h29')
 		self.addLink('s14','h30')
+		#Add a link of switches of original topology
+		self.addLink('s0','s1')
+		self.addLink('s0','s2')
+		self.addLink('s1','s9')
+		self.addLink('s2','s3')
+		self.addLink('s3','s4')
+		self.addLink('s4','s5')
+		self.addLink('s5','s6')
+		self.addLink('s6','s7')
+		self.addLink('s7','s8')
+		self.addLink('s8','s9')
+		self.addLink('s8','s10')
+		self.addLink('s8','s11')
+		self.addLink('s10','s13')
+		self.addLink('s11','s12')
+		self.addLink('s12','s14')
+		self.addLink('s13','s14')
 		
 topos = { 'Spiralight': ( lambda: MininetNX() ) }

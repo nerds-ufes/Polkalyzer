@@ -35,5 +35,12 @@ class MininetNX( Topo ):
 		self.addLink('s4','h10')
 		self.addLink('s5','h11')
 		self.addLink('s5','h12')
+		#Add a link of switches of original topology
+		self.addLink('s0','s1')
+		self.addLink('s0','s2')
+		self.addLink('s0','s3')
+		self.addLink('s0','s4')
+		self.addLink('s1','s2')
+		self.addLink('s2','s5')
 		
 topos = { 'Ulaknet': ( lambda: MininetNX() ) }

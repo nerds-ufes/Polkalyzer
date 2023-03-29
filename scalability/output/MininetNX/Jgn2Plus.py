@@ -95,5 +95,23 @@ class MininetNX( Topo ):
 		self.addLink('s16','h34')
 		self.addLink('s17','h35')
 		self.addLink('s17','h36')
+		#Add a link of switches of original topology
+		self.addLink('s0','s1')
+		self.addLink('s1','s2')
+		self.addLink('s2','s5')
+		self.addLink('s2','s6')
+		self.addLink('s2','s7')
+		self.addLink('s2','s8')
+		self.addLink('s2','s14')
+		self.addLink('s2','s15')
+		self.addLink('s2','s16')
+		self.addLink('s3','s5')
+		self.addLink('s4','s5')
+		self.addLink('s9','s10')
+		self.addLink('s10','s12')
+		self.addLink('s10','s17')
+		self.addLink('s11','s13')
+		self.addLink('s12','s13')
+		self.addLink('s13','s14')
 		
 topos = { 'Jgn2Plus': ( lambda: MininetNX() ) }
