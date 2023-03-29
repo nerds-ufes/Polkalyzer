@@ -6,6 +6,7 @@ import pandas as pd
 import lib.outputValidator as ov
 import lib.overheadCalc as oc
 import lib.toProbe as tpb
+import lib.toMininet as tmn
 from lib.readTopologyZoo import GraphToMST,drawTopology
 
 stronglyConnectedFlag = False
@@ -153,14 +154,21 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportPro
     return df
 
 
-def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw):
+def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
     listTopology = glob.glob(ov.toUniversalOSPath('input/*.gml'))
     for topology in listTopology:
         topologyName = ov.extractFilename(topology)
         G = nx.read_gml(topology,destringizer=int,label='id')
         df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe=True)
+
         if(draw == True):
             T = nx.minimum_spanning_tree(G,algorithm=algorithm)
             outputPath = ov.toUniversalOSPath(f'output/Topology/{topologyName}')
             drawTopology(G,T,outputPath)
+
+        if(mininetNX == True):
+            ov.validateEntirePath(f'output/MininetNX')
+            tmn.networkxToMininetConfig(G,topologyName,hostsPerSwitch=2)
+            
+
     return df
