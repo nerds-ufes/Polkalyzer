@@ -1,9 +1,11 @@
+import glob
 import lib.outputValidator as ov
 from lib.readTopologyZoo import removeBadValues
 import lib.toProbe as tpb
 import lib.toDataframe as tdf
 import pandas as pd
 import lib.plots as pplt
+import matplotlib.image as mpimg
 
 def extractAnswerYN(question):
     while(True):
@@ -18,17 +20,36 @@ def extractAnswerYN(question):
             print()
 
 def mainMenu():
-    print('==== Polka Analyzer Tool ====')
+    print('==== Polkalyzer Main Menu ====')
     if(ov.isDir('input') == 0):
         print('Fill the ./input/ with topologys in .GML to run Polkalyzer...')
     elif(ov.isDir('input') == 1):
         removeBadValues()
 
-    df,choice,algorithm,fixedNodeSender = algorithmChoice()
-    pplt.plotDataFrame(df,'AllTopologys',choice,algorithm,fixedNodeSender)
+    if(ov.isDir('output/MininetNX')):
+        while(True):
+            print('1- Run Polkalyzer')
+            print('2- Modify topologys on MininetNX')
+            print('My choice is: ')
+            choice = int(input())
+            if(choice == 1 or choice == 2):
+                break
 
+    return choice
 
-    return df,choice,algorithm,fixedNodeSender
+def topologyCustomizer():
+    print('==== Control Plane ====')
+    print('1- Type a number of a topology of the list')
+    i=0
+    listTopology = glob.glob(ov.toUniversalOSPath('input/*.gml'))
+    listTopology.sort()
+    for topology in listTopology:
+        topologyName = ov.extractFilename(topology)
+        i+=1
+        print(i,"-",topologyName)
+    print("My Choice is: ")
+    choice=int(input())
+    return choice
 
 def algorithmChoice():
     df = pd.DataFrame() #Empty Dataframe

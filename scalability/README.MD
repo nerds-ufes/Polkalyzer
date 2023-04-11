@@ -34,11 +34,11 @@ If you haven't it, try install: https://www.python.org/downloads/ <br>
 
 You also will need PIP dependencies:
 ```
-pip install pandas seaborn matplotlib networkx scipy
+pip install pandas seaborn matplotlib networkx scipy mininet
 ```
 or
 ```
-pip3 install pandas seaborn matplotlib networkx scipy
+pip3 install pandas seaborn matplotlib networkx scipy mininet
 ```
 
 ## Using Polkalyzer

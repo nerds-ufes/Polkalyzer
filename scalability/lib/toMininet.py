@@ -27,8 +27,6 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
     SwitchSwitchLinkConfig = "#Add a link of switches of original topology\n\t\t"
     BuildTopo = f"\ntopos = {{ '{topologyName}': ( lambda: MininetNX() ) }}"
 
-    parameters = "".join{'delay=100,'}
-
     h = 0 # Host Number
     for s in G.nodes:
         SwitchConfig += f"s{s} = self.addSwitch('s{s}')\n\t\t"
