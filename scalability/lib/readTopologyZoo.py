@@ -86,6 +86,19 @@ def drawTopology(G,T,path):
     plt.savefig(ov.toUniversalOSPath(f'{path}/draw/MST.png'),dpi=120)
     plt.clf()
     plt.close()
+    nx.draw(
+        T, pos, edge_color='black', width=1, linewidths=1,
+        node_size=500, node_color='red', alpha=0.9,
+        labels={node: node for node in T.nodes()}
+    )
+    nx.draw_networkx_edge_labels(
+        G, pos,
+        edge_labels = {(u, v): f"{u}-{v}" for u, v in T.edges()},
+        font_color='red'
+    )
+    plt.savefig(ov.toUniversalOSPath(f'{path}/draw/NetworkNX.png'),dpi=120)
+    plt.clf()
+    plt.close()
 
 def GraphToMST(G,algorithm):
     #topologyName = G.graph['label'] #Hooka o atributo network que identifica o nome da Topologia

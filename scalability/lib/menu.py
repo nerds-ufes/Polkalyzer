@@ -34,10 +34,12 @@ def mainMenu():
             choice = int(input())
             if(choice == 1 or choice == 2):
                 break
+        return choice
 
-    return choice
+    return 1
 
-def topologyCustomizer():
+
+def topologyChoice():
     print('==== Control Plane ====')
     print('1- Type a number of a topology of the list')
     i=0
@@ -47,6 +49,16 @@ def topologyCustomizer():
         topologyName = ov.extractFilename(topology)
         i+=1
         print(i,"-",topologyName)
+    print("My Choice is: ")
+    choice=int(input()) -1
+    topologyCustomizer(ov.extractFilename(listTopology[choice]))
+
+def topologyCustomizer(topologyName): 
+    print(f'==== {topologyName} ====')
+    print('What do you wanna change?: ')
+    print('1- Link Bandwidth')
+    print('2- Link Speed')
+    print('3- Link Delay')
     print("My Choice is: ")
     choice=int(input())
     return choice

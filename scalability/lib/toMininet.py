@@ -1,6 +1,12 @@
 import networkx as nx
 from mininet.net import Mininet
 
+def importConfigs():
+    print('My custom config')
+
+def exportConfigs():
+    print('My custom config')
+
 def networkxToMininet(G,hostsPerSwitch):
     net = Mininet()
     # Construct mininet
@@ -35,7 +41,7 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
             h += 1
             HostConfig += f"h{h} = self.addHost('h{h}')\n\t\t"
             # directly add the link between hosts and their gateways
-            HostSwitchLinkConfig += f"self.addLink('s{s}','h{h}',{parameters})\n\t\t"
+            HostSwitchLinkConfig += f"self.addLink('s{s}','h{h}')\n\t\t"
     # Connect your switches to each other as defined in networkx graph
     for (s1, s2) in G.edges:
         SwitchSwitchLinkConfig += f"self.addLink('s{s1}','s{s2}')\n\t\t"

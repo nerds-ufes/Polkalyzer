@@ -5,10 +5,10 @@ choice=menu.mainMenu()
 if(choice == 1):
     df,choice,algorithm,fixedNodeSender = menu.algorithmChoice()
 elif(choice == 2):
-    menu.topologyCustomizer()
+    menu.topologyChoice()
 
 
-##### PLOT AREA ####
+##### PLOT AREA #####
 
 if(choice == 1): # Only if plot exists
     slice30 = df.loc[df['Number of Nodes'] <= 30]
