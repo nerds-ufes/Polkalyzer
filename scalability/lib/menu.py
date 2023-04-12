@@ -57,16 +57,25 @@ def topologyChoice():
 
 def topologyCustomizer(topologyName): 
     while(True):
-        print(f'==== {topologyName} ====')
+        print(f'==== CUSTOMIZING: {topologyName} ====')
         try:
-            print('What do you wanna change?: ')
-            print('1- Link Bandwidth')
-            print('2- Link Speed')
-            print('3- Link Delay')
-            print('4- Stop Customization')
+            print('What component do you wanna change?: ')
+            print('1- Switch')
+            print('2- Link')
             print("My Choice is: ")
             choice=int(input())
-            if(choice == 1 or choice == 2 or choice == 3 or choice == 4):
+            if(choice == 1):
+                print('Type the number of switch: ')
+                lineNumber = int(input())
+                tmn.extractLine(topologyName,linePrefix='s',lineNumber=lineNumber)
+            elif(choice == 2):
+                print('Type the number of the link: ')
+                lineNumber = int(input())
+                tmn.extractLine(topologyName,linePrefix='lss',lineNumber=lineNumber)
+            else:
+                print('')
+
+            if(extractAnswerYN('Keep Customizing? (y/n):')):
                 break
         except:
             print('')

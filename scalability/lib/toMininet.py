@@ -1,8 +1,9 @@
 import networkx as nx
+import lib.outputValidator as ov
 from mininet.net import Mininet
 
 def extractLine(topologyName,linePrefix,lineNumber):
-    with open(f'output/MininetNX/{topologyName}.py','r') as arq:
+    with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'r') as arq:
         lines = arq.readlines()
         for line in lines:
             if(f'{linePrefix}{lineNumber}' in line):
@@ -62,11 +63,11 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
     
     Code = Code.join([Import,Class,SwitchConfig,HostConfig,HostSwitchLinkConfig,SwitchSwitchLinkConfig,BuildTopo])
     
-    with open(f'output/MininetNX/{topologyName}.py','w') as arq:
+    with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'w') as arq:
         arq.write(Code)
 
     createMakeFile() # Command: make <TopologyName>
 
 def createMakeFile(): # Temporary solution, this function will be a shell script or a better solution
-    with open(f'output/MininetNX/Makefile','w') as arq:
+    with open(ov.toUniversalOSPath(f'output/MininetNX/Makefile'),'w') as arq:
         arq.write("%:\n\t@sudo mn --custom $*.py --topo $*")
