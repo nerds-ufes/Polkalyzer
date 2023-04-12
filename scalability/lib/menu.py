@@ -5,6 +5,7 @@ import lib.toProbe as tpb
 import lib.toDataframe as tdf
 import pandas as pd
 import lib.plots as pplt
+import lib.toMininet as tmn
 import matplotlib.image as mpimg
 
 def extractAnswerYN(question):
@@ -41,7 +42,6 @@ def mainMenu():
 
 def topologyChoice():
     print('==== Control Plane ====')
-    print('1- Type a number of a topology of the list')
     i=0
     listTopology = glob.glob(ov.toUniversalOSPath('input/*.gml'))
     listTopology.sort()
@@ -49,18 +49,28 @@ def topologyChoice():
         topologyName = ov.extractFilename(topology)
         i+=1
         print(i,"-",topologyName)
+    print('==== Control Plane ====')
+    print('Choose a topology')
     print("My Choice is: ")
     choice=int(input()) -1
     topologyCustomizer(ov.extractFilename(listTopology[choice]))
 
 def topologyCustomizer(topologyName): 
-    print(f'==== {topologyName} ====')
-    print('What do you wanna change?: ')
-    print('1- Link Bandwidth')
-    print('2- Link Speed')
-    print('3- Link Delay')
-    print("My Choice is: ")
-    choice=int(input())
+    while(True):
+        print(f'==== {topologyName} ====')
+        try:
+            print('What do you wanna change?: ')
+            print('1- Link Bandwidth')
+            print('2- Link Speed')
+            print('3- Link Delay')
+            print('4- Stop Customization')
+            print("My Choice is: ")
+            choice=int(input())
+            if(choice == 1 or choice == 2 or choice == 3 or choice == 4):
+                break
+        except:
+            print('')
+
     return choice
 
 def algorithmChoice():

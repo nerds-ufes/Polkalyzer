@@ -13,7 +13,7 @@ def StateOverheadHeatMap1(maxNodes,path):
 
     df = pd.DataFrame(data=newArr,columns=['Number of Nodes','Replication Average per Node'])
     df['State Overhead'] = df.apply(lambda x : x['Number of Nodes']*(1+2*(x['Replication Average per Node'])),axis=1)
-    hMap = df.pivot('Number of Nodes','Replication Average per Node','State Overhead')
+    hMap = df1.pivot(index='Number of Nodes', columns='Replication Average per Node', values='State Overhead')
     #Plot Config 
     f, ax = plt.subplots(figsize=(10, 10))
     f.suptitle('State Overhead')
@@ -108,7 +108,7 @@ def StateOverheadHeatMap3(df,path):
 
     df1 = pd.DataFrame(data=newArr,columns=['Number of Nodes','Replication Average per Node'])
     df1['State Overhead'] = df1.apply(lambda x : x['Number of Nodes']*(1+2*(x['Replication Average per Node'])),axis=1)
-    hMap = df1.pivot('Number of Nodes','Replication Average per Node','State Overhead')
+    hMap = df1.pivot(index='Number of Nodes', columns='Replication Average per Node', values='State Overhead')
     #Plot Config 
     f, ax = plt.subplots(figsize=(10, 10))
     f.suptitle('Number of State Entries per Node using MPINT')
@@ -166,7 +166,7 @@ def StateOverheadHeatMap4(df,path):
 
     df1 = pd.DataFrame(data=newArr,columns=['Number of Nodes','Replication Average per Node'])
     df1['State Overhead'] = df1.apply(lambda x : x['Number of Nodes']*(1+2*(x['Replication Average per Node'])),axis=1)
-    hMap = df1.pivot('Number of Nodes','Replication Average per Node','State Overhead')
+    hMap = df1.pivot(index='Number of Nodes', columns='Replication Average per Node', values='State Overhead')
     #Plot Config 
     plt.clf()
     plt.cla()
@@ -223,7 +223,7 @@ def StateOverheadHeatMap5(df,path):
 
     df1 = pd.DataFrame(data=newArr,columns=['Number of Nodes','Replication Average per Node'])
     df1['State Overhead'] = df1.apply(lambda x : x['Number of Nodes']*(1+2*(x['Replication Average per Node'])),axis=1)
-    hMap = df1.pivot('Number of Nodes','Replication Average per Node','State Overhead')
+    hMap = df1.pivot(index='Number of Nodes', columns='Replication Average per Node', values='State Overhead')
     #Plot Config 
     plt.clf()
     plt.cla()
@@ -286,7 +286,7 @@ def StateOverheadHeatMap6(df,path):
 
     df1 = pd.DataFrame(data=newArr,columns=['Number of Nodes','Replication Average per Node'])
     df1['State Overhead'] = df1.apply(lambda x : x['Number of Nodes']*(1+2*(x['Replication Average per Node'])),axis=1)
-    hMap = df1.pivot('Number of Nodes','Replication Average per Node','State Overhead')
+    hMap = df1.pivot(index='Number of Nodes', columns='Replication Average per Node', values='State Overhead')
     #Plot Config 
     plt.clf()
     plt.cla()

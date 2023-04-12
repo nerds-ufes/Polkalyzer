@@ -1,6 +1,18 @@
 import networkx as nx
 from mininet.net import Mininet
 
+def extractLine(topologyName,linePrefix,lineNumber):
+    with open(f'output/MininetNX/{topologyName}.py','r') as arq:
+        lines = arq.readlines()
+        for line in lines:
+            if(f'{linePrefix}{lineNumber}' in line):
+                print('Your line is: ', line)
+                return line
+            
+def customizeLink(myDict):
+    print('customizing link')
+    #r1r2 = {'bw':100,'delay':'3','loss':12}.
+
 def importConfigs():
     print('My custom config')
 
@@ -38,13 +50,15 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
         SwitchConfig += f"s{s} = self.addSwitch('s{s}')\n\t\t"
         # Add single host on designated switches
         for cont in range(hostsPerSwitch):
-            h += 1
             HostConfig += f"h{h} = self.addHost('h{h}')\n\t\t"
             # directly add the link between hosts and their gateways
-            HostSwitchLinkConfig += f"self.addLink('s{s}','h{h}')\n\t\t"
+            HostSwitchLinkConfig += f"lhs{h} = self.addLink('s{s}','h{h}')\n\t\t"
+            h += 1
     # Connect your switches to each other as defined in networkx graph
+    l = 0 #Link Switch Switch
     for (s1, s2) in G.edges:
-        SwitchSwitchLinkConfig += f"self.addLink('s{s1}','s{s2}')\n\t\t"
+        SwitchSwitchLinkConfig += f"lss{l} = self.addLink('s{s1}','s{s2}')\n\t\t"
+        l+=1
     
     Code = Code.join([Import,Class,SwitchConfig,HostConfig,HostSwitchLinkConfig,SwitchSwitchLinkConfig,BuildTopo])
     
