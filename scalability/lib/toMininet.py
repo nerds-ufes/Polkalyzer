@@ -10,9 +10,12 @@ def extractLine(topologyName,linePrefix,lineNumber):
                 print('Your line is: ', line)
                 return line
             
-def customizeLink(myDict):
-    print('customizing link')
-    #r1r2 = {'bw':100,'delay':'3','loss':12}.
+def extractCustomFromLine(myLine):
+    test = "s12 = self.addSwitch('s12','bw':200,'delay':3)"
+
+
+def customizeLink(myLine,myDict):
+    test = {'bw':100,'delay':'3','loss':12}
 
 def importConfigs():
     print('My custom config')
@@ -39,7 +42,8 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
     Code = ""
     Import = "from mininet.topo import Topo\n\n"
     Class = f"class MininetNX( Topo ):\n\tdef build( self ):\n\t\t"
-
+    DefaultParameters = "#Set Here Default Parameters\n\t\t"+"switchParameters= {}\n\t\t"+"hostParameters= {}\n\t\t"+ \
+                        "linkHSParameters= {}\n\t\t"+"linkSSParameters= {}\n\t\t"
     SwitchConfig = "#Add Switches\n\t\t"
     HostConfig = f"#Add {hostsPerSwitch} hosts to each switch\n\t\t"
     HostSwitchLinkConfig = "#Add a link of hosts and switch\n\t\t"
@@ -48,20 +52,20 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
 
     h = 0 # Host Number
     for s in G.nodes:
-        SwitchConfig += f"s{s} = self.addSwitch('s{s}')\n\t\t"
+        SwitchConfig += f"s{s} = self.addSwitch('s{s}',**switchParameters)\n\t\t"
         # Add single host on designated switches
         for cont in range(hostsPerSwitch):
-            HostConfig += f"h{h} = self.addHost('h{h}')\n\t\t"
+            HostConfig += f"h{h} = self.addHost('h{h}',**hostParameters)\n\t\t"
             # directly add the link between hosts and their gateways
-            HostSwitchLinkConfig += f"lhs{h} = self.addLink('s{s}','h{h}')\n\t\t"
+            HostSwitchLinkConfig += f"lhs{h} = self.addLink('s{s}','h{h}',**linkHSParameters)\n\t\t"
             h += 1
     # Connect your switches to each other as defined in networkx graph
     l = 0 #Link Switch Switch
     for (s1, s2) in G.edges:
-        SwitchSwitchLinkConfig += f"lss{l} = self.addLink('s{s1}','s{s2}')\n\t\t"
+        SwitchSwitchLinkConfig += f"lss{l} = self.addLink('s{s1}','s{s2}',**linkSSParameters)\n\t\t"
         l+=1
     
-    Code = Code.join([Import,Class,SwitchConfig,HostConfig,HostSwitchLinkConfig,SwitchSwitchLinkConfig,BuildTopo])
+    Code = Code.join([Import,Class,DefaultParameters,SwitchConfig,HostConfig,HostSwitchLinkConfig,SwitchSwitchLinkConfig,BuildTopo])
     
     with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'w') as arq:
         arq.write(Code)
