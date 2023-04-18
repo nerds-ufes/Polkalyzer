@@ -56,7 +56,9 @@ def topologyChoice():
     topologyCustomizer(ov.extractFilename(listTopology[choice]))
 
 def topologyCustomizer(topologyName): 
+    tmn.createCustomTopology(topologyName)
     while(True):
+        tmn.displayCustomizedComponents(topologyName)
         print(f'==== CUSTOMIZING: {topologyName} ====')
         try:
             print('What component do you wanna change?: ')
@@ -66,12 +68,12 @@ def topologyCustomizer(topologyName):
             choice=int(input())
             if(choice == 1):
                 print('Type the number of switch: ')
-                lineNumber = int(input())
-                tmn.extractLine(topologyName,linePrefix='s',lineNumber=lineNumber)
+                componentNumber = int(input())
+                tmn.extractLine(topologyName,linePrefix='s',componentNumber=componentNumber)
             elif(choice == 2):
                 print('Type the number of the link: ')
-                lineNumber = int(input())
-                tmn.extractLine(topologyName,linePrefix='lss',lineNumber=lineNumber)
+                componentNumber = int(input())
+                lineText = tmn.extractLine(topologyName,linePrefix='lss',componentNumber=componentNumber)
             else:
                 print('')
 

@@ -2,26 +2,72 @@ import networkx as nx
 import lib.outputValidator as ov
 from mininet.net import Mininet
 
-def extractLine(topologyName,linePrefix,lineNumber):
+def extractLine(topologyName,linePrefix,componentNumber):
     with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'r') as arq:
         lines = arq.readlines()
         for line in lines:
-            if(f'{linePrefix}{lineNumber}' in line):
+            if(f'{linePrefix}{componentNumber}' in line):
                 print('Your line is: ', line)
                 return line
-            
-def extractCustomFromLine(myLine):
-    test = "s12 = self.addSwitch('s12','bw':200,'delay':3)"
+        print("We don't found your line")
+        return None
+    
+def alreadyCustomized(topologyName,linePrefix,componentNumber):
+    if(ov.isFile(f'output/CustomMininetNX/{topologyName}.py')):
+        with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'r') as arq:
+            lines = arq.readlines()
+            for line in lines:
+                if(f'custom_{linePrefix}{componentNumber}' in line):
+                    print('is the line')
 
+def createCustomTopology(topologyName):
+    if(ov.isFile(f'output/CustomMininetNX/{topologyName}.py')):
+        return 1
 
-def customizeLink(myLine,myDict):
-    test = {'bw':100,'delay':'3','loss':12}
+    with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'r') as arq:
+        lines = arq.readlines()
+        lineNumber = 0
+        for line in lines:
+            if(line == "\t\t#Add Switches\n"):
+                myLine = lineNumber
+            lineNumber += 1
+        lines[myLine] = "\t\t#Custom Parameters\n\n\t\t#Add Switches\n"
 
-def importConfigs():
-    print('My custom config')
+    ov.validateEntirePath('output/CustomMininetNX')
 
-def exportConfigs():
-    print('My custom config')
+    with open(ov.toUniversalOSPath(f'output/CustomMininetNX/{topologyName}.py'),'w') as arq:
+        arq.writelines(lines)
+
+def displayCustomizedComponents(topologyName):
+    # Mapeamento de strings de entrada para strings de saída correspondentes
+    string_map = {
+        'custom_lss': 'Link SS',
+        'custom_lhs': 'Link HS',
+        'custom_s': 'Switch',
+        'custom_h': 'Host'
+    }
+    # Abrir o arquivo para leitura
+    with open(ov.toUniversalOSPath(f'output/CustomMininetNX/{topologyName}.py'),'r') as arq:
+        # Ler cada linha do arquivo
+        for line in arq:
+            # Verificar se a linha contém uma das strings de entrada
+            for key in string_map.keys():
+                if key in line:
+                    # Extrair o número do link a partir da linha
+                    link = int(line.split(key)[1].split()[0])
+                    # Usar eval() para criar um dicionário a partir da string
+                    d = eval(line.split('=')[1])
+                    # Criar uma lista de strings formatadas para cada chave-valor do dicionário
+                    params = [f"{key}: {value}" for key, value in d.items()]
+                    # Concatenar os itens da lista em uma única string
+                    params_str = ", ".join(params)
+                    # Obter a string de saída correspondente
+                    output_key = key
+                    output_str = string_map[output_key]
+                    # Formatar a saída com base nos valores do dicionário, do link e da string de saída correspondente
+                    output = f"{output_str} {link} -> {params_str}"
+                    # Imprimir a saída
+                    print(output)
 
 def networkxToMininet(G,hostsPerSwitch):
     net = Mininet()
