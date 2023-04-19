@@ -3,8 +3,10 @@ import seaborn as sns
 import numpy as np
 import lib.outputValidator as ov
 from matplotlib import pyplot as plt
+import lib.style as style
 
 def StateOverheadHeatMap1(maxNodes,path):
+    style.checkpoint("Plotting State Overhead HeatMap1")
     replicationArr = np.arange(1.0,2.0,0.1)
     newArr = []
     for i in range (1,maxNodes+1):
@@ -32,9 +34,11 @@ def StateOverheadHeatMap1(maxNodes,path):
     plt.gca().invert_yaxis()
     #Save Fig
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap1.png'),dpi=120)
+    style.success()
     return hMap
 
 def StateOverheadHeatMap2(df,path):
+    style.checkpoint("Plotting State Overhead HeatMap2")
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     df2['State Overhead'] = df2['State Overhead'].apply(lambda x: round(x, 1))
     df2['Replication Average per Node'] = df2['Replication Average per Node'].apply(lambda x: round(x, 1))
@@ -58,6 +62,7 @@ def StateOverheadHeatMap2(df,path):
     #Save Fig
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap2.png'),dpi=120)
+    style.success()
     return hMap
 
 def offsetAnnotation(x):
@@ -89,6 +94,7 @@ def offsetAnnotation(x):
 
 
 def StateOverheadHeatMap3(df,path):
+    style.checkpoint("Plotting State Overhead HeatMap3")
     #Constants
     maxNodes = 30
     #Anotation DF
@@ -144,9 +150,11 @@ def StateOverheadHeatMap3(df,path):
     #Save Fig
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap3.png'),dpi=120)
+    style.success()
     return hMap
 
 def StateOverheadHeatMap4(df,path):
+    style.checkpoint("Plotting State Overhead HeatMap4")
     #Constants
     initialNode = 4
     maxNodes = 30
@@ -201,9 +209,11 @@ def StateOverheadHeatMap4(df,path):
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap4.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap4.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    style.success()
     return hMap
 
 def StateOverheadHeatMap5(df,path):
+    style.checkpoint("Plotting State Overhead HeatMap5")
     #Constants
     initialNode = 4
     maxNodes = 30
@@ -264,9 +274,11 @@ def StateOverheadHeatMap5(df,path):
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap5.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap5.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    style.success()
     return hMap
 
 def StateOverheadHeatMap6(df,path):
+    style.checkpoint("Plotting State Overhead HeatMap6")
     #Constants
     initialNode = 4
     maxNodes = 30
@@ -327,9 +339,11 @@ def StateOverheadHeatMap6(df,path):
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap6.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap6.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    style.success()
     return hMap
 
 def StateOverheadConcentration(df,path):
+    style.checkpoint("Plotting State Overhead Concentration")
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     #Plot Config
     f,axes= plt.subplots(1,2,sharey=True)
@@ -342,31 +356,39 @@ def StateOverheadConcentration(df,path):
     #Save Fig
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_Concentration.png'),dpi=120)
+    style.success()
 
 
 def StateOverheadHistPlot(df,path):
+    style.checkpoint("Plotting State Overhead Hist Plot")
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     sns.histplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2);
     #Save Fig
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HP.png'),dpi=120)
+    style.success()
 
 def StateOverheadJointPlot(df,path):
+    style.checkpoint("Plotting State Overhead JointPlot")
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     sns.jointplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2,kind='hist');
     #Save Fig
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_JP.png'),dpi=120)
+    style.success()
 
 
 def StateOverheadDistribution(df,path):
+    style.checkpoint("Plotting State Overhead Distribution")
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     sns.relplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2);
     #Save Fig
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/SO_Distribuition.png'),dpi=120)
+    style.success()
 
 def OverheadPointPlot(df,path):
+    style.checkpoint("Plotting Overhead PointPlot")
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']]
     #Rename Dataframe
     df2.rename(columns = {'MPolka CRC8':'MPolKA-INT (CRC8)', 'MPolka CRC16':'MPolKA-INT (CRC16)','INT Clássico':'Original INT'}, inplace = True)
@@ -397,8 +419,10 @@ def OverheadPointPlot(df,path):
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/OverheadPP.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     plt.savefig(ov.toUniversalOSPath(f'{path}/OverheadPP.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    style.success()
 
 def OverheadLinePlot(df,path):
+    style.checkpoint("Plotting Overhead LinePlot")
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']]
     #Rename Dataframe
     df2.rename(columns = {'MPolka CRC8':'INT-MPolKA (CRC8)', 'MPolka CRC16':'INT-MPolKA (CRC16)','INT Clássico':'INT Original'}, inplace = True)
@@ -427,6 +451,7 @@ def OverheadLinePlot(df,path):
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/OverheadLP.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     plt.savefig(ov.toUniversalOSPath(f'{path}/OverheadLP.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    style.success()
 
 def OverheadCompare(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT']]
@@ -459,6 +484,7 @@ def OverheadCompare(df,path):
     #sns.lineplot(x="Number of Nodes", y="Overhead",ax=ax, data=df2);
     ov.validateEntirePath(path)
     plt.savefig(ov.toUniversalOSPath(f'{path}/OverheadCompare-MPolka-MPINT.png'),dpi=120)
+    style.success()
     return df2
 
 ######################################## PLOT AREA #################################################
@@ -476,7 +502,6 @@ def OverheadCompare(df,path):
 #plt.show()
 
 def plotDataFrame(df,name,choice,algorithm,fixedNodeSender):
-
     if(choice == 1):
         OverheadPointPlot(df,ov.toUniversalOSPath(f'output/Plots/{name}'))
         #OverheadLinePlot(df,f'output/Plots/{name}')

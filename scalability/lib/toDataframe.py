@@ -2,11 +2,11 @@ import glob
 import networkx as nx
 from numpy import number
 import pandas as pd
-
 import lib.outputValidator as ov
 import lib.overheadCalc as oc
 import lib.toProbe as tpb
 import lib.toMininet as tmn
+import lib.style as style
 from lib.readTopologyZoo import GraphToMST,drawTopology
 
 stronglyConnectedFlag = False
@@ -155,6 +155,7 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportPro
 
 
 def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
+    style.checkpoint("Filling Dataframe")
     listTopology = glob.glob(ov.toUniversalOSPath('input/*.gml'))
     for topology in listTopology:
         topologyName = ov.extractFilename(topology)
@@ -162,13 +163,19 @@ def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
         df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe=True)
 
         if(draw == True):
+            style.checkpoint(f"Drawing {topologyName}")
             T = nx.minimum_spanning_tree(G,algorithm=algorithm)
             outputPath = ov.toUniversalOSPath(f'output/Topology/{topologyName}')
             drawTopology(G,T,outputPath)
+            style.checkpointDone(f"Drawing {topologyName}")
 
         if(mininetNX == True):
+            style.checkpoint(f"Parsing {topologyName} to MininetNX")
             ov.validateEntirePath(f'output/MininetNX')
             tmn.networkxToMininetConfig(T,topologyName,hostsPerSwitch=1)
+            style.checkpointDone(f"Parsing {topologyName} to MininetNX")
+
+    style.checkpointDone("Dataframe filled with success")
             
 
     return df
