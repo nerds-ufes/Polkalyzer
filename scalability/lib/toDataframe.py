@@ -168,7 +168,7 @@ def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
 
         if(mininetNX == True):
             ov.validateEntirePath(f'output/MininetNX')
-            tmn.networkxToMininetConfig(G,topologyName,hostsPerSwitch=2)
+            tmn.networkxToMininetConfig(T,topologyName,hostsPerSwitch=1)
             
 
     return df

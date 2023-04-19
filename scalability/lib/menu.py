@@ -69,18 +69,18 @@ def topologyCustomizer(topologyName):
             if(choice == 1):
                 print('Type the number of switch: ')
                 componentNumber = int(input())
-                tmn.extractLine(topologyName,linePrefix='s',componentNumber=componentNumber)
+                tmn.customizeComponent(topologyName,linePrefix='s',componentNumber=componentNumber)
             elif(choice == 2):
                 print('Type the number of the link: ')
                 componentNumber = int(input())
-                lineText = tmn.extractLine(topologyName,linePrefix='lss',componentNumber=componentNumber)
+                tmn.customizeComponent(topologyName,linePrefix='lss',componentNumber=componentNumber)
             else:
                 print('')
 
             if(extractAnswerYN('Keep Customizing? (y/n):')):
                 break
-        except:
-            print('')
+        except ValueError:
+            print('Erro de Entrada\n')
 
     return choice
 

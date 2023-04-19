@@ -1,27 +1,70 @@
 import networkx as nx
 import lib.outputValidator as ov
 from mininet.net import Mininet
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import ascii_magic
+import os
+import subprocess
 
-def extractLine(topologyName,linePrefix,componentNumber):
-    with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'r') as arq:
-        lines = arq.readlines()
-        for line in lines:
-            if(f'{linePrefix}{componentNumber}' in line):
-                print('Your line is: ', line)
-                return line
-        print("We don't found your line")
-        return None
-    
-def alreadyCustomized(topologyName,linePrefix,componentNumber):
+def userInputToConfig(rawInput):
+    customConfig = {}
+    for item in rawInput.split(","):
+        key, value = item.split("=")
+        customConfig[key.strip()] = value.strip()
+    config_str = ",".join([f"{key}:{value}" for key, value in customConfig.items()])
+    return customConfig
+
+def customizeComponent(topologyName,linePrefix,componentNumber):
+    #pathToImage = ov.toUniversalOSPath(f'output/Topology/{topologyName}/draw/TopologyNX.png')
+    #fsubprocess.run(['gwenview',pathToImage])
+    if(linePrefix == 's'):
+        print('Type your comma separated SWITCH config, like (cls=OVSSwitch,ip=10.0.0.1):')
+        userInput = input()
+    elif(linePrefix == 'lss'):
+        print('Type your comma separated LINK config, like (bw=100, delay:3, loss: 12):')
+        userInput = input()
+
+    customConfig = userInputToConfig(userInput)
+
+    prefix_map = {
+        's': '**switchParameters',
+        'lss': '**linkSSParameters',
+    }
+
     if(ov.isFile(f'output/CustomMininetNX/{topologyName}.py')):
-        with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'r') as arq:
+        customLine = f'custom_{linePrefix}{componentNumber}'
+        with open(ov.toUniversalOSPath(f'output/CustomMininetNX/{topologyName}.py'),'r') as arq:
             lines = arq.readlines()
+            lineNumber = 0
+            alreadyCustomized = False
             for line in lines:
-                if(f'custom_{linePrefix}{componentNumber}' in line):
-                    print('is the line')
+                if customLine in line:
+                    alreadyCustomized = True
+            if(alreadyCustomized): # Component Already Customized
+                for line in lines:
+                    if(f'{customLine} =' in line):
+                        myLine = lineNumber
+                    lineNumber += 1
+                lines[myLine] = f'\t\t{customLine} = {customConfig}\n'
+            else: # Component Not Customized
+                for line in lines:
+                    if(line == "\t\t#Custom Parameters\n"):
+                        myFirstLine = lineNumber
+                    if(f'{linePrefix}{componentNumber} = ' in line):
+                        mySecondLine = lineNumber
+                    lineNumber += 1
+
+                lines[myFirstLine] = f"\t\t#Custom Parameters\n\t\t{customLine} = {customConfig}\n"
+                lines[mySecondLine] = lines[mySecondLine].replace(prefix_map[linePrefix],f'**{customLine}')
+
+        with open(ov.toUniversalOSPath(f'output/CustomMininetNX/{topologyName}.py'),'w') as arq:
+            arq.writelines(lines)
 
 def createCustomTopology(topologyName):
     if(ov.isFile(f'output/CustomMininetNX/{topologyName}.py')):
+        if(not ov.isFile("output/CustomMininetNX/Makefile")):
+            createMakeFile('output/CustomMininetNX')
         return 1
 
     with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'r') as arq:
@@ -31,9 +74,9 @@ def createCustomTopology(topologyName):
             if(line == "\t\t#Add Switches\n"):
                 myLine = lineNumber
             lineNumber += 1
-        lines[myLine] = "\t\t#Custom Parameters\n\n\t\t#Add Switches\n"
+        lines[myLine] = "\t\t#Custom Parameters\n\t\t#Add Switches\n"
 
-    ov.validateEntirePath('output/CustomMininetNX')
+    createMakeFile('output/CustomMininetNX')
 
     with open(ov.toUniversalOSPath(f'output/CustomMininetNX/{topologyName}.py'),'w') as arq:
         arq.writelines(lines)
@@ -41,10 +84,10 @@ def createCustomTopology(topologyName):
 def displayCustomizedComponents(topologyName):
     # Mapeamento de strings de entrada para strings de saída correspondentes
     string_map = {
-        'custom_lss': 'Link SS',
-        'custom_lhs': 'Link HS',
-        'custom_s': 'Switch',
-        'custom_h': 'Host'
+        '\t\tcustom_lss': 'Link SS',
+        '\t\tcustom_lhs': 'Link HS',
+        '\t\tcustom_s': 'Switch',
+        '\t\tcustom_h': 'Host'
     }
     # Abrir o arquivo para leitura
     with open(ov.toUniversalOSPath(f'output/CustomMininetNX/{topologyName}.py'),'r') as arq:
@@ -60,7 +103,7 @@ def displayCustomizedComponents(topologyName):
                     # Criar uma lista de strings formatadas para cada chave-valor do dicionário
                     params = [f"{key}: {value}" for key, value in d.items()]
                     # Concatenar os itens da lista em uma única string
-                    params_str = ", ".join(params)
+                    params_str = " | ".join(params)
                     # Obter a string de saída correspondente
                     output_key = key
                     output_str = string_map[output_key]
@@ -116,8 +159,9 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
     with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'w') as arq:
         arq.write(Code)
 
-    createMakeFile() # Command: make <TopologyName>
+    createMakeFile('output/MininetNX') # Command: make <TopologyName>
 
-def createMakeFile(): # Temporary solution, this function will be a shell script or a better solution
-    with open(ov.toUniversalOSPath(f'output/MininetNX/Makefile'),'w') as arq:
+def createMakeFile(path): # Temporary solution, this function will be a shell script or a better solution
+    ov.validateEntirePath(path)
+    with open(ov.toUniversalOSPath(f'{path}/Makefile'),'w') as arq:
         arq.write("%:\n\t@sudo mn --custom $*.py --topo $*")
