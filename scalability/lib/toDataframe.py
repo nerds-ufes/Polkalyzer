@@ -158,22 +158,24 @@ def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
     style.checkpoint("Filling Dataframe")
     listTopology = glob.glob(ov.toUniversalOSPath('input/*.gml'))
     for topology in listTopology:
+        style.checkpoint(f"Sending Probes on {topologyName}")
         topologyName = ov.extractFilename(topology)
         G = nx.read_gml(topology,destringizer=int,label='id')
         df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe=True)
+        style.done()
 
         if(draw == True):
             style.checkpoint(f"Drawing {topologyName}")
             T = nx.minimum_spanning_tree(G,algorithm=algorithm)
             outputPath = ov.toUniversalOSPath(f'output/Topology/{topologyName}')
             drawTopology(G,T,outputPath)
-            style.checkpointDone(f"Drawing {topologyName}")
+            style.done()
 
         if(mininetNX == True):
             style.checkpoint(f"Parsing {topologyName} to MininetNX")
             ov.validateEntirePath(f'output/MininetNX')
             tmn.networkxToMininetConfig(T,topologyName,hostsPerSwitch=1)
-            style.checkpointDone(f"Parsing {topologyName} to MininetNX")
+            style.done()
 
     style.checkpointDone("Dataframe filled with success")
             

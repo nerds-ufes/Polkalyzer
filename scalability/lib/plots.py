@@ -15,7 +15,7 @@ def StateOverheadHeatMap1(maxNodes,path):
 
     df = pd.DataFrame(data=newArr,columns=['Number of Nodes','Replication Average per Node'])
     df['State Overhead'] = df.apply(lambda x : x['Number of Nodes']*(1+2*(x['Replication Average per Node'])),axis=1)
-    hMap = df1.pivot(index='Number of Nodes', columns='Replication Average per Node', values='State Overhead')
+    hMap = df.pivot(index='Number of Nodes', columns='Replication Average per Node', values='State Overhead')
     #Plot Config 
     f, ax = plt.subplots(figsize=(10, 10))
     f.suptitle('State Overhead')

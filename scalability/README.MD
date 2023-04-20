@@ -69,5 +69,14 @@ Check your Environment Variables to run **pip** on Terminal. <br>
 Change **YOUR_USERNAME** to something like **lucas** <br>
 Change **Python3XY** to something like **Python311** <br>
 
+## Consider giving us a star :star:
+
+If you have used or benefited from Polkalyzer in any way, we kindly ask you to show your support by giving us a star :star: on GitHub.
+Your star is a valuable feedback for us, and it encourages us to continue improving the project. 
+
+We are committed to delivering the best experience possible, and your feedback plays a crucial role in achieving this goal. So, if you enjoyed Polkalyzer, we would greatly appreciate your support through a star on our GitHub repository.
+
+Thank you for your interest and contribution to our project. Your support means a lot to us!
+
 # References
 Topology Dataset - http://www.topology-zoo.org/dataset.html
