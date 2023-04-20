@@ -78,5 +78,8 @@ We are committed to delivering the best experience possible, and your feedback p
 
 Thank you for your interest and contribution to our project. Your support means a lot to us!
 
+## Contributing
+You're free to contribute refactoring and improving our code. Don't hesite to fork this repo.
+
 # References
 Topology Dataset - http://www.topology-zoo.org/dataset.html
