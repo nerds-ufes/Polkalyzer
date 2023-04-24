@@ -3,7 +3,6 @@ import lib.outputValidator as ov
 from mininet.net import Mininet
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-import ascii_magic
 import os
 import subprocess
 
@@ -129,15 +128,31 @@ def networkxToMininet(G,hostsPerSwitch):
 
 def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
     Code = ""
-    Import = "from mininet.topo import Topo\n\n"
-    Class = f"class MininetNX( Topo ):\n\tdef build( self ):\n\t\t"
-    DefaultParameters = "#Set Here Default Parameters\n\t\t"+"switchParameters= {}\n\t\t"+"hostParameters= {}\n\t\t"+ \
-                        "linkHSParameters= {}\n\t\t"+"linkSSParameters= {}\n\t\t"
+    Import= "from mininet.topo import Topo\n"+\
+            "from mininet.net import Mininet\n"+\
+            "from mininet.cli import CLI\n"+\
+            "from mininet.link import TCLink\n"+\
+            "from mininet.log import info,setLogLevel\n\n"
+    Class =f"class MininetNX( Topo ):\n\t"+\
+                "def build( self ):\n\t\t"
+    DefaultParameters = "#Set Here Default Parameters\n\t\t"+\
+                        "switchParameters= {}\n\t\t"+\
+                        "hostParameters= {}\n\t\t"+\
+                        "linkHSParameters= {}\n\t\t"+\
+                        "linkSSParameters= {}\n\t\t"
+    
     SwitchConfig = "#Add Switches\n\t\t"
     HostConfig = f"#Add {hostsPerSwitch} hosts to each switch\n\t\t"
     HostSwitchLinkConfig = "#Add a link of hosts and switch\n\t\t"
     SwitchSwitchLinkConfig = "#Add a link of switches of original topology\n\t\t"
-    BuildTopo = f"\ntopos = {{ '{topologyName}': ( lambda: MininetNX() ) }}"
+    StartNetwork = f"\ndef startNetwork():"+\
+                        "\n\ttopo = MininetNX()"+\
+                        "\n\tnet = Mininet(topo=topo, autoSetMacs=True, link=TCLink)"+\
+                        "\n\tnet.start()"+\
+                        "\n\tCLI(net)"
+    BuildTopo = f"\n\nif __name__ == '__main__':"+\
+                    "\n\tsetLogLevel( 'info' )"+\
+                    "\n\tstartNetwork()"
 
     h = 0 # Host Number
     for s in G.nodes:
@@ -154,7 +169,7 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
         SwitchSwitchLinkConfig += f"lss{l} = self.addLink('s{s1}','s{s2}',**linkSSParameters)\n\t\t"
         l+=1
     
-    Code = Code.join([Import,Class,DefaultParameters,SwitchConfig,HostConfig,HostSwitchLinkConfig,SwitchSwitchLinkConfig,BuildTopo])
+    Code = Code.join([Import,Class,DefaultParameters,SwitchConfig,HostConfig,HostSwitchLinkConfig,SwitchSwitchLinkConfig,StartNetwork,BuildTopo])
     
     with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'w') as arq:
         arq.write(Code)

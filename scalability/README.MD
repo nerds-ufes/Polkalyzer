@@ -1,6 +1,6 @@
 # Polkalyzer - Polka analyzer tool for any given topology.
 
-![Polkalyzer Explained](./imgs/PolkalyzerBehavior.png)
+![Polkalyzer Explained](./utils/imgs/PolkalyzerBehavior.png)
 # 
 
 _This tool can be dissecated in multiple parts._ <br>
@@ -50,7 +50,7 @@ or
 ```
 python3 Polkalyzer.py
 ```
-![Algorithm Choice](./imgs/AlgorithmChoice.png) <br>
+![Algorithm Choice](./utils/imgs/AlgorithmChoice.png) <br>
 You can choose between three algorithm options, after chosen wait finish and check your output folder. <br>
 
 ## Troubleshooting
@@ -79,7 +79,23 @@ We are committed to delivering the best experience possible, and your feedback p
 Thank you for your interest and contribution to our project. Your support means a lot to us!
 
 ## Contributing
-You're free to contribute refactoring and improving our code. Don't hesite to fork this repo.
+You're free to contribute refactoring and improving our code. Don't hesite to fork this repo. <br>
+How you can contribute: <br>
+- [ ] Refactoring our code
+- [ ] Improving performance comparing hash of output/
+- [ ] Building more **utils** for the Control Plane
+
+## Log (Under Development)
+- [x] Calculate the probe path from a topo **COMMIT ID**
+- [x] ~~Allowed to download topologys .gml from topologyZoo~~ **COMMIT ID**
+- [x] Allowed to fill **input/** with topologys **COMMIT ID**
+- [x] Calculate overhead from MPINT Approach **COMMIT ID**
+- [x] Calculate overhead from MPolKA-INT Approach **COMMIT ID**
+- [x] Calculate overhead from Original INT Approach **COMMIT ID**
+- [x] Filling dataframe with topologys information **COMMIT ID**
+- [x] Allowing plotts **COMMIT ID**
+- [x] Allowing draws from (Graph and MST) **COMMIT ID**
+- [x] Allowed transform NetworkX Graphs into Mininet Topologys. **COMMIT ID**  
 
 # References
 Topology Dataset - http://www.topology-zoo.org/dataset.html

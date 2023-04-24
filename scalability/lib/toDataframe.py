@@ -158,8 +158,8 @@ def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
     style.checkpoint("Filling Dataframe")
     listTopology = glob.glob(ov.toUniversalOSPath('input/*.gml'))
     for topology in listTopology:
-        style.checkpoint(f"Sending Probes on {topologyName}")
         topologyName = ov.extractFilename(topology)
+        style.checkpoint(f"Sending Probes on {topologyName}")
         G = nx.read_gml(topology,destringizer=int,label='id')
         df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe=True)
         style.done()
