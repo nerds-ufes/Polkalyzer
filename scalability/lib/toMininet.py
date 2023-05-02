@@ -5,6 +5,16 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import os
 import subprocess
+from PIL import Image
+import sys
+
+def openImage(pathToImage):
+    # Verifica qual é o sistema operacional
+    if os.name == 'nt':  # Windows
+        subprocess.call(['cmd', '/c', 'start', pathToImage], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    else:  # Linux ou Mac
+        subprocess.call(['open', pathToImage], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+   
 
 def userInputToConfig(rawInput):
     customConfig = {}
@@ -15,8 +25,6 @@ def userInputToConfig(rawInput):
     return customConfig
 
 def customizeComponent(topologyName,linePrefix,componentNumber):
-    #pathToImage = ov.toUniversalOSPath(f'output/Topology/{topologyName}/draw/TopologyNX.png')
-    #fsubprocess.run(['gwenview',pathToImage])
     if(linePrefix == 's'):
         print('Type your comma separated SWITCH config, like (cls=OVSSwitch,ip=10.0.0.1):')
         userInput = input()

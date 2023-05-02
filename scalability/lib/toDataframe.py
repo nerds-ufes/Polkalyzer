@@ -155,27 +155,23 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportPro
 
 
 def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
-    style.checkpoint("Filling Dataframe")
     listTopology = glob.glob(ov.toUniversalOSPath('input/*.gml'))
-    for topology in listTopology:
-        topologyName = ov.extractFilename(topology)
-        style.checkpoint(f"Sending Probes on {topologyName}")
-        G = nx.read_gml(topology,destringizer=int,label='id')
-        df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe=True)
-        style.done()
+    style.print_colorfulDict("Config",{"Algorithm": f"{algorithm}", "NodeSender": f"{fixedNodeSender}", "Draw": f"{draw}", "ToMininetNX": f"{mininetNX}"},color="yellow")
+    with style.alive_bar(len(listTopology), title="Filling Dataframe") as bar:
+        for topology in listTopology:
+            topologyName = ov.extractFilename(topology)
+            G = nx.read_gml(topology,destringizer=int,label='id')
+            df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe=True)
 
-        if(draw == True):
-            style.checkpoint(f"Drawing {topologyName}")
-            T = nx.minimum_spanning_tree(G,algorithm=algorithm)
-            outputPath = ov.toUniversalOSPath(f'output/Topology/{topologyName}')
-            drawTopology(G,T,outputPath)
-            style.done()
+            if(draw == True):
+                T = nx.minimum_spanning_tree(G,algorithm=algorithm)
+                outputPath = ov.toUniversalOSPath(f'output/Topology/{topologyName}')
+                drawTopology(G,T,outputPath)
 
-        if(mininetNX == True):
-            style.checkpoint(f"Parsing {topologyName} to MininetNX")
-            ov.validateEntirePath(f'output/MininetNX')
-            tmn.networkxToMininetConfig(T,topologyName,hostsPerSwitch=1)
-            style.done()
+            if(mininetNX == True):
+                ov.validateEntirePath(f'output/MininetNX')
+                tmn.networkxToMininetConfig(T,topologyName,hostsPerSwitch=1)
+            bar()
 
     style.checkpointDone("Dataframe filled with success")
             
