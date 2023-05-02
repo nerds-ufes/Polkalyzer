@@ -26,19 +26,11 @@ You will need Python3 to run Polkalyzer, so try it:
 ```
 python --version
 ```
-or
-```
-python3 --version
-```
 If you haven't it, try install: https://www.python.org/downloads/ <br>
 
 You also will need PIP dependencies:
 ```
-pip install pandas seaborn matplotlib networkx scipy mininet
-```
-or
-```
-pip3 install pandas seaborn matplotlib networkx scipy mininet
+pip install -r requirements.txt
 ```
 
 ## Using Polkalyzer
@@ -84,18 +76,21 @@ How you can contribute: <br>
 - [ ] Refactoring our code
 - [ ] Improving performance comparing hash of output/
 - [ ] Building more **utils** for the Control Plane
+### Maintainers
+- Lucas R. de Almeida      |    Email: contato@propi.dev        | @propilideno
+- Rodolfo S. Villaca       |    Email: rodolfo.villaca@ufes.br  | @rodolfovillaca
 
 ## Log (Under Development)
-- [x] Calculate the probe path from a topo **COMMIT ID**
-- [x] ~~Allowed to download topologys .gml from topologyZoo~~ **COMMIT ID**
-- [x] Allowed to fill **input/** with topologys **COMMIT ID**
-- [x] Calculate overhead from MPINT Approach **COMMIT ID**
-- [x] Calculate overhead from MPolKA-INT Approach **COMMIT ID**
-- [x] Calculate overhead from Original INT Approach **COMMIT ID**
-- [x] Filling dataframe with topologys information **COMMIT ID**
-- [x] Allowing plotts **COMMIT ID**
-- [x] Allowing draws from (Graph and MST) **COMMIT ID**
-- [x] Allowed transform NetworkX Graphs into Mininet Topologys. **COMMIT ID**  
+- [x] Calculate the probe path from a topo
+- [x] ~~Allowed to download topologys .gml from topologyZoo~~
+- [x] Allowed to fill **input/** with topologys
+- [x] Calculate overhead from MPINT Approach
+- [x] Calculate overhead from MPolKA-INT Approach
+- [x] Calculate overhead from Original INT Approach
+- [x] Filling dataframe with topologys information
+- [x] Allowing plotts
+- [x] Allowing draws from (Graph and MST)
+- [x] Allowed transform NetworkX Graphs into Mininet Topologys. 
 
 # References
 Topology Dataset - http://www.topology-zoo.org/dataset.html
