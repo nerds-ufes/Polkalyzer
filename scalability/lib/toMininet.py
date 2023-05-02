@@ -1,12 +1,20 @@
 import networkx as nx
 import lib.outputValidator as ov
 from mininet.net import Mininet
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 import os
 import subprocess
-from PIL import Image
-import sys
+
+# Miniedit Function
+def type_converter(customConfig):
+    if('bw' in customConfig):
+        customConfig['bw'] = int(customConfig['bw'])
+    if('loss' in customConfig):
+        customConfig['loss'] = int(customConfig['loss'])
+    if('speedup' in customConfig):
+        customConfig['speedup'] = int(customConfig['speedup'])
+    if('max_queue_size' in customConfig):
+        customConfig['max_queue_size'] = int(customConfig['max_queue_size'])
+    return customConfig
 
 def openImage(pathToImage):
     # Verifica qual é o sistema operacional
@@ -14,7 +22,6 @@ def openImage(pathToImage):
         subprocess.call(['cmd', '/c', 'start', pathToImage], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     else:  # Linux ou Mac
         subprocess.call(['open', pathToImage], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-   
 
 def userInputToConfig(rawInput):
     customConfig = {}
@@ -33,6 +40,7 @@ def customizeComponent(topologyName,linePrefix,componentNumber):
         userInput = input()
 
     customConfig = userInputToConfig(userInput)
+    customConfig = type_converter(customConfig)
 
     prefix_map = {
         's': '**switchParameters',
@@ -70,8 +78,6 @@ def customizeComponent(topologyName,linePrefix,componentNumber):
 
 def createCustomTopology(topologyName):
     if(ov.isFile(f'output/CustomMininetNX/{topologyName}.py')):
-        if(not ov.isFile("output/CustomMininetNX/Makefile")):
-            createMakeFile('output/CustomMininetNX')
         return 1
 
     with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'r') as arq:
@@ -83,8 +89,7 @@ def createCustomTopology(topologyName):
             lineNumber += 1
         lines[myLine] = "\t\t#Custom Parameters\n\t\t#Add Switches\n"
 
-    createMakeFile('output/CustomMininetNX')
-
+    ov.validateEntirePath(f'output/CustomMininetNX')
     with open(ov.toUniversalOSPath(f'output/CustomMininetNX/{topologyName}.py'),'w') as arq:
         arq.writelines(lines)
 
@@ -148,7 +153,7 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
                         "hostParameters= {}\n\t\t"+\
                         "linkHSParameters= {}\n\t\t"+\
                         "linkSSParameters= {}\n\t\t"
-    
+
     SwitchConfig = "#Add Switches\n\t\t"
     HostConfig = f"#Add {hostsPerSwitch} hosts to each switch\n\t\t"
     HostSwitchLinkConfig = "#Add a link of hosts and switch\n\t\t"
@@ -176,13 +181,13 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
     for (s1, s2) in G.edges:
         SwitchSwitchLinkConfig += f"lss{l} = self.addLink('s{s1}','s{s2}',**linkSSParameters)\n\t\t"
         l+=1
-    
+
     Code = Code.join([Import,Class,DefaultParameters,SwitchConfig,HostConfig,HostSwitchLinkConfig,SwitchSwitchLinkConfig,StartNetwork,BuildTopo])
-    
+
+    ov.validateEntirePath('output/MininetNX')
     with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'w') as arq:
         arq.write(Code)
 
-    createMakeFile('output/MininetNX') # Command: make <TopologyName>
 
 def createMakeFile(path): # Temporary solution, this function will be a shell script or a better solution
     ov.validateEntirePath(path)
