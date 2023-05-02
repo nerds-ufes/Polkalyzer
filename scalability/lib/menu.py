@@ -57,10 +57,10 @@ def topologyChoice():
 
 def topologyCustomizer(topologyName): 
     tmn.createCustomTopology(topologyName)
+    pathToImage = ov.toUniversalOSPath(f'output/Topology/{topologyName}/draw/TopologyNX.png')
+    tmn.openImage(pathToImage)
     while(True):
-        pathToImage = ov.toUniversalOSPath(f'output/Topology/{topologyName}/draw/TopologyNX.png')
         tmn.displayCustomizedComponents(topologyName)
-        tmn.openImage(pathToImage)
         print(f'==== CUSTOMIZING: {topologyName} ====')
         try:
             print('What component do you wanna change?: ')
