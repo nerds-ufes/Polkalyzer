@@ -161,15 +161,14 @@ def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
         for topology in listTopology:
             topologyName = ov.extractFilename(topology)
             G = nx.read_gml(topology,destringizer=int,label='id')
+            T = nx.minimum_spanning_tree(G,algorithm=algorithm)
             df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe=True)
 
             if(draw == True):
-                T = nx.minimum_spanning_tree(G,algorithm=algorithm)
                 outputPath = ov.toUniversalOSPath(f'output/Topology/{topologyName}')
                 drawTopology(G,T,outputPath)
 
             if(mininetNX == True):
-                ov.validateEntirePath(f'output/MininetNX')
                 tmn.networkxToMininetConfig(T,topologyName,hostsPerSwitch=1)
             bar()
 

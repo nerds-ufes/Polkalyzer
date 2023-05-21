@@ -28,7 +28,7 @@ def userInputToConfig(rawInput):
     for item in rawInput.split(","):
         key, value = item.split("=")
         customConfig[key.strip()] = value.strip()
-    config_str = ",".join([f"{key}:{value}" for key, value in customConfig.items()])
+    #config_str = ",".join([f"{key}:{value}" for key, value in customConfig.items()])
     return customConfig
 
 def customizeComponent(topologyName,linePrefix,componentNumber):
@@ -47,9 +47,9 @@ def customizeComponent(topologyName,linePrefix,componentNumber):
         'lss': '**linkSSParameters',
     }
 
-    if(ov.isFile(f'output/CustomMininetNX/{topologyName}.py')):
+    if(ov.isFile(f'output/Topology/{topologyName}/custom_{topologyName}.py')):
         customLine = f'custom_{linePrefix}{componentNumber}'
-        with open(ov.toUniversalOSPath(f'output/CustomMininetNX/{topologyName}.py'),'r') as arq:
+        with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'r') as arq:
             lines = arq.readlines()
             lineNumber = 0
             alreadyCustomized = False
@@ -73,14 +73,14 @@ def customizeComponent(topologyName,linePrefix,componentNumber):
                 lines[myFirstLine] = f"\t\t#Custom Parameters\n\t\t{customLine} = {customConfig}\n"
                 lines[mySecondLine] = lines[mySecondLine].replace(prefix_map[linePrefix],f'**{customLine}')
 
-        with open(ov.toUniversalOSPath(f'output/CustomMininetNX/{topologyName}.py'),'w') as arq:
+        with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'w') as arq:
             arq.writelines(lines)
 
 def createCustomTopology(topologyName):
-    if(ov.isFile(f'output/CustomMininetNX/{topologyName}.py')):
+    if(ov.isFile(f'output/Topology/{topologyName}/custom_{topologyName}.py')):
         return 1
 
-    with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'r') as arq:
+    with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/{topologyName}.py'),'r') as arq:
         lines = arq.readlines()
         lineNumber = 0
         for line in lines:
@@ -89,8 +89,7 @@ def createCustomTopology(topologyName):
             lineNumber += 1
         lines[myLine] = "\t\t#Custom Parameters\n\t\t#Add Switches\n"
 
-    ov.validateEntirePath(f'output/CustomMininetNX')
-    with open(ov.toUniversalOSPath(f'output/CustomMininetNX/{topologyName}.py'),'w') as arq:
+    with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'w') as arq:
         arq.writelines(lines)
 
 def displayCustomizedComponents(topologyName):
@@ -102,7 +101,7 @@ def displayCustomizedComponents(topologyName):
         '\t\tcustom_h': 'Host'
     }
     # Abrir o arquivo para leitura
-    with open(ov.toUniversalOSPath(f'output/CustomMininetNX/{topologyName}.py'),'r') as arq:
+    with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'r') as arq:
         # Ler cada linha do arquivo
         for line in arq:
             # Verificar se a linha contém uma das strings de entrada
@@ -184,12 +183,5 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
 
     Code = Code.join([Import,Class,DefaultParameters,SwitchConfig,HostConfig,HostSwitchLinkConfig,SwitchSwitchLinkConfig,StartNetwork,BuildTopo])
 
-    ov.validateEntirePath('output/MininetNX')
-    with open(ov.toUniversalOSPath(f'output/MininetNX/{topologyName}.py'),'w') as arq:
+    with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/{topologyName}.py'),'w') as arq:
         arq.write(Code)
-
-
-def createMakeFile(path): # Temporary solution, this function will be a shell script or a better solution
-    ov.validateEntirePath(path)
-    with open(ov.toUniversalOSPath(f'{path}/Makefile'),'w') as arq:
-        arq.write("%:\n\t@sudo mn --custom $*.py --topo $*")
