@@ -133,10 +133,10 @@ def extractOptimalNodeSender(G,approach): #Optimal on DP as tiebreaker, Optimal 
     return optimalNodeSender
 
 def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportTopology):
-    G,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G,algorithm)
+    T,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G,algorithm)
     if(fixedNodeSender == -1):
         nodeSenderINTClassico = extractOptimalNodeSender(G,'INTClassico')
-        tpb.dfs_init(G,nodeSenderINTClassico) #Otimizando apenas em relação ao INTClássico
+        tpb.dfs_init(T,nodeSenderINTClassico) #Otimizando apenas em relação ao INTClássico
         fixedNodeSender = 1
         #nodeSenderMPolka = extractOptimalNodeSender(G,'MPolka')
         #nodeSenderMPINT = extractOptimalNodeSender(G,'MPINT')
@@ -146,7 +146,7 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportTop
         #print('NS_MPINT:',nodeSenderMPINT,' DP:',oc.optimalOverhead_DataPlane_MPINT)
         #print('NS_MPolka:',nodeSenderMPolka,' DP:',oc.optimalOverhead_DataPlane_MPolkaCRC8,'\n')
     else:
-        tpb.dfs_init(G,fixedNodeSender)
+        tpb.dfs_init(T,fixedNodeSender)
 
     if(exportTopology == True):
         tpb.exportTopology(G,topologyName,generateNodeID=True,generateRouteID=True)
