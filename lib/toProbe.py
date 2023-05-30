@@ -3,6 +3,7 @@ import lib.overheadCalc as oc
 
 sonda = []
 sondaTemp = []
+tState = []
 
 sondaMPolka = list()
 sondaMPINT = list()
@@ -14,6 +15,11 @@ def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
     grau = G.degree(v)
     if(grau == 0):
         raise Exception('Graph is not strongly connected')
+
+    if(hops!=0):
+        tState.append([1]*(grau -1) + [0])
+    else:
+        tState.append([1]*(grau))
     
     numberOfNodes = G.number_of_nodes()
     oc.calculaReplicationInDFS(grau)
