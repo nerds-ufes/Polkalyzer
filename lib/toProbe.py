@@ -1,5 +1,6 @@
 import lib.outputValidator as ov
 import lib.overheadCalc as oc
+from polka.tools import calculate_routeid, generate_nodeids
 
 sonda = []
 sondaTemp = []
@@ -39,18 +40,28 @@ def dfs_init(G,v):
     visited=[False] * (G.number_of_nodes() + 100)
     sonda.clear()
     sondaTemp.clear()
+    tState.clear()
     oc.replicationReset()
     oc.overheadReset()
     dfs(G,v,visited,hops=0,previousHop=0)
     return sonda.copy()
 
-def exportProbe(topologyName,fixedNodeSender):
+def exportTopology(G,topologyName,generateNodeID,generateRouteID):
     ov.validateEntirePath(f'output/Topology/{topologyName}')
-    if(fixedNodeSender == -1):
-        with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/Probe.txt'),'w') as arq:
-            arq.write('MPINT: %s\n'%sondaMPINT)
-            arq.write('MPolka: %s\n'%sondaMPolka)
-            arq.write('INT Clássico: %s\n'%sondaINTClassico)
-    else:
-        with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/Probe.txt'),'w') as arq:
-            arq.write('%s\n'%sonda)
+    nodeIDs = generate_nodeids(5,G.number_of_nodes()) #MinDegree = 5 for tests
+    routeID = calculate_routeid(nodeIDs,tState,debug=False)
+    with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/topology.toml'),'w') as arq:
+        arq.write('# Usefull informations about topology\n\n')
+        arq.write(f'name = {topologyName}\n')
+        arq.write(f'numbes_of_nodes = {G.number_of_nodes()}\n')
+        arq.write(f'numbes_of_edges = {G.number_of_edges()}\n')
+        # arq.write(f'\n[probe]\n')
+        # arq.write(f'MPINT = {sondaMPINT}\n')
+        # arq.write(f'INT_Classico = {sondaINTClassico}\n')
+        arq.write(f'\n[mpolka]\n')
+        arq.write(f'probe={sonda}\n')
+        arq.write(f'tState={tState}\n')
+        if(generateNodeID):
+            arq.write(f'nodesID={nodeIDs}\n') #MinDegree = 5 for tests
+        if(generateNodeID and generateRouteID):
+            arq.write(f'routeID={routeID}\n')

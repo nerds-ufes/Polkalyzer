@@ -132,7 +132,7 @@ def extractOptimalNodeSender(G,approach): #Optimal on DP as tiebreaker, Optimal 
         tpb.sondaMPINT = optimalProbe.copy()
     return optimalNodeSender
 
-def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe):
+def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportTopology):
     G,isBackBone,numberOfNodes,numberOfEdges = GraphToMST(G,algorithm)
     if(fixedNodeSender == -1):
         nodeSenderINTClassico = extractOptimalNodeSender(G,'INTClassico')
@@ -148,8 +148,8 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportPro
     else:
         tpb.dfs_init(G,fixedNodeSender)
 
-    if(exportProbe == True):
-        tpb.exportProbe(topologyName,fixedNodeSender)
+    if(exportTopology == True):
+        tpb.exportTopology(G,topologyName,generateNodeID=True,generateRouteID=True)
     df = toDataframe(df,topologyName,isBackBone,numberOfNodes,numberOfEdges,fixedNodeSender)
     return df
 
@@ -162,7 +162,7 @@ def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
             topologyName = ov.extractFilename(topology)
             G = nx.read_gml(topology,destringizer=int,label='id')
             T = nx.minimum_spanning_tree(G,algorithm=algorithm)
-            df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportProbe=True)
+            df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportTopology=True)
 
             if(draw == True):
                 outputPath = ov.toUniversalOSPath(f'output/Topology/{topologyName}')
