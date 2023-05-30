@@ -17,10 +17,12 @@ def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
     if(grau == 0):
         raise Exception('Graph is not strongly connected')
 
-    if(hops!=0):
-        tState.append([1]*(grau -1) + [0])
+    if(grau==1):
+        tState.append([1]) #Egress
+    elif(hops==0):
+        tState.append([1]*(grau) + [0]) #Ingress
     else:
-        tState.append([1]*(grau))
+        tState.append([1]*(grau -1) + [0]) #Core Switches
     
     numberOfNodes = G.number_of_nodes()
     oc.calculaReplicationInDFS(grau)
@@ -59,9 +61,9 @@ def exportTopology(G,topologyName,generateNodeID,generateRouteID):
         # arq.write(f'MPINT = {sondaMPINT}\n')
         # arq.write(f'INT_Classico = {sondaINTClassico}\n')
         arq.write(f'\n[mpolka]\n')
-        arq.write(f'probe={sonda}\n')
-        arq.write(f'tState={tState}\n')
+        arq.write(f'probe = {sonda}\n')
+        arq.write(f'tState = {tState}\n')
         if(generateNodeID):
-            arq.write(f'nodesID={nodeIDs}\n') #MinDegree = 5 for tests
+            arq.write(f'nodesID = {nodeIDs}\n') #MinDegree = 5 for tests
         if(generateNodeID and generateRouteID):
-            arq.write(f'routeID={routeID}\n')
+            arq.write(f'routeID = {routeID}\n')
