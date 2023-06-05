@@ -10,6 +10,8 @@ sondaMPolka = list()
 sondaMPINT = list()
 sondaINTClassico = list()
 
+sinkSwitches = set()
+
 def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
     visited[v] = True
     sondaTemp.append(v)
@@ -30,6 +32,7 @@ def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
     hops += 1
     for w in G.neighbors(v):
         if grau == 1: #DEADEND
+            sinkSwitches.add(w)
             oc.deadEndRelease(sondaTemp,hops,numberOfNodes)
         if not visited[w]:
             if grau == 2: #TRANSMISSÃO
@@ -43,6 +46,7 @@ def dfs_init(G,v):
     sonda.clear()
     sondaTemp.clear()
     tState.clear()
+    sinkSwitches.clear()
     oc.replicationReset()
     oc.overheadReset()
     dfs(G,v,visited,hops=0,previousHop=0)
