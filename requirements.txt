@@ -8,3 +8,4 @@ pandas==2.0.0
 seaborn==0.12.2
 polka-routing==0.2.2
 toml
+setuptools
