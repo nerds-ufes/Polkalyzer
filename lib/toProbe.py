@@ -1,6 +1,7 @@
 import lib.outputValidator as ov
 import lib.overheadCalc as oc
-from polka.tools import calculate_routeid, generate_nodeids
+from lib.polka import modified_calculate_routeid
+from lib.cache import get_nodesID_CRC16
 
 sonda = []
 sondaTemp = []
@@ -9,6 +10,15 @@ tState = []
 sondaMPolka = list()
 sondaMPINT = list()
 sondaINTClassico = list()
+
+sinkSwitches = set()
+nodesID_CRC16=get_nodesID_CRC16()
+
+def getNodeID(n):
+    nodesID = list()
+    for i in range(n):
+        nodesID.append(nodesID_CRC16[i])
+    return nodesID
 
 def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
     visited[v] = True
@@ -30,6 +40,7 @@ def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
     hops += 1
     for w in G.neighbors(v):
         if grau == 1: #DEADEND
+            sinkSwitches.add(w)
             oc.deadEndRelease(sondaTemp,hops,numberOfNodes)
         if not visited[w]:
             if grau == 2: #TRANSMISSÃO
@@ -43,6 +54,7 @@ def dfs_init(G,v):
     sonda.clear()
     sondaTemp.clear()
     tState.clear()
+    sinkSwitches.clear()
     oc.replicationReset()
     oc.overheadReset()
     dfs(G,v,visited,hops=0,previousHop=0)
@@ -50,8 +62,8 @@ def dfs_init(G,v):
 
 def exportTopology(G,topologyName,generateNodeID,generateRouteID):
     ov.validateEntirePath(f'output/Topology/{topologyName}')
-    nodeIDs = generate_nodeids(5,G.number_of_nodes()) #MinDegree = 5 for tests
-    routeID = calculate_routeid(nodeIDs,tState,debug=False)
+    nodeIDs = getNodeID(G.number_of_nodes())
+    routeID = modified_calculate_routeid(nodeIDs,tState,debug=False)
     with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/topology.toml'),'w') as arq:
         arq.write('# Usefull informations about topology\n\n')
         arq.write(f'name = {topologyName}\n')

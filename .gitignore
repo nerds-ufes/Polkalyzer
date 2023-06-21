@@ -1,2 +1,3 @@
 output
 lib/__pycache__
+lib/.polkalyzer_cache.json
