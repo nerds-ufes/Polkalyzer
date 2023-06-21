@@ -18,7 +18,7 @@ def is_file_cached(keys: list, path: Path):
 
     if path.exists() and not compare_file_hash(keys,path):
         hash = calculate_file_hash(path)
-        save_hash_to_file(keys, hash)
+        file_save_hash_to_file(keys, hash)
         print(f'Cache saved for {keys} with hash {hash}')
         return False # Not already saved
 
@@ -99,6 +99,20 @@ def save_hash_to_file(keys: list, val):
     with open(hash_file, 'w') as f:
         toml.dump(hashes, f)
 
+def file_save_hash_to_file(keys: list, val):
+    hashes = load_hashes_from_file(hash_file)
+    current_dict = hashes
+    for key in keys[:-1]:
+        current_dict = current_dict.setdefault(key, {})
+    # If key doesn't exist, create it with a empty list
+    if keys[-1] not in current_dict:
+        current_dict[keys[-1]] = []
+
+    current_dict[keys[-1]].append(val)
+
+    with open(hash_file, 'w') as f:
+        toml.dump(hashes, f)
+
 def save_cache_to_file(keys: list, val):
     caches = load_cache_from_file(cache_file)
     current_dict = caches
@@ -135,7 +149,12 @@ def compare_file_hash(keys: list, path: Path):
     for key in keys[:-1]:
         hash_dict = hash_dict.setdefault(key, {})
     
-    if keys[-1] in hash_dict and hash_dict[keys[-1]] == file_hash:
+    # if keys[-1] in hash_dict and hash_dict[keys[-1]] == file_hash:
+    #     print('Hash already saved')
+    #     return True
+    #Now keys[-1] values is a list of hashes
+    if keys[-1] in hash_dict and file_hash in hash_dict[keys[-1]]:
         print('Hash already saved')
         return True
     return False
+
