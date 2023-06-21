@@ -1,6 +1,7 @@
 import lib.outputValidator as ov
 import lib.overheadCalc as oc
-from lib.polka import modified_create_list_irrpoly_mod2, modified_calculate_routeid
+from lib.polka import modified_calculate_routeid
+from lib.cache import get_nodesID_CRC16
 
 sonda = []
 sondaTemp = []
@@ -11,7 +12,7 @@ sondaMPINT = list()
 sondaINTClassico = list()
 
 sinkSwitches = set()
-nodesID_CRC16=modified_create_list_irrpoly_mod2(16)
+nodesID_CRC16=get_nodesID_CRC16()
 
 def getNodeID(n):
     nodesID = list()
