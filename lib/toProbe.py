@@ -40,7 +40,7 @@ def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
     hops += 1
     for w in G.neighbors(v):
         if grau == 1: #DEADEND
-            sinkSwitches.add(w)
+            sinkSwitches.add(v)
             oc.deadEndRelease(sondaTemp,hops,numberOfNodes)
         if not visited[w]:
             if grau == 2: #TRANSMISSÃO

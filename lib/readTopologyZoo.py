@@ -89,24 +89,27 @@ def drawTopology(G,T,path):
     plt.close()
 
     TNX = T
-    # criar um dicionário com peso fixo 10 para cada aresta
-    edge_weights = {(u, v): 10 for u, v in TNX.edges()}
-    leaf_nodes = [node for node in G.nodes() if G.degree(node) == 1]
     print("SINK NODES: ",tpb.sinkSwitches)
-    # Conecte o novo nó aos nós do conjunto
-    newNode = 200
-    for node in tpb.sinkSwitches:
-        TNX.add_edge(newNode, node)
-        newNode += 1
-    # atribuir os pesos fixos às arestas do grafo
-    nx.set_edge_attributes(TNX, edge_weights, 'my_weight')
-    # aplicar o layout com os pesos atribuídos
     pos = nx.spring_layout(TNX, weight='my_weight')
+    for node in TNX.nodes():
+        if node in tpb.sinkSwitches:
+            TNX.nodes[node]['color'] = 'red'
+        elif node == tpb.sonda[0][0]:
+            TNX.nodes[node]['color'] = 'blue'
+        else:
+            TNX.nodes[node]['color'] = 'grey'
+    # Draw with nx.draw with different colors
     nx.draw(
         TNX, pos, edge_color='black', width=1, linewidths=1,
-        node_size=500, node_color='red', alpha=0.9,
+        node_size=500, node_color=list(nx.get_node_attributes(TNX, 'color').values()), alpha=0.9,
         labels={node: node for node in TNX.nodes()}
     )
+    #
+    # nx.draw(
+    #     TNX, pos, edge_color='black', width=1, linewidths=1,
+    #     node_size=500, node_color='red', alpha=0.9,
+    #     labels={node: node for node in TNX.nodes()}
+    # )
     nx.draw_networkx_edge_labels(
         TNX, pos,
         edge_labels = {(u, v): str(i) for i, (u, v) in enumerate(TNX.edges())},
