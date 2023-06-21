@@ -8,6 +8,10 @@ import lib.outputValidator as ov
 import lib.toDataframe as tdf
 import lib.toProbe as tpb
 
+from pathlib import Path
+
+from lib.cache import is_file_cached
+
 def removeBadValues():
     contTotal = 0 #Total
     cont1 = 0 #Bad Test 1
@@ -68,16 +72,21 @@ def removeBadValues():
     print('')
 
 def drawTopology(G,T,path):
-    ov.validateEntirePath(ov.toUniversalOSPath(f'{path}/draw'))
-    pos = nx.kamada_kawai_layout(G)
-    nx.draw(
-        G, pos, edge_color='black', width=1, linewidths=1,
-        node_size=500, node_color='pink', alpha=0.9,
-        labels={node: node for node in G.nodes()}
-    )
-    plt.savefig(ov.toUniversalOSPath(f'{path}/draw/Graph.png'),dpi=120)
-    plt.clf()
-    plt.close()
+    topologyName = path.split('/')[-1]
+    print('Drawing Topology:',topologyName)
+    plotPath = Path(f'{path}/draw/Graph.png')
+    if not is_file_cached(['topology', topologyName, 'Graph'], plotPath):
+        ov.validateEntirePath(ov.toUniversalOSPath(f'{path}/draw'))
+        pos = nx.kamada_kawai_layout(G)
+        nx.draw(
+            G, pos, edge_color='black', width=1, linewidths=1,
+            node_size=500, node_color='pink', alpha=0.9,
+            labels={node: node for node in G.nodes()}
+        )
+        plt.savefig(plotPath,dpi=120)
+        plt.clf()
+        plt.close()
+
     pos = nx.kamada_kawai_layout(T)
     nx.draw(
         T, pos, edge_color='black', width=1, linewidths=1,
@@ -103,12 +112,6 @@ def drawTopology(G,T,path):
         node_size=500, node_color=list(nx.get_node_attributes(TNX, 'color').values()), alpha=0.9,
         labels={node: node for node in TNX.nodes()}
     )
-    #
-    # nx.draw(
-    #     TNX, pos, edge_color='black', width=1, linewidths=1,
-    #     node_size=500, node_color='red', alpha=0.9,
-    #     labels={node: node for node in TNX.nodes()}
-    # )
     nx.draw_networkx_edge_labels(
         TNX, pos,
         edge_labels = {(u, v): str(i) for i, (u, v) in enumerate(TNX.edges())},
