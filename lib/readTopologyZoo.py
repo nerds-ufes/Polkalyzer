@@ -89,7 +89,6 @@ def drawTopology(G,T,path):
     plt.close()
 
     TNX = T
-    print("SINK NODES: ",tpb.sinkSwitches)
     pos = nx.spring_layout(TNX, weight='my_weight')
     for node in TNX.nodes():
         if node in tpb.sinkSwitches:

@@ -33,6 +33,9 @@ def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
         tState.append([1]*(grau) + [0]) #Ingress
     else:
         tState.append([1]*(grau -1) + [0]) #Core Switches
+
+    if(grau == 1 and hops != 0):
+        sinkSwitches.add(v)
     
     numberOfNodes = G.number_of_nodes()
     oc.calculaReplicationInDFS(grau)
@@ -40,7 +43,6 @@ def dfs(G,v,visited,hops,previousHop): #Retorna a matriz de sondas do MPolka
     hops += 1
     for w in G.neighbors(v):
         if grau == 1: #DEADEND
-            sinkSwitches.add(v)
             oc.deadEndRelease(sondaTemp,hops,numberOfNodes)
         if not visited[w]:
             if grau == 2: #TRANSMISSÃO
