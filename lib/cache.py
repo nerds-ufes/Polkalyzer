@@ -34,8 +34,9 @@ def save_if_not_cached(keys: list, value):
 # Given a keys, return the value from the last key on list
 def get_keys_value(keys: list, dictionary: dict):
     current_dict = dictionary
-    for key in keys:
-        current_dict = current_dict[key]
+    if(current_dict != {}): #Verify if the dictionary is empty
+        for key in keys:
+            current_dict = current_dict[key]
     return current_dict
 
 def get_nodesID_CRC16():
@@ -89,14 +90,6 @@ def save_hash_to_file(keys: list, val):
     with open(hash_file, 'w') as f:
         toml.dump(hashes, f)
 
-    # save_hashes_to_file(hash_file, field, hashes)
-
-# def save_hashes_to_file(filename, field, values):
-#     data = {field: values}
-#     with open(filename, 'w') as f:
-#         toml.dump(data, f)
-
-# Given a array of keys (keys and subkeys and subsubkeys ...) and a value, save it into a toml file called hashes.toml
 def save_cache_to_file(keys: list, val):
     caches = load_cache_from_file(cache_file)
 
@@ -107,20 +100,6 @@ def save_cache_to_file(keys: list, val):
 
     with open(cache_file, 'w') as f:
         json.dump(caches, f)
-
-    # save_caches_to_file(cache_file, caches)
-
-def save_caches_to_file(filename, field, values):
-    data = {field: values}
-    with open(filename, 'w') as f:
-        json.dump(data, f)
-
-# # Given a key and a value, save it into a json file called .polkalyzer_cache.json
-# def save_cache_to_file(key, value):
-#     cache = load_cache_from_file(cache_file)
-#     cache[key] = value
-#     with open(cache_file, 'w') as f:
-#         json.dump(cache, f)
 
 # Given key, compare the value from the .polkalyzer_cache.json file, calculate its hash and compare it with hash on hashes.toml to this key
 
@@ -133,11 +112,6 @@ def compare_hash(keys: list):
         hash_dict = hash_dict.setdefault(key, {})
         json_dict = json_dict.setdefault(key, {})
     
-    # return hash_dict[keys[-1]] == json_dict[keys[-1]]
     if keys[-1] in hash_dict and hash_dict[keys[-1]] == current_hash:
         return True
     return False
-
-    # if key in hashes and hashes[key] == current_hash:
-    #     return True
-    # return False
