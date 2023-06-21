@@ -114,6 +114,7 @@ def drawTopology(G,T,path):
         edge_labels = {(u, v): str(i) for i, (u, v) in enumerate(TNX.edges())},
         font_color='red', alpha=0.7, font_size=7
     )
+
     plt.savefig(ov.toUniversalOSPath(f'{path}/draw/TopologyNX.png'),dpi=120)
     plt.clf()
     plt.close()
