@@ -16,7 +16,7 @@ def is_cached(keys: list):
 def is_file_cached(keys: list, path: Path):
     # A partir do path, crie um objeto Path
 
-    if not is_cached(keys) and path.exists():
+    if path.exists() and not compare_file_hash(keys,path):
         hash = calculate_file_hash(path)
         save_hash_to_file(keys, hash)
         print(f'Cache saved for {keys} with hash {hash}')
@@ -57,7 +57,7 @@ def get_nodesID_CRC16():
     
     return get_keys_value(keys, cache)
 
-def calculate_file_hash(path):
+def calculate_file_hash(path: Path):
     with open(path, 'rb') as f:
         image = f.read()
         return hashlib.md5(image).hexdigest()
@@ -120,19 +120,15 @@ def compare_hash(keys: list):
         return True
     return False
 
-def compare_file_hash(keys: list):
+def compare_file_hash(keys: list, path: Path):
     hash_dict = load_hashes_from_file(hash_file)
-    json_dict = load_cache_from_file(cache_file)
 
-    if(json_dict == {}): #Verify if the dictionary is empty
-        return False
-
-    current_hash = calculate_file_hash(get_keys_value(keys, json_dict))
+    file_hash = calculate_file_hash(path)
+    print(f'file_hash: {file_hash}')
 
     for key in keys[:-1]:
         hash_dict = hash_dict.setdefault(key, {})
-        json_dict = json_dict.setdefault(key, {})
     
-    if keys[-1] in hash_dict and hash_dict[keys[-1]] == current_hash:
+    if keys[-1] in hash_dict and hash_dict[keys[-1]] == file_hash:
         return True
     return False
