@@ -73,7 +73,6 @@ def removeBadValues():
 
 def drawTopology(G,T,path):
     topologyName = path.split('/')[-1]
-    print('Drawing Topology:',topologyName)
     plotPath = Path(f'{path}/draw/Graph.png')
     if not is_file_cached(['topology', topologyName, 'Graph'], plotPath):
         ov.validateEntirePath(ov.toUniversalOSPath(f'{path}/draw'))
@@ -87,40 +86,44 @@ def drawTopology(G,T,path):
         plt.clf()
         plt.close()
 
-    pos = nx.kamada_kawai_layout(T)
-    nx.draw(
-        T, pos, edge_color='black', width=1, linewidths=1,
-        node_size=500, node_color='red', alpha=0.9,
-        labels={node: node for node in T.nodes()}
-    )
-    plt.savefig(ov.toUniversalOSPath(f'{path}/draw/MST.png'),dpi=120)
-    plt.clf()
-    plt.close()
+    plotPath = Path(f'{path}/draw/MST.png')
+    if not is_file_cached(['topology', topologyName, 'MST'], plotPath):
+        pos = nx.kamada_kawai_layout(T)
+        nx.draw(
+            T, pos, edge_color='black', width=1, linewidths=1,
+            node_size=500, node_color='red', alpha=0.9,
+            labels={node: node for node in T.nodes()}
+        )
+        plt.savefig(ov.toUniversalOSPath(f'{path}/draw/MST.png'),dpi=120)
+        plt.clf()
+        plt.close()
 
-    TNX = T
-    pos = nx.spring_layout(TNX, weight='my_weight')
-    for node in TNX.nodes():
-        if node in tpb.sinkSwitches:
-            TNX.nodes[node]['color'] = 'red'
-        elif node == tpb.sonda[0][0]:
-            TNX.nodes[node]['color'] = 'blue'
-        else:
-            TNX.nodes[node]['color'] = 'grey'
-    # Draw with nx.draw with different colors
-    nx.draw(
-        TNX, pos, edge_color='black', width=1, linewidths=1,
-        node_size=500, node_color=list(nx.get_node_attributes(TNX, 'color').values()), alpha=0.9,
-        labels={node: node for node in TNX.nodes()}
-    )
-    nx.draw_networkx_edge_labels(
-        TNX, pos,
-        edge_labels = {(u, v): str(i) for i, (u, v) in enumerate(TNX.edges())},
-        font_color='red', alpha=0.7, font_size=7
-    )
+    plotPath = Path(f'{path}/draw/TopologyNX.png')
+    if not is_file_cached(['topology', topologyName, 'TNX'], plotPath):
+        TNX = T
+        pos = nx.spring_layout(TNX)
+        for node in TNX.nodes():
+            if node in tpb.sinkSwitches:
+                TNX.nodes[node]['color'] = 'red'
+            elif node == tpb.sonda[0][0]:
+                TNX.nodes[node]['color'] = 'blue'
+            else:
+                TNX.nodes[node]['color'] = 'grey'
+        # Draw with nx.draw with different colors
+        nx.draw(
+            TNX, pos, edge_color='black', width=1, linewidths=1,
+            node_size=500, node_color=list(nx.get_node_attributes(TNX, 'color').values()), alpha=0.9,
+            labels={node: node for node in TNX.nodes()}
+        )
+        nx.draw_networkx_edge_labels(
+            TNX, pos,
+            edge_labels = {(u, v): str(i) for i, (u, v) in enumerate(TNX.edges())},
+            font_color='red', alpha=0.7, font_size=7
+        )
 
-    plt.savefig(ov.toUniversalOSPath(f'{path}/draw/TopologyNX.png'),dpi=120)
-    plt.clf()
-    plt.close()
+        plt.savefig(ov.toUniversalOSPath(f'{path}/draw/TopologyNX.png'),dpi=120)
+        plt.clf()
+        plt.close()
 
 def GraphToMST(G,algorithm):
     #topologyName = G.graph['label'] #Hooka o atributo network que identifica o nome da Topologia

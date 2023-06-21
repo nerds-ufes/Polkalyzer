@@ -3,396 +3,209 @@ crc16 = "25bc7d09ac06f8972ad95685d79c9c41"
 
 [topology.Gambia]
 Graph = "6ddd386435993f36a8892d818c8c3c23"
+MST = "57548971e787c8e4ec4c52a5f210229d"
+TNX = "39be8d2f5f5e672c640a9d1c0132dd34"
 
 [topology.Arpanet19719]
 Graph = "9c9a61c7af133ec020aa00870b0af54d"
+MST = "aa9f66e6c222d7de8cf8926f07caf107"
+TNX = "d701b3106c89830882e5f6487fcb3e68"
 
 [topology.Cesnet200511]
 Graph = "31c098929df72f902de2cb1ccf053f4b"
+MST = "0df2857a045124c1bb1dc534c5c5678b"
+TNX = "b164d03e341d6e3316d8990ce0522078"
 
 [topology.Psnc]
 Graph = "d228365215d7b60f56b6b995da019310"
+MST = "92326143705bf7466aac53d0b10ab0fa"
+TNX = "9fb3df52c545a48dbbdd85fa51a3bb26"
 
 [topology.Garr201001]
 Graph = "e3a01183eda2c509ca1dcff36205ccde"
+MST = "beba9a05e5089ff5841f554057be1707"
+TNX = "1103502b7b3bc7964f43ed905d90b708"
 
 [topology.Ernet]
 Graph = "1c115c9549b09494ce8a445a93cfa44d"
+MST = "0e71adbd1095007bb733fcd38090e4f3"
+TNX = "8dae3bcafdb8b51b551bcaa2d09d7a95"
 
 [topology.Oxford]
 Graph = "ad7a5cabb01dac6c19c32abfdd0e5c13"
+MST = "3324aeaf7c30089068cb5baf57f8dc4d"
+TNX = "733da9165af8437b3c1ce4a414d5c043"
 
 [topology.Atmnet]
 Graph = "29f844b221548814d1221fa4d5d1cf62"
+MST = "3310ba8de7d6b44d9197b8cc2f4e9be1"
+TNX = "f61225c0b90b4b72dc053e5130f799a6"
 
 [topology.Arpanet19723]
 Graph = "c1ccc0ac8ed428311dbd5c2b65429abd"
+MST = "1b23710b5da6c345746e0b760443d44b"
+TNX = "8fd333079d5b2df4613e7c8d6779d8bf"
 
 [topology.Forthnet]
 Graph = "e0a9fd38796b31e39499d37f7d22e61a"
+MST = "25d30d1b9efdb8ead0e694fc241158be"
+TNX = "4e33c80d5f77ae9df87017bf54826032"
 
 [topology.Ans]
 Graph = "fd81bb034b8a57bc476ef01859532d81"
+MST = "e043c5972bf69d2fc49669b03e65f16d"
+TNX = "387a65ee26fcc7d70f087a64a9309c99"
 
 [topology.Vinaren]
 Graph = "0cf2c6e33bae81e0d05b95d6eb856c57"
+MST = "9ebbc409b440715c1958328035614a67"
+TNX = "95e0a53992a84526aa9264db7bbc726f"
 
 [topology.Spiralight]
 Graph = "19650470c7007a836dd6516d614accc2"
+MST = "2d45acfcaa38f315e11a22f845ec1c22"
+TNX = "94b7bc8a8f67e44b62c16edf930d8c88"
 
 [topology.Pern]
 Graph = "44bbbffb8bc85daf246860769ea78cb4"
+MST = "572fbc82478b2f36bd64b16da345c501"
+TNX = "db064c137a913705f7f3a2f69d83b1cb"
 
 [topology.NetworkUsa]
 Graph = "9f677334b188b157b5ffcf7007d040b4"
+MST = "5d14ca1338045af175648b3ca78e8cc6"
+TNX = "7eb716df253dc7b275f271dfdfa29531"
 
 [topology.Arpanet196912]
 Graph = "8fa7b3f2952770fec220c6bdba8bfcb9"
+MST = "65c70879862264ae681e2d0af870a591"
+TNX = "c7d44a00e19a8f86e9f63c096649929c"
 
 [topology.Garr200912]
 Graph = "e3a01183eda2c509ca1dcff36205ccde"
+MST = "beba9a05e5089ff5841f554057be1707"
+TNX = "5de3c419ac006a94293f32af04ca79a1"
 
 [topology.Shentel]
 Graph = "9a59a62bfd279a4049e480f11727a00c"
+MST = "e2e01cfac7d1e213c13c03bf705e92ad"
+TNX = "43ad3c27d0cd2fb7bf62f518885ebcde"
 
 [topology.Uunet]
 Graph = "36da196fb0185686d389ca4deecd2a28"
+MST = "15b3a732ec222cd9a8c550b864598585"
+TNX = "d7b156f3ab8400791ecdab4e10433ab7"
 
 [topology.Integra]
 Graph = "a2d886fc99f861a08edf2f5562c7adda"
+MST = "1fba18e745cbe8ada84e1777b1753240"
+TNX = "729403c3a7c7a12b33f044f10d1553ea"
 
 [topology.Ai3]
 Graph = "ad5afee9ea374cd1c2044241350d2009"
+MST = "193536f475723bce94600cf2a2b9d6ad"
+TNX = "4fd89903bdae4d57f319a6d142a5dbe8"
 
 [topology.Garr200909]
 Graph = "3feb7743029fd6b4f938eef8ccb0f957"
+MST = "a4a975b98d6313759302908e1ab72d8e"
+TNX = "54dc5bfb6b5e5751648e4558af9ec72f"
 
 [topology.Twaren]
 Graph = "ae6936120bbdddad2f196c6df5ce193a"
+MST = "bbe30e23d483d4ac85c2890daf3446c4"
+TNX = "94abc5e95403bf539ac5036c4ad94ed8"
 
 [topology.Syringa]
 Graph = "5cab42414c8c7696553f530c303a0e04"
+MST = "10e62c4770add7c01d888ae3518b49af"
+TNX = "82eab60dedaf7cd3c011b6431b872159"
 
 [topology.Gblnet]
 Graph = "752cb129ac1740cb218e4d13a710236e"
+MST = "4e4ca18b5896617d850f4c99f990c366"
+TNX = "200a5596e90f7b08e46abd94db08d596"
 
 [topology.Psinet]
 Graph = "9ed711aec3d40bc8ab06c5781a57a199"
+MST = "825c11c16e45f53f77ebc101965b8a08"
+TNX = "d5b9e09afda647c24fa659f0d9dd2d52"
 
 [topology.Goodnet]
 Graph = "08d5f28461778bb84e6a23a699c9095f"
+MST = "f02b8d0fd1faea4c6679897b71869d4a"
+TNX = "f8bfd390ea3c7eb9d0203d2188d2c3c9"
 
 [topology.Cesnet200603]
 Graph = "31c098929df72f902de2cb1ccf053f4b"
+MST = "0df2857a045124c1bb1dc534c5c5678b"
+TNX = "b2b426d8c3e7f2511f21a12a217dd434"
 
 [topology.Geant2009]
 Graph = "095007cf9dbc9519f0906e9ef644c7d5"
+MST = "ec9a3f5e231e29b2f7d2a32d7c411682"
+TNX = "a1bc5853b6ad47a18d6390654ecac31b"
 
 [topology.Uran]
 Graph = "1a65f8055b9a309b36478c0e60965152"
+MST = "da657e87fe3167767339f825e49f9ecd"
+TNX = "f84e520f6f3269b46531a30d5000c95d"
 
 [topology.Sago]
 Graph = "cff1f6f4b46b5c9a79518623086fc5ef"
+MST = "ab12501ba92423e132e2157b246c9ebb"
+TNX = "7750968e41128c247138e777a1bf9283"
 
 [topology.Bellsouth]
 Graph = "b19cfc812174bbcf400f9c06df1f104f"
+MST = "4df2b5702bc0f5f30f680065aeb6365b"
+TNX = "bec4fd31f1de9e19571935035c4d4241"
 
 [topology.Layer42]
 Graph = "186c8cd17aef17b13274d7562fb8dc5e"
+MST = "cea44297e63ea324200a3a5934c2b790"
+TNX = "b35020c3c6621af2b303dce40d961ebe"
 
 [topology.Cudi]
 Graph = "c7d6d3509f727c9f8e21dec4d1689bed"
+MST = "f07b847c0f7cb98d558a609accf3d27e"
+TNX = "1ad6461308623dee4579e66af2d4a6a5"
 
 [topology.Aarnet]
 Graph = "84efe50675de458ab9a29dcffdad4b82"
+MST = "335e0108338a8aff28419bab4a178d2e"
+TNX = "c2d8f2e5fb3da5c308d4467efa95438d"
 
 [topology.BeyondTheNetwork]
 Graph = "dd783eb15fd376098445ab2f78be39b2"
+MST = "86c527b77cf51cd611607a0c96c585fc"
+TNX = "48e7e2e56483eef6ede6d55490af8a89"
 
 [topology.Cwix]
 Graph = "d5754038412c6efad9ab0762a672ed51"
+MST = "f8a7d3effa521dc2d26190e3dd081c19"
+TNX = "40c46384d9c28d11e6d7ee702b93a660"
 
 [topology.Geant2001]
 Graph = "c4fc98884d32a4252bddf9b49916e8f9"
+MST = "ae4067c84229e87fa6c6c09732997ae0"
+TNX = "b933b90efb0f13895887c22b973ed6ac"
 
 [topology.HiberniaIreland]
 Graph = "a409d370f48902bbc5c868a13e895524"
+MST = "b2d963b67b404d19e41fcf535d6ffe07"
+TNX = "f5282e27c8d7550a98400c874b4c8f9d"
 
 [topology.Rnp]
 Graph = "ad993600b61d3670cdcb3b50023c2320"
+MST = "c3fc0fab440b2105a3b7a0cc7dffbfe0"
+TNX = "3f290b6e73e16a513d3eb1f9362b73f5"
 
 [topology.Quest]
 Graph = "9a8482fcd0224c1c9d972c229621cf6f"
+MST = "22821b6425c02060a2b0c77911e17d6c"
+TNX = "85737b9ca27caa4dcf53a1bb02d0673e"
 
 [topology.Darkstrand]
 Graph = "bf86c15b3433a4a7076a66d5be6951ec"
-
-[topology.Singaren]
-Graph = "4d820d9154a48555a614c14a2ae4ba90"
-
-[topology.Rhnet]
-Graph = "cd5ad274c44cc9be16d50c5d8da81148"
-
-[topology.Fatman]
-Graph = "e044c3466f95581b7bdce8135d846fe2"
-
-[topology.Netrail]
-Graph = "4cb809123a6040f987758b1dd371d910"
-
-[topology.Renater2006]
-Graph = "617de3b537d4ac36d7102429e2615785"
-
-[topology.Biznet]
-Graph = "3eec3a9de66e3e2b7e88cfc789911754"
-
-[topology.VtlWavenet2011]
-Graph = "53a3995b32ae1ea9804634978fc73b6c"
-
-[topology.Xspedius]
-Graph = "d143a76c05d270e92e8219de1c0db8a9"
-
-[topology.WideJpn]
-Graph = "9c710ad3e98c6a6966df41c894a7fc82"
-
-[topology.HostwayInternational]
-Graph = "88c4b611b30d228aeb0fb3b517d6325d"
-
-[topology.Reuna]
-Graph = "74f6269f9c7c47dae33cd2352531f008"
-
-[topology.Epoch]
-Graph = "6dc52dcf2ebf7a67585624da8aa48680"
-
-[topology.Columbus]
-Graph = "91cf8afa885bd0ec09021a77e2e6a557"
-
-[topology.LambdaNet]
-Graph = "c15104337c7440a39b087784667452f9"
-
-[topology.Missouri]
-Graph = "491aadaa5fa988a9b324698eefba56ef"
-
-[topology.Dataxchange]
-Graph = "f832b43b1f1ff4cc858ea443740877a0"
-
-[topology.GtsCzechRepublic]
-Graph = "d23c9a9fbad0d7e9274a1466a47c6044"
-
-[topology.Tinet]
-Graph = "ce32e5686838d184db811a5ee68065ab"
-
-[topology.BtEurope]
-Graph = "2d44c1eab26810351e95f12003990f62"
-
-[topology.Napnet]
-Graph = "c89b1a33437959189a0889ea851d09a9"
-
-[topology.CrlNetworkServices]
-Graph = "c26b9ba4672f5726646ffa6f9e89305d"
-
-[topology.Litnet]
-Graph = "422302f603fbd1b3d17de93814c123f9"
-
-[topology.Renater2010]
-Graph = "39daf57de37f59644a7f1604a6d5ab4d"
-
-[topology.Arn]
-Graph = "629e42dcde647b11e2e5d23c61b21ada"
-
-[topology.GtsSlovakia]
-Graph = "2cc0932eaf2cc290796c4cbbda5fe6d9"
-
-[topology.GtsHungary]
-Graph = "da0526d400c08c8e44ea40fc8ed68594"
-
-[topology.EliBackbone]
-Graph = "e156df0369aa437cd68d691e2f4da960"
-
-[topology.Sinet]
-Graph = "4d20a947c96ed9ebdf471ba17cf58a99"
-
-[topology.HiberniaGlobal]
-Graph = "dcc33d4e056be3505a7e615e6c142388"
-
-[topology.Cesnet200304]
-Graph = "3b9ffc0ca64ea429b1c6578e7940efeb"
-
-[topology.Ulaknet]
-Graph = "a703e29dfce5e8ccc9392ff58443eeac"
-
-[topology.Garr200908]
-Graph = "6fa5c94c574123e70e72d09059f73b42"
-
-[topology.Kreonet]
-Graph = "885e8a2cc01e8d2f7471f30bb675c5cd"
-
-[topology.Cesnet1997]
-Graph = "fe10a73e02d3e145c164fee9d622fe59"
-
-[topology.Niif]
-Graph = "c0d1d816520d3a440fa938ebadd8b7c3"
-
-[topology.Bbnplanet]
-Graph = "a546408d98af83b9d250f80322ed9be3"
-
-[topology.Canerie]
-Graph = "24114f0e5446e5086979b38277e7724e"
-
-[topology.Abilene]
-Graph = "fd9801ec0a96d6644aa02704d2ccf132"
-
-[topology.Packetexchange]
-Graph = "efe2250f93842f862a4a4040e44bdfb0"
-
-[topology.GtsPoland]
-Graph = "687097065d0415d8e913a4f1f69e8f46"
-
-[topology.HiberniaUk]
-Graph = "5b8aa6220b667080a5026206353e63f6"
-
-[topology.Arpanet19706]
-Graph = "f9752471c37cb16eb2e904dc64912bc0"
-
-[topology.BtNorthAmerica]
-Graph = "e67585d812b4f4f63a65c71fc22bc6ed"
-
-[topology.Noel]
-Graph = "e9ed97d68099b781f664f3388a612f6c"
-
-[topology.Xeex]
-Graph = "3b8531eaab2c585f1b2d464af415cdc3"
-
-[topology.Carnet]
-Graph = "713f930cfa7857852edcecde1d8675e8"
-
-[topology.Telecomserbia]
-Graph = "29023e3b069dbe396b4ba17e143fb347"
-
-[topology.Gridnet]
-Graph = "241b6dc941f9160efc9f6d1046f2b6ff"
-
-[topology.Cesnet1999]
-Graph = "b343001c2f126d6a81423b3e59aed22a"
-
-[topology.VtlWavenet2008]
-Graph = "5d2b6424d29028c47d0e6ac62ded4600"
-
-[topology.Iris]
-Graph = "f56240449e8c7b563f7b063c863cc1ac"
-
-[topology.Cesnet1993]
-Graph = "dfad50b17acff550aaf2fa12e967bdff"
-
-[topology.Itnet]
-Graph = "ca655c0e16c9a573fcb4d31b6f88009b"
-
-[topology.Cynet]
-Graph = "695123d4e9d34650181e2fab5837c143"
-
-[topology.Chinanet]
-Graph = "30ed0cc2ad2d0626b5cce70c0ab2aef2"
-
-[topology.HiberniaCanada]
-Graph = "15b38950fb9442f32381d52f05a5f25c"
-
-[topology.Renater2004]
-Graph = "4066b322cc1380fed9321708ef1871a3"
-
-[topology.Cesnet200706]
-Graph = "05e0248a8bbe4078ef4447c596a455e2"
-
-[topology.Sanren]
-Graph = "51540051b25b35923992895048fa287d"
-
-[topology.Renater2001]
-Graph = "12731b4d076e17bd4bdddbd4640691ad"
-
-[topology.HurricaneElectric]
-Graph = "d17d3cd43a431e0453b8e4c5a898ddec"
-
-[topology.KentmanJul2005]
-Graph = "b8b53fb80e98df39b5230728184838b2"
-
-[topology.GtsRomania]
-Graph = "6707955093b00dca8541dcc9073cdcdb"
-
-[topology.Nordu1997]
-Graph = "e3aaf082d3f568a5d7888ce22ce00224"
-
-[topology.Sprint]
-Graph = "0cd6e0881245a80e7446bc13c7ee64a5"
-
-[topology.Peer1]
-Graph = "0468370c942448c71f5c6e20b70487f9"
-
-[topology.Iinet]
-Graph = "fcae3b93826f2848bf200be1fceb545d"
-
-[topology.Agis]
-Graph = "570a716a060721efd6bd480c6a492e1d"
-
-[topology.Globalcenter]
-Graph = "11eba99de1d83926d50bfd80404cc82a"
-
-[topology.Nordu1989]
-Graph = "391f2f1833a3251fb0a887d566bddaf2"
-
-[topology.Bics]
-Graph = "8b31675b671d88792882bea6114a6fa1"
-
-[topology.Renater2008]
-Graph = "617de3b537d4ac36d7102429e2615785"
-
-[topology.Nsfnet]
-Graph = "c71899e9fd8fbcd8c75310ef64000895"
-
-[topology.Restena]
-Graph = "62d23653ec22d1b84c5134ef9d964027"
-
-[topology.Getnet]
-Graph = "411b19cd02bb63b8217e63086a387fa3"
-
-[topology.Aconet]
-Graph = "d199f6cf541f79c5841a3516d54f06b8"
-
-[topology.VisionNet]
-Graph = "88ea351eeedd967ef1686fb78c769825"
-
-[topology.Ibm]
-Graph = "b6fba8548b5c3579bfbb5b8c5f001ff9"
-
-[topology.Savvis]
-Graph = "6e7df05c5c5e0ad8da708cc580db3a02"
-
-[topology.Abvt]
-Graph = "ba517a2cba42891a1ee5a980ee7b38a1"
-
-[topology.Cesnet2001]
-Graph = "99cc5d7a6429eeb7b01c6a55f6def030"
-
-[topology.Arpanet19728]
-Graph = "249f201d5e1b902a2dbb355c796130c9"
-
-[topology.Renater1999]
-Graph = "50c4755fe95dfa6c234cebabe8199b1f"
-
-[topology.Claranet]
-Graph = "928410c2a91c13be1b7d44d159a46faf"
-
-[topology.Sanet]
-Graph = "dc4899c15a778d6083d849b481185107"
-
-[topology.Jgn2Plus]
-Graph = "800e6a32a58116234cd5140aa1da34a0"
-
-[topology.Ilan]
-Graph = "ba48af3c74d1e57813693576fa859f19"
-
-[topology.BtAsiaPac]
-Graph = "0dc47a1be637e5395f031b25f3b6d876"
-
-[topology.Compuserve]
-Graph = "431d837222f625c585f8bf711d49a761"
-
-[topology.York]
-Graph = "945f8235b7646ebcd25817b031b23b13"
+MST = "95f456bb6ca7930265aae0d3a1a9728d"

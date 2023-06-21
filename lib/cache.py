@@ -57,10 +57,17 @@ def get_nodesID_CRC16():
     
     return get_keys_value(keys, cache)
 
+# def calculate_file_hash(path: Path):
+#     with open(path, 'rb') as f:
+#         image = f.read()
+#         return hashlib.md5(image).hexdigest()
+
 def calculate_file_hash(path: Path):
+    hash_md5 = hashlib.md5()
     with open(path, 'rb') as f:
-        image = f.read()
-        return hashlib.md5(image).hexdigest()
+        for chunk in iter(lambda: f.read(4096), b''):
+            hash_md5.update(chunk)
+    return hash_md5.hexdigest()
 
 def calculate_dict_hash(data):
     json_data = json.dumps(data, sort_keys=True)
@@ -124,11 +131,11 @@ def compare_file_hash(keys: list, path: Path):
     hash_dict = load_hashes_from_file(hash_file)
 
     file_hash = calculate_file_hash(path)
-    print(f'file_hash: {file_hash}')
 
     for key in keys[:-1]:
         hash_dict = hash_dict.setdefault(key, {})
     
     if keys[-1] in hash_dict and hash_dict[keys[-1]] == file_hash:
+        print('Hash already saved')
         return True
     return False
