@@ -8,6 +8,10 @@ import lib.outputValidator as ov
 import lib.toDataframe as tdf
 import lib.toProbe as tpb
 
+from pathlib import Path
+
+from lib.cache import is_file_cached
+
 def removeBadValues():
     contTotal = 0 #Total
     cont1 = 0 #Bad Test 1
@@ -68,53 +72,59 @@ def removeBadValues():
     print('')
 
 def drawTopology(G,T,path):
-    ov.validateEntirePath(ov.toUniversalOSPath(f'{path}/draw'))
-    pos = nx.kamada_kawai_layout(G)
-    nx.draw(
-        G, pos, edge_color='black', width=1, linewidths=1,
-        node_size=500, node_color='pink', alpha=0.9,
-        labels={node: node for node in G.nodes()}
-    )
-    plt.savefig(ov.toUniversalOSPath(f'{path}/draw/Graph.png'),dpi=120)
-    plt.clf()
-    plt.close()
-    pos = nx.kamada_kawai_layout(T)
-    nx.draw(
-        T, pos, edge_color='black', width=1, linewidths=1,
-        node_size=500, node_color='red', alpha=0.9,
-        labels={node: node for node in T.nodes()}
-    )
-    plt.savefig(ov.toUniversalOSPath(f'{path}/draw/MST.png'),dpi=120)
-    plt.clf()
-    plt.close()
+    topologyName = path.split('/')[-1]
+    plotPath = Path(f'{path}/draw/Graph.png')
+    if not is_file_cached(['topology', topologyName, 'Graph'], plotPath):
+        ov.validateEntirePath(ov.toUniversalOSPath(f'{path}/draw'))
+        pos = nx.kamada_kawai_layout(G)
+        nx.draw(
+            G, pos, edge_color='black', width=1, linewidths=1,
+            node_size=500, node_color='pink', alpha=0.9,
+            labels={node: node for node in G.nodes()}
+        )
+        plt.savefig(plotPath,dpi=120)
+        plt.clf()
+        plt.close()
 
-    TNX = T
-    # criar um dicionário com peso fixo 10 para cada aresta
-    edge_weights = {(u, v): 10 for u, v in TNX.edges()}
-    leaf_nodes = [node for node in G.nodes() if G.degree(node) == 1]
-    print("SINK NODES: ",tpb.sinkSwitches)
-    # Conecte o novo nó aos nós do conjunto
-    newNode = 200
-    for node in tpb.sinkSwitches:
-        TNX.add_edge(newNode, node)
-        newNode += 1
-    # atribuir os pesos fixos às arestas do grafo
-    nx.set_edge_attributes(TNX, edge_weights, 'my_weight')
-    # aplicar o layout com os pesos atribuídos
-    pos = nx.spring_layout(TNX, weight='my_weight')
-    nx.draw(
-        TNX, pos, edge_color='black', width=1, linewidths=1,
-        node_size=500, node_color='red', alpha=0.9,
-        labels={node: node for node in TNX.nodes()}
-    )
-    nx.draw_networkx_edge_labels(
-        TNX, pos,
-        edge_labels = {(u, v): str(i) for i, (u, v) in enumerate(TNX.edges())},
-        font_color='red', alpha=0.7, font_size=7
-    )
-    plt.savefig(ov.toUniversalOSPath(f'{path}/draw/TopologyNX.png'),dpi=120)
-    plt.clf()
-    plt.close()
+    plotPath = Path(f'{path}/draw/MST.png')
+    if not is_file_cached(['topology', topologyName, 'MST'], plotPath):
+        pos = nx.kamada_kawai_layout(T)
+        nx.draw(
+            T, pos, edge_color='black', width=1, linewidths=1,
+            node_size=500, node_color='red', alpha=0.9,
+            labels={node: node for node in T.nodes()}
+        )
+        plt.savefig(ov.toUniversalOSPath(f'{path}/draw/MST.png'),dpi=120)
+        plt.clf()
+        plt.close()
+
+    plotPath = Path(f'{path}/draw/TopologyNX.png')
+    if not is_file_cached(['topology', topologyName, 'TNX'], plotPath):
+        TNX = T
+        # pos = nx.spring_layout(TNX)
+        pos = nx.kamada_kawai_layout(TNX)
+        for node in TNX.nodes():
+            if node in tpb.sinkSwitches:
+                TNX.nodes[node]['color'] = 'red'
+            elif node == tpb.sonda[0][0]:
+                TNX.nodes[node]['color'] = 'blue'
+            else:
+                TNX.nodes[node]['color'] = 'grey'
+        # Draw with nx.draw with different colors
+        nx.draw(
+            TNX, pos, edge_color='black', width=1, linewidths=1,
+            node_size=500, node_color=list(nx.get_node_attributes(TNX, 'color').values()), alpha=0.9,
+            labels={node: node for node in TNX.nodes()}
+        )
+        nx.draw_networkx_edge_labels(
+            TNX, pos,
+            edge_labels = {(u, v): str(i) for i, (u, v) in enumerate(TNX.edges())},
+            font_color='red', alpha=0.7, font_size=7
+        )
+
+        plt.savefig(ov.toUniversalOSPath(f'{path}/draw/TopologyNX.png'),dpi=120)
+        plt.clf()
+        plt.close()
 
 def GraphToMST(G,algorithm):
     #topologyName = G.graph['label'] #Hooka o atributo network que identifica o nome da Topologia
