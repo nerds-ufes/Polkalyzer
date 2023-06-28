@@ -101,7 +101,8 @@ def drawTopology(G,T,path):
     plotPath = Path(f'{path}/draw/TopologyNX.png')
     if not is_file_cached(['topology', topologyName, 'TNX'], plotPath):
         TNX = T
-        pos = nx.spring_layout(TNX)
+        # pos = nx.spring_layout(TNX)
+        pos = nx.kamada_kawai_layout(TNX)
         for node in TNX.nodes():
             if node in tpb.sinkSwitches:
                 TNX.nodes[node]['color'] = 'red'

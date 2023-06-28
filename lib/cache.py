@@ -107,7 +107,6 @@ def file_save_hash_to_file(keys: list, val):
     # If key doesn't exist, create it with a empty list
     if keys[-1] not in current_dict:
         current_dict[keys[-1]] = []
-
     current_dict[keys[-1]].append(val)
 
     with open(hash_file, 'w') as f:
