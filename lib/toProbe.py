@@ -68,7 +68,7 @@ def exportTopology(G,topologyName,generateNodeID,generateRouteID):
     routeID = modified_calculate_routeid(nodeIDs,tState,debug=False)
     with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/topology.toml'),'w') as arq:
         arq.write('# Usefull informations about topology\n\n')
-        arq.write(f'name = {topologyName}\n')
+        arq.write(f'name = "{topologyName}"\n')
         arq.write(f'numbes_of_nodes = {G.number_of_nodes()}\n')
         arq.write(f'numbes_of_edges = {G.number_of_edges()}\n')
         # arq.write(f'\n[probe]\n')
@@ -77,6 +77,11 @@ def exportTopology(G,topologyName,generateNodeID,generateRouteID):
         arq.write(f'\n[mpolka]\n')
         arq.write(f'probe = {sonda}\n')
         arq.write(f'tState = {tState}\n')
+        edgeSwitches = list(sinkSwitches.copy())
+        edgeSwitches.insert(0,sonda[0][0])
+        arq.write(f'edgeSwitches = {edgeSwitches}\n')
+        arq.write(f'number_of_edgeSwitches = {len(edgeSwitches)}\n')
+        arq.write(f'number_of_coreSwitches = {G.number_of_nodes()}\n')
         if(generateNodeID):
             arq.write(f'nodesID = {nodeIDs}\n') #MinDegree = 5 for tests
         if(generateNodeID and generateRouteID):

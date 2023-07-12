@@ -8,6 +8,7 @@ import lib.toProbe as tpb
 import lib.toMininet as tmn
 import lib.style as style
 from lib.readTopologyZoo import GraphToMST,drawTopology
+from lib.p4 import networkx_to_mininet_P4
 
 stronglyConnectedFlag = False
 
@@ -170,6 +171,8 @@ def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
 
             if(mininetNX == True):
                 tmn.networkxToMininetConfig(T,topologyName,hostsPerSwitch=1)
+                networkx_to_mininet_P4(T,topologyName)
+                
             bar()
 
     style.checkpointDone("Dataframe filled with success")
