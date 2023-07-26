@@ -85,7 +85,7 @@ def networkx_to_mininet_P4(T,topologyName): # T is the MST of the topology
                     "controller = None)\n\n\t"+\
                     "net.start()\n\t"+\
                     "net.staticArp()\n\t"+\
-                    f"os.system('output/Topology/{topologyName}/p4/flow_table/f.sh')\n\n\t"
+                    f"os.system('output/Topology/{topologyName}/p4/flow_table/f.sh {number_of_edgeSwitches} {number_of_coreSwitches}')\n\n\t"
 
     ConfigNetwork = "for n in xrange(num_hosts):\n\t\t"+\
                         "h = net.get('h%d' % (n + 1))\n\t\t"+\

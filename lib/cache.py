@@ -4,8 +4,25 @@ import json
 import toml
 from pathlib import Path
 
+def load_hashes_from_file(path):
+    try:
+        with open(path, 'r') as f:
+            return toml.load(f)
+    except (FileNotFoundError, toml.TomlDecodeError):
+        return {}
+
+def load_cache_from_file(path):
+    try:
+        with open(path, 'r') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
 cache_file = Path('lib/.polkalyzer_cache.json')
 hash_file = 'hashes.toml'
+
+hashes = load_hashes_from_file(hash_file)
+caches = load_cache_from_file(cache_file)
 
 def is_cached(keys: list):
     if not compare_hash(keys):
@@ -15,14 +32,16 @@ def is_cached(keys: list):
 # If not cached yet, save the hash of the file in hashes.toml
 def is_file_cached(keys: list, path: Path):
     # A partir do path, crie um objeto Path
-
-    if path.exists() and not compare_file_hash(keys,path):
+    if path.exists() and not compare_file_hash(keys,path): #Path exist and hash not saved
         hash = calculate_file_hash(path)
         file_save_hash_to_file(keys, hash)
         print(f'Cache saved for {keys} with hash {hash}')
         return False # Not already saved
+    elif not path.exists(): # Path not exist
+        return False
+    else:
+        return True # Already saved
 
-    return True # Already saved
 
 def save_if_not_cached(keys: list, value):
     if not is_cached(keys):
@@ -46,7 +65,7 @@ def get_keys_value(keys: list, dictionary: dict):
     return current_dict
 
 def get_nodesID_CRC16():
-    cache = load_cache_from_file(cache_file)
+    cache = caches
     keys = ['nodesID', 'crc16']
 
     if not is_cached(keys):
@@ -74,33 +93,16 @@ def calculate_dict_hash(data):
     hash_value = hashlib.md5(json_data.encode()).hexdigest()
     return hash_value
 
-def load_hashes_from_file(path):
-    try:
-        with open(path, 'r') as f:
-            return toml.load(f)
-    except (FileNotFoundError, toml.TomlDecodeError):
-        return {}
-
-def load_cache_from_file(path):
-    try:
-        with open(path, 'r') as f:
-            return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        return {}
-
 # Given a array of keys (keys and subkeys and subsubkeys ...) and a value, save it into a toml file called hashes.toml
 def save_hash_to_file(keys: list, val):
-    hashes = load_hashes_from_file(hash_file)
+    global hashes
     current_dict = hashes
     for key in keys[:-1]:
         current_dict = current_dict.setdefault(key, {})
     current_dict[keys[-1]] = val
 
-    with open(hash_file, 'w') as f:
-        toml.dump(hashes, f)
-
 def file_save_hash_to_file(keys: list, val):
-    hashes = load_hashes_from_file(hash_file)
+    global hashes
     current_dict = hashes
     for key in keys[:-1]:
         current_dict = current_dict.setdefault(key, {})
@@ -109,23 +111,18 @@ def file_save_hash_to_file(keys: list, val):
         current_dict[keys[-1]] = []
     current_dict[keys[-1]].append(val)
 
-    with open(hash_file, 'w') as f:
-        toml.dump(hashes, f)
-
 def save_cache_to_file(keys: list, val):
-    caches = load_cache_from_file(cache_file)
+    global caches
     current_dict = caches
     for key in keys[:-1]:
         current_dict = current_dict.setdefault(key, {})
     current_dict[keys[-1]] = val
 
-    with open(cache_file, 'w') as f:
-        json.dump(caches, f)
-
 # Given key, compare the value from the .polkalyzer_cache.json file, calculate its hash and compare it with hash on hashes.toml to this key
 def compare_hash(keys: list):
-    hash_dict = load_hashes_from_file(hash_file)
-    json_dict = load_cache_from_file(cache_file)
+    global hashes, caches
+    hash_dict = hashes
+    json_dict = caches
 
     if(json_dict == {}): #Verify if the dictionary is empty
         return False
@@ -141,8 +138,8 @@ def compare_hash(keys: list):
     return False
 
 def compare_file_hash(keys: list, path: Path):
-    hash_dict = load_hashes_from_file(hash_file)
-
+    global hashes
+    hash_dict = hashes
     file_hash = calculate_file_hash(path)
 
     for key in keys[:-1]:
@@ -157,3 +154,10 @@ def compare_file_hash(keys: list, path: Path):
         return True
     return False
 
+def export_cache():
+    global hashes, caches
+
+    with open(hash_file, 'w') as f:
+        toml.dump(hashes, f)
+    with open(cache_file, 'w') as f:
+        json.dump(caches, f)

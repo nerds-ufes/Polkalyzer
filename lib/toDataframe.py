@@ -9,6 +9,7 @@ import lib.toMininet as tmn
 import lib.style as style
 from lib.readTopologyZoo import GraphToMST,drawTopology
 from lib.p4 import networkx_to_mininet_P4
+from lib.cache import export_cache
 
 stronglyConnectedFlag = False
 
@@ -175,6 +176,7 @@ def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
                 
             bar()
 
+    export_cache()
     style.checkpointDone("Dataframe filled with success")
             
 
