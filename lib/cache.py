@@ -145,12 +145,8 @@ def compare_file_hash(keys: list, path: Path):
     for key in keys[:-1]:
         hash_dict = hash_dict.setdefault(key, {})
     
-    # if keys[-1] in hash_dict and hash_dict[keys[-1]] == file_hash:
-    #     print('Hash already saved')
-    #     return True
-    #Now keys[-1] values is a list of hashes
     if keys[-1] in hash_dict and file_hash in hash_dict[keys[-1]]:
-        print('Hash already saved')
+        # print('Hash already saved')
         return True
     return False
 

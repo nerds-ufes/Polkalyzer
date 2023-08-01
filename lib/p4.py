@@ -23,7 +23,7 @@ def networkx_to_mininet_P4(T,topologyName): # T is the MST of the topology
             "from time import sleep\n\n"
     ArgParser = "parser = argparse.ArgumentParser(description='Mininet demo')\n"+\
                 "parser.add_argument('--behavioral-exe', help='Path to behavioral executable',\n"+\
-                "\t\t\t\t\ttype=str, action=\"store\", default=\"/home/p4/INTMPolKA/behavioral-model/targets/simple_switch/simple_switch\")\n"+\
+                "\t\t\t\t\ttype=str, action=\"store\", default=\"../../../lib/p4/behavioral-model/targets/simple_switch/simple_switch\")\n"+\
                 "parser.add_argument('--thrift-port', help='Thrift server port for table updates',\n"+\
                 "\t\t\t\t\ttype=int, action=\"store\", default=9090)\n"+\
                 "#parser.add_argument('--json', help='Path to JSON config file',\n"+\
@@ -40,7 +40,7 @@ def networkx_to_mininet_P4(T,topologyName): # T is the MST of the topology
                         "for h in xrange(e):\n\t\t\t"+\
                             "switch = self.addSwitch('e%d' % (h + 1),\n\t\t\t\t"+\
                                     "sw_path = sw_path,\n\t\t\t\t"+\
-                                    f"json_path = 'lib/p4/mpolka-int-edge.json',\n\t\t\t\t"+\
+                                    f"json_path = '../../../lib/p4/mpolka-int-edge.json',\n\t\t\t\t"+\
                                     "thrift_port = thrift_port,\n\t\t\t\t"+\
                                     "pcap_dump = pcap_dump,\n\t\t\t\t"+\
                                     "log_console = True)\n\t\t\t"+\
@@ -50,7 +50,7 @@ def networkx_to_mininet_P4(T,topologyName): # T is the MST of the topology
                         "for h in xrange(m):\n\t\t\t"+\
                             "switch = self.addSwitch('c%d' % (h + 1),\n\t\t\t\t"+\
                                     "sw_path = sw_path,\n\t\t\t\t"+\
-                                    f"json_path = 'lib/p4/mpolka-int-core.json',\n\t\t\t\t"+\
+                                    f"json_path = '../../../lib/p4/mpolka-int-core.json',\n\t\t\t\t"+\
                                     "thrift_port = thrift_port,\n\t\t\t\t"+\
                                     "pcap_dump = pcap_dump,\n\t\t\t\t"+\
                                     "log_console = True)\n\t\t\t"+\
@@ -105,9 +105,9 @@ def networkx_to_mininet_P4(T,topologyName): # T is the MST of the topology
                     "CLI( net )\n\t"+\
                     "net.stop()\n\n"
 
-    Main = "\ndef main():\n\t" + StartNetwork + ConfigNetwork + "\n\n"
+    Main = "\ndef main():\n\t" + StartNetwork + ConfigNetwork + "\n"
 
-    BuildTopo = f"\n\nif __name__ == '__main__':"+\
+    BuildTopo = f"\nif __name__ == '__main__':"+\
                     "\n\tsetLogLevel( 'info' )"+\
                     "\n\tmain()"
 
