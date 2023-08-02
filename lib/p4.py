@@ -130,7 +130,7 @@ def networkx_to_mininet_P4(T,topologyName): # T is the MST of the topology
 
     createFlowTable(T,topologyName)
 
-def createFlowTable(T,topologyName):
+def createFlowTable(T,topologyName, createAllEdgeSwitches = False):
     ov.validateEntirePath(f'output/Topology/{topologyName}/flow_table')
 
     topology = toml.load(Path(f"output/Topology/{topologyName}/topology.toml"))
@@ -140,7 +140,17 @@ def createFlowTable(T,topologyName):
     nodesID = topology['mpolka']['nodesID']
     routeID = topology['mpolka']['routeID']
 
-    for e in range(number_of_edgeSwitches):
+    if(createAllEdgeSwitches):
+        for e in range(number_of_edgeSwitches):
+            with open(Path(f'output/Topology/{topologyName}/flow_table/e{e+1}.txt'),'w') as arq:
+                arq.write('table_set_default tunnel_encap_process_sr tdrop\n')
+                arq.write(f'table_add tunnel_encap_process_sr add_sourcerouting_header 10.0.1.{e+1}/32 => {e+1} 1 00:04:00:00:00:{e:02x} {hex(routeID[str(edgeSwitches[e])])}\n\n')
+    else: # Create only for the first and the last edge switch
+        e = 0 # First edge switch
+        with open(Path(f'output/Topology/{topologyName}/flow_table/e{e+1}.txt'),'w') as arq:
+            arq.write('table_set_default tunnel_encap_process_sr tdrop\n')
+            arq.write(f'table_add tunnel_encap_process_sr add_sourcerouting_header 10.0.1.{e+1}/32 => {e+1} 1 00:04:00:00:00:{e:02x} {hex(routeID[str(edgeSwitches[e])])}\n\n')
+        e = number_of_edgeSwitches - 1 # Last edge switch
         with open(Path(f'output/Topology/{topologyName}/flow_table/e{e+1}.txt'),'w') as arq:
             arq.write('table_set_default tunnel_encap_process_sr tdrop\n')
             arq.write(f'table_add tunnel_encap_process_sr add_sourcerouting_header 10.0.1.{e+1}/32 => {e+1} 1 00:04:00:00:00:{e:02x} {hex(routeID[str(edgeSwitches[e])])}\n\n')

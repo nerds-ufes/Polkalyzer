@@ -62,7 +62,7 @@ def dfs_init(G,v):
     dfs(G,v,visited,hops=0,previousHop=0)
     return sonda.copy()
 
-def exportTopology(G,topologyName):
+def exportTopology(G,topologyName, createAllEdgeSwitches = False):
     ov.validateEntirePath(f'output/Topology/{topologyName}')
     poly_nodeIDs = getNodeID(G.number_of_nodes())
     poly_routeID = modified_calculate_routeid(poly_nodeIDs,tState,debug=False)
@@ -87,12 +87,21 @@ def exportTopology(G,topologyName):
         arq.write(f'number_of_coreSwitches = {G.number_of_nodes()}\n')
         arq.write(f'nodesID = {nodeIDs}\n')
         arq.write(f'\n[mpolka.routeID]\n')
-        for e in edgeSwitches:
-            tStateRegress = generate_regress_TState(tState,e,edgeSwitches[0])
-            # print(f"e = {e} | tStateRegress = {tStateRegress}")
-            poly_routeIDRegress = modified_calculate_routeid(poly_nodeIDs,tStateRegress,debug=False)
-            routeIDRegress = poly_to_hex(poly_routeIDRegress)
-            arq.write(f"'{e}' = {routeIDRegress}\n")
+
+        if(createAllEdgeSwitches): # Create routeID for all edgeSwitches
+            export_regress_routeID(arq,poly_nodeIDs,edgeSwitches)
+        else: # Create only for the first and the last edgeSwitches
+            myEdges = [edgeSwitches[0],edgeSwitches[-1]]
+            export_regress_routeID(arq,poly_nodeIDs,myEdges)
+
+
+def export_regress_routeID(arq,poly_nodeIDs,edgeSwitches):
+    for e in edgeSwitches:
+        tStateRegress = generate_regress_TState(tState,e,edgeSwitches[0])
+        # print(f"e = {e} | tStateRegress = {tStateRegress}")
+        poly_routeIDRegress = modified_calculate_routeid(poly_nodeIDs,tStateRegress,debug=False)
+        routeIDRegress = poly_to_hex(poly_routeIDRegress)
+        arq.write(f"'{e}' = {routeIDRegress}\n")
             
 def generate_regress_TState(tState,destination,origin):
     # tStateRegress = tState.copy()
