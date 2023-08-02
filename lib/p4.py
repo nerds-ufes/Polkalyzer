@@ -140,15 +140,13 @@ def createFlowTable(T,topologyName):
     nodesID = topology['mpolka']['nodesID']
     routeID = topology['mpolka']['routeID']
 
-    print(topologyName)
-
     for e in range(number_of_edgeSwitches):
         with open(Path(f'output/Topology/{topologyName}/flow_table/e{e+1}.txt'),'w') as arq:
             arq.write('table_set_default tunnel_encap_process_sr tdrop\n')
             arq.write(f'table_add tunnel_encap_process_sr add_sourcerouting_header 10.0.1.{e+1}/32 => {e+1} 1 00:04:00:00:00:{e:02x} {hex(routeID[str(edgeSwitches[e])])}\n\n')
     
-    print(T.degree())
-    print(f'nodesID: {len(nodesID)}')
+    # print(T.degree())
+    # print(f'nodesID: {len(nodesID)}')
     for c, degree in T.degree():
         if(c not in edgeSwitches):
             degree=degree-1 # Core Switches connected to edge switches don't decrease the degree

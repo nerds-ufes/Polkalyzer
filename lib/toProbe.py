@@ -89,7 +89,7 @@ def exportTopology(G,topologyName):
         arq.write(f'\n[mpolka.routeID]\n')
         for e in edgeSwitches:
             tStateRegress = generate_regress_TState(tState,e,edgeSwitches[0])
-            print(f"e = {e} | tStateRegress = {tStateRegress}")
+            # print(f"e = {e} | tStateRegress = {tStateRegress}")
             poly_routeIDRegress = modified_calculate_routeid(poly_nodeIDs,tStateRegress,debug=False)
             routeIDRegress = poly_to_hex(poly_routeIDRegress)
             arq.write(f"'{e}' = {routeIDRegress}\n")
