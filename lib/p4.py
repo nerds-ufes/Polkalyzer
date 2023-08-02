@@ -140,20 +140,11 @@ def createFlowTable(T,topologyName, createAllEdgeSwitches = False):
     nodesID = topology['mpolka']['nodesID']
     routeID = topology['mpolka']['routeID']
 
-    if(createAllEdgeSwitches):
-        for e in range(number_of_edgeSwitches):
-            with open(Path(f'output/Topology/{topologyName}/flow_table/e{e+1}.txt'),'w') as arq:
-                arq.write('table_set_default tunnel_encap_process_sr tdrop\n')
-                arq.write(f'table_add tunnel_encap_process_sr add_sourcerouting_header 10.0.1.{e+1}/32 => {e+1} 1 00:04:00:00:00:{e:02x} {hex(routeID[str(edgeSwitches[e])])}\n\n')
+    if(createAllEdgeSwitches): # Create for all edge switches
+        export_flowTable_edgeSwitches(topologyName, edgeSwitches, routeID)
     else: # Create only for the first and the last edge switch
-        e = 0 # First edge switch
-        with open(Path(f'output/Topology/{topologyName}/flow_table/e{e+1}.txt'),'w') as arq:
-            arq.write('table_set_default tunnel_encap_process_sr tdrop\n')
-            arq.write(f'table_add tunnel_encap_process_sr add_sourcerouting_header 10.0.1.{e+1}/32 => {e+1} 1 00:04:00:00:00:{e:02x} {hex(routeID[str(edgeSwitches[e])])}\n\n')
-        e = number_of_edgeSwitches - 1 # Last edge switch
-        with open(Path(f'output/Topology/{topologyName}/flow_table/e{e+1}.txt'),'w') as arq:
-            arq.write('table_set_default tunnel_encap_process_sr tdrop\n')
-            arq.write(f'table_add tunnel_encap_process_sr add_sourcerouting_header 10.0.1.{e+1}/32 => {e+1} 1 00:04:00:00:00:{e:02x} {hex(routeID[str(edgeSwitches[e])])}\n\n')
+        myEdges = [edgeSwitches[0],edgeSwitches[-1]]
+        export_flowTable_edgeSwitches(topologyName, myEdges, routeID)
     
     # print(T.degree())
     # print(f'nodesID: {len(nodesID)}')
@@ -166,3 +157,10 @@ def createFlowTable(T,topologyName, createAllEdgeSwitches = False):
             arq.write('mirroring_add 1 1\n')
             arq.write('mirroring_add 2 2\n')
             arq.write('mirroring_add 3 3\n')
+
+def export_flowTable_edgeSwitches(topologyName,edgeSwitches, routeID):
+    number_of_edgeSwitches = len(edgeSwitches)
+    for e in range(number_of_edgeSwitches):
+        with open(Path(f'output/Topology/{topologyName}/flow_table/e{e+1}.txt'),'w') as arq:
+            arq.write('table_set_default tunnel_encap_process_sr tdrop\n')
+            arq.write(f'table_add tunnel_encap_process_sr add_sourcerouting_header 10.0.1.{e+1}/32 => {e+1} 1 00:04:00:00:00:{e:02x} {hex(routeID[str(edgeSwitches[e])])}\n\n')
