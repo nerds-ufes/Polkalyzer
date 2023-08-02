@@ -10,6 +10,7 @@ import lib.style as style
 from lib.readTopologyZoo import GraphToMST,drawTopology
 from lib.p4 import networkx_to_mininet_P4
 from lib.cache import export_cache
+from lib.utils import remap_labels
 
 stronglyConnectedFlag = False
 
@@ -151,7 +152,7 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportTop
         tpb.dfs_init(T,fixedNodeSender)
 
     if(exportTopology == True):
-        tpb.exportTopology(G,topologyName,generateNodeID=True,generateRouteID=True)
+        tpb.exportTopology(G,topologyName)
     df = toDataframe(df,topologyName,isBackBone,numberOfNodes,numberOfEdges,fixedNodeSender)
     return df
 
@@ -163,6 +164,7 @@ def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
         for topology in listTopology:
             topologyName = ov.extractFilename(topology)
             G = nx.read_gml(topology,destringizer=int,label='id')
+            G = remap_labels(G)
             T = nx.minimum_spanning_tree(G,algorithm=algorithm)
             df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportTopology=True)
 

@@ -1,5 +1,6 @@
 import toml
 from pathlib import Path
+import lib.outputValidator as ov
 
 def networkx_to_mininet_P4(T,topologyName): # T is the MST of the topology
     # Read informations from toml file
@@ -126,3 +127,34 @@ def networkx_to_mininet_P4(T,topologyName): # T is the MST of the topology
 
     with open(Path(f'output/Topology/{topologyName}/{topologyName}-P4.py'),'w') as arq:
         arq.write(Code)
+
+    createFlowTable(T,topologyName)
+
+def createFlowTable(T,topologyName):
+    ov.validateEntirePath(f'output/Topology/{topologyName}/flow_table')
+
+    topology = toml.load(Path(f"output/Topology/{topologyName}/topology.toml"))
+
+    edgeSwitches = topology['mpolka']['edgeSwitches']
+    number_of_edgeSwitches = topology['mpolka']['number_of_edgeSwitches']
+    nodesID = topology['mpolka']['nodesID']
+    routeID = topology['mpolka']['routeID']
+
+    print(topologyName)
+
+    for e in range(number_of_edgeSwitches):
+        with open(Path(f'output/Topology/{topologyName}/flow_table/e{e+1}.txt'),'w') as arq:
+            arq.write('table_set_default tunnel_encap_process_sr tdrop\n')
+            arq.write(f'table_add tunnel_encap_process_sr add_sourcerouting_header 10.0.1.{e+1}/32 => {e+1} 1 00:04:00:00:00:{e:02x} {hex(routeID[str(edgeSwitches[e])])}\n\n')
+    
+    print(T.degree())
+    print(f'nodesID: {len(nodesID)}')
+    for c, degree in T.degree():
+        if(c not in edgeSwitches):
+            degree=degree-1 # Core Switches connected to edge switches don't decrease the degree
+        with open(Path(f'output/Topology/{topologyName}/flow_table/s{c+1}.txt'),'w') as arq:
+            arq.write(f'table_add addIntInfo add_int_info 0x2020 => {c+1} {degree}\n\n')
+            arq.write(f'set_crc16_parameters calc {nodesID[c]} 0x0 0x0 false false\n')
+            arq.write('mirroring_add 1 1\n')
+            arq.write('mirroring_add 2 2\n')
+            arq.write('mirroring_add 3 3\n')

@@ -62,7 +62,7 @@ def dfs_init(G,v):
     dfs(G,v,visited,hops=0,previousHop=0)
     return sonda.copy()
 
-def exportTopology(G,topologyName,generateNodeID,generateRouteID):
+def exportTopology(G,topologyName):
     ov.validateEntirePath(f'output/Topology/{topologyName}')
     poly_nodeIDs = getNodeID(G.number_of_nodes())
     poly_routeID = modified_calculate_routeid(poly_nodeIDs,tState,debug=False)
@@ -73,8 +73,9 @@ def exportTopology(G,topologyName,generateNodeID,generateRouteID):
         arq.write(f'name = "{topologyName}"\n')
         arq.write(f'numbes_of_nodes = {G.number_of_nodes()}\n')
         arq.write(f'numbes_of_edges = {G.number_of_edges()}\n')
-        # arq.write(f'\n[probe]\n')
+        # arq.write(f'\n[mpint]\n')
         # arq.write(f'MPINT = {sondaMPINT}\n')
+        # arq.write(f'\n[int-classico]\n')
         # arq.write(f'INT_Classico = {sondaINTClassico}\n')
         arq.write(f'\n[mpolka]\n')
         arq.write(f'probe = {sonda}\n')
@@ -84,7 +85,18 @@ def exportTopology(G,topologyName,generateNodeID,generateRouteID):
         arq.write(f'edgeSwitches = {edgeSwitches}\n')
         arq.write(f'number_of_edgeSwitches = {len(edgeSwitches)}\n')
         arq.write(f'number_of_coreSwitches = {G.number_of_nodes()}\n')
-        if(generateNodeID):
-            arq.write(f'nodesID = {nodeIDs}\n') #MinDegree = 5 for tests
-        if(generateNodeID and generateRouteID):
-            arq.write(f'routeID = {routeID}\n')
+        arq.write(f'nodesID = {nodeIDs}\n')
+        arq.write(f'\n[mpolka.routeID]\n')
+        for e in edgeSwitches:
+            tStateRegress = generate_regress_TState(tState,e,edgeSwitches[0])
+            print(f"e = {e} | tStateRegress = {tStateRegress}")
+            poly_routeIDRegress = modified_calculate_routeid(poly_nodeIDs,tStateRegress,debug=False)
+            routeIDRegress = poly_to_hex(poly_routeIDRegress)
+            arq.write(f"'{e}' = {routeIDRegress}\n")
+            
+def generate_regress_TState(tState,destination,origin):
+    # tStateRegress = tState.copy()
+    tStateRegress = [lst.copy() for lst in tState] #Copy tState
+    tStateRegress[origin] = [1] # Set origin as egress
+    tStateRegress[destination].append(0) # Set destination as ingress
+    return tStateRegress
