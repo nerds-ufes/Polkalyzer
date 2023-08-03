@@ -1,6 +1,6 @@
 import lib.outputValidator as ov
 import lib.overheadCalc as oc
-from lib.polka import modified_calculate_routeid
+from lib.polka import modified_calculate_routeid, poly_to_hex, polyList_to_hexList
 from lib.cache import get_nodesID_CRC16
 
 sonda = []
@@ -62,22 +62,50 @@ def dfs_init(G,v):
     dfs(G,v,visited,hops=0,previousHop=0)
     return sonda.copy()
 
-def exportTopology(G,topologyName,generateNodeID,generateRouteID):
+def exportTopology(G,topologyName, createAllEdgeSwitches = False):
     ov.validateEntirePath(f'output/Topology/{topologyName}')
-    nodeIDs = getNodeID(G.number_of_nodes())
-    routeID = modified_calculate_routeid(nodeIDs,tState,debug=False)
+    poly_nodeIDs = getNodeID(G.number_of_nodes())
+    poly_routeID = modified_calculate_routeid(poly_nodeIDs,tState,debug=False)
+    routeID = poly_to_hex(poly_routeID)
+    nodeIDs = polyList_to_hexList(poly_nodeIDs)
     with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/topology.toml'),'w') as arq:
         arq.write('# Usefull informations about topology\n\n')
-        arq.write(f'name = {topologyName}\n')
+        arq.write(f'name = "{topologyName}"\n')
         arq.write(f'numbes_of_nodes = {G.number_of_nodes()}\n')
         arq.write(f'numbes_of_edges = {G.number_of_edges()}\n')
-        # arq.write(f'\n[probe]\n')
+        # arq.write(f'\n[mpint]\n')
         # arq.write(f'MPINT = {sondaMPINT}\n')
+        # arq.write(f'\n[int-classico]\n')
         # arq.write(f'INT_Classico = {sondaINTClassico}\n')
         arq.write(f'\n[mpolka]\n')
         arq.write(f'probe = {sonda}\n')
         arq.write(f'tState = {tState}\n')
-        if(generateNodeID):
-            arq.write(f'nodesID = {nodeIDs}\n') #MinDegree = 5 for tests
-        if(generateNodeID and generateRouteID):
-            arq.write(f'routeID = {routeID}\n')
+        edgeSwitches = list(sinkSwitches.copy())
+        edgeSwitches.insert(0,sonda[0][0])
+        arq.write(f'edgeSwitches = {edgeSwitches}\n')
+        arq.write(f'number_of_edgeSwitches = {len(edgeSwitches)}\n')
+        arq.write(f'number_of_coreSwitches = {G.number_of_nodes()}\n')
+        arq.write(f'nodesID = {nodeIDs}\n')
+        arq.write(f'\n[mpolka.routeID]\n')
+
+        if(createAllEdgeSwitches): # Create routeID for all edgeSwitches
+            export_regress_routeID(arq,poly_nodeIDs,edgeSwitches)
+        else: # Create only for the first and the last edgeSwitches
+            myEdges = [edgeSwitches[0],edgeSwitches[-1]]
+            export_regress_routeID(arq,poly_nodeIDs,myEdges)
+
+
+def export_regress_routeID(arq,poly_nodeIDs,edgeSwitches):
+    for e in edgeSwitches:
+        tStateRegress = generate_regress_TState(tState,e,edgeSwitches[0])
+        # print(f"e = {e} | tStateRegress = {tStateRegress}")
+        poly_routeIDRegress = modified_calculate_routeid(poly_nodeIDs,tStateRegress,debug=False)
+        routeIDRegress = poly_to_hex(poly_routeIDRegress)
+        arq.write(f"'{e}' = {routeIDRegress}\n")
+            
+def generate_regress_TState(tState,destination,origin):
+    # tStateRegress = tState.copy()
+    tStateRegress = [lst.copy() for lst in tState] #Copy tState
+    tStateRegress[origin] = [1] # Set origin as egress
+    tStateRegress[destination].append(0) # Set destination as ingress
+    return tStateRegress

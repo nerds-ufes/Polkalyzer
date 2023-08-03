@@ -86,3 +86,27 @@ def modified_calculate_routeid(s, o, debug=False):
             )
 
     return f
+
+def poly_to_int(bitlist):
+    out = 0
+    for bit in bitlist:
+        out = (out << 1) | bit
+    return out
+
+def poly_to_hex(bitlist):
+    return hex(poly_to_int(bitlist))
+
+def polyList_to_hexList(nodeIDs):
+    out_list = list()
+    for n in nodeIDs:
+        out = poly_to_hex(n)
+        out_list.append(out)
+    return out_list
+
+def print_poly(p):
+    print("Len: ", len(p))
+    print("Poly (list): ", p)
+    intp = poly_to_int(p)
+    print("Poly (int): ", intp)
+    print("Poly (bin): ", bin(intp))
+    print("Poly (hex): ", hex(intp))
