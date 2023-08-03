@@ -18,7 +18,7 @@ def networkx_to_mininet_P4(T,topologyName): # T is the MST of the topology
             "from mininet.cli import CLI\n"+\
             "from mininet.link import TCLink\n"+\
             "from mininet.log import info,setLogLevel\n"+\
-            "from lib.p4.p4_mininet import P4Switch, P4Host\n\n"+\
+            "from ../../../lib/p4_mininet import P4Switch, P4Host\n\n"+\
             "import argparse\n"+\
             "import os\n"+\
             "from time import sleep\n\n"
