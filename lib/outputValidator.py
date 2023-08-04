@@ -1,6 +1,15 @@
 import os
 import lib.toDataframe as tdf
 import pandas as pd
+import shutil
+from pathlib import Path
+
+def copyFiles(fileList, dstPath):
+    for file in fileList:
+        shutil.copy(Path(file),Path(dstPath))
+
+def copyFile(file, destPath):
+    shutil.copy(Path(file),Path(destPath))
 
 def isDir(path):
     if(os.path.isdir(path)):
