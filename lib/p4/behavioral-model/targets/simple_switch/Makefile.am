@@ -74,10 +74,10 @@ simple_switch_CLI: Makefile
 	chmod a-w $@.tmp
 	mv $@.tmp $@
 
-simple_switch_CLI: simple_switch_CLI.in
+simple_switch_CLI: simple_switch
 
 EXTRA_DIST = \
-simple_switch_CLI.in \
+simple_switch \
 sswitch_CLI
 
 bin_SCRIPTS = \

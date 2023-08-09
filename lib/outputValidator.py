@@ -4,6 +4,10 @@ import pandas as pd
 import shutil
 from pathlib import Path
 
+# Copy folder with shutil
+def copyFolder(srcPath, dstPath):
+    shutil.copytree(Path(srcPath),Path(dstPath))
+
 def copyFiles(fileList, dstPath):
     for file in fileList:
         shutil.copy(Path(file),Path(dstPath))

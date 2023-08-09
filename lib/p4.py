@@ -25,14 +25,16 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
             "from lib.p4_mininet import P4Switch, P4Host\n\n"+\
             "import argparse\n"+\
             "import os\n"+\
+            "import sys\n"+\
             "from time import sleep\n\n"
+    AppendBehavioralModelToPath= "script_directory = os.path.dirname(os.path.abspath(__file__))\n"+\
+                                 "behavioral_exe_path = os.path.join(script_directory, '../../../../lib/behavioral-model/targets/simple_switch')\n"+\
+                                 "sys.path.append(behavioral_exe_path)\n\n"
     ArgParser = "parser = argparse.ArgumentParser(description='Mininet demo')\n"+\
                 "parser.add_argument('--behavioral-exe', help='Path to behavioral executable',\n"+\
-                "\t\t\t\t\ttype=str, action=\"store\", default=\"lib/simple_switch_CLI.in\")\n"+\
+                "\t\t\t\t\ttype=str, action=\"store\", default=\"simple_switch\")\n"+\
                 "parser.add_argument('--thrift-port', help='Thrift server port for table updates',\n"+\
                 "\t\t\t\t\ttype=int, action=\"store\", default=9090)\n"+\
-                "#parser.add_argument('--json', help='Path to JSON config file',\n"+\
-                "#\t\t\t\t\ttype=str, action=\"store\", required=False)\n"+\
                 "parser.add_argument('--pcap-dump', help='Dump packets on interfaces to pcap files',\n"+\
                 "\t\t\t\t\ttype=str, action=\"store\", required=False, default=False)\n\n"+\
                 "args = parser.parse_args()\n\n"
@@ -118,6 +120,7 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
 
     Code = Code.join([CompilerDirective,
                       Import,
+                      AppendBehavioralModelToPath,
                       ArgParser,
                       Class,
                       EdgeSwitchConfig,
@@ -139,11 +142,11 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
         'lib/p4/mpolka-int-edge.json',
         'lib/p4/mpolka-int-core.json',
         'lib/p4/p4_mininet.py',
-        'lib/p4/simple_switch_CLI.in',
     ]
 
     ov.copyFiles(fileList, f'output/Topology/{topologyName}/p4/lib')
     ov.copyFile('lib/p4/f.sh',f'output/Topology/{topologyName}/p4/flow_table/f.sh')
+    ov.copyFolder('lib/p4/packet',f'output/Topology/{topologyName}/p4/packet')
 
 
 def createFlowTable(T,topologyName, createAllEdgeSwitches = False):
