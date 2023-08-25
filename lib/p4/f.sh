@@ -1,7 +1,6 @@
 #!/bin/bash
 
 THRIFT_PORT=9090
-cd ../flow_table
 
 run(){
 	for((i=1; i<=$1; i++)); #Edge Switches
