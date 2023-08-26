@@ -19,12 +19,12 @@
 #
 #
 
-# This is just a wrapper script around pswitch_CLI.py
+# This is just a wrapper script around sswitch_CLI.py
 # It makes sure that the script works correctly no matter where Python
 # dependencies are installed
 
 import sys
 sys.path.append("@pythondir@")
 
-import pswitch_CLI
-pswitch_CLI.main()
+import sswitch_CLI
+sswitch_CLI.main()
