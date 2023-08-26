@@ -20,3 +20,4 @@ WORKDIR /home/Polkalyzer
 RUN git checkout develop
 RUN pip install -r requirements.txt
 CMD ["service","openvswitch-switch","start"]
+CMD /bin/bash
