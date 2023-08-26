@@ -18,6 +18,7 @@ RUN util/install.sh -a
 
 WORKDIR /home/Polkalyzer
 RUN git checkout develop
+RUN git pull origin develop # Prevent cache conflicts
 RUN pip install -r requirements.txt
 CMD ["service","openvswitch-switch","start"]
 CMD /bin/bash
