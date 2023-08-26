@@ -11,7 +11,7 @@ def modified_create_list_irrpoly_mod2(n):
     f = []
     total = pow(2, n)
     poly = [K.one] + [K(0) for i in range(0, n)]
-    with style.alive_bar(int(total/n), title=f"Generating Irreducible Poly List with CRC{n-1}") as bar:
+    with style.alive_bar(int(total/n), title=f"Generating Irreducible Poly List with CRC{n+1}") as bar:
         for j in range(total):
             if gf_irreducible_p(poly, p, K):
                 f.append(poly)
