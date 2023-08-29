@@ -12,6 +12,7 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
     number_of_edgeSwitches = len(edgeSwitches)
     number_of_coreSwitches = topology['mpolka']['number_of_coreSwitches']
     number_of_hosts = number_of_edgeSwitches
+    bmodelPath = ov.normilizePath('Polkalyzer','Polkalyzer/lib/p4/behavioral-model/targets/simple_switch')
     
     Code = ""
     CompilerDirective = "#!/usr/bin/env python\n\n"
@@ -26,10 +27,9 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
             "import sys\n"+\
             "from time import sleep\n\n"
 
-    AppendBehavioralModelToPath= f"sys.path.append({ov.normilizePath('Polkalyzer','Polkalyzer/lib/p4/behavioral-model/targets/simple_switch')})\n\n"
     ArgParser = "parser = argparse.ArgumentParser(description='Mininet demo')\n"+\
                 "parser.add_argument('--behavioral-exe', help='Path to behavioral executable',\n"+\
-                "\t\t\t\t\ttype=str, action=\"store\", default=\"simple_switch\")\n"+\
+                f"\t\t\t\t\ttype=str, action=\"store\", default=\"{bmodelPath}\")\n"+\
                 "parser.add_argument('--thrift-port', help='Thrift server port for table updates',\n"+\
                 "\t\t\t\t\ttype=int, action=\"store\", default=9090)\n"+\
                 "parser.add_argument('--pcap-dump', help='Dump packets on interfaces to pcap files',\n"+\
@@ -117,7 +117,6 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
 
     Code = Code.join([CompilerDirective,
                       Import,
-                      AppendBehavioralModelToPath,
                       ArgParser,
                       Class,
                       EdgeSwitchConfig,
