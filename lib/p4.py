@@ -12,7 +12,7 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
     number_of_edgeSwitches = len(edgeSwitches)
     number_of_coreSwitches = topology['mpolka']['number_of_coreSwitches']
     number_of_hosts = number_of_edgeSwitches
-    bmodelPath = ov.normilizePath('Polkalyzer','Polkalyzer/lib/p4/behavioral-model/targets/simple_switch')
+    bmodelPath = ov.normilizePath('Polkalyzer','Polkalyzer/lib/p4/behavioral-model/targets/simple_switch/simple_switch')
     
     Code = ""
     CompilerDirective = "#!/usr/bin/env python\n\n"
