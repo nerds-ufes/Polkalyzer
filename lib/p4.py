@@ -13,8 +13,6 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
     number_of_coreSwitches = topology['mpolka']['number_of_coreSwitches']
     number_of_hosts = number_of_edgeSwitches
     
-
-    
     Code = ""
     CompilerDirective = "#!/usr/bin/env python\n\n"
     Import= "from mininet.topo import Topo\n"+\
@@ -27,9 +25,8 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
             "import os\n"+\
             "import sys\n"+\
             "from time import sleep\n\n"
-    AppendBehavioralModelToPath= "script_directory = os.path.dirname(os.path.abspath(__file__))\n"+\
-                                 "behavioral_exe_path = os.path.join(script_directory, '../../../../lib/behavioral-model/targets/simple_switch')\n"+\
-                                 "sys.path.append(behavioral_exe_path)\n\n"
+
+    AppendBehavioralModelToPath= f"sys.path.append({ov.normilizePath('Polkalyzer','Polkalyzer/lib/p4/behavioral-model/targets/simple_switch')})\n\n"
     ArgParser = "parser = argparse.ArgumentParser(description='Mininet demo')\n"+\
                 "parser.add_argument('--behavioral-exe', help='Path to behavioral executable',\n"+\
                 "\t\t\t\t\ttype=str, action=\"store\", default=\"simple_switch\")\n"+\
