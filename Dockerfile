@@ -1,4 +1,8 @@
 FROM ubuntu:latest
+
+ENV BM /home/Polkalyzer/lib/p4/behavioral-model/targets/simple_switch/
+ENV PATH $BM:$PATH
+
 RUN apt-get update && \
 	apt-get install -y \
 		python3 \
@@ -20,5 +24,6 @@ WORKDIR /home/Polkalyzer
 RUN git checkout develop
 RUN git pull origin develop # Prevent cache conflicts
 RUN pip install -r requirements.txt
+RUN service openvswitch-switch start
 CMD ["service","openvswitch-switch","start"]
 CMD /bin/bash
