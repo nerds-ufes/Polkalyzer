@@ -25,11 +25,12 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
             "import argparse\n"+\
             "import os\n"+\
             "import sys\n"+\
-            "from time import sleep\n\n"
+            "from time import sleep\n\n"+\
+            f"sys.path.append('{simple_switch_path}')\n\n"
 
     ArgParser = "parser = argparse.ArgumentParser(description='Mininet demo')\n"+\
                 "parser.add_argument('--behavioral-exe', help='Path to behavioral executable',\n"+\
-                f"\t\t\t\t\ttype=str, action=\"store\", default=\"{simple_switch_path}\")\n"+\
+                f"\t\t\t\t\ttype=str, action=\"store\", default=\"simple_switch\")\n"+\
                 "parser.add_argument('--thrift-port', help='Thrift server port for table updates',\n"+\
                 "\t\t\t\t\ttype=int, action=\"store\", default=9090)\n"+\
                 "parser.add_argument('--pcap-dump', help='Dump packets on interfaces to pcap files',\n"+\

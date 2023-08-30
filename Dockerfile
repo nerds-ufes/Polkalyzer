@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
-ENV BM /home/Polkalyzer/lib/p4/behavioral-model/targets/simple_switch/
-ENV PATH $BM:$PATH
+ENV BM_SSWITCH /home/Polkalyzer/lib/p4/bmv2/targets/simple_switch/
+ENV PATH $BM_SSWITCH:$PATH
 
 RUN apt-get update && \
 	apt-get install -y \
