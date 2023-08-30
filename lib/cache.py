@@ -3,6 +3,7 @@ import hashlib
 import json
 import toml
 from pathlib import Path
+from lib.utils import installBehavioralModel
 
 def load_hashes_from_file(path):
     try:
@@ -23,6 +24,8 @@ hash_file = 'hashes.toml'
 
 hashes = load_hashes_from_file(hash_file)
 caches = load_cache_from_file(cache_file)
+
+installBehavioralModel() # If not installed, install behavioral model
 
 def is_cached(keys: list):
     if not compare_hash(keys):
