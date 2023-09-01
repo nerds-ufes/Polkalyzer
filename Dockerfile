@@ -1,7 +1,7 @@
-FROM ubuntu:latest
+FROM p4lang/p4c:latest
 
-ENV BM_SSWITCH /home/Polkalyzer/lib/p4/bmv2/targets/simple_switch/
-ENV PATH $BM_SSWITCH:$PATH
+# ENV BM_SSWITCH /home/Polkalyzer/lib/p4/bmv2/targets/simple_switch/
+# ENV PATH $BM_SSWITCH:$PATH
 
 RUN apt-get update && \
 	apt-get install -y \
