@@ -39,7 +39,9 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
     Class =f"class INTTopo( Topo ):\n\t"+\
                 '"Single switch connected to n (< 256) hosts."\n\t'+\
                 "def __init__(self, sw_path, thrift_port, pcap_dump, n, **opts):\n\t\t"+\
-                "Topo.__init__( self, **opts )\n"
+                "Topo.__init__( self, **opts )\n\n\t\t"+\
+                "self.switch_list = []\n\t\t"+\
+                "self.host_list = []\n"
     EdgeSwitchConfig = "\n\t\tinfo('*** Adding P4Switches (edge)\\n')\n\t\t"+\
                         f"e = {number_of_edgeSwitches}\n\t\t"+\
                         "for h in range(e):\n\t\t\t"+\
@@ -49,6 +51,7 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
                                     "thrift_port = thrift_port,\n\t\t\t\t"+\
                                     "pcap_dump = pcap_dump,\n\t\t\t\t"+\
                                     "log_console = True)\n\t\t\t"+\
+                            "self.switch_list.append(switch)\n\t\t\t"+\
                             "thrift_port = thrift_port + 1\n"
     CoreSwitchConfig = "\n\t\tinfo('*** Adding P4Switches (core)\\n')\n\t\t"+\
                         f"m = {number_of_coreSwitches}\n\t\t"+\
@@ -59,13 +62,15 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
                                     "thrift_port = thrift_port,\n\t\t\t\t"+\
                                     "pcap_dump = pcap_dump,\n\t\t\t\t"+\
                                     "log_console = True)\n\t\t\t"+\
+                            "self.switch_list.append(switch)\n\t\t\t"+\
                             "thrift_port = thrift_port + 1\n"
     HostConfig = f"\n\t\tinfo('*** Adding hosts\\n')\n\t\t"+\
                     f"n = {number_of_hosts}\n\t\t"+\
                     "for h in range(n):\n\t\t\t"+\
                         "host = self.addHost('h%d' % (h + 1),\n\t\t\t\t"+\
-                                "ip = '10.0.%d.1/24' % (h + 1),\n\t\t\t\t"+\
-                                "mac = '00:00:00:00:00:%02x' % (h + 1))\n"
+                                "ip = '10.0.1.%d/24' % (h + 1),\n\t\t\t\t"+\
+                                "mac = '00:04:00:00:00:%02x' %h)\n\t\t\t"+\
+                        "self.host_list.append(host)\n"
     #Link each host to respective edge switch
     HostSwitchLinkConfig = "\n\t\tinfo('*** Creating links between hosts and edge switches\\n')\n\t\t"+\
                             "for h in range(n):\n\t\t\t"+\
@@ -100,11 +105,11 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
                             "h.cmd('python2 ../packet/receive.py >/dev/null &')\n\t\t\t"+\
                             "h.cmd('sysctl -w net.ipv6.conf.all.disable_ipv6=1')\n\t\t\t"+\
                             "h.cmd('sysctl -w net.ipv6.conf.default.disable_ipv6=1')\n\t\t\t"+\
-                            "h.cmd('sysctl -w net.ipv6.conf.lo.disable_ipv6=1')\n\n\t\t"+\
-                    "for sw in net.switches:\n\t\t\t"+\
-                        "sw.cmd('sysctl -w net.ipv6.conf.all.disable_ipv6=1')\n\t\t\t"+\
-                        "sw.cmd('sysctl -w net.ipv6.conf.default.disable_ipv6=1')\n\t\t\t"+\
-                        "sw.cmd('sysctl -w net.ipv6.conf.lo.disable_ipv6=1')\n\n\t\t"+\
+                            "h.cmd('sysctl -w net.ipv6.conf.lo.disable_ipv6=1')\n\n\t"+\
+                    "for sw in net.switches:\n\t\t"+\
+                        "sw.cmd('sysctl -w net.ipv6.conf.all.disable_ipv6=1')\n\t\t"+\
+                        "sw.cmd('sysctl -w net.ipv6.conf.default.disable_ipv6=1')\n\t\t"+\
+                        "sw.cmd('sysctl -w net.ipv6.conf.lo.disable_ipv6=1')\n\n\t"+\
                     "sleep(1)\n\n\t"+\
                     "print( 'Ready !' )\n\n\t"+\
                     "CLI( net )\n\t"+\
