@@ -4,6 +4,10 @@ import pandas as pd
 import shutil
 from pathlib import Path
 
+# Copy folder with shutil
+def copyFolder(srcPath, dstPath):
+    shutil.copytree(Path(srcPath),Path(dstPath))
+
 def copyFiles(fileList, dstPath):
     for file in fileList:
         shutil.copy(Path(file),Path(dstPath))
@@ -95,3 +99,13 @@ def toUniversalOSPath(rawPath):
     for path in auxPath:
         universalPath = os.path.join(universalPath,path)
     return universalPath
+
+def normilizePath(root,new_path):
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    last_occurrence_index = script_directory.rfind(root)
+
+    if last_occurrence_index != -1:
+        new_path = script_directory[:last_occurrence_index] + new_path
+        return new_path
+    else:
+        return None

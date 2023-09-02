@@ -1,4 +1,5 @@
 output
 lib/__pycache__
 lib/.polkalyzer_cache.json
+lib/p4/bmv2
 hashes.toml
