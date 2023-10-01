@@ -65,6 +65,7 @@ def removeBadValues():
 
     #df2.to_csv('output/Filtered Topologys/OptimalOverhead.csv')
 
+    print('\n\n === Filtered Topologys ===')
     print('<Topologys Removed on Test 1>: ',cont1,'/',contTotal)
     print('<Topologys Removed on Test 2>: ',cont2,'/',contTotal)
     print('<Topologys Removed on Test 3>: ',cont3,'/',contTotal)

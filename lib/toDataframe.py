@@ -160,7 +160,7 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportTop
 def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
     listTopology = glob.glob(ov.toUniversalOSPath('input/*.gml'))
     style.print_colorfulDict("Config",{"Algorithm": f"{algorithm}", "NodeSender": f"{fixedNodeSender}", "Draw": f"{draw}", "ToMininetNX": f"{mininetNX}"},color="yellow")
-    with style.alive_bar(len(listTopology), title="Filling Dataframe") as bar:
+    with style.alive_bar(len(listTopology), title="Transforming RAW Data and Loading") as bar:
         for topology in listTopology:
             topologyName = ov.extractFilename(topology)
             G = nx.read_gml(topology,destringizer=int,label='id')
@@ -179,7 +179,6 @@ def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
             bar()
 
     export_cache()
-    style.checkpointDone("Dataframe filled with success")
-            
+    style.checkpointDone("Data was loaded with success")
 
     return df
