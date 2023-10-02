@@ -2,18 +2,18 @@ import os
 import lib.toDataframe as tdf
 import pandas as pd
 import shutil
-from pathlib import Path
+import pathlib
 
 # Copy folder with shutil
 def copyFolder(srcPath, dstPath):
-    shutil.copytree(Path(srcPath),Path(dstPath))
+    shutil.copytree(pathlib.Path(srcPath),pathlib.Path(dstPath))
 
 def copyFiles(fileList, dstPath):
     for file in fileList:
-        shutil.copy(Path(file),Path(dstPath))
+        shutil.copy(pathlib.Path(file),pathlib.Path(dstPath))
 
 def copyFile(file, destPath):
-    shutil.copy(Path(file),Path(destPath))
+    shutil.copy(pathlib.Path(file),pathlib.Path(destPath))
 
 def isDir(path):
     if(os.path.isdir(path)):
@@ -27,21 +27,8 @@ def isFile(path):
     else:
         return 0
 
-def validatePath(path):
-    if(not(os.path.isdir(path))):
-        os.mkdir(path)
-
-def validateEntirePath(path):
-
-    if(os.name == 'posix'):
-        pathNames = path.split('/')
-    else:
-        pathNames = path.split('\\')
-    
-    subPath = ''
-    for p in pathNames:
-        subPath += p + '/' #For each subpath, verify and create
-        validatePath(subPath)
+def ensureExist(path):
+    pathlib.Path(path).mkdir(parents=True, exist_ok=True)
 
 def validateNodeSender(fixedNodeSender):
     try:
@@ -62,37 +49,6 @@ def extractFilename(path):
     #print(fileName)
     return fileName
 
-def extractPathFile(path):
-    if(os.name == 'posix'):
-        pathFile = path.split('/')
-    else:
-        pathFile = path.split('\\')
-
-    pathFile.pop()
-    folderPath = ''
-
-    if(os.name == 'posix'):
-        for subPath in pathFile:
-            folderPath += subPath + '/'
-        #print(folderPath)
-    else:
-        for subPath in pathFile:
-            folderPath += subPath + '\\'
-        #print(folderPath)
-    
-    return folderPath
-
-def validateEntirePathFile(path):
-    newPath = extractPathFile(path)
-    if(os.name == 'posix'):
-        pathNames = newPath.split('/')
-    else:
-        pathNames = newPath.split('\\')
-    subPath = ''
-    for p in pathNames:
-        subPath += p + '/' #For each subpath, verify and create
-        validatePath(subPath)
-
 def Path(rawPath):
     auxPath = rawPath.split('/')
     universalPath = ''
@@ -100,7 +56,7 @@ def Path(rawPath):
         universalPath = os.path.join(universalPath,path)
     return universalPath
 
-def normilizePath(root,new_path):
+def normalizePath(root,new_path):
     script_directory = os.path.dirname(os.path.abspath(__file__))
     last_occurrence_index = script_directory.rfind(root)
 

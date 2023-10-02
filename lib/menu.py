@@ -100,20 +100,20 @@ def algorithmChoice():
 
         if(choice == 1): #Default
             df = tdf.appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw=True,mininetNX=True)
-            ov.validateEntirePath('output/Data/')
+            ov.ensureExist('output/Data/')
             df.to_csv(Path('output/Data/OptimalOverhead.csv'),index=False)
             break
         elif(choice == 2): #MST Choice
             algorithm = mstChoice()
             df = tdf.appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw=True,mininetNX=True)
-            ov.validateEntirePath('output/Data/')
+            ov.ensureExist('output/Data/')
             df.to_csv(Path(f'output/Data/Overhead_{algorithm}-Optimal.csv'),index=False)
             break
         elif(choice == 3): #MST and NodeSender Choice
             algorithm = mstChoice()
             fixedNodeSender = nodeSenderChoice()
             df = tdf.appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw=True,mininetNX=True)
-            ov.validateEntirePath('output/Data/')
+            ov.ensureExist('output/Data/')
             df.to_csv(Path(f'output/Data/Overhead_{algorithm}-{fixedNodeSender}.csv'),index=False)
             break
         else:

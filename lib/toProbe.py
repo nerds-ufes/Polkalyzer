@@ -64,7 +64,7 @@ def dfs_init(G,v):
     return sonda.copy()
 
 def exportTopology(G,topologyName, createAllEdgeSwitches = False):
-    ov.validateEntirePath(f'output/Topology/{topologyName}')
+    ov.ensureExist(f'output/Topology/{topologyName}')
     poly_nodeIDs = getNodeID(G.number_of_nodes())
     poly_routeID = modified_calculate_routeid(poly_nodeIDs,tState,debug=False)
     routeID = poly_to_hex(poly_routeID)
@@ -79,8 +79,8 @@ def exportTopology(G,topologyName, createAllEdgeSwitches = False):
         # arq.write(f'\n[int-classico]\n')
         # arq.write(f'INT_Classico = {sondaINTClassico}\n')
         arq.write('[bmv2]\n')
-        arq.write(f'path = "{ov.normilizePath("Polkalyzer","Polkalyzer/lib/p4/bmv2")}"\n')
-        arq.write(f'simple_switch_path = "{ov.normilizePath("Polkalyzer","Polkalyzer/lib/p4/bmv2/targets/simple_switch")}"\n')
+        arq.write(f'path = "{ov.normalizePath("Polkalyzer","Polkalyzer/lib/p4/bmv2")}"\n')
+        arq.write(f'simple_switch_path = "{ov.normalizePath("Polkalyzer","Polkalyzer/lib/p4/bmv2/targets/simple_switch")}"\n')
         arq.write(f'\n[mpolka]\n')
         arq.write(f'probe = {sonda}\n')
         arq.write(f'tState = {tState}\n')

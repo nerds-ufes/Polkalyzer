@@ -58,7 +58,7 @@ def StateOverheadHeatMap2(df,path):
                )
     plt.gca().invert_yaxis()
     #Save Fig
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/SO_HeatMap2.png'),dpi=120)
     return hMap
 
@@ -144,7 +144,7 @@ def StateOverheadHeatMap3(df,path):
     #Invert Y Axis
     plt.gca().invert_yaxis()
     #Save Fig
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/SO_HeatMap3.png'),dpi=120)
     return hMap
 
@@ -200,7 +200,7 @@ def StateOverheadHeatMap4(df,path):
     #Invert Y Axis
     plt.gca().invert_yaxis()
     #Save Fig
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/SO_HeatMap4.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     plt.savefig(Path(f'{path}/SO_HeatMap4.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     return hMap
@@ -263,7 +263,7 @@ def StateOverheadHeatMap5(df,path):
     #Invert Y Axis
     plt.gca().invert_yaxis()
     #Save Fig
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/SO_HeatMap5.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     plt.savefig(Path(f'{path}/SO_HeatMap5.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     return hMap
@@ -326,7 +326,7 @@ def StateOverheadHeatMap6(df,path):
     #Invert Y Axis
     plt.gca().invert_yaxis()
     #Save Fig
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/SO_HeatMap6.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     plt.savefig(Path(f'{path}/SO_HeatMap6.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     return hMap
@@ -342,7 +342,7 @@ def StateOverheadConcentration(df,path):
     sns.ecdfplot(data=df2, x = "Number of Nodes",ax=axes[0]);
     sns.ecdfplot(data=df2, x = "Replication Average per Node",ax=axes[1]);
     #Save Fig
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/SO_Concentration.png'),dpi=120)
 
 
@@ -350,14 +350,14 @@ def StateOverheadHistPlot(df,path):
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     sns.histplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2);
     #Save Fig
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/SO_HP.png'),dpi=120)
 
 def StateOverheadJointPlot(df,path):
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     sns.jointplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2,kind='hist');
     #Save Fig
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/SO_JP.png'),dpi=120)
 
 
@@ -365,7 +365,7 @@ def StateOverheadDistribution(df,path):
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     sns.relplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2);
     #Save Fig
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/SO_Distribuition.png'),dpi=120)
 
 def OverheadPointPlot(df,path):
@@ -396,7 +396,7 @@ def OverheadPointPlot(df,path):
     g2 = sns.pointplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1],dodge=True,data=dfm2,errorbar=None);
     g2.set(xlabel=None,ylabel=None)
     #Save Fig
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/OverheadPP.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     plt.savefig(Path(f'{path}/OverheadPP.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
 
@@ -426,7 +426,7 @@ def OverheadLinePlot(df,path):
     g2 = sns.lineplot(x="Number of Nodes", y="Overhead", hue='Type',ax=ax[1], data=dfm2,errorbar=None);
     g2.set(xlabel=None,ylabel=None)
     #Save Fig
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/OverheadLP.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     plt.savefig(Path(f'{path}/OverheadLP.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
 
@@ -459,7 +459,7 @@ def OverheadCompare(df,path):
     #sns.residplot(x="Number of Nodes", y="Overhead", data=dfCP);
     #Plot Data
     #sns.lineplot(x="Number of Nodes", y="Overhead",ax=ax, data=df2);
-    ov.validateEntirePath(path)
+    ov.ensureExist(path)
     plt.savefig(Path(f'{path}/OverheadCompare-MPolka-MPINT.png'),dpi=120)
     return df2
 
