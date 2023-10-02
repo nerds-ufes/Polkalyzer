@@ -93,6 +93,13 @@ def validateEntirePathFile(path):
         subPath += p + '/' #For each subpath, verify and create
         validatePath(subPath)
 
+def Path(rawPath):
+    auxPath = rawPath.split('/')
+    universalPath = ''
+    for path in auxPath:
+        universalPath = os.path.join(universalPath,path)
+    return universalPath
+
 def normilizePath(root,new_path):
     script_directory = os.path.dirname(os.path.abspath(__file__))
     last_occurrence_index = script_directory.rfind(root)

@@ -41,7 +41,7 @@ def mainMenu():
 def topologyChoice():
     print('==== Control Plane ====')
     i=0
-    listTopology = glob.glob(Path('input/*.gml'))
+    listTopology = glob.glob(ov.UniversalPath('input/*.gml'))
     listTopology.sort()
     for topology in listTopology:
         topologyName = ov.extractFilename(topology)

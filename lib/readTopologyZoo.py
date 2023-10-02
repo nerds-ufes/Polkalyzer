@@ -73,7 +73,7 @@ def removeBadValues():
     print('')
 
 def drawTopology(G,T,path):
-    topologyName = path.split('/')[-1]
+    topologyName = path.name # Hooka o nome da topologia da pathlib
     plotPath = Path(f'{path}/draw/Graph.png')
     if not is_file_cached(['topology', topologyName, 'Graph'], plotPath):
         ov.validateEntirePath(Path(f'{path}/draw'))

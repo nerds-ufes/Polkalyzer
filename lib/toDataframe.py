@@ -159,7 +159,7 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportTop
 
 
 def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
-    listTopology = glob.glob(Path('input/*.gml'))
+    listTopology = glob.glob(ov.Path('input/*.gml'))
     style.print_colorfulDict("Config",{"Algorithm": f"{algorithm}", "NodeSender": f"{fixedNodeSender}", "Draw": f"{draw}", "ToMininetNX": f"{mininetNX}"},color="yellow")
     with style.alive_bar(len(listTopology), title="Transforming RAW Data and Loading") as bar:
         for topology in listTopology:
