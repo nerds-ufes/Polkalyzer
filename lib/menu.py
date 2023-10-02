@@ -1,12 +1,10 @@
 import glob
 import lib.outputValidator as ov
 from lib.readTopologyZoo import removeBadValues
-import lib.toProbe as tpb
 import lib.toDataframe as tdf
 import pandas as pd
-import lib.plots as pplt
 import lib.toMininet as tmn
-import matplotlib.image as mpimg
+from pathlib import Path
 
 def extractAnswerYN(question):
     while(True):
@@ -43,7 +41,7 @@ def mainMenu():
 def topologyChoice():
     print('==== Control Plane ====')
     i=0
-    listTopology = glob.glob(ov.toUniversalOSPath('input/*.gml'))
+    listTopology = glob.glob(Path('input/*.gml'))
     listTopology.sort()
     for topology in listTopology:
         topologyName = ov.extractFilename(topology)
@@ -57,7 +55,7 @@ def topologyChoice():
 
 def topologyCustomizer(topologyName): 
     tmn.createCustomTopology(topologyName)
-    pathToImage = ov.toUniversalOSPath(f'output/Topology/{topologyName}/draw/TopologyNX.png')
+    pathToImage = Path(f'output/Topology/{topologyName}/draw/TopologyNX.png')
     tmn.openImage(pathToImage)
     while(True):
         tmn.displayCustomizedComponents(topologyName)
@@ -103,20 +101,20 @@ def algorithmChoice():
         if(choice == 1): #Default
             df = tdf.appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw=True,mininetNX=True)
             ov.validateEntirePath('output/Data/')
-            df.to_csv(ov.toUniversalOSPath('output/Data/OptimalOverhead.csv'),index=False)
+            df.to_csv(Path('output/Data/OptimalOverhead.csv'),index=False)
             break
         elif(choice == 2): #MST Choice
             algorithm = mstChoice()
             df = tdf.appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw=True,mininetNX=True)
             ov.validateEntirePath('output/Data/')
-            df.to_csv(ov.toUniversalOSPath(f'output/Data/Overhead_{algorithm}-Optimal.csv'),index=False)
+            df.to_csv(Path(f'output/Data/Overhead_{algorithm}-Optimal.csv'),index=False)
             break
         elif(choice == 3): #MST and NodeSender Choice
             algorithm = mstChoice()
             fixedNodeSender = nodeSenderChoice()
             df = tdf.appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw=True,mininetNX=True)
             ov.validateEntirePath('output/Data/')
-            df.to_csv(ov.toUniversalOSPath(f'output/Data/Overhead_{algorithm}-{fixedNodeSender}.csv'),index=False)
+            df.to_csv(Path(f'output/Data/Overhead_{algorithm}-{fixedNodeSender}.csv'),index=False)
             break
         else:
             print('')

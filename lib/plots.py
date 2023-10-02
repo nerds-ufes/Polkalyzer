@@ -4,6 +4,7 @@ import numpy as np
 import lib.outputValidator as ov
 from matplotlib import pyplot as plt
 import lib.style as style
+from pathlib import Path
 
 def StateOverheadHeatMap1(maxNodes,path):
     replicationArr = np.arange(1.0,2.0,0.1)
@@ -32,7 +33,7 @@ def StateOverheadHeatMap1(maxNodes,path):
                )
     plt.gca().invert_yaxis()
     #Save Fig
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap1.png'),dpi=120)
+    plt.savefig(Path(f'{path}/SO_HeatMap1.png'),dpi=120)
     return hMap
 
 def StateOverheadHeatMap2(df,path):
@@ -58,7 +59,7 @@ def StateOverheadHeatMap2(df,path):
     plt.gca().invert_yaxis()
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap2.png'),dpi=120)
+    plt.savefig(Path(f'{path}/SO_HeatMap2.png'),dpi=120)
     return hMap
 
 def offsetAnnotation(x):
@@ -144,7 +145,7 @@ def StateOverheadHeatMap3(df,path):
     plt.gca().invert_yaxis()
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap3.png'),dpi=120)
+    plt.savefig(Path(f'{path}/SO_HeatMap3.png'),dpi=120)
     return hMap
 
 def StateOverheadHeatMap4(df,path):
@@ -200,8 +201,8 @@ def StateOverheadHeatMap4(df,path):
     plt.gca().invert_yaxis()
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap4.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap4.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(Path(f'{path}/SO_HeatMap4.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(Path(f'{path}/SO_HeatMap4.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     return hMap
 
 def StateOverheadHeatMap5(df,path):
@@ -263,8 +264,8 @@ def StateOverheadHeatMap5(df,path):
     plt.gca().invert_yaxis()
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap5.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap5.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(Path(f'{path}/SO_HeatMap5.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(Path(f'{path}/SO_HeatMap5.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     return hMap
 
 def StateOverheadHeatMap6(df,path):
@@ -326,8 +327,8 @@ def StateOverheadHeatMap6(df,path):
     plt.gca().invert_yaxis()
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap6.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HeatMap6.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(Path(f'{path}/SO_HeatMap6.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(Path(f'{path}/SO_HeatMap6.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
     return hMap
 
 def StateOverheadConcentration(df,path):
@@ -342,7 +343,7 @@ def StateOverheadConcentration(df,path):
     sns.ecdfplot(data=df2, x = "Replication Average per Node",ax=axes[1]);
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_Concentration.png'),dpi=120)
+    plt.savefig(Path(f'{path}/SO_Concentration.png'),dpi=120)
 
 
 def StateOverheadHistPlot(df,path):
@@ -350,14 +351,14 @@ def StateOverheadHistPlot(df,path):
     sns.histplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2);
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_HP.png'),dpi=120)
+    plt.savefig(Path(f'{path}/SO_HP.png'),dpi=120)
 
 def StateOverheadJointPlot(df,path):
     df2 = (df[['Number of Nodes','Replication Average per Node','State Overhead']].loc[df['Where'] == 'DataPlane']).copy() #To exclude duplicated values, we look only for DataPlane
     sns.jointplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2,kind='hist');
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_JP.png'),dpi=120)
+    plt.savefig(Path(f'{path}/SO_JP.png'),dpi=120)
 
 
 def StateOverheadDistribution(df,path):
@@ -365,7 +366,7 @@ def StateOverheadDistribution(df,path):
     sns.relplot(x = 'Replication Average per Node', y = 'Number of Nodes', data = df2);
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/SO_Distribuition.png'),dpi=120)
+    plt.savefig(Path(f'{path}/SO_Distribuition.png'),dpi=120)
 
 def OverheadPointPlot(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']].copy()
@@ -396,8 +397,8 @@ def OverheadPointPlot(df,path):
     g2.set(xlabel=None,ylabel=None)
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/OverheadPP.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/OverheadPP.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(Path(f'{path}/OverheadPP.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(Path(f'{path}/OverheadPP.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
 
 def OverheadLinePlot(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT','INT Clássico']].copy()
@@ -426,8 +427,8 @@ def OverheadLinePlot(df,path):
     g2.set(xlabel=None,ylabel=None)
     #Save Fig
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/OverheadLP.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/OverheadLP.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(Path(f'{path}/OverheadLP.png'),bbox_inches='tight',pad_inches=0.1,dpi=120)
+    plt.savefig(Path(f'{path}/OverheadLP.pdf'),bbox_inches='tight',pad_inches=0.1,dpi=120)
 
 def OverheadCompare(df,path):
     df2 = df[['Where','Number of Nodes','MPolka CRC8','MPolka CRC16','MPINT']]
@@ -459,7 +460,7 @@ def OverheadCompare(df,path):
     #Plot Data
     #sns.lineplot(x="Number of Nodes", y="Overhead",ax=ax, data=df2);
     ov.validateEntirePath(path)
-    plt.savefig(ov.toUniversalOSPath(f'{path}/OverheadCompare-MPolka-MPINT.png'),dpi=120)
+    plt.savefig(Path(f'{path}/OverheadCompare-MPolka-MPINT.png'),dpi=120)
     return df2
 
 ######################################## PLOT AREA #################################################
@@ -480,32 +481,32 @@ def plotDataFrame(df,name,choice,algorithm,fixedNodeSender):
     numberOfPlots = 9
     with style.alive_bar(numberOfPlots, title= f"Ploting for {name} Dataframe") as bar:
         if(choice == 1):
-            OverheadPointPlot(df,ov.toUniversalOSPath(f'output/Plots/{name}'))
+            OverheadPointPlot(df,Path(f'output/Plots/{name}'))
             #OverheadLinePlot(df,f'output/Plots/{name}')
             #OverheadCompare(df,f'output/Plots/{name}')
         elif(choice == 2):
-            OverheadPointPlot(df,ov.toUniversalOSPath(f'output/Plots/{name}/{algorithm}/optimalNodeSender'))
+            OverheadPointPlot(df,Path(f'output/Plots/{name}/{algorithm}/optimalNodeSender'))
             #OverheadLinePlot(df,f'output/Plots/{name}/{algorithm}/optimalNodeSender')
             #OverheadCompare(df,f'output/Plots/{name}/{algorithm}/optimalNodeSender')
         elif(choice == 3):
-            OverheadPointPlot(df,ov.toUniversalOSPath(f'output/Plots/{name}/{algorithm}/{fixedNodeSender}'))
+            OverheadPointPlot(df,Path(f'output/Plots/{name}/{algorithm}/{fixedNodeSender}'))
             #OverheadLinePlot(df,f'output/Plots/{name}/{algorithm}/{fixedNodeSender}')
             #OverheadCompare(df,f'output/Plots/{name}/{algorithm}/{fixedNodeSender}')
         bar()
-        StateOverheadJointPlot(df,ov.toUniversalOSPath(f'output/Plots/{name}/StateOverhead'))
+        StateOverheadJointPlot(df,Path(f'output/Plots/{name}/StateOverhead'))
         bar()
-        StateOverheadConcentration(df,ov.toUniversalOSPath(f'output/Plots/{name}/StateOverhead'))
+        StateOverheadConcentration(df,Path(f'output/Plots/{name}/StateOverhead'))
         bar()
-        StateOverheadDistribution(df,ov.toUniversalOSPath(f'output/Plots/{name}/StateOverhead'))
+        StateOverheadDistribution(df,Path(f'output/Plots/{name}/StateOverhead'))
         bar()
-        StateOverheadHeatMap2(df,ov.toUniversalOSPath(f'output/Plots/{name}/StateOverhead'))
+        StateOverheadHeatMap2(df,Path(f'output/Plots/{name}/StateOverhead'))
         bar()
-        StateOverheadHeatMap3(df,ov.toUniversalOSPath(f'output/Plots/{name}/StateOverhead'))
+        StateOverheadHeatMap3(df,Path(f'output/Plots/{name}/StateOverhead'))
         bar()
-        StateOverheadHeatMap4(df,ov.toUniversalOSPath(f'output/Plots/{name}/StateOverhead'))
+        StateOverheadHeatMap4(df,Path(f'output/Plots/{name}/StateOverhead'))
         bar()
-        StateOverheadHeatMap5(df,ov.toUniversalOSPath(f'output/Plots/{name}/StateOverhead'))
+        StateOverheadHeatMap5(df,Path(f'output/Plots/{name}/StateOverhead'))
         bar()
-        StateOverheadHeatMap6(df,ov.toUniversalOSPath(f'output/Plots/{name}/StateOverhead'))
+        StateOverheadHeatMap6(df,Path(f'output/Plots/{name}/StateOverhead'))
         bar()
     style.success()

@@ -3,6 +3,7 @@ import lib.outputValidator as ov
 from mininet.net import Mininet
 import os
 import subprocess
+from pathlib import Path
 
 # Miniedit Function
 def type_converter(customConfig):
@@ -49,7 +50,7 @@ def customizeComponent(topologyName,linePrefix,componentNumber):
 
     if(ov.isFile(f'output/Topology/{topologyName}/custom_{topologyName}.py')):
         customLine = f'custom_{linePrefix}{componentNumber}'
-        with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'r') as arq:
+        with open(Path(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'r') as arq:
             lines = arq.readlines()
             lineNumber = 0
             alreadyCustomized = False
@@ -73,14 +74,14 @@ def customizeComponent(topologyName,linePrefix,componentNumber):
                 lines[myFirstLine] = f"\t\t#Custom Parameters\n\t\t{customLine} = {customConfig}\n"
                 lines[mySecondLine] = lines[mySecondLine].replace(prefix_map[linePrefix],f'**{customLine}')
 
-        with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'w') as arq:
+        with open(Path(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'w') as arq:
             arq.writelines(lines)
 
 def createCustomTopology(topologyName):
     if(ov.isFile(f'output/Topology/{topologyName}/custom_{topologyName}.py')):
         return 1
 
-    with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/{topologyName}.py'),'r') as arq:
+    with open(Path(f'output/Topology/{topologyName}/{topologyName}.py'),'r') as arq:
         lines = arq.readlines()
         lineNumber = 0
         for line in lines:
@@ -89,7 +90,7 @@ def createCustomTopology(topologyName):
             lineNumber += 1
         lines[myLine] = "\t\t#Custom Parameters\n\t\t#Add Switches\n"
 
-    with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'w') as arq:
+    with open(Path(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'w') as arq:
         arq.writelines(lines)
 
 def displayCustomizedComponents(topologyName):
@@ -101,7 +102,7 @@ def displayCustomizedComponents(topologyName):
         '\t\tcustom_h': 'Host'
     }
     # Abrir o arquivo para leitura
-    with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'r') as arq:
+    with open(Path(f'output/Topology/{topologyName}/custom_{topologyName}.py'),'r') as arq:
         # Ler cada linha do arquivo
         for line in arq:
             # Verificar se a linha contém uma das strings de entrada
@@ -183,5 +184,5 @@ def networkxToMininetConfig(G,topologyName,hostsPerSwitch):
 
     Code = Code.join([Import,Class,DefaultParameters,SwitchConfig,HostConfig,HostSwitchLinkConfig,SwitchSwitchLinkConfig,StartNetwork,BuildTopo])
 
-    with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/{topologyName}.py'),'w') as arq:
+    with open(Path(f'output/Topology/{topologyName}/{topologyName}.py'),'w') as arq:
         arq.write(Code)

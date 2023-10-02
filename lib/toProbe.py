@@ -2,6 +2,7 @@ import lib.outputValidator as ov
 import lib.overheadCalc as oc
 from lib.polka import modified_calculate_routeid, poly_to_hex, polyList_to_hexList
 from lib.cache import get_nodesID_CRC16
+from pathlib import Path
 
 sonda = []
 sondaTemp = []
@@ -68,7 +69,7 @@ def exportTopology(G,topologyName, createAllEdgeSwitches = False):
     poly_routeID = modified_calculate_routeid(poly_nodeIDs,tState,debug=False)
     routeID = poly_to_hex(poly_routeID)
     nodeIDs = polyList_to_hexList(poly_nodeIDs)
-    with open(ov.toUniversalOSPath(f'output/Topology/{topologyName}/topology.toml'),'w') as arq:
+    with open(Path(f'output/Topology/{topologyName}/topology.toml'),'w') as arq:
         arq.write('# Usefull informations about topology\n\n')
         arq.write(f'name = "{topologyName}"\n')
         arq.write(f'numbes_of_nodes = {G.number_of_nodes()}\n')

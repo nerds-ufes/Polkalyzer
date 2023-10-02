@@ -11,6 +11,7 @@ from lib.readTopologyZoo import GraphToMST,drawTopology
 from lib.p4 import networkx_to_mininet_P4
 from lib.cache import export_cache
 from lib.utils import remap_labels
+from pathlib import Path
 
 stronglyConnectedFlag = False
 
@@ -158,7 +159,7 @@ def appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportTop
 
 
 def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
-    listTopology = glob.glob(ov.toUniversalOSPath('input/*.gml'))
+    listTopology = glob.glob(Path('input/*.gml'))
     style.print_colorfulDict("Config",{"Algorithm": f"{algorithm}", "NodeSender": f"{fixedNodeSender}", "Draw": f"{draw}", "ToMininetNX": f"{mininetNX}"},color="yellow")
     with style.alive_bar(len(listTopology), title="Transforming RAW Data and Loading") as bar:
         for topology in listTopology:
@@ -169,7 +170,7 @@ def appendAllTopologysToDataFrame(df,algorithm,fixedNodeSender,draw, mininetNX):
             df = appendGraphToDataFrame(df,G,algorithm,fixedNodeSender,topologyName,exportTopology=True)
 
             if(draw == True):
-                outputPath = ov.toUniversalOSPath(f'output/Topology/{topologyName}')
+                outputPath = Path(f'output/Topology/{topologyName}')
                 drawTopology(G,T,outputPath)
 
             if(mininetNX == True):

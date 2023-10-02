@@ -76,7 +76,7 @@ def drawTopology(G,T,path):
     topologyName = path.split('/')[-1]
     plotPath = Path(f'{path}/draw/Graph.png')
     if not is_file_cached(['topology', topologyName, 'Graph'], plotPath):
-        ov.validateEntirePath(ov.toUniversalOSPath(f'{path}/draw'))
+        ov.validateEntirePath(Path(f'{path}/draw'))
         pos = nx.kamada_kawai_layout(G)
         nx.draw(
             G, pos, edge_color='black', width=1, linewidths=1,
@@ -95,7 +95,7 @@ def drawTopology(G,T,path):
             node_size=500, node_color='red', alpha=0.9,
             labels={node: node for node in T.nodes()}
         )
-        plt.savefig(ov.toUniversalOSPath(f'{path}/draw/MST.png'),dpi=120)
+        plt.savefig(Path(f'{path}/draw/MST.png'),dpi=120)
         plt.clf()
         plt.close()
 
@@ -123,7 +123,7 @@ def drawTopology(G,T,path):
             font_color='red', alpha=0.7, font_size=7
         )
 
-        plt.savefig(ov.toUniversalOSPath(f'{path}/draw/TopologyNX.png'),dpi=120)
+        plt.savefig(Path(f'{path}/draw/TopologyNX.png'),dpi=120)
         plt.clf()
         plt.close()
 
