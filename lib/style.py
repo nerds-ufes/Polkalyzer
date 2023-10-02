@@ -41,8 +41,6 @@ def print_colorfulDict(dictName,d, color):
 def greetings():
     print("==> Polkalyzer finished with SUCCESS !!!\n")
     colorful_print("==> Contribute with us giving this repo a Star ⭐", color="yellow")
-    colorful_print("Owner:",color="yellow")
-    print("\t - NERDS (Núcleo de Estudos em Redes Definidas por Software)     | @nerds-ufes")
     colorful_print("Maintainers:",color="yellow")
-    print("\t - Lucas R. de Almeida      |    Email: contato@propi.dev        | @propilideno")
+    print("\t - Lucas R. de Almeida      |    Email: hello@propi.dev          | @propilideno")
     print("\t - Rodolfo S. Villaca       |    Email: rodolfo.villaca@ufes.br  | @rodolfovillaca")

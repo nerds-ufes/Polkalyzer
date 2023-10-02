@@ -26,4 +26,3 @@ RUN git pull origin develop # Prevent cache conflicts
 RUN pip install -r requirements.txt
 RUN service openvswitch-switch start
 CMD ["service","openvswitch-switch","start"]
-CMD /bin/bash
