@@ -25,7 +25,7 @@ def mainMenu():
     elif(ov.isDir('input') == 1):
         removeBadValues()
 
-    if(ov.isDir('output/MininetNX')):
+    if(ov.isDir('output/Topology')):
         while(True):
             print('1- Run Polkalyzer')
             print('2- Modify topologys on MininetNX')
