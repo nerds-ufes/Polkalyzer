@@ -134,7 +134,7 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
                       Main,
                       BuildTopo])
     
-    ov.validateEntirePath(f'output/Topology/{topologyName}/p4/lib')
+    ov.ensureExist(f'output/Topology/{topologyName}/p4/lib')
     with open(Path(f'output/Topology/{topologyName}/p4/{topologyName}-P4.py'),'w') as arq:
         arq.write(Code)
 
@@ -152,7 +152,7 @@ def networkx_to_mininet_P4(T,topologyName, createAllEdgeSwitches = False): # T i
 
 
 def createFlowTable(T,topologyName, createAllEdgeSwitches = False):
-    ov.validateEntirePath(f'output/Topology/{topologyName}/p4/flow_table')
+    ov.ensureExist(f'output/Topology/{topologyName}/p4/flow_table')
 
     topology = toml.load(Path(f"output/Topology/{topologyName}/topology.toml"))
 

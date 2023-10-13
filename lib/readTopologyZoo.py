@@ -57,7 +57,7 @@ def removeBadValues():
     #    filtereds += 1
     #    input_pathGoodValue = 'input/' + goodTopology + '.gml'
     #    output_pathGoodValue = 'output/Filtered Topologys/' + goodTopology + '/'
-    #    ov.validateEntirePath(output_pathGoodValue)
+    #    ov.ensureExist(output_pathGoodValue)
     #    G = nx.read_gml(input_pathGoodValue,destringizer=int,label='id')
     #    T = nx.minimum_spanning_tree(G,algorithm='prim')
     #    drawTopology(G,T,output_pathGoodValue)
@@ -73,10 +73,10 @@ def removeBadValues():
     print('')
 
 def drawTopology(G,T,path):
-    topologyName = path.split('/')[-1]
+    topologyName = path.name # Hooka o nome da topologia da pathlib
     plotPath = Path(f'{path}/draw/Graph.png')
     if not is_file_cached(['topology', topologyName, 'Graph'], plotPath):
-        ov.validateEntirePath(ov.toUniversalOSPath(f'{path}/draw'))
+        ov.ensureExist(Path(f'{path}/draw'))
         pos = nx.kamada_kawai_layout(G)
         nx.draw(
             G, pos, edge_color='black', width=1, linewidths=1,
@@ -95,7 +95,7 @@ def drawTopology(G,T,path):
             node_size=500, node_color='red', alpha=0.9,
             labels={node: node for node in T.nodes()}
         )
-        plt.savefig(ov.toUniversalOSPath(f'{path}/draw/MST.png'),dpi=120)
+        plt.savefig(Path(f'{path}/draw/MST.png'),dpi=120)
         plt.clf()
         plt.close()
 
@@ -123,7 +123,7 @@ def drawTopology(G,T,path):
             font_color='red', alpha=0.7, font_size=7
         )
 
-        plt.savefig(ov.toUniversalOSPath(f'{path}/draw/TopologyNX.png'),dpi=120)
+        plt.savefig(Path(f'{path}/draw/TopologyNX.png'),dpi=120)
         plt.clf()
         plt.close()
 
