@@ -87,10 +87,9 @@ def topologyCustomizer(topologyName):
 def algorithmChoice():
     df = pd.DataFrame() #Empty Dataframe
     print('==== Algorithm Choice ====')
-    print('Answer what option do you want for algorithm')
-    print('1- Default options, Polkalyzer will choice the MST and the optimal node sender for any topology')
-    print('2- You\'ll choose the MST algorithm, however Polkalyzer will choose the optimal node sender for any topology')
-    print('3- You\'ll choose the MST algorithm and a fixed node sender for any topologys given.')
+    print('1- Polkalyzer will choose everything for you')
+    print('2- You\'ll choose the MST algorithm')
+    print('3- You\'ll choose the MST algorithm and the node sender')
     #DEFAULT
     algorithm = 'prim'
     fixedNodeSender = -1
