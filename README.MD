@@ -21,10 +21,12 @@ You can choose the a fixed node sender or leave to algorithm decide the optimal 
 8 - Export to **output/Data** all usefull information collected into a csv. <br>
 9 - Export to **output/Plots** different plots to help us to understand the information collected. <br>
 
-## Installing Polkalyzer dependencies
+## Dependencies
+You can run it in your own machine or use Docker to run Polkalyzer. <br>
+### Without Docker
 You will need Python3 to run Polkalyzer, so try it:
 ```
-python --version
+python3 --version
 ```
 If you haven't it, try install: https://www.python.org/downloads/ <br>
 
@@ -32,16 +34,26 @@ You also will need PIP dependencies:
 ```
 pip install -r requirements.txt
 ```
+### With Docker and Docker-Compose
+You'll need `docker` and `docker-compose`
+```
+docker --version
+docker-compose --version
+```
+If you haven't it, try install: https://docs.docker.com/get-docker/ <br>
+
+Staring Polkalyzer with docker-compose:
+```
+docker-compose up -d
+docker exec -it polkalyzer-app-1 /bin/bash
+```
 
 ## Using Polkalyzer
 First of all, run Polkalyzer.py
 ```
-python Polkalyzer.py
-```
-or
-```
 python3 Polkalyzer.py
 ```
+
 ![Algorithm Choice](./utils/imgs/AlgorithmChoice.png) <br>
 You can choose between three algorithm options, after chosen wait finish and check your output folder. <br>
 
@@ -70,27 +82,9 @@ We are committed to delivering the best experience possible, and your feedback p
 
 Thank you for your interest and contribution to our project. Your support means a lot to us!
 
-## Contributing
-You're free to contribute refactoring and improving our code. Don't hesite to fork this repo. <br>
-How you can contribute: <br>
-- [ ] Refactoring our code
-- [ ] Improving performance comparing hash of output/
-- [ ] Building more **utils** for the Control Plane
 ### Maintainers
-- Lucas R. de Almeida      |    Email: contato@propi.dev        | @propilideno
+- Lucas R. de Almeida      |    Email: hello@propi.dev          | @propilideno
 - Rodolfo S. Villaca       |    Email: rodolfo.villaca@ufes.br  | @rodolfovillaca
-
-## Log (Under Development)
-- [x] Calculate the probe path from a topo
-- [x] ~~Allowed to download topologys .gml from topologyZoo~~
-- [x] Allowed to fill **input/** with topologys
-- [x] Calculate overhead from MPINT Approach
-- [x] Calculate overhead from MPolKA-INT Approach
-- [x] Calculate overhead from Original INT Approach
-- [x] Filling dataframe with topologys information
-- [x] Allowing plotts
-- [x] Allowing draws from (Graph and MST)
-- [x] Allowed transform NetworkX Graphs into Mininet Topologys. 
 
 # References
 Topology Dataset - http://www.topology-zoo.org/dataset.html
