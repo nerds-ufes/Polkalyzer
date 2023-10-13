@@ -6,22 +6,13 @@ import pathlib
 
 # Copy folder with shutil
 def copyFolder(srcPath, dstPath):
-    # If path not exists, create it like with mkdir -p
-    if(not(os.path.isdir(dstPath))):
-        os.makedirs(dstPath)
-    shutil.copytree(pathlib.Path(srcPath),pathlib.Path(dstPath))
+    shutil.copytree(pathlib.Path(srcPath),pathlib.Path(dstPath), dirs_exist_ok=True)
 
 def copyFiles(fileList, dstPath):
-    # If path not exists, create it like with mkdir -p
-    if(not(os.path.isdir(dstPath))):
-        os.makedirs(dstPath)
     for file in fileList:
         shutil.copy(pathlib.Path(file),pathlib.Path(dstPath))
 
 def copyFile(file, dstPath):
-    # If path not exists, create it like with mkdir -p
-    if(not(os.path.isdir(dstPath))):
-        os.makedirs(dstPath)
     shutil.copy(pathlib.Path(file),pathlib.Path(dstPath))
 
 def isDir(path):
