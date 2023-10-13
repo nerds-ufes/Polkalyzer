@@ -1,4 +1,4 @@
-import glob
+import os
 import lib.outputValidator as ov
 from lib.readTopologyZoo import removeBadValues
 import lib.toDataframe as tdf
@@ -41,7 +41,7 @@ def mainMenu():
 def topologyChoice():
     print('==== Control Plane ====')
     i=0
-    listTopology = glob.glob(ov.Path('input/*.gml'))
+    listTopology = os.listdir('output/Topology')
     listTopology.sort()
     for topology in listTopology:
         topologyName = ov.extractFilename(topology)
