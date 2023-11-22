@@ -81,7 +81,7 @@ def drawTopology(G,T,path):
         nx.draw(
             G, pos, edge_color='black', width=1, linewidths=1,
             node_size=500, node_color='pink', alpha=0.9,
-            labels={node: node for node in G.nodes()}
+            labels={node: node+1 for node in G.nodes()}
         )
         plt.savefig(plotPath,dpi=120)
         plt.clf()
@@ -93,7 +93,7 @@ def drawTopology(G,T,path):
         nx.draw(
             T, pos, edge_color='black', width=1, linewidths=1,
             node_size=500, node_color='red', alpha=0.9,
-            labels={node: node for node in T.nodes()}
+            labels={node: node+1 for node in T.nodes()}
         )
         plt.savefig(Path(f'{path}/draw/MST.png'),dpi=120)
         plt.clf()
@@ -115,7 +115,7 @@ def drawTopology(G,T,path):
         nx.draw(
             TNX, pos, edge_color='black', width=1, linewidths=1,
             node_size=500, node_color=list(nx.get_node_attributes(TNX, 'color').values()), alpha=0.9,
-            labels={node: node for node in TNX.nodes()}
+            labels={node: node+1 for node in TNX.nodes()}
         )
         nx.draw_networkx_edge_labels(
             TNX, pos,
