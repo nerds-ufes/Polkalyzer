@@ -72,7 +72,7 @@ def get_nodesID_CRC16():
     keys = ['nodesID', 'crc16']
 
     if not is_cached(keys):
-        nodesID_CRC16 = modified_create_list_irrpoly_mod2(15)
+        nodesID_CRC16 = modified_create_list_irrpoly_mod2(16)
         save_cache_to_file(keys, nodesID_CRC16)
         save_hash_to_file(keys, calculate_dict_hash(nodesID_CRC16))
         export_cache() # Export to don't need to calculate again if the program is closed
