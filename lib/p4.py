@@ -184,4 +184,7 @@ def export_flowTable_edgeSwitches(topologyName,edgeSwitches, routeID):
     for e in range(number_of_edgeSwitches):
         with open(Path(f'output/Topology/{topologyName}/p4/flow_table/e{e+1}.txt'),'w') as arq:
             arq.write('table_set_default tunnel_encap_process_sr tdrop\n')
-            arq.write(f'table_add tunnel_encap_process_sr add_sourcerouting_header 10.0.1.{e+1}/32 => {e+1} 1 00:04:00:00:00:{e:02x} {hex(routeID[str(edgeSwitches[e])])}\n\n')
+            for h in range(number_of_edgeSwitches):
+                if(h == e):
+                    continue # Only add the destination hosts, skip itself
+                arq.write(f'table_add tunnel_encap_process_sr add_sourcerouting_header 10.0.1.{h+1}/32 => 2 1 00:04:00:00:00:{h:02x} {hex(routeID[str(edgeSwitches[e])])}\n')
